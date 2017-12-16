@@ -34,9 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
         "value": 0.7,
         "random": false,
         "anim": {
-          "enable": false,
+          "enable": true,
           "speed": 1,
-          "opacity_min": 0.1,
+          "opacity_min": 0.23,
           "sync": false
         }
       },
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "detect_on": "window",
       "events": {
         "onhover": {
-          "enable": false,
+          "enable": true,
           "mode": "grab"
         },
         "onclick": {
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "duration": 0.4
         },
         "push": {
-          "particles_nb": 4
+          "particles_nb": 3
         },
         "remove": {
           "particles_nb": 2

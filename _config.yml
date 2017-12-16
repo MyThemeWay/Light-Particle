@@ -1,17 +1,17 @@
 # Site settings
-title: S.:.A..:
-description: S. Arsenault
+title: "S.:.A..:"
+description: "S.: ARSENAULT"
 # baseurl: "/particle" # the subpath of your site, e.g. /blog
 # url: "localhost:3000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
 # User settings
 username: S. Arsenault
-user_description: Give him slack, or give him death
-user_title: Software Developer
+user_description: Agile, creative thinker ready to take on any new task
+user_title: Computer Engineer, B.ASc
 email: stephen.astronaut@gmail.com
-twitter_username: lorem_ipsum
+twitter_username:
 github_username:  dasushi
-gplus_username:  lorem_ipsum
+gplus_username:
 
 # Google-analytics
 google-analytics:
