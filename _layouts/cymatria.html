@@ -1,0 +1,262 @@
+<!doctype html>
+<hmtl lang="en">
+  <head>
+    <title>Cymatria - S.:. A..:</title>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <div id="container"></div>
+  </body>
+
+  <script src="js/three.min.js"></script>
+  <script src="js/OrbitControls.js"></script>
+  <script src="js/dat.gui.min.js"></script>
+  <script src="fbo.js"></script>
+
+  <script type="x-shader/x-vertex" id="simVertexShader">
+  varying vec2 vUv;
+  void main(){
+    vUv = vec2(uv.x, uv.y);
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+  }
+  </script>
+
+  <script type="x-shader/x-vertex" id="simFragShader">
+  uniform sampler2D positions;
+  uniform float time;
+  uniform float rM;
+  uniform float thetaM;
+  uniform float phiM;
+  uniform float xM;
+  uniform float yM;
+  uniform float zM;
+  uniform float w;
+  varying vec2 vUv;
+  void main(){
+    vec3 pos = texture2D(positions, vUv).rgb;
+    //move particle here
+    if(dot(pos, pos) > 0.01){
+      float r = rM*sqrt(dot(pos,pos));
+      float theta = thetaM*acos(pos.z / r);
+      float phi = phiM*atan(pos.y, pos.x);
+      pos.x = pos.x + xM*cos(phi)*sin(theta)*sin(r-w*time)/r;
+      pos.y = pos.y + yM*sin(phi)*sin(theta)*sin(r-w*time)/r;
+      pos.z = pos.z + zM*cos(theta)*sin(r-w*time)/r;
+    }
+    gl_FragColor = vec4(pos, 1.0);
+  }
+  </script>
+
+  <script type="x-shader/x-vertex" id="renderVertexShader">
+  uniform sampler2D positions;
+  uniform float pointSize;
+  void main(){
+    vec3 pos = texture2D(positions, position.xy).xyz;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+    gl_PointSize = pointSize;
+  }
+  </script>
+
+  <script type="x-shader/x-vertex" id="renderFragShader">
+  void main(){
+    gl_FragColor = vec4(vec3(1.), 0.3);
+  }
+  </script>
+
+  <script type="text/javascript" id="mainCode">
+  var container,
+  renderer,
+  scene,
+  camera,
+  start = Date.now(),
+  fov = 32,
+  counter = 0,
+  freq=0.025;
+
+  window.addEventListener('load', function() {
+    container = document.getElementById("container");
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(
+      fov,
+      window.innerWidth / window.innerHeight,
+      1,
+      10000
+    );
+    camera.position.z = 500;
+
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    container.appendChild(renderer.domElement);
+
+    var height = 1024;
+    var width = 1024;
+    var depth = 256;
+    var scale = 64.0;
+    var randomVals = generateRandomCube(width, height, depth, scale);
+    var randomTexture = new THREE.DataTexture(
+      randomVals,
+      width,
+      height,
+      THREE.RGBFormat,
+      THREE.FloatType
+    );
+    randomTexture.needsUpdate = true;
+    simulationMaterial = new THREE.ShaderMaterial({
+      uniforms: {
+        positions: {
+          type: "t",
+          value: randomTexture
+        },
+        time:{
+          type: "f",
+          value: 0.0
+        },
+        rM:{
+          type: "f",
+          value: 1.0
+        },
+        phiM:{
+          type: "f",
+          value: 1.0
+        },
+        thetaM:{
+          type: "f",
+          value: 1.0
+        },
+        xM:{
+          type: "f",
+          value: 1.0
+        },
+        yM:{
+          type: "f",
+          value: 1.0
+        },
+        zM:{
+          type: "f",
+          value: 1.0
+        },
+        w:{
+          type:"f",
+          value: 1.0
+        }
+      },
+      vertexShader: document.getElementById('simVertexShader').textContent,
+      fragmentShader: document.getElementById('simFragShader').textContent
+    });
+    renderMaterial = new THREE.ShaderMaterial({
+      uniforms: {
+        positions: {
+          type: "t",
+          value: null
+        },
+        pointSize: {
+          type: "f",
+          value: 0.5
+        }
+      },
+      transparent: true,
+      blending: THREE.AdditiveBlending,
+      vertexShader: document.getElementById('renderVertexShader').textContent,
+      fragmentShader: document.getElementById('renderFragShader').textContent
+    });
+
+    //initialize FBO
+    fbo.init(width, height, renderer, simulationMaterial, renderMaterial);
+    scene.add(fbo.particles);
+    //scene.add(mesh);
+
+    var controls = new THREE.OrbitControls(camera, renderer.domElement);
+    var gui = new dat.GUI();
+    var waveParams = gui.addFolder('Wave Parameters');
+    var Radius = {
+      Radius: 1.0
+    };
+    waveParams.add(Radius, 'Radius').onFinishChange(function(value){
+      simulationMaterial.uniforms['rM'].value = value;
+    });
+    var Phi = {
+      Phi: 1.0
+    };
+    waveParams.add(Phi, 'Phi').onFinishChange(function(value){
+      simulationMaterial.uniforms['phiM'].value = value;
+    });
+    var Theta = {
+      Theta: 1.0
+    };
+    waveParams.add(Theta,'Theta').onFinishChange(function(value){
+      simulationMaterial.uniforms['thetaM'].value = value;
+    });
+    var xScale = {
+      xScale: 1.0
+    };
+    var scaleParams = gui.addFolder('Scale Parameters');
+    scaleParams.add(xScale, 'xScale').min(0).onFinishChange(function(value){
+      simulationMaterial.uniforms['xM'].value = value;
+    });
+    var yScale = {
+      yScale: 1.0
+    };
+    scaleParams.add(yScale, 'yScale').min(0).onFinishChange(function(value){
+      simulationMaterial.uniforms['yM'].value = value;
+    });
+    var zScale = {
+      zScale: 1.0
+    };
+    scaleParams.add(zScale, 'zScale').min(0).onFinishChange(function(value){
+      simulationMaterial.uniforms['zM'].value = value;
+    });
+    var timeParams = gui.addFolder('Time Parameters');
+    var Frequency = {
+      Frequency: freq
+    };
+    timeParams.add(Frequency, 'Frequency').min(0).onFinishChange(function(value){
+      freq = value;
+    });
+    var Omega = {
+      Omega: 1.0
+    };
+    timeParams.add(Omega, 'Omega').min(0).onFinishChange(function(value){
+      simulationMaterial.uniforms['w'].value = value;
+    });
+    waveParams.open();
+    onWindowResize();
+    window.addEventListener('resize', onWindowResize);
+    render();
+  })
+
+  function onWindowResize(){
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+  }
+
+  function generateRandomCube(x, y, z, scale) {
+    var length = x * y * 3;
+    var output = new Float32Array(length);
+    for(var i = 0; i < x; i++){
+      for(var j = 0; j < y; j++){
+        output[(i*x+j)*3] = (i-(x/2))/(x/scale);
+        output[((i*x+j)*3)+1] = (j-(y/2))/(y/scale);
+        output[((i*x+j)*3)+2] = (Math.random()-.5)/(z/scale);
+      }
+    }
+    return output;
+  }
+
+  function getRandomInt(min, max){
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  function render() {
+    //+++FIAT LVX+++\\
+    simulationMaterial.uniforms['time'].value = freq * (Date.now() - start);
+    requestAnimationFrame(render);
+    fbo.update();
+    renderer.render(scene, camera);
+  }
+  </script>
+</html>
