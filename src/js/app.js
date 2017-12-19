@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       },
       "opacity": {
-        "value": 0.7,
+        "value": 0.8,
         "random": false,
         "anim": {
           "enable": true,
@@ -45,33 +45,33 @@ document.addEventListener("DOMContentLoaded", function () {
         "random": true,
         "anim": {
           "enable": false,
-          "speed": 19.18081918081918,
-          "size_min": 0.1,
+          "speed": 23.18081918081918,
+          "size_min": 0.2,
           "sync": false
         }
       },
       "line_linked": {
         "enable": true,
-        "distance": 150,
+        "distance": 230,
         "color": "#5fd3bc",
-        "opacity": 0.5,
+        "opacity": 0.57,
         "width": 1
       },
       "move": {
         "enable": true,
-        "speed": 4,
+        "speed": 4.5,
         "direction": "none",
         "random": true,
         "straight": false,
         "out_mode": "out",
         "bounce": false,
         "attract": {
-          "enable": false,
-          "rotateX": 230,
-          "rotateY": 723
+          "enable": true,
+          "rotateX": 123,
+          "rotateY": 223
         }
       },
-      nb: 80
+      nb: 90
     },
     "interactivity": {
       "detect_on": "window",
@@ -88,9 +88,9 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       "modes": {
         "grab": {
-          "distance": 400,
+          "distance": 130,
           "line_linked": {
-            "opacity": 1
+            "opacity": 0.2
           }
         },
         "bubble": {
