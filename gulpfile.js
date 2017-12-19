@@ -71,11 +71,15 @@ gulp.task('imagemin', function() {
  * Compile and minify js
  */
 gulp.task('js', function(){
-	return gulp.src('src/js/**/*.js')
+	return gulp.src('src/js/app.js')
 		.pipe(plumber())
 		.pipe(concat('main.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('assets/js/'))
+});
+
+gulp.task('move-js', function(){
+	return gulp.src(['src/js/OrbitControls.js','src/js/three.min.js','src/js/fbo.js','src/js/dat.gui.min.js', 'src/js/dat.gui.css']).pipe(gulp.dest('assets/js/'))
 });
 
 gulp.task('watch', function() {
@@ -86,4 +90,4 @@ gulp.task('watch', function() {
   gulp.watch(['*html', '_includes/*html', '_layouts/*.html'], ['jekyll-rebuild']);
 });
 
-gulp.task('default', ['js', 'sass', 'fonts', 'browser-sync', 'watch']);
+gulp.task('default', ['js', 'move-js', 'sass', 'fonts', 'browser-sync', 'watch']);

@@ -1,68 +1,61 @@
 <!doctype html>
-<hmtl lang="en">
+<html lang="en">
   <head>
-    <title>Cymatria - S.:. A..:</title>
+    <title>Cymatria - S..A.:</title>
     <meta charset="utf-8">
-  </head>
+    <script src="/assets/js/three.min.js"></script>
+    <script src="/assets/js/OrbitControls.js"></script>
+    <script src="/assets/js/dat.gui.min.js"></script>
+    <script src="/assets/js/fbo.js"></script>
+    <script type="x-shader/x-vertex" id="simVertexShader">
+      varying vec2 vUv;
+      void main(){
+        vUv = vec2(uv.x, uv.y);
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    </script>
 
-  <body>
-    <div id="container"></div>
-  </body>
-
-  <script src="assets/js/three.min.js"></script>
-  <script src="assets/js/OrbitControls.js"></script>
-  <script src="assets/js/dat.gui.min.js"></script>
-  <script src="assets/js/fbo.js"></script>
-
-  <script type="x-shader/x-vertex" id="simVertexShader">
-  varying vec2 vUv;
-  void main(){
-    vUv = vec2(uv.x, uv.y);
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-  }
-  </script>
-
-  <script type="x-shader/x-vertex" id="simFragShader">
-  uniform sampler2D positions;
-  uniform float time;
-  uniform float rM;
-  uniform float thetaM;
-  uniform float phiM;
-  uniform float xM;
-  uniform float yM;
-  uniform float zM;
-  uniform float w;
-  varying vec2 vUv;
-  void main(){
-    vec3 pos = texture2D(positions, vUv).rgb;
-    //move particle here
-    if(dot(pos, pos) > 0.01){
-      float r = rM*sqrt(dot(pos,pos));
-      float theta = thetaM*acos(pos.z / r);
-      float phi = phiM*atan(pos.y, pos.x);
-      pos.x = pos.x + xM*cos(phi)*sin(theta)*sin(r-w*time)/r;
-      pos.y = pos.y + yM*sin(phi)*sin(theta)*sin(r-w*time)/r;
-      pos.z = pos.z + zM*cos(theta)*sin(r-w*time)/r;
+    <script type="x-shader/x-vertex" id="simFragShader">
+    uniform sampler2D positions;
+    uniform float time;
+    uniform float rM;
+    uniform float thetaM;
+    uniform float phiM;
+    uniform float xM;
+    uniform float yM;
+    uniform float zM;
+    uniform float w;
+    varying vec2 vUv;
+    void main(){
+      vec3 pos = texture2D(positions, vUv).rgb;
+      //move particle here
+      if(dot(pos, pos) > 0.01){
+        float r = rM*sqrt(dot(pos,pos));
+        float theta = thetaM*acos(pos.z / r);
+        float phi = phiM*atan(pos.y, pos.x);
+	pos.x = pos.x + xM*cos(phi)*sin(theta)*sin(r-w*time)/r;
+	pos.y = pos.y + yM*sin(phi)*sin(theta)*sin(r-w*time)/r;
+	pos.z = pos.z + zM*cos(theta)*sin(r-w*time)/r;
+      }
+      gl_FragColor = vec4(pos, 1.0);
     }
-    gl_FragColor = vec4(pos, 1.0);
-  }
-  </script>
+    </script>
 
-  <script type="x-shader/x-vertex" id="renderVertexShader">
-  uniform sampler2D positions;
-  uniform float pointSize;
-  void main(){
-    vec3 pos = texture2D(positions, position.xy).xyz;
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
-    gl_PointSize = pointSize;
-  }
-  </script>
+    <script type="x-shader/x-vertex" id="renderVertexShader">
+    uniform sampler2D positions;
+    uniform float pointSize;
+    void main(){
+      vec3 pos = texture2D(positions, position.xy).xyz;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+      gl_PointSize = pointSize;
+    }
+    </script>
 
-  <script type="x-shader/x-vertex" id="renderFragShader">
-  void main(){
-    gl_FragColor = vec4(vec3(1.), 0.3);
-  }
-  </script>
+    <script type="x-shader/x-vertex" id="renderFragShader">
+    void main(){
+      gl_FragColor = vec4(vec3(1.), 0.3);
+    }
+    </script>
 
   <script type="text/javascript" id="mainCode">
   var container,
@@ -259,4 +252,11 @@
     renderer.render(scene, camera);
   }
   </script>
+
+  </head>
+
+  <body>
+    <div id="container"></div>
+  </body>
+
 </html>
