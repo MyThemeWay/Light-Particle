@@ -21,7 +21,7 @@ var fbo = function(exports) {
     var options = {
       minFilter: THREE.NearestFilter,
       magFilter: THREE.NearestFilter,
-      format: THREE.RGBFormat, //RGB = 3 floats per particle, RGBA for 4
+      format: THREE.RGBAFormat, //RGB = 3 floats per particle, RGBA for 4
       type: THREE.FloatType
     };
     rtt = new THREE.WebGLRenderTarget(width,
@@ -33,10 +33,10 @@ var fbo = function(exports) {
     geometry.addAttribute(
       'position',
       new THREE.BufferAttribute(new Float32Array([
-          -1, -1, 0,
-          1, -1, 0,
-          1, 1, 0,
-          -1, -1, 0,
+          -1, -1, 0, 
+          1, -1, 0, 
+          1, 1, 0, 
+          -1, -1, 0, 
           1, 1, 0,
           -1, 1, 0]),
         3));
@@ -52,9 +52,9 @@ var fbo = function(exports) {
     scene.add(simParticles);
     //create particles
     var size = (height * width);
-    var vertices = new Float32Array(size * 3);
+    var vertices = new Float32Array(size * 4);
     for(var i = 0; i < size; i++){
-      var index = i * 3;
+      var index = i * 4;
       vertices[index] = (i % width) / width;
       vertices[index + 1] = (i/width)/height;
     }
@@ -62,7 +62,7 @@ var fbo = function(exports) {
     var particleGeometry = new THREE.BufferGeometry();
     particleGeometry.addAttribute('position', new THREE.BufferAttribute(
       vertices,
-      3
+      4
     ));
     exports.particles = new THREE.Points(particleGeometry, renderMaterial);
     exports.renderer = renderer;

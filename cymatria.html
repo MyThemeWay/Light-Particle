@@ -92,7 +92,7 @@
       randomVals,
       width,
       height,
-      THREE.RGBFormat,
+      THREE.RGBAFormat,
       THREE.FloatType
     );
     randomTexture.needsUpdate = true;
@@ -226,13 +226,14 @@
   }
 
   function generateRandomCube(x, y, z, scale) {
-    var length = x * y * 3;
+    var length = x * y * 4;
     var output = new Float32Array(length);
     for(var i = 0; i < x; i++){
       for(var j = 0; j < y; j++){
-        output[(i*x+j)*3] = (i-(x/2))/(x/scale);
-        output[((i*x+j)*3)+1] = (j-(y/2))/(y/scale);
-        output[((i*x+j)*3)+2] = (Math.random()-.5)/(z/scale);
+        output[(i*x+j)*4] = (i-(x/2))/(x/scale);
+        output[((i*x+j)*4)+1] = (j-(y/2))/(y/scale);
+        output[((i*x+j)*4)+2] = (Math.random()-.5)/(z/scale);
+	output[((i*x+j)*4)+3] = 0;
       }
     }
     return output;
