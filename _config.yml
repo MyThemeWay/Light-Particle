@@ -2,11 +2,11 @@
 title: "S.:.A..:"
 description: "S.: ARSENAULT"
 # baseurl: "/particle" # the subpath of your site, e.g. /blog
-# url: "localhost:3000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+url: "https://s-arsenault.github.io" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
 # User settings
 username: S. Arsenault
-user_description: Agile, creative problem solver with multi-role skillset.
+user_description: Agile, creative problem solver with a diverse and multi-faceted skillset.
 user_title: Software Developer, B.ASc
 email: stephen.astronaut@gmail.com
 twitter_username:
