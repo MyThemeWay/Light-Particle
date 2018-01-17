@@ -78,16 +78,56 @@ gulp.task('js', function(){
 		.pipe(gulp.dest('assets/js/'))
 });
 
+gulp.task('cym-js', function(){
+        return gulp.src('src/js/cymatria.js')
+        .pipe(plumber())
+        .pipe(concat('cymatria.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('assets/js/'))
+});
+/**
+ * Minify raw libraries and concatenate to lib file
+ **/
+gulp.task('lib-js', function(){
+        return gulp.src(['src/js/OrbitControls.js',
+          'src/js/PhysicsRenderer.js'])
+        .pipe(plumber())
+        .pipe(concat('libs.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('assets/js/'))
+});
+
+/**
+ * Move already minified libraries to /assets
+ */
 gulp.task('move-js', function(){
-	return gulp.src(['src/js/OrbitControls.js','src/js/three.min.js','src/js/fbo.js','src/js/dat.gui.min.js', 'src/js/dat.gui.css']).pipe(gulp.dest('assets/js/'))
+	return gulp.src([
+          'src/js/three.min.js',
+          'src/js/dat.gui.min.js', 
+          'src/js/dat.gui.css'])
+        .pipe(gulp.dest('assets/js/'))
+});
+
+/**
+ * Move audio to /assets
+ */
+gulp.task('move-audio', function(){
+        return gulp.src(['src/audio/sample.mp3']).pipe(gulp.dest('assets/audio/'))
 });
 
 gulp.task('watch', function() {
   gulp.watch('src/styles/**/*.scss', ['sass', 'jekyll-rebuild']);
-  gulp.watch('src/js/**/*.js', ['js']);
+  gulp.watch('src/js/app.js', ['js']);
+  gulp.watch('src/js/cymatria.js', ['cym-js']);
+  gulp.watch('src/js/*.min.js', ['move-js']);
   gulp.watch('src/fonts/**/*.{tff,woff,woff2}', ['fonts']);
+  gulp.watch('src/audio/**/*.{mp3,ogg,wav}',['move-audio']);
   gulp.watch('src/img/**/*.{jpg,png,gif}', ['imagemin']);
   gulp.watch(['*html', '_includes/*html', '_layouts/*.html'], ['jekyll-rebuild']);
 });
 
-gulp.task('default', ['js', 'move-js', 'sass', 'fonts', 'browser-sync', 'watch']);
+gulp.task('default', [
+  'js', 'cym-js', 'lib-js', 'move-js', 
+  'move-audio', 
+  'sass', 'fonts', 
+  'browser-sync', 'watch']);

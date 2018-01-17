@@ -4,260 +4,105 @@
     <title>Cymatria - S..A.:</title>
     <meta charset="utf-8">
     <script src="/assets/js/three.min.js"></script>
-    <script src="/assets/js/OrbitControls.js"></script>
+    <script src="/assets/js/libs.min.js"></script>
     <script src="/assets/js/dat.gui.min.js"></script>
-    <script src="/assets/js/fbo.js"></script>
-    <script type="x-shader/x-vertex" id="simVertexShader">
-      varying vec2 vUv;
-      void main(){
-        vUv = vec2(uv.x, uv.y);
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-      }
+    <script type="x-shader/x-vertex" id="testFragShader">
+    uniform sampler2D t_pos;
+    uniform sampler2D t_oPos;
+    uniform vec2 resolution;
+    void main(){
+      vec2 uv = gl_FragCoord.xy / resolution;
+      vec4 oPos = texture2D(t_oPos, uv);
+      vec4 pos = texture2D(t_pos, uv);
+      vec3 vel = pos.xyz - oPos.xyz;
+      vec3 force = vec3(0., -1., 0.);
+      vel += force;
+      vec3 newPos = pos.xyz + vel;
+      gl_FragColor = vec4(newPos, 1.);
+    }
     </script>
-
     <script type="x-shader/x-vertex" id="simFragShader">
-    uniform sampler2D positions;
-    uniform float time;
-    uniform float rM;
-    uniform float thetaM;
-    uniform float phiM;
-    uniform float xM;
-    uniform float yM;
-    uniform float zM;
-    uniform float w;
-    varying vec2 vUv;
-    void main(){
-      vec3 pos = texture2D(positions, vUv).rgb;
+uniform sampler2D t_pos;
+uniform sampler2D t_oPos;
+uniform vec2 resolution;
+uniform float time;
+uniform float rM;
+uniform float thetaM;
+uniform float phiM;
+uniform float scale;
+uniform float fft[128];
+uniform float baseFreq;
+uniform float freqM;
+uniform float bounds;
+
+highp float rand(vec2 co) {
+  highp float a = 12.9898;
+  highp float b = 78.233;
+  highp float c = 43758.5453;
+  highp float dt = dot(co.xy, vec2(a,b));
+  highp float sn = mod(dt, 3.14);
+  return fract(sin(sn) * c);
+}
+
+void main(){
+ //lookup current(previous) position
+ vec2 uv = gl_FragCoord.xy / resolution;
+ vec3 oldPos = texture2D(t_oPos, uv).xyz;
+ vec3 pos = texture2D(t_pos, uv).xyz;
+ vec3 vel = pos - oldPos;
+ vec3 force = vec3(0., 0., -0.1);
+ float currFreq = baseFreq;
+ //perturb particles at each FFT frequency
+ //if(dot(pos,pos) > 0.001){
+   for(int i = 0; i < 128; i++){
       //move particle here
-      if(dot(pos, pos) > 0.01){
-        float r = rM*sqrt(dot(pos,pos));
-        float theta = thetaM*acos(pos.z / r);
-        float phi = phiM*atan(pos.y, pos.x);
-	pos.x = pos.x + xM*cos(phi)*sin(theta)*sin(r-w*time)/r;
-	pos.y = pos.y + yM*sin(phi)*sin(theta)*sin(r-w*time)/r;
-	pos.z = pos.z + zM*cos(theta)*sin(r-w*time)/r;
-      }
-      gl_FragColor = vec4(pos, 1.0);
-    }
+      float r = rM * sqrt(dot(pos,pos));
+      float theta = thetaM * acos(pos.z / r);
+      float phi = phiM * atan(pos.y, pos.x);
+      force.x = force.x + (fft[i]*scale*(cos(phi*currFreq)*sin(theta))*sin(r-currFreq*time));
+      force.y = force.y + (fft[i]*scale*(sin(phi*currFreq)*sin(theta))*sin(r-currFreq*time));
+      force.z = force.z + (fft[i]*(scale/4.0)*cos(theta)*sin(r-currFreq*time)/r);
+      currFreq = currFreq*freqM;
+   }
+   pos = pos + force + (vel * 0.25);
+   pos.z = max(pos.z, 0.);
+ //}
+ //respawn if over bounds
+ if(abs(pos.x) > bounds){
+   pos.x = 2. * bounds * (rand(vec2(pos.x, pos.y + pos.z))-.5);
+   pos.y = 2. * bounds * (rand(vec2(pos.y, pos.x + pos.z))-.5);
+ } else if (abs(pos.y) > bounds) {
+   pos.x = 2. * bounds * (rand(vec2(pos.x, pos.y + pos.z))-.5);
+   pos.y = 2. * bounds * (rand(vec2(pos.y, pos.x + pos.z))-.5); 
+ }
+ gl_FragColor = vec4(pos.xyz, 1.0);
+}
     </script>
-
     <script type="x-shader/x-vertex" id="renderVertexShader">
-    uniform sampler2D positions;
-    uniform float pointSize;
-    void main(){
-      vec3 pos = texture2D(positions, position.xy).xyz;
-      gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
-      gl_PointSize = pointSize;
-    }
+uniform sampler2D t_pos;
+void main(){
+  vec4 pos = texture2D(t_pos, position.xy);
+  vec3 dif = cameraPosition - pos.xyz;
+  gl_Position = projectionMatrix * modelViewMatrix * vec4(pos.xyz, 1.0);
+  gl_PointSize = min(5., 50. / length(dif));
+}
     </script>
-
     <script type="x-shader/x-vertex" id="renderFragShader">
-    void main(){
-      gl_FragColor = vec4(vec3(1.), 0.3);
-    }
+void main(){
+  gl_FragColor = vec4(1.);
+}
     </script>
 
-  <script type="text/javascript" id="mainCode">
-  var container,
-  renderer,
-  scene,
-  camera,
-  start = Date.now(),
-  fov = 32,
-  counter = 0,
-  freq=0.025;
-
-  window.addEventListener('load', function() {
-    container = document.getElementById("container");
-    scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(
-      fov,
-      window.innerWidth / window.innerHeight,
-      1,
-      10000
-    );
-    camera.position.z = 500;
-
-    renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
-    container.appendChild(renderer.domElement);
-
-    var height = 1024;
-    var width = 1024;
-    var depth = 128.0;
-    var scale = 256.0;
-    var randomVals = generateRandomCube(width, height, depth, scale);
-    var randomTexture = new THREE.DataTexture(
-      randomVals,
-      width,
-      height,
-      THREE.RGBAFormat,
-      THREE.FloatType
-    );
-    randomTexture.needsUpdate = true;
-    simulationMaterial = new THREE.ShaderMaterial({
-      uniforms: {
-        positions: {
-          type: "t",
-          value: randomTexture
-        },
-        time:{
-          type: "f",
-          value: 0.0
-        },
-        rM:{
-          type: "f",
-          value: 1.0
-        },
-        phiM:{
-          type: "f",
-          value: 1.0
-        },
-        thetaM:{
-          type: "f",
-          value: 1.0
-        },
-        xM:{
-          type: "f",
-          value: 1.0
-        },
-        yM:{
-          type: "f",
-          value: 1.0
-        },
-        zM:{
-          type: "f",
-          value: 1.0
-        },
-        w:{
-          type:"f",
-          value: 1.0
-        }
-      },
-      vertexShader: document.getElementById('simVertexShader').textContent,
-      fragmentShader: document.getElementById('simFragShader').textContent
-    });
-    renderMaterial = new THREE.ShaderMaterial({
-      uniforms: {
-        positions: {
-          type: "t",
-          value: null
-        },
-        pointSize: {
-          type: "f",
-          value: 0.5
-        }
-      },
-      transparent: true,
-      blending: THREE.AdditiveBlending,
-      vertexShader: document.getElementById('renderVertexShader').textContent,
-      fragmentShader: document.getElementById('renderFragShader').textContent
-    });
-
-    //initialize FBO
-    fbo.init(width, height, renderer, simulationMaterial, renderMaterial);
-    scene.add(fbo.particles);
-    //scene.add(mesh);
-
-    var controls = new THREE.OrbitControls(camera, renderer.domElement);
-    var gui = new dat.GUI();
-    var waveParams = gui.addFolder('Wave Parameters');
-    var Radius = {
-      Radius: 1.0
-    };
-    waveParams.add(Radius, 'Radius').onFinishChange(function(value){
-      simulationMaterial.uniforms['rM'].value = value;
-    });
-    var Phi = {
-      Phi: 1.0
-    };
-    waveParams.add(Phi, 'Phi').onFinishChange(function(value){
-      simulationMaterial.uniforms['phiM'].value = value;
-    });
-    var Theta = {
-      Theta: 1.0
-    };
-    waveParams.add(Theta,'Theta').onFinishChange(function(value){
-      simulationMaterial.uniforms['thetaM'].value = value;
-    });
-    var xScale = {
-      xScale: 1.0
-    };
-    var scaleParams = gui.addFolder('Scale Parameters');
-    scaleParams.add(xScale, 'xScale').min(0).onFinishChange(function(value){
-      simulationMaterial.uniforms['xM'].value = value;
-    });
-    var yScale = {
-      yScale: 1.0
-    };
-    scaleParams.add(yScale, 'yScale').min(0).onFinishChange(function(value){
-      simulationMaterial.uniforms['yM'].value = value;
-    });
-    var zScale = {
-      zScale: 1.0
-    };
-    scaleParams.add(zScale, 'zScale').min(0).onFinishChange(function(value){
-      simulationMaterial.uniforms['zM'].value = value;
-    });
-    var timeParams = gui.addFolder('Time Parameters');
-    var Frequency = {
-      Frequency: freq
-    };
-    timeParams.add(Frequency, 'Frequency').min(0).onFinishChange(function(value){
-      freq = value;
-    });
-    var Omega = {
-      Omega: 1.0
-    };
-    timeParams.add(Omega, 'Omega').min(0).onFinishChange(function(value){
-      simulationMaterial.uniforms['w'].value = value;
-    });
-    waveParams.open();
-    onWindowResize();
-    window.addEventListener('resize', onWindowResize);
-    render();
-  })
-
-  function onWindowResize(){
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-  }
-
-  function generateRandomCube(x, y, z, scale) {
-    var length = x * y * 4;
-    var output = new Float32Array(length);
-    for(var i = 0; i < x; i++){
-      for(var j = 0; j < y; j++){
-        output[(i*x+j)*4] = (i-(x/2))/(x/scale);
-        output[((i*x+j)*4)+1] = (j-(y/2))/(y/scale);
-        output[((i*x+j)*4)+2] = (Math.random()-.5)/(z/scale);
-	output[((i*x+j)*4)+3] = 0;
-      }
-    }
-    return output;
-  }
-
-  function getRandomInt(min, max){
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-  }
-
-  function render() {
-    //+++FIAT LVX+++\\
-    simulationMaterial.uniforms['time'].value = freq * (Date.now() - start);
-    requestAnimationFrame(render);
-    fbo.update();
-    renderer.render(scene, camera);
-  }
-  </script>
-
+    <script src="/assets/js/cymatria.min.js"></script>
   </head>
 
   <body>
     <div id="container"></div>
+    <audio id="audio" loop="true">
+       <source src="/assets/audio/sample.mp3" type="audio/mpeg">
+       Loading error. Your browser does not support the audio element.
+    </audio>
+    <input id="fileInput" type="file" accept="audio/*" hidden=true>
   </body>
 
 </html>
