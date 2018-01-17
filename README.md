@@ -15,8 +15,9 @@ Personal website designed using [Particle.js](https://github.com/VincentGarreau/
   * SASS
   * Particle.js
   * Cymatria:
-    Three.js  
-    dat.gui  
-    OrbitControls  
-    PhysicsRenderer  
+
+      Three.js  
+      dat.gui  
+      OrbitControls  
+      PhysicsRenderer  
 
