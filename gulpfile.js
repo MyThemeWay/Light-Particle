@@ -128,6 +128,7 @@ gulp.task('watch', function() {
 
 gulp.task('default', [
   'js', 'cym-js', 'lib-js', 'move-js', 
+  'imagemin',
   'move-audio', 
   'sass', 'fonts', 
   'browser-sync', 'watch']);

@@ -11,6 +11,8 @@
 }
 
 .user-projects {
+  border-top: 1px solid $main;
+
   margin: 20px auto;
   img {
     max-width: 100%;
@@ -39,16 +41,18 @@
 .contents-right {
   @media only screen and (min-width: $cut) {
     float: right;
-    margin-top: -5%;
+    //margin-top: -5%;
     width: 48%;
   }
 }
 .images-right {
+  text-align: center;
   @media only screen and (min-width: $cut) {
     float: right;
     width: 48%;
   }
   img {
+    margin-top: 50px;
     @media only screen and (min-width: $cut) {
       float: right;
     }
@@ -61,6 +65,7 @@
     width: 48%;
   }
   img {
+    margin-top: 50px;
     @media only screen and (min-width: $cut) {
       float: left;
     }
@@ -70,7 +75,7 @@
 .project-link {
   display: block;
   width: 100px;
-  margin: 10px 0px;
+  margin: 10px auto;
   padding: 5px;
   color: $main;
   background-color: transparent;
