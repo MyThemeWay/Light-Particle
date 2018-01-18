@@ -50,7 +50,7 @@ void main(){
  vec3 oldPos = texture2D(t_oPos, uv).xyz;
  vec3 pos = texture2D(t_pos, uv).xyz;
  vec3 vel = pos - oldPos;
- vec3 force = vec3(0., 0., -0.1);
+ vec3 force = vec3(0., 0., -0.5);
  float currFreq = baseFreq;
  //perturb particles at each FFT frequency
  //if(dot(pos,pos) > 0.001){
@@ -62,9 +62,10 @@ void main(){
       force.x = force.x + (fft[i]*scale*(cos(phi*currFreq)*sin(theta))*sin(r-currFreq*time));
       force.y = force.y + (fft[i]*scale*(sin(phi*currFreq)*sin(theta))*sin(r-currFreq*time));
       force.z = force.z + (fft[i]*(scale/4.0)*cos(theta)*sin(r-currFreq*time)/r);
+      force.z = min(15., force.z);
       currFreq = currFreq*freqM;
    }
-   pos = pos + force + (vel * 0.25);
+   pos = pos + force + (vel * 0.35);
    pos.z = max(pos.z, 0.);
  //}
  //respawn if over bounds
