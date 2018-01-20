@@ -1,0 +1,9 @@
+#project-content {
+  display: block;
+  width: 90%;
+  margin: 20px auto;
+  max-width: 960px;
+  @media only screen and (min-width: $cut) {
+    width: 80%;
+  }
+}

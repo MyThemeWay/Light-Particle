@@ -1,20 +1,19 @@
-# Site settings
+# Jekyll Config
 title: "S..A.:"
 description: "S.: ARSENAULT"
-# baseurl: "/particle" # the subpath of your site, e.g. /blog
-url: "https://s-arsenault.github.io" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+future: true #allow for posts with future dates
+#baseurl: "https://s-arsenault.github.io" # subpath
+url: "https://s-arsenault.github.io" # github-pages final URL
 
 # User settings
 username: S. Arsenault
 user_description: Agile, creative problem solver with a diverse and multi-faceted skillset. Full-stack experience, right to the metal, with experience in performance and optimization. Visual, systematic thinker with an eye towards the future while keeping one foot in the past.  
 user_title: Software Developer, B.ASc
 email: stephen.astronaut@gmail.com
-twitter_username:
 github_username:  dasushi
-gplus_username:
 
 # Google-analytics
-google-analytics:
-  id: ""
+#google-analytics:
+#  id: ""
 
 exclude: ['package.json', 'src' , 'node_modules']

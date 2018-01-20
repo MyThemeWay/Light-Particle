@@ -71,9 +71,8 @@ gulp.task('imagemin', function() {
  * Compile and minify js
  */
 gulp.task('js', function(){
-	return gulp.src('src/js/app.js')
+	return gulp.src(['src/js/app.js', 'src/js/project.js'])
 		.pipe(plumber())
-		.pipe(concat('main.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('assets/js/'))
 });

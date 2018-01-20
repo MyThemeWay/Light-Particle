@@ -1,0 +1,91 @@
+#short-particles-js {
+  background: $main;
+  display: flex;
+  vertical-align: middle;
+  width: 100%;
+  min-height: 20vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  .particles-js-canvas-el {
+    width:100% !important;
+    height:30vh !important;
+  }
+}
+
+.short-header {
+  z-index: 1;
+  text-align: center;
+  color:#FFF;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  margin: 0 auto;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  .site-title {
+    font-size: 30px;
+    display: block;
+    line-height: 1;
+    color: #FFF;
+    @media only screen and (min-width:$cut){
+      margin: 0;
+      font-size: 40px;
+    }
+  }
+  .site-description {
+    font-size: 17px;
+    display: block;
+    line-height: 1;
+    color: #FFF;
+    margin-top: 10px;
+    @media only screen and (min-width:$cut){
+      font-size: 25px;
+    }
+  }
+}
+
+.short-header-links {
+  margin: 6px;
+  .link {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 6px;
+    @media only screen and (min-width:$cut){
+      font-size: 15px;
+    }
+  }
+}
+
+.short-header-icons {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  .icon {
+    text-align: center;
+    color: #FFF;
+    width: 15px;
+    height: 15px;
+    font-size: 15px;
+    padding: 6px;
+    margin: 3px;
+    border-radius: 50%;
+    border: 2px solid #FFF;
+    transition: all .7s;
+    &:hover {
+      color: $main;
+      background: #FFF;
+    }
+    &:active {
+      color: $main;
+      background: #FFF;
+    }
+    @media only screen and (min-width:$cut) {
+      width: 25px;
+      height: 25px;
+      font-size: 25px;
+    }
+  }
+}
+

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+      {% include short-header.html %}
+      <section id="project-content">
+        {{ content }}
+      </section>
+      <section id="projects">
+        {% include projects.html %}
+      </section>
+      {% include short-footer.html %}
+  </body>
