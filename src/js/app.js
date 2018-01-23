@@ -6,14 +6,14 @@ document.addEventListener("DOMContentLoaded", function () {
   particlesJS('particles-js', {
     "particles": {
       "number": {
-        "value": 35,
+        "value": 65,
         "density": {
           "enable": true,
           "value_area": 800
         }
       },
       "color": {
-        "value": "#B7BEC8"
+        "value": "#9be3d5"
       },
       "shape": {
         "type": "polygon",
@@ -31,22 +31,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       },
       "opacity": {
-        "value": 0.8,
+        "value": 0.9,
         "random": false,
         "anim": {
           "enable": true,
-          "speed": 1,
-          "opacity_min": 0.23,
+          "speed": 1.5,
+          "opacity_min": 0.33,
           "sync": false
         }
       },
       "size": {
-        "value": 4,
+        "value": 2.3,
         "random": true,
         "anim": {
           "enable": false,
           "speed": 23.18081918081918,
-          "size_min": 0.2,
+          "size_min": 0.23,
           "sync": false
         }
       },
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       "move": {
         "enable": true,
-        "speed": 4.5,
+        "speed": 3.5,
         "direction": "none",
         "random": true,
         "straight": false,
@@ -68,10 +68,10 @@ document.addEventListener("DOMContentLoaded", function () {
         "attract": {
           "enable": true,
           "rotateX": 123,
-          "rotateY": 223
+          "rotateY": 67
         }
       },
-      nb: 90
+      nb: 100
     },
     "interactivity": {
       "detect_on": "window",
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "grab": {
           "distance": 130,
           "line_linked": {
-            "opacity": 0.2
+            "opacity": 0.3
           }
         },
         "bubble": {

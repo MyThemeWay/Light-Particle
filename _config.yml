@@ -1,6 +1,8 @@
 # Jekyll Config
 title: "S..A.:"
 description: "S.: ARSENAULT"
+encoding: utf-8
+markdown: kramdown
 future: true #allow for posts with future dates
 #baseurl: "https://s-arsenault.github.io" # subpath
 url: "https://s-arsenault.github.io" # github-pages final URL

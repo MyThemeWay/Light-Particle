@@ -43,6 +43,7 @@ window.addEventListener('load', function() {
   analyser = audioCtx.createAnalyser();
   analyser.minDecibels = -90;
   analyser.maxDecibels = -10;
+  analyser.smoothingTimeConstant = 0.85;
   analyser.fftSize = 256; //higher val = more freq info, less time domain
   //connect audio elements
   audioSrc.connect(analyser);
@@ -117,7 +118,7 @@ window.addEventListener('load', function() {
     Amplitude: simUniforms.scale.value,
     Frequency: freq
   };
-  waveParams.add(params, 'Radius', 0.01, 5).onFinishChange(function(value){
+  waveParams.add(params, 'Radius', 0.25, 5).onFinishChange(function(value){
     simUniforms.rM.value = value; 
   });
   waveParams.add(params, 'Phi', 0.1, 50).onFinishChange(function(value){
@@ -129,13 +130,13 @@ window.addEventListener('load', function() {
   waveParams.add(params, 'baseFreq', 0.01, 5).onFinishChange(function(value){
     simUniforms.baseFreq.value = value; 
   });
-  waveParams.add(params, 'freqScale', 1.0001, 1.1).onFinishChange(function(value){
+  waveParams.add(params, 'freqScale', 1.0001, 1.01).onFinishChange(function(value){
     simUniforms.freqM.value = value; 
   });
   waveParams.add(params, 'Amplitude', 0.1, 5.0).onFinishChange(function(value){
     simUniforms.scale.value = value; 
   });
-  waveParams.add(params, 'Frequency', 0.001, 0.25).onFinishChange(function(value){
+  waveParams.add(params, 'Frequency', 0.001, 0.01).onFinishChange(function(value){
     freq = value; 
   });
   //button for resetting points to their initial positions

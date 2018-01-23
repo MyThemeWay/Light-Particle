@@ -1,28 +1,28 @@
 #short-particles-js {
   background: $main;
   display: flex;
-  vertical-align: middle;
+  vertical-align: center;
   width: 100%;
-  min-height: 20vh;
+  min-height: 30vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   .particles-js-canvas-el {
     width:100% !important;
-    height:30vh !important;
+    height:35vh !important;
   }
 }
 
 .short-header {
   z-index: 1;
-  text-align: center;
+  text-align: left;
   color:#FFF;
   position: absolute;
   top: 10%;
-  left: 50%;
-  margin: 0 auto;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  left: 10%;
+  margin: 10px;
+  -webkit-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
   .site-title {
     font-size: 30px;
     display: block;
@@ -46,12 +46,13 @@
 }
 
 .short-header-links {
-  margin: 6px;
+  margin: 0px;
+  text-align: left;
   .link {
     color: #FFF;
     text-decoration: none;
     font-size: 12px;
-    margin: 6px;
+    margin-right: 10px;
     @media only screen and (min-width:$cut){
       font-size: 15px;
     }
@@ -60,7 +61,7 @@
 
 .short-header-icons {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   text-align: center;
   .icon {
     text-align: center;

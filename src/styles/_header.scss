@@ -46,10 +46,14 @@
 }
 
 .header-links {
+  display: flex;
+  justify-content: center;
+  text-align: center;
   margin: 10px;
   .link {
     color: #FFF;
     text-decoration: none;
+    display: inline-block;
     font-size: 15px;
     margin: 10px;
     @media only screen and (min-width:$cut){
@@ -65,11 +69,11 @@
   .icon {
     text-align: center;
     color: #FFF;
-    width: 20px;
-    height: 20px;
-    font-size: 20px;
+    width: 15px;
+    height: 15px;
+    font-size: 15px;
     padding: 10px;
-    margin: 5px;
+    margin: 5px 12px;
     border-radius: 50%;
     border: 2px solid #FFF;
     transition: all .7s;
@@ -82,9 +86,9 @@
       background: #FFF;
     }
     @media only screen and (min-width:$cut) {
-      width: 35px;
-      height: 35px;
-      font-size: 35px;
+      width: 25px;
+      height: 25px;
+      font-size: 25px;
     }
   }
 }

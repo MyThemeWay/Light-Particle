@@ -74,13 +74,13 @@
 
 .project-link {
   display: block;
-  width: 100px;
+  width: 90px;
   margin: 10px auto;
   padding: 5px;
   color: $main;
   background-color: transparent;
   border: 1px solid $main;
-  border-radius: 10px;
+  border-radius: 3px;
   text-align: center;
   outline: none;
   text-decoration: none;
@@ -103,5 +103,19 @@
     transition: color 0.3s ease-in,
                 background-color 0.3s ease-in,
                 border-color 0.3s ease-in;
+  }
+}
+
+.project-link-header {
+  text-decoration: none;
+  color: $main;
+  transition: color 0.3s ease-out;
+  &:hover {
+    color: $purple;
+    transition: color 0.3s ease-in;
+  }
+  &:active {
+    color: $purple;
+    transition: color 0.3s ease-in;
   }
 }

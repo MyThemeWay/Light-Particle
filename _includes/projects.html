@@ -4,48 +4,48 @@
 <div class="user-projects">
   <div class="images-right" >
     <img alt="Sony Cymatics Image" src="{{ "/assets/img/cymatics-small.jpg" | prepend: site.baseurl }}" />
-    <p><small>Image courtesy of <a href="http://presscentre.sony.co.uk/images/mhc-v7d-cymatics-443993">Sony Entertainment</a></small></>
+    <p><small>Image courtesy of <a class="project-link-header" href="http://presscentre.sony.co.uk/images/mhc-v7d-cymatics-443993">Sony Entertainment</a></small></>
   </div>
   <div class="contents">
-    <h3> Cymatria </h3>
+    <h3><a href="{{ "/cymatria.html" | prepend: site.baseurl }}" class="project-link-header">Cymatria</a></h3>
     <ul>
       <li>WebGL (ThreeJS)</li>
-      <li>PhysicsRenderer</li>
       <li>Web Audio API</li>
-    </ul>
-    <p>GPGPU particle simulation of audio waves using ThreeJS and the Web Audio API. Allows for large particle counts and high FPS by computing positions entirely on-GPU without any CPU traffic, using PhysicsRenderer. Created to visualize Chladni or Cymatic patterns.</p>
+      <li>PhysicsRenderer</li>
+   </ul>
+    <p>GPGPU particle simulation of vibratory motion from audio waves using ThreeJS and the Web Audio API. Allows for large particle counts and high FPS by computing positions entirely on-GPU without any CPU traffic, using PhysicsRenderer. Created to visualize Chladni or Cymatic patterns.</p>
     <a class="project-link" href="{{ "/cymatria.html" | prepend: site.baseurl }}">Try it out!</a>
   </div>
 </div>
 <div class="user-projects">
   <div class="images-left">
-	<img alt="Haight-Ashbury Camaro" src="{{ "/assets/img/camaro.jpg" | prepend: site.baseurl }}" />
+	<img alt="Haight-Ashbury Camaro" src="{{ "/assets/img/camaro.jpg" | prepend: site.baseurl }}"/>
   </div>
   <div class="contents-right">
-    <h3> Steve McQueen </h3>
+    <h3><a href="{{ site.baseurl}}{% post_url 2018-01-23-steve-mcqueen %}" class="project-link-header">Steve McQueen</a></h3>
     <ul>
       <li>Keras</li>
       <li>TensorFlow</li>
       <li>OpenAI Gym</li>
     </ul>
     <p>Deep Deterministic Gradient Policy (Actor-Critic) machine learning racing driver, implemented for the racing simulator "TORCS". Uses an actor-critic network implemented in Keras and TensorFlow with OpenAI Gym environment interface to train a racing AI using reinforcement learning.</p>
-    <a class="project-link" href="https://www.youtube.com/watch?v=zoH7e3BybCE&feature=youtu.be">Watch Steve!</a>
     <a class="project-link" href="{{ site.baseurl}}{% post_url 2018-01-23-steve-mcqueen %}">Read the Theory</a>
   </div>
 </div>
 <div class="user-projects">
   <div class="images-right" >
     <img alt="Christie 3D Projectors" src="{{ "/assets/img/christie-projector.jpg" | prepend: site.baseurl }}" />
+    <p><small>Image courtesy of <a class="project-link-header" href="https://www.engadget.com/2016/02/15/films-cinema-comeback-is-driven-by-nostalgia-not-logic/">Engadget</a></small></p>
   </div>
   <div class="contents">
-    <h3> Cinema Projector Auto-Alignment </h3>
+    <h3><a href="https://1drv.ms/v/s!AnYGNwNPwidWhdR8FaWliQH5fHCUmw" class="project-link-header">Cinema Projector Auto-Alignment</a></h3>
     <ul>
       <li>C#</li>
       <li>WPF</li>
       <li>Computer Vision</li>
     </ul>
     <p>Multi-Projector Zoom Alignment created for Christie Digital, used to automatically align 2 or more projectors for 3D cinemas. Runs C# computer vision processing to align the size of a test pattern on both projectors, with a WPF interface. Emphasis on performance for potential future embedded uses, using dotMemory and dotTrace profiling tools.</p>
-    <a class="project-link" href="https://1drv.ms/v/s!AnYGNwNPwidWhdR8FaWliQH5fHCUmw">Watch the process</a>
+    <a class="project-link" href="https://1drv.ms/v/s!AnYGNwNPwidWhdR8FaWliQH5fHCUmw">Watch the Process</a>
   </div>
 </div>
 
