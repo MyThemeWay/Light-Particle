@@ -116,9 +116,9 @@ gulp.task('move-audio', function(){
 
 gulp.task('watch', function() {
   gulp.watch('src/styles/**/*.scss', ['sass', 'jekyll-rebuild']);
-  gulp.watch('src/js/app.js', ['js']);
-  gulp.watch('src/js/cymatria.js', ['cym-js']);
-  gulp.watch('src/js/*.min.js', ['move-js']);
+  gulp.watch('src/js/app.js', ['js', 'jekyll-rebuild']);
+  gulp.watch('src/js/cymatria.js', ['cym-js', 'jekyll-rebuild']);
+  gulp.watch('src/js/*.min.js', ['move-js', 'jekyll-rebuild']);
   gulp.watch('src/fonts/**/*.{tff,woff,woff2}', ['fonts']);
   gulp.watch('src/audio/**/*.{mp3,ogg,wav}',['move-audio']);
   gulp.watch('src/img/**/*.{jpg,png,gif}', ['imagemin']);
