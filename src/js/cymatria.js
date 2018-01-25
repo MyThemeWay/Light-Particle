@@ -209,8 +209,8 @@ function generateRandomPlane(size, z, scale) {
   var output = new Float32Array(length);
   for(var i = 0; i < size; i++){
     for(var j = 0; j < size; j++){
-      output[(i*size+j)*4] = (i-(size/2))/(size/scale);
-      output[((i*size+j)*4)+1] = (j-(size/2))/(size/scale);
+      output[(i*size+j)*4] = (i-(size/2) + Math.random())/(size/scale);
+      output[((i*size+j)*4)+1] = (j-(size/2) + Math.random())/(size/scale);
       output[((i*size+j)*4)+2] = Math.random()*z;
       output[((i*size+j)*4)+3] = 0;
     }
