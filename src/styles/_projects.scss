@@ -9,7 +9,11 @@
     width: 80%;
   }
 }
-
+.user-details {
+  h1 {
+    margin: 0 auto;
+  }
+}
 .user-projects {
   border-top: 2px solid $main;
 
@@ -89,16 +93,16 @@
               background-color 0.3s ease-out,
               border-color 0.3s ease-out;
   &:hover {
-    background-color: $purple;
-    border-color: $purple;
+    background-color: $accent;
+    border-color: $accent;
     color: #fff;
     transition: color 0.3s ease-in,
                 background-color 0.3s ease-in,
                 border-color 0.3s ease-in;
   }
   &:active {
-    background-color: $purple;
-    border-color: $purple;
+    background-color: $accent;
+    border-color: $accent;
     color: #fff;
     transition: color 0.3s ease-in,
                 background-color 0.3s ease-in,
@@ -111,11 +115,11 @@
   color: $main;
   transition: color 0.3s ease-out;
   &:hover {
-    color: $purple;
+    color: $accent;
     transition: color 0.3s ease-in;
   }
   &:active {
-    color: $purple;
+    color: $accent;
     transition: color 0.3s ease-in;
   }
 }

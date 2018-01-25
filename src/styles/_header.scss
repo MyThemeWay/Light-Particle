@@ -1,4 +1,5 @@
 #particles-js {
+  z-index: 1;
   background: $main;
   display: flex;
   vertical-align: bottom;
@@ -8,54 +9,92 @@
   background-size: cover;
   background-attachment: fixed;
   .particles-js-canvas-el {
+    z-index: 1 !important;
     width:100% !important;
     height:100vh !important;
   }
 }
 
 .header {
-  z-index: 1;
+  z-index: 5;
+  width: 100%;
   text-align: center;
   color:#FFF;
   position: absolute;
   top: 50%;
   left: 50%;
   margin: 0 auto;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -60%);
+  transform: translate(-50%, -60%);
   .site-title {
+    z-index: 10;
     font-size: 50px;
     display: block;
     line-height: 1;
     color: #FFF;
+    text-shadow: 3px 3px 1px rgba(70, 70, 70, 0.53);
     @media only screen and (min-width:$cut){
       margin: 0;
       font-size: 100px;
     }
   }
   .site-description {
+    z-index: 10;
     font-size: 20px;
     display: block;
     line-height: 1;
     color: #FFF;
     margin-top: 10px;
+    text-shadow: 2px 2px 1px rgba(70, 70, 70, 0.53);
     @media only screen and (min-width:$cut){
       font-size: 40px;
     }
   }
+  h1{
+    margin: 5px auto;
+  }
+}
+
+.hex-grid {
+  z-index: 5;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header-hex {
+  margin: -53px 0px;
+  padding: 0px;
+  font-size: 175px;
+  line-height: 1;
+  letter-spacing: 5px;
+  z-index: 5;
+  color: rgba(52, 117, 104, 0.7);
+}
+
+.header-hex-even {
+  @extend .header-hex;
+  margin-left: -73px;
 }
 
 .header-links {
+  z-index: 10;
   display: flex;
   justify-content: center;
   text-align: center;
-  margin: 10px;
+  margin: 0px 10px;
   .link {
     color: #FFF;
     text-decoration: none;
     display: inline-block;
     font-size: 15px;
     margin: 10px;
+    text-shadow: 2px 2px 1px rgba(70, 70, 70, 0.53);
     @media only screen and (min-width:$cut){
       font-size: 20px;
     }
@@ -63,6 +102,7 @@
 }
 
 .header-icons {
+  z-index: 10;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -73,9 +113,10 @@
     height: 15px;
     font-size: 15px;
     padding: 10px;
-    margin: 5px 12px;
+    margin: 8px 8px;
     border-radius: 50%;
     border: 2px solid #FFF;
+    text-shadow: 1px 1px 1px rgba(70, 70, 70, 0.53);
     transition: all .7s;
     &:hover {
       color: $main;
@@ -94,6 +135,7 @@
 }
 
 .down {
+  z-index: 5;
   color: #FFF;
   position: absolute;
   bottom: 25px;
@@ -117,10 +159,10 @@
       -webkit-animation: pulse 1.3s infinite;
       animation: pulse 1.3s infinite;
       &:hover {
-        color: $sec;
+        color: $accent;
       }
       &:active {
-        color: $sec;
+        color: $accent;
       }
   }
 }
