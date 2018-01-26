@@ -32,7 +32,7 @@
     display: block;
     line-height: 1;
     color: #FFF;
-    text-shadow: 3px 3px 1px rgba(70, 70, 70, 0.53);
+    text-shadow: 3px 3px 1px rgba(70, 70, 70, 0.83);
     @media only screen and (min-width:$cut){
       margin: 0;
       font-size: 100px;
@@ -45,7 +45,7 @@
     line-height: 1;
     color: #FFF;
     margin-top: 10px;
-    text-shadow: 2px 2px 1px rgba(70, 70, 70, 0.53);
+    text-shadow: 2px 2px 1px rgba(70, 70, 70, 0.83);
     @media only screen and (min-width:$cut){
       font-size: 40px;
     }
@@ -68,18 +68,24 @@
 }
 
 .header-hex {
-  margin: -53px 0px;
+  margin: -80px 0px;
   padding: 0px;
-  font-size: 175px;
+  font-size: 295px;
   line-height: 1;
-  letter-spacing: 5px;
+  letter-spacing: 20px;
   z-index: 5;
-  color: rgba(52, 117, 104, 0.7);
+  color: rgba(71, 104, 110, 0.7);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .header-hex-even {
   @extend .header-hex;
-  margin-left: -73px;
+  margin-left: -127px;
 }
 
 .header-links {
@@ -94,7 +100,7 @@
     display: inline-block;
     font-size: 15px;
     margin: 10px;
-    text-shadow: 2px 2px 1px rgba(70, 70, 70, 0.53);
+    text-shadow: 2px 2px 1px rgba(70, 70, 70, 0.63);
     @media only screen and (min-width:$cut){
       font-size: 20px;
     }
@@ -116,7 +122,7 @@
     margin: 8px 8px;
     border-radius: 50%;
     border: 2px solid #FFF;
-    text-shadow: 1px 1px 1px rgba(70, 70, 70, 0.53);
+    text-shadow: 1px 1px 1px rgba(70, 70, 70, 0.63);
     transition: all .7s;
     &:hover {
       color: $main;
@@ -156,8 +162,8 @@
       width: 100px;
       height: 100px;
       fill: #fff;
-      -webkit-animation: pulse 1.3s infinite;
-      animation: pulse 1.3s infinite;
+      -webkit-animation: pulse 3.3s infinite;
+      animation: pulse 3.3s infinite;
       &:hover {
         color: $accent;
       }

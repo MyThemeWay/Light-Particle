@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "value": 65,
         "density": {
           "enable": true,
-          "value_area": 800
+          "value_area": 1000
         }
       },
       "color": {
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "type": "polygon",
         "stroke": {
           "width": 0,
-          "color": "#37C8AB"
+          "color": "#429383"
         },
         "polygon": {
           "nb_sides": 6
@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "random": false,
         "anim": {
           "enable": true,
-          "speed": 1.5,
-          "opacity_min": 0.33,
+          "speed": 1.1,
+          "opacity_min": 0.01,
           "sync": false
         }
       },
@@ -45,17 +45,17 @@ document.addEventListener("DOMContentLoaded", function () {
         "random": true,
         "anim": {
           "enable": false,
-          "speed": 23.180819,
-          "size_min": 0.73,
+          "speed": 3.180819,
+          "size_min": 1.73,
           "sync": false
         }
       },
       "line_linked": {
         "enable": true,
-        "distance": 130,
+        "distance": 170,
         "color": "#5fd3bc",
-        "opacity": 0.47,
-        "width": 1
+        "opacity": 0.67,
+        "width": 2
       },
       "move": {
         "enable": true,
@@ -63,11 +63,11 @@ document.addEventListener("DOMContentLoaded", function () {
         "direction": "none",
         "random": true,
         "straight": false,
-        "out_mode": "out",
+        "out_mode": "bounce",
         "bounce": false,
         "attract": {
-          "enable": true,
-          "rotateX": 623,
+          "enable": false,
+          "rotateX": 1623,
           "rotateY": 1267
         }
       },
@@ -77,8 +77,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "detect_on": "window",
       "events": {
         "onhover": {
-          "enable": true,
-          "mode": "grab"
+          "enable": false,
+          "mode": "repulse"
         },
         "onclick": {
           "enable": true,
@@ -101,8 +101,8 @@ document.addEventListener("DOMContentLoaded", function () {
           "speed": 3
         },
         "repulse": {
-          "distance": 200,
-          "duration": 0.4
+          "distance": 30,
+          "duration": 0.8
         },
         "push": {
           "particles_nb": 3
