@@ -9,7 +9,7 @@
   background-attachment: fixed;
   .particles-js-canvas-el {
     width:100% !important;
-    height:35vh !important;
+    height:30vh !important;
   }
 }
 
@@ -23,10 +23,15 @@
   margin: 10px;
   -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
+  h1 {
+    padding: 3px;
+    margin: 3px 0px;
+  }
   .site-title {
     font-size: 30px;
     display: block;
     line-height: 1;
+    margin: 5px 0;
     color: #FFF;
     @media only screen and (min-width:$cut){
       margin: 0;
@@ -34,12 +39,16 @@
     }
   }
   .site-description {
+    position: relative;
+    top: 5%;
+    left: 0%;
     font-size: 17px;
     display: block;
     line-height: 1;
     color: #FFF;
-    margin-top: 10px;
+    margin: 0px;
     @media only screen and (min-width:$cut){
+      margin-top: 3px;
       font-size: 25px;
     }
   }
@@ -50,9 +59,10 @@
   text-align: left;
   .link {
     color: #FFF;
+    line-height: 1;
     text-decoration: none;
     font-size: 12px;
-    margin-right: 10px;
+    margin: 0px 5px;
     @media only screen and (min-width:$cut){
       font-size: 15px;
     }

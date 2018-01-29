@@ -35,13 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
         "random": false,
         "anim": {
           "enable": true,
-          "speed": 1.1,
-          "opacity_min": 0.01,
+          "speed": 0.6,
+          "opacity_min": 0.1,
           "sync": false
         }
       },
       "size": {
-        "value": 2.7,
+        "value": 5.7,
         "random": true,
         "anim": {
           "enable": false,
