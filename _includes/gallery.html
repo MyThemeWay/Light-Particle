@@ -20,11 +20,11 @@
         <div>
           <h3>{{ image.title }}
             <span>
-            {% if forloop.index > 1 %}<a href="#image{{ forloop.index0 }}">&#x2B22;</a>
-            {% else %}&#x23E3;{% endif %}
-            &#x23E3;
-            {% if forloop.rindex > 1 %}<a href="#image{{ forloop.index | plus: 1 }}">&#x2B22;</a>
-            {% else %}&#x23E3;{% endif %}
+            {% if forloop.index > 1 %}<a href="#image{{ forloop.index0 }}">&#9187;</a>
+            {% else %}&#11041;{% endif %}
+            &#11041;
+            {% if forloop.rindex > 1 %}<a href="#image{{ forloop.index | plus: 1 }}">&#9187;</a>
+            {% else %}&#11041;{% endif %}
             </span>
           </h3>
           <p>{{ image.description }}</p>

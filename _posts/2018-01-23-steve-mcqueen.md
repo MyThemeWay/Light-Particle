@@ -5,9 +5,9 @@ date: 2018-01-23 05:18:23 -0000
 categories: project
 ---
 
-# Steve McQueen: TORCS racing with Deep Deterministic Gradient Policy
-##### *Published: {{page.date | date: '%B %d, %Y'}}*
-## Background
+# Steve McQueen: TORCS with Actor-Critic/DDPG Learning
+###### *Published: {{page.date | date: '%B %d, %Y'}}*
+### Background
 
 Steve McQueen is a culminating project completed for ECE457B: Fundamentals of Computational Intelligence. 
 The class covered a variety of topics on machine learning, including artificial neural networks. 
@@ -15,7 +15,7 @@ This was an exercise to go above and beyond the class and experiment with a nove
 learning that Google has been pioneering, called Deep Deterministic Gradient Policy (DDPG) 
 or Actor-Critic Reinforcement learning. 
 
-## What is DDPG or Deep-Q Learning?
+### What is DDPG or Deep-Q Learning?
 
 This new type of network was made possible in 2015 with the reinforcement learning based 
 Deep-Q Network[^deepq]. 
@@ -34,6 +34,8 @@ that it is possible for the Critic to directly adjust the weights of the the Act
 
 {: style="text-align:center"}
 ![DDPG Actor-Critic flow diagram]({{ "/assets/img/actor-critic.png" | prepend: site.baseurl }})
+
+{: style="text-align:center"}
 ###### Diagram from Reinforcement Learning by Sutton & Barto[^reinforcement].
 
 The Critic network is responsible for weighting the value of Actor decisions,
@@ -55,7 +57,7 @@ the likelihood of the network getting stuck in local minima due to over-fitting.
 this, networks can be trained more aggressively without worry of getting too used to a 
 certain series of states. 
 
-## Creating Steve McQueen
+### Creating Steve McQueen
 
 In order to create Steve McQueen, several tools were required to interface with TORCS and 
 create and train the neural networks. 
