@@ -7,10 +7,10 @@
 </div>
 <ul id="hex-gallery" class="clear">
   {% for image in site.data.images %}
-    <li class="hex">
+    <li class="hex" id="#hex{{ forloop.index }}">
       <div class="hex-div">
         <a class="hex-link" href="#image{{ forloop.index }}">
-          <img src="{{ image.thumb_url }}" alt="{{ image.title }}"/>
+          <img src="{{ image.thumb_url }}" alt=""/>
           <h1>{{ image.title }}</h1>
           <p>{{ image.description }}</p>
         </a>
@@ -29,7 +29,7 @@
           </h3>
           <p>{{ image.description }}</p>
         </div>
-        <a href="#page" class="lbox-close">CLOSE</a>
+        <a href="#hex{{ forloop.index }}" class="lbox-close">CLOSE</a>
       </div>
     </li>
   {% endfor %}
