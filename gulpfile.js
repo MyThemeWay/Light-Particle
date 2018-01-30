@@ -61,10 +61,16 @@ gulp.task('fonts', function() {
  * Minify images
  */
 gulp.task('imagemin', function() {
-	return gulp.src('src/img/**/*.{jpg,png,gif}')
+	return gulp.src('src/img/*.{jpg,png,gif}')
 		.pipe(plumber())
 		.pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
 		.pipe(gulp.dest('assets/img/'));
+});
+
+gulp.task('icon', function() {
+        return gulp.src('src/img/icon/*')
+                .pipe(plumber())
+                .pipe(gulp.dest('assets/img/icon/'));
 });
 
 /**
@@ -121,13 +127,15 @@ gulp.task('watch', function() {
   gulp.watch('src/js/*.js', ['move-js', 'jekyll-rebuild']);
   gulp.watch('src/fonts/**/*.{tff,woff,woff2}', ['fonts']);
   gulp.watch('src/audio/**/*.{mp3,ogg,wav}',['move-audio']);
-  gulp.watch('src/img/**/*.{jpg,png,gif}', ['imagemin', 'jekyll-rebuild']);
+  gulp.watch('src/img/*.{jpg,png,gif}', ['imagemin', 'jekyll-rebuild']);
+  gulp.watch('src/img/icon/*', ['icon', 'jekyll-rebuild']);
   gulp.watch(['*html', '_includes/*html', '_layouts/*.html', '_posts/*', '_data/*'], ['jekyll-rebuild']);
 });
 
 gulp.task('default', [
   'js', 'cym-js', 'lib-js', 'move-js', 
   'imagemin',
+  'icon',
   'move-audio', 
   'sass', 'fonts', 
   'browser-sync', 'watch']);
