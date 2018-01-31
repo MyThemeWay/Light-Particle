@@ -25,16 +25,22 @@
   top: 50%;
   left: 50%;
   margin: 0 auto;
+  background-color: #e0e0e0;
+  background: #e0e0e0; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #e0e0e0 1%, #ededed 51%, #e0e0e0 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #e0e0e0 1%,#ededed 51%,#e0e0e0 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #e0e0e0 1%,#ededed 51%,#e0e0e0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e0e0', endColorstr='#e0e0e0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  box-shadow: 0px 0px 10px rgba(70, 70, 70, 0.8);
   -webkit-transform: translate(-50%, -60%);
   transform: translate(-50%, -60%);
   .site-title {
     z-index: 10;
-    font-size: 50px;
-    font-weight: 400;
+    font-size: 60px;
+    font-weight: 500;
     display: block;
     line-height: 1;
-    color: #FFF;
-    text-shadow: 3px 3px 1px rgba(70, 70, 70, 0.83);
+    color: $header;
     @media only screen and (min-width:$cut){
       margin: 0;
       font-size: 100px;
@@ -46,9 +52,8 @@
     font-weight: 400;
     display: block;
     line-height: 1;
-    color: #FFF;
+    color: $header;
     margin-top: 10px;
-    text-shadow: 2px 2px 1px rgba(70, 70, 70, 0.83);
     @media only screen and (min-width:$cut){
       font-size: 40px;
     }
@@ -71,13 +76,13 @@
 }
 
 .header-hex {
-  margin: -90px 0px;
+  margin: -80px 0px;
   padding: 0px;
   font-size: 295px;
   line-height: 1;
-  letter-spacing: 0px;
+  letter-spacing: 20px;
   z-index: 5;
-  color: rgba(71, 104, 110, 1.0);
+  color: $header;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -88,7 +93,7 @@
 
 .header-hex-even {
   @extend .header-hex;
-  margin-left: -118px;
+  margin-left: -126px;
 }
 
 .header-links {
@@ -96,14 +101,20 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  margin: 0px 10px;
+  margin: 0px 10px 30px 10px;
   .link {
-    color: #FFF;
+    color: $header;
     text-decoration: none;
     display: inline-block;
     font-size: 15px;
     margin: 10px;
-    text-shadow: 2px 2px 1px rgba(70, 70, 70, 0.63);
+    transition: all .7s;
+    &:hover {
+      color: $accent;
+    }
+    &:active {
+      color: $accent;
+    }
     @media only screen and (min-width:$cut){
       font-size: 20px;
     }
@@ -115,25 +126,25 @@
   display: flex;
   justify-content: center;
   text-align: center;
+  margin-top: 20px;
   .icon {
     text-align: center;
-    color: #FFF;
+    color: $header;
     width: 15px;
     height: 15px;
     font-size: 15px;
     padding: 10px;
     margin: 8px 8px;
     border-radius: 50%;
-    border: 2px solid #FFF;
-    text-shadow: 1px 1px 1px rgba(70, 70, 70, 0.63);
+    border: 2px solid $header;
     transition: all .7s;
     &:hover {
-      color: $main;
-      background: #FFF;
+      color: #e0e0e0;
+      background: $header;
     }
     &:active {
-      color: $main;
-      background: #FFF;
+      color: #e0e0e0;
+      background: $header;
     }
     @media only screen and (min-width:$cut) {
       width: 25px;
