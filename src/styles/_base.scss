@@ -6,7 +6,12 @@ body {
     font-size: 100%;
     line-height: 1.5;
     color: #555;
-    background-color: #ececec;
+    background-color: #eaf1f2;
+    background: #eaf1f2; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #eaf1f2 0%, #c9c9c9 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #eaf1f2 0%,#c9c9c9 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #eaf1f2 0%,#c9c9c9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f1f2', endColorstr='#c9c9c9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     font-family: 'Rubik';
 }
 article, aside, figcaption, figure, footer, header, nav, section {
