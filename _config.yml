@@ -8,8 +8,8 @@ future: true #allow for posts with future dates
 url: "https://s-arsenault.github.io" # github-pages final URL
 
 # User settings
-username: S. Arsenault
-user_description: Agile, creative problem solver with a diverse and multi-faceted skillset. Full-stack experience, right to the metal, with experience in performance and optimization. Visual, systematic thinker with an eye towards the future while keeping one foot in the past.  
+username: S. ARSENAULT
+user_description: Agile, creative problem solver. Full-stack experience, right to the metal, with experience in performance and optimization. Visual, systematic thinker with an eye towards the future.  
 user_title: Software Developer, B.ASc
 email: stephen.astronaut@gmail.com
 github_username:  dasushi
