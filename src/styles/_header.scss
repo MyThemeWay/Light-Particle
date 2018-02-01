@@ -257,6 +257,8 @@
   }
 } 
 
+/* Hexagon count scaling with screen size */
+/* 4/5 hexagons per row */
 @media (min-width: 1201px) {
   .hex-header-li {
     width: 20%;
@@ -266,6 +268,7 @@
   }
 }
 
+/* 3/4 hexagons per row */
 @media (max-width: 1200px) and (min-width: 901px) {
   .hex-header-li {
     width: 25%;
@@ -275,6 +278,7 @@
   }
 }
 
+/* 2/3 hexagons per row */
 @media (max-width: 900px) and (min-width: 601px) {
   .hex-header-li {
     width: 33.333%;
@@ -284,6 +288,7 @@
   }
 }
 
+/* 1/2 hexagons per fow */
 @media (max-width: 600px) {
   .hex-header-li {
     width: 50%;
@@ -292,5 +297,3 @@
     margin-left: 25%;
   }
 }
-
-

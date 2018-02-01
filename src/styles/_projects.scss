@@ -5,14 +5,7 @@
   width: 90%;
   max-width: 960px;
   margin: 80px auto 20px auto;
-  background-color: #f9f9f9;
-  background: #f9f9f9; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #f9f9f9 0%, #ececec 52%, #f9f9f9 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #f9f9f9 0%,#ececec 52%,#f9f9f9 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #f9f9f9 0%,#ececec 52%,#f9f9f9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#f9f9f9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  border-radius: 6px;
-  box-shadow: 6px 6px 7px rgba(70, 70, 70, 0.4);
+  @include card-style; 
   @media only screen and (min-width: $cut) {
     width: 80%;
   }
