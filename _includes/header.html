@@ -1,8 +1,11 @@
 <div id="particles-js">
-  <div class="hex-grid">{% for i in (1..8) %}
-    <p class="header-hex">&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;</p>
-    <p class="header-hex-even">&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;</p>{% endfor %}
-  </div>
+  <ul id="hex-header" class="clear">{% for i in (1..20) %}
+    <li class="hex-header-li" id="#hex{{ forloop.index }}">
+      <div class="hex-header-div">
+        <a class="hex-header-link" href="#hex{{ forloop.index }}"></a>
+      </div>
+    </li>{% endfor %}
+  </ul>
   <div class="header">
     <h1>
       <span class="site-title">{{site.username}}</span>

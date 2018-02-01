@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "onclick": {
           "enable": true,
-          "mode": "push"
+          "mode": "repulse"
         },
         "resize": true
       },
@@ -96,12 +96,12 @@ document.addEventListener("DOMContentLoaded", function () {
         "bubble": {
           "distance": 400,
           "size": 40,
-          "duration": 2,
+          "duration": 1,
           "opacity": 8,
           "speed": 3
         },
         "repulse": {
-          "distance": 30,
+          "distance": 130,
           "duration": 0.8
         },
         "push": {
