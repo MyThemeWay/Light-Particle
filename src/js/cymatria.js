@@ -71,7 +71,15 @@ window.addEventListener('load', function() {
   //get frag and vertex shaders for rendering
   var vs = document.getElementById('renderVertexShader').textContent;
   var fs = document.getElementById('renderFragShader').textContent;
-  renderMaterial = new THREE.ShaderMaterial({uniforms:uniforms, vertexShader: vs, fragmentShader: fs});
+  renderMaterial = new THREE.ShaderMaterial({
+    uniforms:uniforms, 
+    vertexShader: vs, 
+    fragmentShader: fs,
+    blending: THREE.AdditiveBlending,
+    depthTest: false,
+    transparent: true,
+    vertexColors: true
+  });
 
   //create points to add to scene
   var points = new THREE.Points(renderGeometry, renderMaterial);
@@ -109,12 +117,15 @@ window.addEventListener('load', function() {
   var controls = new THREE.OrbitControls(camera, renderer.domElement);
   var gui = new dat.GUI();
   var waveParams = gui.addFolder('Wave Parameters');
+  var linearFlag = false;
   var params = {
     Radius: simUniforms.rM.value,
     Phi: simUniforms.phiM.value,
     Theta: simUniforms.thetaM.value,
     baseFreq: simUniforms.baseFreq.value,
     freqScale: simUniforms.freqM.value,
+    linearMode: linearFlag,
+    linearScale: simUniforms.freqM.value,
     Amplitude: simUniforms.scale.value,
     Frequency: freq
   };
@@ -130,7 +141,7 @@ window.addEventListener('load', function() {
   waveParams.add(params, 'baseFreq', 0.01, 5).onFinishChange(function(value){
     simUniforms.baseFreq.value = value; 
   });
-  waveParams.add(params, 'freqScale', 1.0001, 1.01).onFinishChange(function(value){
+  var freqControl = waveParams.add(params, 'freqScale', 1.0001, 1.01).onFinishChange(function(value){
     simUniforms.freqM.value = value; 
   });
   waveParams.add(params, 'Amplitude', 0.1, 5.0).onFinishChange(function(value){
@@ -138,6 +149,17 @@ window.addEventListener('load', function() {
   });
   waveParams.add(params, 'Frequency', 0.001, 0.01).onFinishChange(function(value){
     freq = value; 
+  });
+  waveParams.add(params, 'linearMode').onFinishChange(function(value){
+    if(value){
+      freqControl.domElement.style.pointerEvents = "none";
+      freqControl.domElement.style.opacity = 0.5;
+      simUniforms.freqM.value = 0.0;
+    } else {
+      freqControl.domElement.style.pointerEvents = "auto";
+      freqControl.domElement.style.opacity = 1.0;
+      simUniforms.freqM.value = freqControl.getValue();
+    }
   });
   //button for resetting points to their initial positions
   var reset = {reset:function(){physicsRenderer.reset(dataTexture);}};
@@ -195,12 +217,18 @@ function onWindowResize() {
 function generateLookupGeometry(size) {
   var geom = new THREE.BufferGeometry();
   var pos = new Float32Array(size * size * 3);
+  var colors = [];
+  var color = new THREE.Color();
   for(var i = 0, j = 0; i < size * size; i++, j+=3) {
     pos[j] = (i % size) / size;
     pos[j+1] = Math.floor(i/size)/size;
+    color.setHSL(Math.random(), 0.9, 0.5);
+    colors.push(color.r, color.g, color.b);
   }
   var posAttribute = new THREE.BufferAttribute(pos, 3);
   geom.addAttribute('position', posAttribute);
+  var colorAttribute = new THREE.Float32BufferAttribute(colors, 3);
+  geom.addAttribute('color', colorAttribute);
   return geom;
 }
 

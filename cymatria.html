@@ -52,6 +52,7 @@ void main(){
  vec3 vel = pos - oldPos;
  vec3 force = vec3(0., 0., -0.5);
  float currFreq = baseFreq;
+ float counter = 1.0;
  //perturb particles at each FFT frequency
  //if(dot(pos,pos) > 0.001){
    for(int i = 0; i < 128; i++){
@@ -63,7 +64,12 @@ void main(){
       force.y = force.y + (fft[i]*scale*(sin(phi*currFreq)*sin(theta))*sin(r-currFreq*time));
       force.z = force.z + (fft[i]*(scale/4.0)*cos(theta)*sin(r-currFreq*time)/r);
       force.z = min(15., force.z);
-      currFreq = currFreq*freqM;
+      if(freqM > 0.) {
+        currFreq *= freqM;
+      } else {
+        currFreq = baseFreq * counter;
+        counter += 1.0;
+      }   
    }
    pos = pos + force + (vel * 0.35);
    pos.z = max(pos.z, 0.);
@@ -76,21 +82,27 @@ void main(){
    pos.x = 2. * bounds * (rand(vec2(pos.x, pos.y + pos.z))-.5);
    pos.y = 2. * bounds * (rand(vec2(pos.y, pos.x + pos.z))-.5); 
  }
- gl_FragColor = vec4(pos.xyz, 1.0);
+ gl_FragColor = vec4(pos.xyz, length(vel));
 }
     </script>
     <script type="x-shader/x-vertex" id="renderVertexShader">
 uniform sampler2D t_pos;
+varying vec3 vColor;
 void main(){
   vec4 pos = texture2D(t_pos, position.xy);
+  //velocity is 4th coordinate
+  float vel = pos.w;
+  //higher velocity = more color
+  vColor = vec3(.05 + color.r * vel/4., .1 + color.g * vel/2., .05 + color.b * vel);
   vec3 dif = cameraPosition - pos.xyz;
   gl_Position = projectionMatrix * modelViewMatrix * vec4(pos.xyz, 1.0);
   gl_PointSize = min(5., 50. / length(dif));
 }
     </script>
     <script type="x-shader/x-vertex" id="renderFragShader">
+varying vec3 vColor;
 void main(){
-  gl_FragColor = vec4(1.);
+  gl_FragColor = vec4(vColor, 1.);
 }
     </script>
 
