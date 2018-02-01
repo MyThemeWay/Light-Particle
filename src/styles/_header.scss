@@ -18,37 +18,41 @@
 
 .header {
   z-index: 5;
-  width: 100%;
+  max-width: 95%;
   text-align: center;
   color:#FFF;
   position: absolute;
   top: 50%;
   left: 50%;
   margin: 0 auto;
-  background-color: #e0e0e0;
-  background: #e0e0e0; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #e0e0e0 1%, #ededed 51%, #e0e0e0 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #e0e0e0 1%,#ededed 51%,#e0e0e0 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #e0e0e0 1%,#ededed 51%,#e0e0e0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e0e0', endColorstr='#e0e0e0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  box-shadow: 0px 0px 10px rgba(70, 70, 70, 0.8);
+  padding: 10px 30px;
+  border-radius: 6px;
+  background: #f9f9f9; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #f9f9f9 0%, #ececec 52%, #f9f9f9 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #f9f9f9 0%,#ececec 52%,#f9f9f9 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #f9f9f9 0%,#ececec 52%,#f9f9f9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#f9f9f9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  box-shadow: 4px 4px 10px rgba(70, 70, 70, 0.6);
   -webkit-transform: translate(-50%, -60%);
   transform: translate(-50%, -60%);
   .site-title {
     z-index: 10;
-    font-size: 60px;
+    font-size: 40px;
+    padding: 0px;
+    margin: 10px 0px;
     font-weight: 500;
+    white-space: nowrap;
     display: block;
     line-height: 1;
     color: $header;
     @media only screen and (min-width:$cut){
-      margin: 0;
-      font-size: 100px;
+      font-size: 80px;
+      padding: 10px 40px;
     }
   }
   .site-description {
     z-index: 10;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 400;
     display: block;
     line-height: 1;
@@ -59,7 +63,8 @@
     }
   }
   h1{
-    margin: 5px auto;
+    margin: 5px 0px;
+    padding: 0px;
   }
 }
 
@@ -101,14 +106,21 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  margin: 0px 10px 30px 10px;
+  width: 100%;
+  margin: 5px 0px;
+  font-size: 0;
+  @media only screen and (min-width:$cut){
+    //margin-bottom: 30px;
+  }
   .link {
+    flex: 4;
     color: $header;
     text-decoration: none;
     display: inline-block;
     font-size: 15px;
-    margin: 10px;
+    margin: 5px;
     transition: all .7s;
+    padding-left: 3px;
     &:hover {
       color: $accent;
     }
@@ -119,6 +131,28 @@
       font-size: 20px;
     }
   }
+  .link-left {
+    text-align: right;
+    float: right;
+  }
+  .link-right {
+    text-align: left;
+    float: left;
+  }
+  .link-center {
+    flex: 0;
+    color: $header;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 5px;
+    @media only screen and (min-width:$cut){
+      font-size: 20px;
+    }
+
+  }
 }
 
 .header-icons {
@@ -126,7 +160,10 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 5px;
+  @media only screen and (min-width:$cut) {
+    margin-top: 20px;
+  }
   .icon {
     text-align: center;
     color: $header;
@@ -134,7 +171,7 @@
     height: 15px;
     font-size: 15px;
     padding: 10px;
-    margin: 8px 8px;
+    margin: 4px 4px;
     border-radius: 50%;
     border: 2px solid $header;
     transition: all .7s;

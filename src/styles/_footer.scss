@@ -12,12 +12,12 @@
   a {
     text-decoration: none;
     margin: 0;
-    color: #FFF;
+    color: #ccc;
     &:hover{
-      color: $sec;
+      color: $accent;
     }
     &:active {
-      color: $sec;
+      color: $accent;
     }
   }
 }
