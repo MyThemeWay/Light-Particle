@@ -6,10 +6,9 @@
   max-width: 1160px;
   background-color: #f9f9f9;
   background: #f9f9f9; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #f9f9f9 0%, #ffffff 52%, #f9f9f9 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #f9f9f9 0%,#ffffff 52%,#f9f9f9 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #f9f9f9 0%,#ffffff 52%,#f9f9f9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#f9f9f9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background: -moz-linear-gradient(-45deg, #f9f9f9 0%, #ffffff 52%, #e9e9e9 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #f9f9f9 0%,#ffffff 52%,#e9e9e9 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #f9f9f9 0%,#ffffff 52%,#e9e9e9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   border-radius: 6px;
   box-shadow: 6px 6px 6px rgba(70, 70, 70, 0.4);
   @media only screen and (min-width: $cut) {
@@ -19,6 +18,7 @@
     padding-top: 10px;
     margin-top: 10px;
     margin-bottom: 5px;
+    color: $header;
   }
   img { 
     max-width: 100%;

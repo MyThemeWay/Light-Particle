@@ -3,27 +3,6 @@
   padding: 0;
 }
 
-@mixin rotate-skewY($rotate, $skewY) {
-  -webkit-transform: rotate($rotate) skewY($skewY);
-  -moz-transform: rotate($rotate) skewY($skewY);
-  -ms-transform: rotate($rotate) skewY($skewY);
-  transform: rotate($rotate) skewY($skewY);
-}
-
-@mixin skewY-rotate($skewY, $rotate) {
-  -webkit-transform: skewY($skewY) rotate($rotate);
-  -moz-transform: skewY($skewY) rotate($rotate);
-  -ms-transform: skewY($skewY) rotate($rotate);
-  transform: skewY($skewY) rotate($rotate);
-}
-
-@mixin translateX-rotate-skewY($translateX, $rotate, $skewY) {
-  -webkit-transform: translateX($translateX) rotate($rotate) skewY($skewY);
-  -moz-transform: translateX($translateX) rotate($rotate) skewY($skewY);
-  -ms-transform: translateX($translateX) rotate($rotate) skewY($skewY);
-  transform: translateX($translateX) rotate($rotate) skewY($skewY);
-}
-
 @mixin translate3d($x, $y, $z) {
   -webkit-transform: translate3d($x, $y, $z);
   -moz-transform: translate3d($x, $y, $z);

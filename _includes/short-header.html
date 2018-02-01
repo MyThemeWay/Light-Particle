@@ -1,17 +1,20 @@
 <div id="short-particles-js">
-  <div class="short-hex-grid">{% for i in (1..7) %}
-    <p class="short-hex">&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;</p>
-    <p class="short-hex-even">&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;&#11041;</p>{% endfor %}
- </div>
-  <div class="short-header">
-      <h1>
-        <span class="site-title">{{site.username}}</span>
-        <span class="site-description">{{site.user_title}}</span>
-      </h1>
-      <div class="short-header-links">
-        <a class="link" href="{{ "/" | prepend: site.baseurl }}">Home</a>
-        <a>&#11041;</a>
-        <a class="link" href="#projects" data-scroll>Projects</a>
+  <ul id="short-hex-header" class="clear">{% for i in (1..12) %}
+    <li class="hex-header-li" id="#hex{{ forloop.index }}">
+      <div class="hex-header-div">
+        <a class="hex-header-link" href="#hex{{ forloop.index }}"></a>
       </div>
+    </li>{% endfor %}
+  </ul>
+  <div class="short-header">
+    <h1>
+      <span class="site-title">{{site.username}}</span>
+      <span class="site-description">{{site.user_title}}</span>
+    </h1>
+    <div class="short-header-links">
+      <a class="link" href="{{ "/" | prepend: site.baseurl }}">Home</a>
+      <a>&#11041;</a>
+      <a class="link" href="#projects" data-scroll>Projects</a>
+    </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 #short-particles-js {
+  z-index: 1;
   background: $main;
   display: flex;
   vertical-align: center;
@@ -20,10 +21,12 @@
   color:#FFF;
   position: absolute;
   top: 10%;
-  left: 10%;
+  left: 5%;
   margin: 10px;
+  padding: 10px 30px;
   -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
+  @include card-style;
   h1 {
     padding: 3px;
     margin: 3px 0px;
@@ -33,8 +36,8 @@
     display: block;
     line-height: 1;
     margin: 5px 0;
-    color: #FFF;
-    text-shadow: 2px 2px 1px rgba(60, 60, 60, 0.8);
+    white-space: nowrap;
+    color: $header;
     @media only screen and (min-width:$cut){
       margin: 0;
       font-size: 40px;
@@ -47,8 +50,7 @@
     font-size: 17px;
     display: block;
     line-height: 1;
-    color: #FFF;
-    text-shadow: 1px 1px 1px rgba(60, 60, 60, 0.8);
+    color: $header;
     margin: 0px;
     @media only screen and (min-width:$cut){
       margin-top: 3px;
@@ -60,82 +62,43 @@
 .short-header-links {
   z-index: 10;
   margin: 0px;
+  color: $header;
   text-align: left;
   .link {
-    color: #FFF;
+    color: $header;
     line-height: 1;
     text-decoration: none;
-    text-shadow: 1px 1px 1px rgba(60, 60, 60, 0.8);
     font-size: 12px;
     margin: 0px 5px;
     @media only screen and (min-width:$cut){
       font-size: 15px;
     }
-  }
-}
-
-.short-header-icons {
-  z-index: 10;
-  display: flex;
-  justify-content: left;
-  text-align: center;
-  .icon {
-    text-align: center;
-    color: #FFF;
-    width: 15px;
-    height: 15px;
-    font-size: 15px;
-    padding: 6px;
-    margin: 3px;
-    border-radius: 50%;
-    border: 2px solid #FFF;
-    transition: all .7s;
-    &:hover {
-      color: $main;
-      background: #FFF;
-    }
-    &:active {
-      color: $main;
-      background: #FFF;
-    }
-    @media only screen and (min-width:$cut) {
-      width: 25px;
-      height: 25px;
-      font-size: 25px;
+    &:hover, &:active {
+      color: $accent;
     }
   }
 }
 
-.short-hex-grid {
+#short-hex-header {
   z-index: 5;
   position: absolute;
   top: 0px;
   left: 0px;
-  margin: 0px;
-  padding: 0px;
   width: 100%;
   height: 25vh;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
-}
-
-.short-hex {
-  margin: -23px 0px;
-  padding: 0px;
-  font-size: 75px;
-  line-height: 1;
-  letter-spacing: 1px;
-  z-index: 5;
-  color: rgba(71, 104, 110, 1.0);
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  .hex-header-div {
+    margin: -60% 2%;
+  }
 }
-
-.short-hex-even {
-  @extend .short-hex;
-  margin-left: -30px;
-}
-

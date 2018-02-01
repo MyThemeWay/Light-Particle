@@ -26,14 +26,9 @@
   left: 50%;
   margin: 0 auto;
   padding: 10px 30px;
-  border-radius: 6px;
-  background: #f9f9f9;
-  background: -moz-linear-gradient(-45deg, #f9f9f9 0%, #ececec 52%, #f9f9f9 100%);
-  background: -webkit-linear-gradient(-45deg, #f9f9f9 0%,#ececec 52%,#f9f9f9 100%);
-  background: linear-gradient(135deg, #f9f9f9 0%,#ececec 52%,#f9f9f9 100%);
-  box-shadow: 4px 4px 10px rgba(20, 20, 20, 0.6);
   -webkit-transform: translate(-50%, -60%);
   transform: translate(-50%, -60%);
+  @include card-style;
   .site-title {
     z-index: 10;
     font-size: 40px;
@@ -209,57 +204,58 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  .hex-header-li {
-    z-index: 5;
-    position: relative;
-    visibility: hidden;
-    outline: 1px solid transparent;
-    &::after {
-      content: "";
-      display: block;
-      padding-bottom: 86.602%;
-    }
-    .hex-header-div {
-      position: absolute;
-      width: 96%;
-      padding-bottom: 110.851%;
-      margin: -24% 2%;
-      visibility: hidden;
-      overflow: hidden;
-      outline: 1px solid transparent;
-      -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
-      -moz-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
-      -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
-      transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
-      * {
-        position: absolute;
-        visiblity: visible;
-        outline: 1px solid transparent;
-      }
-      .hex-header-link {
-        display: block;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        background-color: $header;
-        visibility: visible;
-        opacity: 0.1;
-        -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
-        -moz-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
-        -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
-        transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
-        -webkit-transition: opacity .3s ease-out;
-        transition: opacity .3s ease-out;
-        &:hover {
-          opacity: 0.6;
-        }
-        &:focus {
-          opacity: 1.0;
-        }
-      }
-    } 
+}
+
+.hex-header-li {
+  z-index: 5;
+  position: relative;
+  visibility: hidden;
+  outline: 1px solid transparent;
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: 86.602%;
   }
 }
+.hex-header-div {
+  position: absolute;
+  width: 96%;
+  padding-bottom: 110.851%;
+  margin: -24% 2%;
+  visibility: hidden;
+  overflow: hidden;
+  outline: 1px solid transparent;
+  -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+  -moz-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+  -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+  transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+  * {
+    position: absolute;
+    visiblity: visible;
+    outline: 1px solid transparent;
+  }
+  .hex-header-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: $header;
+    visibility: visible;
+    opacity: 0.2;
+    -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+    -moz-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+    -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+    transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+    -webkit-transition: opacity .3s ease-out;
+    transition: opacity .3s ease-out;
+    &:hover {
+      opacity: 0.6;
+    }
+    &:focus {
+      opacity: 1.0;
+    }
+  }
+} 
 
 @media (min-width: 1201px) {
   .hex-header-li {
