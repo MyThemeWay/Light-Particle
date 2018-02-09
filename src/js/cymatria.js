@@ -1,3 +1,13 @@
+var THREE = require('three');
+var OrbitControls = require('three-orbit-controls')(THREE);
+var PhysicsRenderer = require('./PhysicsRenderer.js').PhysicsRenderer;
+var dat = require('dat.gui');
+var ss = require('../shaders/particle-sim.frag');
+var vs = require('../shaders/particle-render.vert');
+var fs = require('../shaders/particle-render.frag');
+var svs = require('../shaders/sphere.vert');
+var sfs = require('../shaders/sphere.frag');
+
 var renderer,
 physicsRenderer,
 scene,
@@ -5,23 +15,33 @@ camera,
 analyser,
 freqArr,
 start = Date.now(),
-fov  = 75,
+fov  = 35,
 SIZE = 512,
 freq = 0.005,
 scale = 64,
 simUniforms = {
-    time : {type:'f',value: 0.0},
-    rM : {type:'f',value: 1.0},
-    phiM : {type:'f',value: 5.0},
-    thetaM : {type:'f',value: 7.0},
-    scale : {type:'f',value: 0.7},
-    baseFreq : {type:'f',value: 1.0},
-    freqM : {type:'f',value: 1.0025},
-    bounds: {type:'f',value:(SIZE - SIZE/2)/(SIZE/scale)},
-    fft : {type:'1fv',value: null}
+    time : { type:'f',value: 0.0 },
+    rM : { type:'f',value: 1.0 },
+    phiM : { type:'f',value: 5.0 },
+    thetaM : { type:'f',value: 7.0 },
+    scale : { type:'f',value: 0.7 },
+    baseFreq : { type:'f',value: 1.0 },
+    freqM : { type:'f',value: 1.0025 },
+    bounds: { type:'f',value:(SIZE - SIZE/2)/(SIZE/scale) },
+    fft : { type:'1fv',value: null }
 },
-uniforms = {
-    t_pos: {type: "t", value: null}
+/*sphereUniforms = {
+    t_ramp: { type: "t", value: null },
+    fft: { type: "1fv", value: null },
+    bM: {type: "f", value: 1.0},
+    noiseM: {type: "f", value: 20.0},
+    perlinM: {type: "f", value: 5.0},
+    timeM: {type: "f", value: 70.0},
+    time: { type: "f", value: 0.0 }
+},*/
+renderUniforms = {
+    t_pos: { type: "t", value: null },
+    t_img: { type: "t", value: null }
 };
 
 window.addEventListener('load', function() {
@@ -55,26 +75,50 @@ window.addEventListener('load', function() {
   analyser.getFloatTimeDomainData(freqArr);
     
   //initialize Three.js renderer
-  renderer = new THREE.WebGLRenderer({antialias:true});
+  renderer = new THREE.WebGLRenderer({ antialias:true });
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
   container.appendChild(renderer.domElement);
 
+  //create data texture from freqArr
+  /*var fftTexture = new THREE.DataTexture({
+    data: freqArr, 
+    width: analyser.frequencyBinCount / 4, 
+    height: 1, 
+    format: THREE.RGBAFormat,
+    type: THREE.FloatType
+  });
+  fftTexture.needsUpdate = true;
+  simUniforms.t_fft.value = fftTexture;
+  sphereUniforms.t_fft.value = fftTexture;*/
+
   //initialize PhysicsRenderer with simulation shader
-  var simShader = document.getElementById('simFragShader').textContent;
-  physicsRenderer = new PhysicsRenderer(SIZE, simShader, renderer);
+  physicsRenderer = new PhysicsRenderer(SIZE, ss(), renderer);
+
   //pass uniforms for shader
   physicsRenderer.setUniforms(simUniforms);
   
+  //load sphere color ramp texture
+  /*sphereUniforms.t_ramp.value = new THREE.TextureLoader().load('/assets/img/sphere-purp.png');
+  var sphereMaterial = new THREE.ShaderMaterial( {
+    uniforms: sphereUniforms,
+    vertexShader: svs(),
+    fragmentShader: sfs()
+  });
+  var sphereGeom = new THREE.TorusGeometry(100, 50, 128,128);
+  //push sphere slightly behind particle plane
+  sphereGeom.translate(0,0,-100);
+  var sphereMesh = new THREE.Mesh(sphereGeom, sphereMaterial);
+  scene.add(sphereMesh);
+  */
   //render geometry needs a lookup map to reference positions within texture
   var renderGeometry = generateLookupGeometry(SIZE);
-  //get frag and vertex shaders for rendering
-  var vs = document.getElementById('renderVertexShader').textContent;
-  var fs = document.getElementById('renderFragShader').textContent;
+
+  renderUniforms.t_img.value = new THREE.TextureLoader().load('/assets/img/texture/particle.png');
   renderMaterial = new THREE.ShaderMaterial({
-    uniforms:uniforms, 
-    vertexShader: vs, 
-    fragmentShader: fs,
+    uniforms:renderUniforms, 
+    vertexShader: vs(), 
+    fragmentShader: fs(),
     blending: THREE.AdditiveBlending,
     depthTest: false,
     transparent: true,
@@ -109,28 +153,27 @@ window.addEventListener('load', function() {
   physicsRenderer.debugScene.scale.multiplyScalar(.05);*/
   
   //bind simulation output to render uniforms
-  physicsRenderer.addBoundTexture(uniforms.t_pos, 'output');
+  physicsRenderer.addBoundTexture(renderUniforms.t_pos, 'output');
 
   /**
    * Initialize dat.gui and orbit controls
    **/
-  var controls = new THREE.OrbitControls(camera, renderer.domElement);
+  var controls = new OrbitControls(camera);
   var gui = new dat.GUI();
   var waveParams = gui.addFolder('Wave Parameters');
-  var linearFlag = false;
   var params = {
     Radius: simUniforms.rM.value,
     Phi: simUniforms.phiM.value,
     Theta: simUniforms.thetaM.value,
-    baseFreq: simUniforms.baseFreq.value,
-    freqScale: simUniforms.freqM.value,
-    linearMode: linearFlag,
+    fftFreq: simUniforms.baseFreq.value,
+    fftScale: simUniforms.freqM.value,
+    linearMode: false,
     linearScale: simUniforms.freqM.value,
     Amplitude: simUniforms.scale.value,
     Frequency: freq
   };
-  waveParams.add(params, 'Radius', 0.25, 5).onFinishChange(function(value){
-    simUniforms.rM.value = value; 
+  waveParams.add(params, 'Amplitude', 0.1, 5.0).onFinishChange(function(value){
+    simUniforms.scale.value = value; 
   });
   waveParams.add(params, 'Phi', 0.1, 50).onFinishChange(function(value){
     simUniforms.phiM.value = value; 
@@ -138,23 +181,25 @@ window.addEventListener('load', function() {
   waveParams.add(params, 'Theta', 0.1, 50).onFinishChange(function(value){
     simUniforms.thetaM.value = value; 
   });
-  waveParams.add(params, 'baseFreq', 0.01, 5).onFinishChange(function(value){
+  waveParams.add(params, 'Radius', 0.25, 5).onFinishChange(function(value){
+    simUniforms.rM.value = value; 
+  });
+  waveParams.add(params, 'fftFreq', 0.01, 5).onFinishChange(function(value){
     simUniforms.baseFreq.value = value; 
   });
-  var freqControl = waveParams.add(params, 'freqScale', 1.0001, 1.01).onFinishChange(function(value){
+  var freqControl = waveParams.add(params, 'fftScale', 1.0001, 1.01).onFinishChange(function(value){
     simUniforms.freqM.value = value; 
   });
-  waveParams.add(params, 'Amplitude', 0.1, 5.0).onFinishChange(function(value){
-    simUniforms.scale.value = value; 
-  });
-  waveParams.add(params, 'Frequency', 0.001, 0.01).onFinishChange(function(value){
+    waveParams.add(params, 'Frequency', 0.001, 0.01).onFinishChange(function(value){
     freq = value; 
   });
   waveParams.add(params, 'linearMode').onFinishChange(function(value){
+    //disable freqScale control, since only baseFreq is used
     if(value){
       freqControl.domElement.style.pointerEvents = "none";
       freqControl.domElement.style.opacity = 0.5;
       simUniforms.freqM.value = 0.0;
+    //re-enable freqScale
     } else {
       freqControl.domElement.style.pointerEvents = "auto";
       freqControl.domElement.style.opacity = 1.0;
@@ -165,6 +210,26 @@ window.addEventListener('load', function() {
   var reset = {reset:function(){physicsRenderer.reset(dataTexture);}};
   waveParams.add(reset, 'reset');
   waveParams.open();
+
+  /*var sphereControl = gui.addFolder('Sphere Controls');
+  sphereParams = {
+    Frequency: sphereUniforms.timeM.value,
+    Noise: sphereUniforms.noiseM.value,
+    Perlin: sphereUniforms.perlinM.value,
+    Scale: sphereUniforms.bM.value
+  };
+  sphereControl.add(sphereParams, 'Noise', 5.0, 100.0).onFinishChange(function(value){
+    sphereUniforms.noiseM.value = value; 
+  });
+  sphereControl.add(sphereParams, 'Frequency', 10.0, 100.0).onFinishChange(function(value){
+    sphereUniforms.timeM.value = value; 
+  });
+  sphereControl.add(sphereParams, 'Scale', 0.001, 5.0).onFinishChange(function(value){
+    sphereUniforms.bM.value = value; 
+  });
+  sphereControl.add(sphereParams, 'Perlin', 0.01, 25.0).onFinishChange(function(value){
+    sphereUniforms.perlinM.value = value; 
+  });*/
 
   //music controls
   var musicControl = gui.addFolder('Music Controls');
@@ -202,6 +267,7 @@ window.addEventListener('load', function() {
   musicControl.add(stop, 'stop');
   musicControl.open();
 
+    
   onWindowResize();
   window.addEventListener('resize', onWindowResize);
   
@@ -250,8 +316,11 @@ function render() {
   requestAnimationFrame(render);
   //get new FFT data from Web Audio API
   analyser.getFloatTimeDomainData(freqArr);
+  //updateCheckerboard();
+  //sphereUniforms.fft_prev.value = sphereUniforms.fft.value;
   simUniforms.fft.value = freqArr;
   simUniforms.time.value = freq * (Date.now() - start);
+  //sphereUniforms.time.value = freq / 500 * (Date.now() - start); 
   //get gpu compute update frame
   physicsRenderer.update();
 

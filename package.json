@@ -6,16 +6,27 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Nathan Randecker",
+  "author": "S Arsenault",
   "license": "ISC",
   "dependencies": {
     "browser-sync": "^2.18.6",
+    "browserify": "^15.2.0",
+    "browserify-shader": "^0.1.2",
+    "canvas-particle-network": "^1.5.0",
+    "dat.gui": "^0.7.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^2.0.0",
     "gulp-imagemin": "^3.1.1",
     "gulp-plumber": "^1.1.0",
     "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^2.0.0"
+    "gulp-uglify": "^2.0.0",
+    "merge-stream": "^1.0.1",
+    "sweet-scroll": "^3.0.0",
+    "three": "^0.89.0",
+    "three-orbit-controls": "^82.1.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
+    "watchify": "^3.10.0"
   }
 }

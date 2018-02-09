@@ -1,3 +1,5 @@
+var particleJS = require('particle.js');
+
 document.addEventListener("DOMContentLoaded", function () {
 
   /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */

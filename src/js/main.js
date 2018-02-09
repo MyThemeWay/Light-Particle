@@ -1,9 +1,24 @@
+var sweet = require('sweet-scroll');
+var particle = require('canvas-particle-network');
+
 /* sweetScroll load */
 document.addEventListener("DOMContentLoaded", function () {
-  const sweetScroll = new SweetScroll({/* some options */});
+  const sweetScroll = new sweet({/* some options */});
 
-  /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-  particlesJS('particles-js', {
+  var canvas = new particle(
+                      document.getElementById('particles-js'), 
+                      {particleColor: '#5fd3bc'}
+  );
+  
+  /*Particles.init({
+    selector: '#particles-js',
+    color: '#429383',
+    connectParticles: true
+  });*/
+
+
+  /* particlesJS.load(@dom-id, @path-json, @callback (optional)); 
+  window.particleJS.particleJS('particles-js', {
     "particles": {
       "number": {
         "value": 65,
@@ -113,6 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     },
     "retina_detect": true
-  });
+  });*/
 
 }, false);

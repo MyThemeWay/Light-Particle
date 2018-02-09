@@ -1,3 +1,6 @@
+var THREE = require('three');
+
+
 function PhysicsRenderer( size , shader , renderer ){
 
   // First Make sure everything Works
@@ -50,7 +53,6 @@ function PhysicsRenderer( size , shader , renderer ){
   this.scene = new THREE.Scene();
   this.mesh = new THREE.Mesh( new THREE.PlaneBufferGeometry( 1, 1 ) );
   this.scene.add( this.mesh );
-  
 }
 
 PhysicsRenderer.prototype.checkCompatibility = function( renderer ){
@@ -324,4 +326,4 @@ PhysicsRenderer.prototype.bindTextures = function(){
   }
 
 }
-
+module.exports.PhysicsRenderer = PhysicsRenderer;
