@@ -1,14 +1,20 @@
-@import "lib/normalize";
-@import "lib/fontawesome";
-@import "lib/devicon";
+/*!
+ * main.scss
+ * 
+ * Author: sitdisch
+ * Source: https://sitdisch.github.io/#mythemeway
+ * License: MIT
+ * Copyright (c) 2020 sitdisch
+ *
+ */
 
-@import 'base';
-@import 'vars';
 @import 'animation';
+@import 'mixins';
+@import 'base';
 @import 'header';
 @import 'short-header';
 @import 'about';
 @import 'projects';
-@import 'gallery';
 @import 'content';
+@import 'navbar';
 @import 'footer';

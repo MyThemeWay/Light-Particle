@@ -1,5 +1,5 @@
 <div id="particles-js" class="short-particles">
-  <ul id="short-hex-header" class="clear">{% for i in (1..12) %}
+  <ul id="short-hex-header" class="clear">{% for i in (1..18) %}
     <li class="hex-header-li" id="#hex{{ forloop.index }}">
       <div class="hex-header-div">
         <a class="hex-header-link" href="#hex{{ forloop.index }}"></a>
@@ -7,14 +7,15 @@
     </li>{% endfor %}
   </ul>
   <div class="short-header">
-    <h1>
-      <span class="site-title">{{site.username}}</span>
-      <span class="site-description">{{site.user_title}}</span>
-    </h1>
+    <a title="Go Home" href="{{ '/' | prepend: site.baseurl }}">
+      <img data-press-delay src="{{ site.user_picture | prepend: site.baseurl }}" alt="{{ site.user_name | prepend: site.baseurl }}" ></img>
+    </a>
+    <h1 class="site-title">{{site.user_name}}</h1>
+    <div class="short-header-icons">
+      {% include follow-banner.html %}
+    </div>
     <div class="short-header-links">
-      <a class="link" href="{{ "/" | prepend: site.baseurl }}">Home</a>
-      <a class="spacer">|</a>
-      <a class="link" href="#projects" data-scroll>Projects</a>
+      {% include navbar-link-banner.html %}
     </div>
   </div>
 </div>

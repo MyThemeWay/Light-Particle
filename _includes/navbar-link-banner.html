@@ -1,0 +1,14 @@
+<a class="nav-link link navbar-link-home navbar-click-stay" data-press-delay title="Go there" href="{{ '/' | prepend: site.baseurl }}" >Home</a>
+<a class="bar navbar-link-home">|</a>
+<div class="dropdown-divider navbar-link-home"></div>
+<a class="nav-link link navbar-link-about" title="Go there" href='#about' data-hash-prefix="{{ '/' | prepend: site.baseurl }}" data-scroll data-scroll-options='{"offset": -15}'>Expertise</a>
+<div class="dropdown-divider"></div>
+<a class="bar">|</a>
+<li class="nav-item dropdown">
+  <a class="btn btn-drop navbar-link-projects" role="button" title="Go to this overview" href="#projects" data-hash-prefix="{{ '/' | prepend: site.baseurl }}" data-scroll data-scroll-options='{"offset": -15}'>Projects</a>
+  <div class="btn btn-arrow dropdown-toggle dropdown-toggle-split navbar-arrow-projects" role="button" title="Toggle Dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <a class="dropdown-item navbar-link-project-1" title="Go there" href="#project-1" data-hash-prefix="{{ '/projects/2020/10/31/project-1.html' | prepend: site.baseurl }}" data-scroll data-scroll-options='{"offset": -45}'>- Project 1</a>
+    <a class="dropdown-item navbar-link-project-2" title="Go there" href="#project-2" data-hash-prefix="{{ '/projects/2020/10/31/project-2.html' | prepend: site.baseurl }}" data-scroll data-scroll-options='{"offset": -45}'>- Project 2</a>
+  </div>
+</li>

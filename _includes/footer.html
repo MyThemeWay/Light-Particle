@@ -1,7 +1,12 @@
 <footer class="footer">
-  <p><i>I have desired to do good, but I have not desired to make noise, because I have felt that noise did no good and that good made no noise.</i><br><small>- Louise-Claude de Saint-Martin</small></p>
-  <p>&copy; {{site.username}}</p>
-  <p>Built with Jekyll, Gulp, Github Pages and <a href=https://github.com/JulianLaval/canvas-particle-network>canvas-particle-network</a></p>
+  <p>&copy; {{site.user_name}}</p>
+  <p>Built with Webpack, Jekyll, Gulp, Github Pages and <i class="fas fa-heart love"></i> by <a data-press-delay href="https://github.com/nrandecker" title="Visit him">Nathan Randecker</a>, <a data-press-delay href="https://github.com/s-arsenault" title="Visit him">Stephen Arsenault</a> and <a data-press-delay href="https://github.com/sitdisch" title="Visit me">Sitdisch</a>.<br>You can find the source of this demo <a data-press-delay href="https://sitdisch.github.io/" title="Go there">here</a>.</p>
 </footer>
-<!--<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>-->
-<script src="{{ "/assets/js/main.bundle.js" | prepend: site.baseurl }}"></script>
+
+<!-- INCLUDE THE NECESSARY HTML FILES FOR ALL LAYOUTS -->  
+{% include navbar.html %}
+
+<!-- INCLUDE THE NECESSARY JS FILES FOR ALL LAYOUTS -->  
+<script src="{{ '/assets/lib/jquery/dist/jquery.min.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/assets/js/main.bundle.min.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/assets/lib/bootstrap/dist/js/bootstrap.bundle.min.js' | prepend: site.baseurl }}"></script>

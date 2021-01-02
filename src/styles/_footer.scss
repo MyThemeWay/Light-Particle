@@ -1,50 +1,99 @@
 .footer {
+  @include banner-style;
+  border-color: var(--border-2);
   position: relative;
   bottom: 0;
   width: 100%;
-  background: $main;
   padding-top: 15px;
   padding-bottom: 25px;
-  margin-top: 80px;
+  margin-top: 65px;
   text-align: center;
-  font-size: 11px;
-  color: #AAA;
+  p {
+    color: #AAA;
+    font-size: 15px;
+    margin: 18px;
+  }
   a {
+    font-size: 15px;
     text-decoration: none;
     margin: 0;
     color: #ccc;
-    &:hover{
-      color: $accent;
+    @media (pointer:fine) {
+      &:hover {
+        text-decoration: none;
+        text-shadow: 0 0 .15px #ccc, 0 0 .15px #ccc, 0 0 .15px #ccc;
+        line-height: 1.25;
+      }
+      &.pressed {
+        color: grey;
+      }
     }
-    &:active {
-      color: $accent;
+    @media (pointer:coarse) {
+      &.pressed {
+        text-decoration: none;
+        text-shadow: 0 0 .15px #ccc, 0 0 .15px #ccc, 0 0 .15px #ccc;
+        line-height: 1.25;
+      }
+    }
+  }
+  .love {
+    color: red;
+    font-size: 13px;
+  }
+}
+
+//
+// adaptions to screen size changes
+//
+
+@media only screen and (min-width: 550px) {
+  .footer {
+    p {
+      font-size: 17px;
+    }
+    a {
+      font-size: 17px;
+      @media (pointer:fine) {
+        &:hover {
+          text-shadow: 0 0 .17px #ccc, 0 0 .17px #ccc, 0 0 .17px #ccc;
+          line-height: 1.25;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          text-shadow: 0 0 .17px #ccc, 0 0 .17px #ccc, 0 0 .17px #ccc;
+          line-height: 1.25;
+        }
+      }
+    }
+    .love {
+      font-size: 14px;
     }
   }
 }
 
-.footer-hex-grid {
-  z-index: 5;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-  height: 60px;
-  overflow: hidden;
-}
-
-.footer-hex {
-  margin: -53px 0px;
-  padding: 0px;
-  font-size: 115px;
-  line-height: 1;
-  letter-spacing: 5px;
-  z-index: 5;
-  color: rgba(52, 117, 104, 0.7);
-}
-
-.footer-hex-even {
-  @extend .footer-hex;
-  margin-left: -73px;
+@media only screen and (min-height: 1350px) and (min-width: 1200px) {
+  .footer {
+    p {
+      font-size: 20px;
+    }
+    a {
+      font-size: 20px;
+      @media (pointer:fine) {
+        &:hover {
+          text-shadow: 0 0 .2px #ccc, 0 0 .2px #ccc, 0 0 .2px #ccc;
+          line-height: 1.25;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          text-shadow: 0 0 .2px #ccc, 0 0 .2px #ccc, 0 0 .2px #ccc;
+          line-height: 1.25;
+        }
+      }
+    }
+    .love {
+      font-size: 18px;
+    }
+  }
 }

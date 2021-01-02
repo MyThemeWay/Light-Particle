@@ -1,53 +1,66 @@
 #about {
-  width: 95%;
-  margin: 0 auto;
+  @include card-style;
+  width: 90%;
   max-width: 1260px;
-  background: #f9f9f9; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #f9f9f9 0%, #ececec 52%, #f9f9f9 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #f9f9f9 0%,#ececec 52%,#f9f9f9 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #f9f9f9 0%,#ececec 52%,#f9f9f9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#f9f9f9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  border-radius: 6px;
-  box-shadow: 4px 4px 7px rgba(70, 70, 70, 0.4);
-  @media only screen and (min-width: $cut) {
-    width: 80%;
-  }
-}
-
-.tech {
-  margin: 10px 20px 20px 20px;
-  padding: 0px 20px 10px 20px;
-  h2 {
-    padding-top: 0px;
-    margin-top: 20px;
+  min-width: 270px;
+  text-align: center;
+  p {
     margin-bottom: 10px;
-    font-weight: 400;
+  }
+  h1 {
+    margin-bottom: 35px;
   }
 }
 
 .user {
-  text-align: center;
   font-size: 60px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  p {
-    font-size: 16px;
+}
+
+.tech {
+  h2 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
   }
-  @media only screen and (min-width: $cut) {
+}
+
+@media only screen and (min-width: 390px) {
+  .tech {
+    padding: 0px 10px 0px 10px;
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  .user {
     flex-wrap: nowrap;
     font-size: 75px;
   }
 }
 
-.user-details {
-  text-align: center;
-  margin: 45px auto 10px auto;
-  padding: 0px 5px 3px 5px;
-  h1 {
-    font-weight: 400;
-    padding-top: 15px;
-    margin-bottom: 0px;
+@media only screen and (min-width: 690px) {
+  .tech {
+    padding: 0px 15px 0px 15px;
+  }
+}
+
+@media only screen and (min-width: 710px) {
+  .tech {
+    padding: 0px 20px 0px 20px;
+  }
+}
+
+@media only screen and (min-width: 740px) {
+  .tech {
+    padding: 0px 25px 0px 25px;
+  }
+}
+
+@media only screen and (min-width: 850px) {
+  .tech {
+    padding: 0px 35px 0px 35px;
   }
 }

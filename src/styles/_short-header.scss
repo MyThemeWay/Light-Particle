@@ -1,93 +1,207 @@
-/*#particles-js .short-particles {
-  z-index: 1;
-  background: $main;
-  display: flex;
-  vertical-align: center;
-  width: 100%;
-  min-height: 25vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  box-shadow: 0px 3px 4px rgba(70, 70, 70, 0.4);
-  .particles-js-canvas-el {
-    width:100% !important;
-    height:25vh !important;
-  }
-}*/
-
 .short-header {
-  z-index: 50;
+  @include header-style;
   text-align: left;
-  color:#FFF;
-  position: absolute;
+  color: #FFF;
   top: 45%;
   left: 5%;
   margin: 10px;
-  padding: 10px 20px;
+  padding: 14px 22px 10px 14px;
   -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
-  @include card-style;
-  @media only screen and (min-width:$cut){
-    padding: 15px 30px;
-  }
-  h1 {
-    padding: 3px;
-    margin: 3px 0px;
+  img{
+    width: 80px;
+    height: auto !important;
+    @media (pointer:fine) {
+      &:hover {
+        @include hover-img-style;
+      }
+      &.pressed {
+        transform: scale(0.7);
+        background: transparent;
+        background-color: transparent;
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        @include hover-img-style;
+      }
+    }
   }
   .site-title {
+    margin-top: -74px;
+    margin-left: 80px;
+    margin-bottom: 10px;
     font-size: 30px;
     display: block;
     line-height: 1;
-    margin: 5px 0;
-    white-space: nowrap;
-    color: $header;
-    @media only screen and (min-width:$cut){
-      font-size: 40px;
-    }
+    color: #fcfcfc;
   }
-  .site-description {
-    position: relative;
-    top: 5%;
-    left: 0%;
-    font-size: 17px;
-    display: block;
-    line-height: 1;
-    white-space: nowrap;
-    color: $header;
-    margin: 0px;
-    @media only screen and (min-width:$cut){
-      margin-top: 3px;
-      font-size: 25px;
+}
+
+.short-header-icons {
+  margin-top: -1px;
+  margin-bottom: 3px;
+  margin-left: 86px;
+  .icon {
+    @include icon-style;
+    font-size: 21px;
+    margin: 3px 1px 3px 1px;
+    margin-right: 0px;
+    padding: .565em;
+    border-radius: 50%;
+    @media (pointer:fine) {
+      &:hover {
+        font-size: 25px;
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        font-size: 25px;
+      }
     }
   }
 }
 
 .short-header-links {
-  z-index: 50;
-  margin: 0px;
-  color: $header;
-  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  flex-wrap: wrap;
+  font-size: 15px;
+  float: left;
+  line-height: 1;
   .link {
-    color: $header;
-    line-height: 1;
-    text-decoration: none;
-    font-size: 12px;
-    margin: 0px 5px;
-    @media only screen and (min-width:$cut){
-      font-size: 15px;
+    color: #fcfcfc;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    &.navbar-link-home {
+      padding-left: 5px;
     }
-    &:hover, &:active {
-      color: $accent;
+    @media (pointer:fine) {
+      &:hover {
+        @include hover-link-style;
+        font-size: 16px;
+      }
+      &.pressed {
+        transform: scale(0.9);
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        @include hover-link-style;
+        font-size: 16px;
+      }
     }
   }
-  .spacer {
-    color: $header;
-    line-height: 1;
-    text-decoration: none;
-    font-size: 12px;
-    @media only screen and (min-width:$cut){
-      font-size: 15px;
+  .bar {
+    margin-top: 1px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    color: #8F887B;
+    font-weight: bold;
+    cursor: default;
+    @media (pointer:fine) {
+      &:hover {
+        color: #8F887B;
+      }
     }
+    @media (pointer:coarse) {
+      &.pressed {
+        color: #8F887B;
+      }
+    }
+  }
+  .btn {
+    &.btn-drop {
+      margin-left: 0px;
+      margin-top: 0px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+      font-size: 15px;
+      font-weight: initial;
+      @media (pointer:fine) {
+        &:hover {
+          @include hover-link-style;
+          font-size: 16px;
+        }
+        &.pressed {
+          transform: scale(0.9);
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          @include hover-link-style;
+          font-size: 16px;
+        }
+      }
+    }
+    &.btn-arrow {
+      margin-top: 2px;
+      margin-left: -1px;
+      margin-right: 0px;
+      font-size: 11px;
+      line-height: 1.15;
+      padding-right: 2px;
+      padding-left: 2px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 14px;
+          padding-right: 3px;
+          padding-left: 3px;
+          line-height: 1.15;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 14px;
+          padding-right: 3px;
+          padding-left: 3px;
+          line-height: 1.15;
+        }
+      }
+    }
+  }
+  .dropdown-menu {
+    @include background-style-green;
+    margin-top: 5%;
+    margin-left: -85%;
+  }
+  .dropdown-item {
+    font-size: 13px;
+    font-weight: initial;
+    line-height: 1.5;
+    padding-left: 7px;
+    padding-right: 7px;
+    @media (pointer:fine) {
+      &:hover {
+        @include hover-link-style;
+        font-size: 14px;
+      }
+      &.pressed {
+        transform: scale(0.9);
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        @include hover-link-style;
+        font-size: 14px;
+      }
+    }
+  }
+  .navbar-link-home {
+    margin-top: 0px;
+  }
+  .dropdown-divider {
+    display: none;
   }
 }
 
@@ -113,5 +227,312 @@
   user-select: none;
   .hex-header-div {
     margin: -60% 2%;
+  }
+}
+
+//
+// adaptions to screen size changes
+//
+
+@media only screen and (min-width:550px){
+  .short-header {
+    margin: 40px;
+    padding: 20px 35px 10px 17px;
+    .site-title {
+      margin-top: -94px;
+      margin-left: 105px;
+      font-size: 40px;
+    }
+    img{
+      width: 100px;
+    }
+  }
+  .short-header-icons {
+    margin-left: 115px;
+    .icon {
+      margin-top: 2px;
+      font-size: 23px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 27px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 27px;
+        }
+      }
+    }
+  }
+  .short-header-links {
+    font-size: 20px;
+    .btn {
+      &.btn-drop {
+        font-size: 20px;
+        @media (pointer:fine) {
+          &:hover {
+            font-size: 21px;
+          }
+        }
+        @media (pointer:coarse) {
+          &.pressed {
+            font-size: 21px;
+          }
+        }
+      }
+      &.btn-arrow {
+        margin-top: 3px;
+        margin-left: 0px;
+        font-size: 14px;
+        line-height: 0.9;
+        @media (pointer:fine) {
+          &:hover {
+            font-size: 18px;
+            line-height: 0.9;
+          }
+        }
+        @media (pointer:coarse) {
+          &.pressed {
+            font-size: 18px;
+            line-height: 0.9;
+          }
+        }
+      }
+    }
+    .link {
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 21px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 21px;
+        }
+      }
+    }
+    .bar {
+      margin-left: 7px;
+      margin-right: 7px;
+    }
+    .dropdown-item {
+      font-size: 18px;
+      font-weight: initial;
+      line-height: 1.4;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 19px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 19px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-height: 900px) {
+  .short-header {
+    margin: 10px;
+    padding: 14px 22px 10px 14px;
+    .site-title {
+      margin-top: -74px;
+      margin-left: 80px;
+      font-size: 30px;
+    }
+    img{
+      width: 80px;
+    }
+  }
+  .short-header-icons {
+    margin-left: 86px;
+    .icon {
+      font-size: 21px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 25px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+  .short-header-links {
+    font-size: 15px;
+    .btn {
+      &.btn-drop {
+        font-size: 15px;
+        @media (pointer:fine) {
+          &:hover {
+            font-size: 16px;
+          }
+        }
+        @media (pointer:coarse) {
+          &.pressed {
+            font-size: 16px;
+          }
+        }
+      }
+      &.btn-arrow {
+        margin-top: 4px;
+        margin-left: -1px;
+        font-size: 11px;
+        line-height: 1;
+        @media (pointer:fine) {
+          &:hover {
+            font-size: 14px;
+            line-height: 0.9;
+          }
+        }
+        @media (pointer:coarse) {
+          &.pressed {
+            font-size: 14px;
+            line-height: 0.9;
+          }
+        }
+      }
+    }
+    .link {
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 16px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 16px;
+        }
+      }
+    }
+    .bar {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    .dropdown-item {
+      font-size: 13px;
+      font-weight: initial;
+      line-height: 1.4;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 14px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-height: 1350px) and (min-width: 1200px) {
+  .short-header {
+    margin: 40px;
+    padding: 20px 35px 10px 17px;
+    .site-title {
+      margin-top: -144px;
+      margin-left: 155px;
+      font-size: 75px;
+    }
+    img{
+      width: 150px;
+    }
+  }
+  .short-header-icons {
+    margin-left: 165px;
+    .icon {
+      margin-top: 2px;
+      font-size: 36px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 40px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+  .short-header-links {
+    font-size: 25px;
+    .btn {
+      &.btn-drop {
+        font-size: 25px;
+        @media (pointer:fine) {
+          &:hover {
+            font-size: 26px;
+          }
+        }
+        @media (pointer:coarse) {
+          &.pressed {
+            font-size: 26px;
+          }
+        }
+      }
+      &.btn-arrow {
+        margin-top: 4px;
+        margin-left: 0px;
+        font-size: 20px;
+        line-height: 0.9;
+        @media (pointer:fine) {
+          &:hover {
+            font-size: 22px;
+            padding-right: 4px;
+            padding-left: 4px;
+            line-height: 1;
+          }
+        }
+        @media (pointer:coarse) {
+          &.pressed {
+            font-size: 22px;
+            padding-right: 4px;
+            padding-left: 4px;
+            line-height: 1;
+          }
+        }
+      }
+    }
+    .link {
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 26px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 26px;
+        }
+      }
+    }
+    .bar {
+      margin-left: 9px;
+      margin-right: 9px;
+    }
+    .dropdown-item {
+      font-size: 22px;
+      font-weight: initial;
+      line-height: 1.4;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 23px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 23px;
+        }
+      }
+    }
+    .dropdown-menu {
+      margin-top: 8%;
+    }
   }
 }

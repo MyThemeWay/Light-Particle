@@ -1,5 +1,5 @@
 <div id="particles-js">
-  <ul id="hex-header" class="clear">{% for i in (1..20) %}
+  <ul id="hex-header" class="clear">{% for i in (1..48) %}
     <li class="hex-header-li" id="#hex{{ forloop.index }}">
       <div class="hex-header-div">
         <a class="hex-header-link" href="#hex{{ forloop.index }}"></a>
@@ -7,20 +7,18 @@
     </li>{% endfor %}
   </ul>
   <div class="header">
-    <h1>
-      <span class="site-title">{{site.username}}</span>
-      <span class="site-description">{{site.user_title}}</span>
-    </h1> 
+    <h1 class="site-title">{{site.title}}</h1>
+    <img src="{{ site.user_picture | prepend: site.baseurl }}" alt="{{ site.user_name | prepend: site.baseurl }}" ></img>
+    <span class="user-description">{{site.user_name}}</span>
+    {% if site.user_title != null %}
+      <span class="user-description">{{site.user_title}}</span>
+    {% endif %}
     <div class="header-icons">
-      <a aria-label="Send email" href="mailto:stephen.astronaut@gmail.com"><i class="icon fa fa-envelope"></i></a>
-      <a aria-label="My Github" target="_blank" href="https://github.com/dasushi"><i class="icon fa fa-github-alt" aria-hidden="true"></i></a>
-      <a aria-label="LinkedIn" href="https://www.linkedin.com/in/stephen-arsenault-2905a467"><i class="icon fa fa-linkedin" aria-hidden="true"></i></a>
+      {% include follow-banner.html %}
     </div>
     <div class="header-links">
-      <a class="link link-left" href="#about" data-scroll>Expertise</a>
-      <span class="link-center">|</span>
-      <a class="link link-right" href="#projects" data-scroll> Projects</a>
+      {% include navbar-link-banner.html %}
     </div>
   </div>
-  <a class="down" href="#about" data-scroll><i class="icon fa fa-angle-double-down" aria-hidden="true"></i></a>
+  <a class="down" href="#about" title="Go down" data-scroll data-scroll-options='{"offset": -15}'><i class="icon fa fa-angle-double-down" aria-hidden="true"></i></a>
 </div>

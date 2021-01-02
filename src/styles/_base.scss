@@ -1,50 +1,83 @@
-@import url('https://fonts.googleapis.com/css?family=Rubik');
-
+:root {
+  --border-1: #1D1E1C;
+  --border-2: #1D1E1C;
+  --border-3: #eeeeee;
+}
+html { 
+  background-color: #1F2624;
+} 
 body {
-    margin: 0;
-    padding: 0;
-    font-size: 100%;
-    line-height: 1.5;
-    color: #555;
-    background-color: #eaf1f2;
-    background: #eaf1f2; /* Old browsers */
-    background: -moz-linear-gradient(-45deg, #eaf1f2 0%, #c9c9c9 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(-45deg, #eaf1f2 0%,#c9c9c9 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg, #eaf1f2 0%,#c9c9c9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f1f2', endColorstr='#c9c9c9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-    font-family: 'Rubik';
+  @include background-style-brown-light;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #eeeeee;
+  font-family: 'Rubik';
 }
 article, aside, figcaption, figure, footer, header, nav, section {
-    display: block;
+  display: block;
 }
 h1, h2, h3, h4, stong {
-    margin-top: 1em;
-    padding-top: 1em;
-    line-height: 1.25;
-    color: #333;
+  line-height: 1.25;
+  margin-bottom: 0px;
 }
 h1 {
-    font-size: 2.5rem;
+  font-size: 39px;
+  font-weight: bold;
 }
 h2 {
-    font-size: 2rem;
+  font-size: 36px;
 }
 h3 {
-    font-size: 1.5rem;
+  font-size: 32px;
 }
 h4 {
-    font-size: 1rem;
+  font-size: 29px;
+}
+hr {
+  margin-top: 35px;
+  color: #429383;
 }
 ul, ol {
-    margin: 1em 0;
-    padding-left: 40px;
+  margin: 18px 0;
+  padding-left: 40px;
 }
-p, figure {
-    margin: 1em 0;
+figure {
+  font-size: 22px;
 }
-a img {
-    border: none;
+p {
+  font-size: 22px;
+  margin-bottom: 0px;
+}
+a, img {
+  border: none;
+  outline: none;
+}
+a {
+  cursor: pointer;
+  &:active, &:focus, &:visited, &:link  {
+    text-decoration: none;
+    outline: none;
+  }
 }
 sup, sub {
-    line-height: 0;
+  line-height: 0;
+}
+
+//
+// adaptions to screen size changes
+//
+
+@media only screen and (min-height: 1350px) and (min-width: 1200px) {
+  p {
+    font-size: 26px;
+    line-height: 1.4;
+  }
+  h1 {
+    font-size: 60px;
+  }
+  h2 {
+    font-size: 50px;
+  }
 }

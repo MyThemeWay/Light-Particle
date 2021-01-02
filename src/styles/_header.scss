@@ -1,10 +1,12 @@
 #particles-js {
-  z-index: 1;
-  background: $main;
-  display: flex; //flex;
+  @include banner-style;
+  border-bottom: none;
+  z-index: 2;
+  display: flex;
   vertical-align: bottom;
   width: 100%;
   min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -13,179 +15,232 @@
     min-height: 25vh;
     height: 30vh;
   }
-  // .particles-js-canvas-el {
-  //  z-index: 1 !important;
-  //  width:100% !important;
-  //  height:100vh !important;
-  //}
 }
 
 .header {
-  z-index: 50;
-  max-width: 95%;
+  @include header-style;
+  max-width: 80%;
+  min-width: 187px;
   text-align: center;
-  color:#FFF;
-  position: absolute;
   top: 50%;
   left: 50%;
-  margin: 0 auto;
-  padding: 10px 30px;
+  color: #fcfcfc;
+  padding: 15px 11px 7px 11px;
+  margin: 0px;
   -webkit-transform: translate(-50%, -60%);
   transform: translate(-50%, -60%);
-  @include card-style;
   .site-title {
-    z-index: 55;
-    font-size: 40px;
-    padding: 0px;
-    margin: 10px 0px;
-    font-weight: 500;
-    white-space: nowrap;
+    font-size: 24px;
+    min-width: 175px;
     display: block;
     line-height: 1;
-    color: $header;
-    @media only screen and (min-width:$cut){
-      font-size: 80px;
-      padding: 10px 40px;
-    }
+    margin-bottom: 11px;
   }
-  .site-description {
-    z-index: 55;
-    font-size: 25px;
-    font-weight: 400;
+  img{
+    width: auto !important;
+    height: auto !important;
+    max-height: 450px;
+    max-width: 65%;
+  }
+  .user-description {
+    font-size: 20px;
+    padding-bottom: 7px;
     display: block;
     line-height: 1;
-    color: $header;
-    margin-top: 10px;
-    @media only screen and (min-width:$cut){
-      font-size: 40px;
-    }
-  }
-  h1{
-    margin: 5px 0px;
-    padding: 0px;
-  }
-}
-
-.header-links {
-  z-index: 50;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-  margin: 5px 0px;
-  font-size: 0;
-  @media only screen and (min-width:$cut){
-    //margin-bottom: 30px;
-  }
-  .link {
-    flex: 4;
-    color: $header;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 15px;
-    margin: 5px;
-    transition: all .7s;
-    padding-left: 3px;
-    &:hover {
-      color: $accent;
-    }
-    &:active {
-      color: $accent;
-    }
-    @media only screen and (min-width:$cut){
-      font-size: 20px;
-    }
-  }
-  .link-left {
-    text-align: right;
-    float: right;
-  }
-  .link-right {
-    text-align: left;
-    float: left;
-  }
-  .link-center {
-    flex: 0;
-    color: $header;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    font-size: 15px;
-    font-weight: 700;
-    margin: 5px;
-    @media only screen and (min-width:$cut){
-      font-size: 20px;
-    }
-
   }
 }
 
 .header-icons {
-  z-index: 50;
-  display: flex;
-  justify-content: center;
-  text-align: center;
   margin-top: 5px;
-  @media only screen and (min-width:$cut) {
-    margin-top: 20px;
-  }
   .icon {
-    text-align: center;
-    color: $header;
-    width: 15px;
-    height: 15px;
-    font-size: 15px;
-    padding: 10px;
-    margin: 4px 4px;
+    @include icon-style;
+    font-size: 21px;
+    margin: 3px 1px 3px 1px;
+    padding: .565em;
     border-radius: 50%;
-    border: 2px solid $header;
-    transition: all .7s;
-    &:hover {
-      color: #e0e0e0;
-      background: $header;
+    @media (pointer:fine) {
+      &:hover {
+        font-size: 25px;
+      }
     }
-    &:active {
-      color: #e0e0e0;
-      background: $header;
-    }
-    @media only screen and (min-width:$cut) {
-      width: 25px;
-      height: 25px;
-      font-size: 25px;
+    @media (pointer:coarse) {
+      &.pressed {
+        font-size: 25px;
+      }
     }
   }
 }
 
+.header-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  flex-wrap: wrap;
+  line-height: 1.25;
+  margin-top: 7px;
+  margin-bottom: 2px;
+  // here you change the middle bar position
+  margin-left: 8px;
+  .link {
+    font-size: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    color: #eeeeee;
+    @media (pointer:fine) {
+      &:hover {
+        @include hover-link-style;
+        font-size: 16px;
+      }
+      &.pressed {
+        transform: scale(0.9);
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        @include hover-link-style;
+        font-size: 16px;
+      }
+    }
+  }
+  .bar {
+    color: #8F887B;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 6px;
+    margin-right: 6px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    cursor: default;
+    @media (pointer:fine) {
+      &:hover {
+        color: #8F887B;
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        color: #8F887B;
+      }
+    }
+  }
+  .btn {
+    &.btn-drop {
+      padding-top: 0px;
+      padding-bottom: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+      font-size: 15px;
+      font-weight: initial;
+      @media (pointer:fine) {
+        &:hover {
+          @include hover-link-style;
+          font-size: 16px;
+        }
+        &.pressed {
+          transform: scale(0.9);
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          @include hover-link-style;
+          font-size: 16px;
+        }
+      }
+    }
+    &.btn-arrow {
+      margin-top: 3px;
+      margin-left: -1px;
+      margin-right: 0px;
+      padding-right: 2px;
+      padding-left: 2px;
+      font-size: 11px;
+      line-height: 1.15;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 14px;
+          padding-right: 3px;
+          padding-left: 3px;
+          line-height: 1.15;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 14px;
+          padding-right: 3px;
+          padding-left: 3px;
+          line-height: 1.15;
+        }
+      }
+    }
+  }
+  .dropdown-menu {
+    @include background-style-green;
+    line-height: 1.5;
+    margin-top: 5%;
+    margin-left: -85%;
+  }
+  .dropdown-item {
+    font-size: 13px;
+    font-weight: initial;
+    padding-left: 7px;
+    padding-right: 7px;
+    @media (pointer:fine) {
+      &:hover {
+        @include hover-link-style;
+        font-size: 14px;
+      }
+      &.pressed {
+        transform: scale(0.9);
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        @include hover-link-style;
+        font-size: 14px;
+      }
+    }
+  }
+  .navbar-link-home, .dropdown-divider {
+    display: none;
+  }
+}
+
 .down {
-  z-index: 50;
+  z-index: 52;
   color: #FFF;
   position: absolute;
-  bottom: 25px;
+  bottom: 5%;
   width: 100%;
-  margin: 0 auto;
+  margin: 0px auto;
   display: block;
   text-align: center;
-  font-size: 50px;
+  font-size: 30px;
   cursor: pointer;
   .icon {
-      position: absolute;
-      -webkit-transform-style: preserve-3d;
-      transform-style: preserve-3d;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      width: 100px;
-      height: 100px;
-      fill: #fff;
-      -webkit-animation: pulse 3.3s infinite;
-      animation: pulse 3.3s infinite;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    color: #fff;
+    -webkit-animation: pulse 3.3s infinite;
+    animation: pulse 3.3s infinite;
+    @media (pointer:fine) {
       &:hover {
-        color: $accent;
+        color: #8F887B;
+        font-size: 37px;
       }
-      &:active {
-        color: $accent;
-      }
+    }
+    &.pressed {
+      color: orange;
+      font-size: 37px;
+    }
   }
 }
 
@@ -196,6 +251,7 @@
   left: 0px;
   width: 100%;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -221,6 +277,7 @@
     padding-bottom: 86.602%;
   }
 }
+
 .hex-header-div {
   position: absolute;
   width: 96%;
@@ -243,61 +300,473 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: $header;
+    background: #706b60;
+    background-color: #706b60;
+    background: -moz-linear-gradient(-45deg, #706b60 0%, #7e786c 52%, #706b60 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #706b60 0%,#7e786c 52%, #706b60 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #706b60 0%,#7e786c 52%, #706b60 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#706b60', endColorstr='#7e786c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     visibility: visible;
-    opacity: 0.2;
+    opacity: 0.25;
     -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
     -moz-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
     -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
     transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
     -webkit-transition: opacity .3s ease-out;
+    -moz-transition: opacity .3s ease-out;
+    -o-transition: opacity .3s ease-out;
     transition: opacity .3s ease-out;
-    &:hover {
-      opacity: 0.6;
+    @media (pointer:fine) {
+      &:hover {
+        opacity: 0.6;
+      }
+      &:focus {
+        opacity: 1.0;
+      }
     }
-    &:focus {
-      opacity: 1.0;
+    @media (pointer:coarse) {
+      &:focus {
+        opacity: 1.0;
+      }
     }
   }
-} 
+}
 
-/* Hexagon count scaling with screen size */
-/* 4/5 hexagons per row */
-@media (min-width: 1201px) {
+//
+// adaptions to screen size changes
+//
+
+@media only screen and (min-width: 1200.5px) {
   .hex-header-li {
     width: 20%;
   }
+  /* 4/5 hexagons per row */
   .hex-header-li:nth-child(9n+6) {
     margin-left: 10%;
   }
+  .header {
+    padding: 24px 17px 16px 17px;
+    .site-title {
+      font-size: 75px;
+      margin-bottom: 17px;
+    }
+    .user-description {
+      font-size: 45px;
+      padding-bottom: 13px;
+    }
+  }
+  .header-icons {
+    .icon {
+      font-size: 34px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 38px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 38px;
+        }
+      }
+    }
+  }
+  .header-links {
+    margin-top: 6px;
+    line-height: 0.9;
+    .link, .btn.btn-drop {
+      font-size: 25px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 26px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 26px;
+        }
+      }
+    }
+    .btn.btn-arrow {
+      margin-top: 3px;
+      margin-left: 2px;
+      font-size: 18px;
+      line-height: 1;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 22px;
+          line-height: 1;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 22px;
+          line-height: 1;
+        }
+      }
+    }
+    .dropdown-menu {
+      line-height: 1.6;
+      margin-top: 8%;
+      padding-right: 3%;
+    }
+    .dropdown-item {
+      font-size: 22px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 23px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 23px;
+        }
+      }
+    }
+    .bar {
+      font-size: 25px;
+      margin-left: 12px;
+      margin-right: 12px;
+    }
+  }
+  .down {
+    font-size: 45px;
+    .icon {
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 55px;
+        }
+      }
+      &.pressed {
+        font-size: 55px;
+      }
+    }
+  }
 }
 
-/* 3/4 hexagons per row */
-@media (max-width: 1200px) and (min-width: 901px) {
+@media only screen and (max-width: 1200px) and (min-width: 900.5px) {
   .hex-header-li {
     width: 25%;
   }
+  /* 3/4 hexagons per row */
   .hex-header-li:nth-child(7n+5) {
     margin-left: 12.5%;
   }
+  .header {
+    padding: 21px 15px 13px 15px;
+    .site-title {
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+    .user-description {
+      font-size: 40px;
+      padding-bottom: 11px;
+    }
+  }
+  .header-icons {
+    .icon {
+      font-size: 30px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 34px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 34px;
+        }
+      }
+    }
+  }
+  .header-links {
+    margin-top: 4px;
+    line-height: 0.8;
+    .link, .btn.btn-drop {
+      font-size: 20px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 21px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 21px;
+        }
+      }
+    }
+    .btn.btn-arrow {
+      margin-top: 3px;
+      margin-left: 1px;
+      font-size: 15px;
+      line-height: 1;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 18px;
+          line-height: 1;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 18px;
+          line-height: 1;
+        }
+      }
+    }
+    .dropdown-menu {
+      line-height: 1.6;
+      margin-top: 7%;
+      padding-right: 3%;
+    }
+    .dropdown-item {
+      font-size: 18px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 19px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 19px;
+        }
+      }
+    }
+    .bar {
+      font-size: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+  .down {
+    font-size: 40px;
+    .icon {
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 50px;
+        }
+      }
+      &.pressed {
+        font-size: 50px;
+      }
+    }
+  }
 }
 
-/* 2/3 hexagons per row */
-@media (max-width: 900px) and (min-width: 601px) {
+@media only screen and (max-width: 900px) and (min-width: 600.5px) {
   .hex-header-li {
     width: 33.333%;
   }
+  /* 2/3 hexagons per row */
   .hex-header-li:nth-child(5n+4) {
     margin-left: 16.666%;
+  }
+  .header {
+    padding: 18px 13px 10px 13px;
+    .site-title {
+      font-size: 39px;
+      margin-bottom: 13px;
+    }
+    .user-description {
+      font-size: 30px;
+      padding-bottom: 9px;
+    }
+  }
+  .header-icons {
+    margin-top: 7px;
+    .icon {
+      font-size: 26px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 30px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+  .header-links {
+    margin-top: 2px;
+    line-height: 0.7;
+    .link, .btn.btn-drop {
+      font-size: 18px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 19px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 19px;
+        }
+      }
+    }
+    .btn.btn-arrow {
+      margin-top: 3px;
+      margin-left: 0px;
+      font-size: 14px;
+      line-height: 1;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 18px;
+          line-height: 1;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 18px;
+          line-height: 1;
+        }
+      }
+    }
+    .dropdown-menu {
+      line-height: 1.6;
+      margin-top: 7%;
+    }
+    .dropdown-item {
+      font-size: 16px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 17px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 17px;
+        }
+      }
+    }
+    .bar {
+      font-size: 18px;
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+  }
+  .down {
+    font-size: 35px;
+    .icon {
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 45px;
+        }
+      }
+      &.pressed {
+        font-size: 45px;
+      }
+    }
   }
 }
 
 /* 1/2 hexagons per fow */
-@media (max-width: 600px) {
+@media only screen and (max-width: 600px) {
   .hex-header-li {
     width: 50%;
   }
   .hex-header-li:nth-child(3n+3) {
     margin-left: 25%;
+  }
+}
+
+@media only screen and (max-height: 900px) and (min-width: 600.5px) {
+  .header {
+    padding: 15px 11px 7px 11px;
+    .site-title {
+      font-size: 24px;
+      margin-bottom: 11px;
+    }
+    img {
+      max-height: 230px;
+      max-width: 65%;
+    }
+    .user-description {
+      font-size: 20px;
+      padding-bottom: 7px;
+    }
+  }
+  .header-icons {
+    margin-top: 5px;
+    .icon {
+      font-size: 21px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 25px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+  .header-links {
+    margin-top: 0px;
+    line-height: 0.6;
+    .link, .btn.btn-drop {
+      font-size: 15px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 16px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 16px;
+        }
+      }
+    }
+    .btn.btn-arrow {
+      margin-top: 3px;
+      margin-left: -1px;
+      font-size: 11px;
+      line-height: 1.15;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 14px;
+          line-height: 1.15;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 14px;
+          line-height: 1.15;
+        }
+      }
+    }
+    .dropdown-menu {
+      line-height: 1.5;
+      margin-top: 5%;
+    }
+    .dropdown-item {
+      font-size: 13px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 14px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 14px;
+        }
+      }
+    }
+    .bar {
+      font-size: 15px;
+      margin-left: 6px;
+      margin-right: 6px;
+    }
+  }
+  .down {
+    font-size: 30px;
+    .icon {
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 37px;
+        }
+      }
+      &.pressed {
+        font-size: 37px;
+      }
+    }
   }
 }

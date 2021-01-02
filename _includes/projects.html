@@ -3,63 +3,30 @@
 </div>
 <div class="user-projects">
   <div class="images-right" >
-    <img alt="Cymatria" src="{{ "/assets/img/cymatria.png" | prepend: site.baseurl }}" />
+    <img alt="Project1" src="{{ '/assets/img/Project1.jpg' | prepend: site.baseurl }}" ></img>
   </div>
   <div class="contents">
-    <h3><a href="{{ "/cymatria.html" | prepend: site.baseurl }}" class="project-link-header">Cymatria</a></h3>
+    <h2><a data-press-delay href="{{ site.baseurl }}{% post_url 2020-10-31-project-1 %}" class="project-link-header" title="Explore this">Project 1</a></h2>
     <ul class="fa-ul">
-      <li><i class="fa fa-li fa-cube"></i>WebGL (ThreeJS)</li>
-      <li><i class="fa fa-li fa-cube"></i>Web Audio API</li>
-      <li><i class="fa fa-li fa-cube"></i>PhysicsRenderer</li>
-   </ul>
-    <p>GPU particle simulation of vibratory audio wave motion using ThreeJS and the Web Audio API. Allows for large particle counts by computing positions with a shader, using PhysicsRenderer and Render-To-Texture. Inspired by Chladni or Cymatic patterns.</p>
-    <a class="project-link" href="{{ "/cymatria.html" | prepend: site.baseurl }}">Visualize</a>
-  </div>
-</div>
-<div class="user-projects">
-  <div class="images-left">
-	<img alt="Haight-Ashbury Camaro" src="{{ "/assets/img/camaro.jpg" | prepend: site.baseurl }}"/>
-  </div>
-  <div class="contents-right">
-    <h3><a href="{{ site.baseurl}}{% post_url 2018-01-23-steve-mcqueen %}" class="project-link-header">Steve McQueen</a></h3>
-    <ul class="fa-ul">
-      <li><i class="fa fa-li fa-cube"></i>Keras</li>
-      <li><i class="fa fa-li fa-cube"></i>TensorFlow</li>
-      <li><i class="fa fa-li fa-cube"></i>OpenAI Gym</li>
+      <li><i class="fa fa-li fa-dot-circle-o"></i>Feature 1.1</li>
+      <li><i class="fa fa-li fa-dot-circle-o"></i>Feature 1.2</li>
     </ul>
-    <p>Deep Deterministic Gradient Policy (Actor-Critic) machine learning racing driver, implemented for the racing simulator "TORCS". Uses an actor-critic network implemented in Keras and TensorFlow with OpenAI Gym environment interface to train a racing AI using reinforcement learning.</p>
-    <a class="project-link" href="{{ site.baseurl}}{% post_url 2018-01-23-steve-mcqueen %}">Learn</a>
-  </div>
-</div>
-<div class="user-projects">
-  <div class="images-right" >
-    <img alt="Christie 3D Projectors" src="{{ "/assets/img/christie-projector.jpg" | prepend: site.baseurl }}" />
-    <p><small>Image courtesy of <a class="project-link-header" href="https://www.engadget.com/2016/02/15/films-cinema-comeback-is-driven-by-nostalgia-not-logic/">Engadget</a></small></p>
-  </div>
-  <div class="contents">
-    <h3><a href="https://1drv.ms/v/s!AnYGNwNPwidWhdR8FaWliQH5fHCUmw" class="project-link-header">Cinema Projector Auto-Alignment</a></h3>
-    <ul class="fa-ul">
-      <li><i class="fa fa-li fa-cube"></i>C#</li>
-      <li><i class="fa fa-li fa-cube"></i>WPF</li>
-      <li><i class="fa fa-li fa-cube"></i>Computer Vision</li>
-    </ul>
-    <p>Multi-Projector Zoom Alignment created for Christie Digital, used to automatically align 2 or more projectors for 3D cinemas. Runs C# computer vision processing to align the size of a test pattern on both projectors, with a WPF interface. Emphasis on performance for potential future embedded uses, using dotMemory and dotTrace profiling tools.</p>
-    <a class="project-link" href="https://1drv.ms/v/s!AnYGNwNPwidWhdR8FaWliQH5fHCUmw">Watch</a>
-  </div>
-</div>
-<div class="user-projects">
-  <div class="images-left" >
-    <img alt="Mountains" src="{{ "/assets/img/mountains.jpg" | prepend: site.baseurl }}" />
-  </div>
-  <div class="contents-right">
-    <h3><a href="{{ "/gallery.html" | prepend: site.baseurl }}" class="project-link-header">Photo Gallery</a></h3>
-    <ul class="fa-ul">
-      <li><i class="fa fa-li fa-cube"></i>HTML5</li>
-      <li><i class="fa fa-li fa-cube"></i>CSS3</li>
-      <li><i class="fa fa-li fa-cube"></i>Pentax K-x and two feet!</li>
-    </ul>
-    <p>A gallery of personal photography, with a responsive tiled hexagon layout and CSS-only lightbox effect. Pictures of travels, novelties, and simple beauties.</p>
-    <a class="project-link" href="{{ "/gallery.html" | prepend: site.baseurl }}">Explore</a>
+    <p>Short explanation of your project</p>
+    <a class="project-link" data-press-delay href="{{ site.baseurl }}{% post_url 2020-10-31-project-1 %}">Explore</a>
   </div>
 </div>
 
+<div class="user-projects">
+  <div class="images-left" >
+    <img alt="Project2" src="{{ '/assets/img/Project2.jpg' | prepend: site.baseurl }}" ></img>
+  </div>
+  <div class="contents-right">
+    <h2><a data-press-delay href="{{ site.baseurl }}{% post_url 2020-10-31-project-2 %}" class="project-link-header" title="Explore this">Project 2</a></h2>
+    <ul class="fa-ul">
+      <li><i class="far fa-li fa-dot-circle"></i>Feature 2.1</li>
+      <li><i class="far fa-li fa-dot-circle"></i>Feature 2.2</li>
+    </ul>
+    <p>Short explanation of your project</p>
+    <a class="project-link" data-press-delay href="{{ site.baseurl }}{% post_url 2020-10-31-project-2 %}">Explore</a>
+  </div>
+</div>
