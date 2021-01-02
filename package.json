@@ -1,18 +1,18 @@
 {
-  "name": "Dark-Particle",
+  "name": "Light-Particle",
   "author": "Sitdisch",
   "version": "1.0.0",
-  "description": "Package of Dark-Particle",
+  "description": "Package of Light-Particle",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sitdisch/dark-particle"
+    "url": "https://github.com/mythemeway/light-particle"
   },
   "license": "MIT",
   "scripts": {
     "start": "npm run -s start:log && nodemon",
     "start:log": "node -e 'console.log(\"[\\x1b[90mnodemon\\x1b[0m]: Starting `\\x1b[36mwatch\\x1b[0m` of \\x1b[35mwebpack.config.js\\x1b[0m and \\x1b[35mgulpfile.js\\x1b[0m\\n[\\x1b[90mnodemon\\x1b[0m]: Starting `\\x1b[36mwebpack-dev-server\\x1b[0m`...\")'",
     "build": "npm run -s build:cmd",
-    "build:cmd": "(npm run -s build:log:webp) && (./node_modules/.bin/webpack --mode=production --display-modules) && (npm run -s build:log:jekyll) && (bundle exec jekyll build --baseurl /Dark-Particle) && (npm run -s build:log:htmlminifier) && (npm run -s build:htmlminifier) && (npm run -s build:log:finish)",
+    "build:cmd": "(npm run -s build:log:webp) && (./node_modules/.bin/webpack --mode=production --display-modules) && (npm run -s build:log:jekyll) && (bundle exec jekyll build --baseurl /Light-Particle) && (npm run -s build:log:htmlminifier) && (npm run -s build:htmlminifier) && (npm run -s build:log:finish)",
     "build:log:webp": "node -e 'console.log(\"[\\x1b[90mwebpack\\x1b[0m]: Starting `\\x1b[36mproduction-mode\\x1b[0m`...\")'",
     "build:log:jekyll": "node -e 'console.log(\"[\\x1b[90mwebpack\\x1b[0m]: Finished `\\x1b[36mproduction-mode\\x1b[0m`\\n[\\x1b[90mjekyll\\x1b[0m]: Starting `\\x1b[36mbuild-process\\x1b[0m`...\")'",
     "build:log:htmlminifier": "node -e 'console.log(\"[\\x1b[90mjekyll\\x1b[0m]: Finished `\\x1b[36mbuild-process\\x1b[0m`\\n[\\x1b[90mHTMLMinifier\\x1b[0m]: Starting `\\x1b[36mminifying-process\\x1b[0m`...\")'",

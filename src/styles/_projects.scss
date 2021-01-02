@@ -113,14 +113,15 @@
 .project-link-header {
   text-decoration: none;
   font-weight: bold;
-  color: #eeeeee;
+  color: #2A3E42;
   &:active, &:focus {
-    color: #eeeeee;
+    color: #2A3E42;
   }
   @media (pointer:fine) {
     &:hover {
       @include hover-link-style;
       font-size: 40px;
+      color: #2A3E42;
       @media only screen and (min-height: 1350px) and (min-width: 1200px) {
         font-size: 54px;
       }
@@ -133,6 +134,7 @@
     &.pressed {
       @include hover-link-style;
       font-size: 40px;
+      color: #2A3E42;
       @media only screen and (min-height: 1350px) and (min-width: 1200px) {
         font-size: 54px;
       }

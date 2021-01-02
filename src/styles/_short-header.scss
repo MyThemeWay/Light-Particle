@@ -1,7 +1,7 @@
 .short-header {
   @include header-style;
   text-align: left;
-  color: #FFF;
+  color: rgba(71, 104, 110, 1.0);
   top: 45%;
   left: 5%;
   margin: 10px;
@@ -14,16 +14,20 @@
     @media (pointer:fine) {
       &:hover {
         @include hover-img-style;
+        background: rgba(71, 104, 110, 1.0);
+        background-color: rgba(71, 104, 110, 1.0);
       }
       &.pressed {
         transform: scale(0.7);
-        background: transparent;
-        background-color: transparent;
+        background: rgba(71, 104, 110, 1.0);
+        background-color: rgba(71, 104, 110, 1.0);
       }
     }
     @media (pointer:coarse) {
       &.pressed {
         @include hover-img-style;
+        background: rgba(71, 104, 110, 1.0);
+        background-color: rgba(71, 104, 110, 1.0);
       }
     }
   }
@@ -34,7 +38,7 @@
     font-size: 30px;
     display: block;
     line-height: 1;
-    color: #fcfcfc;
+    color: rgba(71, 104, 110, 1.0);
   }
 }
 
@@ -43,7 +47,7 @@
   margin-bottom: 3px;
   margin-left: 86px;
   .icon {
-    @include icon-style;
+    @include icon-header-style;
     font-size: 21px;
     margin: 3px 1px 3px 1px;
     margin-right: 0px;
@@ -52,6 +56,10 @@
     @media (pointer:fine) {
       &:hover {
         font-size: 25px;
+      }
+      &.pressed {
+        background: #1A252F;
+        background-color: #1A252F;
       }
     }
     @media (pointer:coarse) {
@@ -72,7 +80,7 @@
   float: left;
   line-height: 1;
   .link {
-    color: #fcfcfc;
+    color: rgba(71, 104, 110, 1.0);
     padding-top: 0px;
     padding-bottom: 0px;
     padding-left: 0px;
@@ -83,6 +91,7 @@
     @media (pointer:fine) {
       &:hover {
         @include hover-link-style;
+        color: rgba(71, 104, 110, 1.0);
         font-size: 16px;
       }
       &.pressed {
@@ -92,6 +101,7 @@
     @media (pointer:coarse) {
       &.pressed {
         @include hover-link-style;
+        color: rgba(71, 104, 110, 1.0);
         font-size: 16px;
       }
     }
@@ -104,34 +114,29 @@
     padding-bottom: 0px;
     padding-left: 0px;
     padding-right: 0px;
-    color: #8F887B;
+    color: rgba(71, 104, 110, 1.0);
     font-weight: bold;
     cursor: default;
     @media (pointer:fine) {
       &:hover {
-        color: #8F887B;
+        color: rgba(71, 104, 110, 1.0);
       }
     }
     @media (pointer:coarse) {
       &.pressed {
-        color: #8F887B;
+        color: rgba(71, 104, 110, 1.0);
       }
     }
   }
   .btn {
+    @include drop-arrow-header-style;
     &.btn-drop {
       margin-left: 0px;
       margin-top: 0px;
-      padding-top: 0px;
-      padding-bottom: 0px;
-      padding-left: 0px;
-      padding-right: 0px;
-      font-size: 15px;
-      font-weight: initial;
+      color: rgba(71, 104, 110, 1.0);
       @media (pointer:fine) {
         &:hover {
-          @include hover-link-style;
-          font-size: 16px;
+          color: rgba(71, 104, 110, 1.0);
         }
         &.pressed {
           transform: scale(0.9);
@@ -139,39 +144,13 @@
       }
       @media (pointer:coarse) {
         &.pressed {
-          @include hover-link-style;
-          font-size: 16px;
-        }
-      }
-    }
-    &.btn-arrow {
-      margin-top: 2px;
-      margin-left: -1px;
-      margin-right: 0px;
-      font-size: 11px;
-      line-height: 1.15;
-      padding-right: 2px;
-      padding-left: 2px;
-      @media (pointer:fine) {
-        &:hover {
-          font-size: 14px;
-          padding-right: 3px;
-          padding-left: 3px;
-          line-height: 1.15;
-        }
-      }
-      @media (pointer:coarse) {
-        &.pressed {
-          font-size: 14px;
-          padding-right: 3px;
-          padding-left: 3px;
-          line-height: 1.15;
+          color: rgba(71, 104, 110, 1.0);
         }
       }
     }
   }
   .dropdown-menu {
-    @include background-style-green;
+    @include background-style-brown-dark;
     margin-top: 5%;
     margin-left: -85%;
   }

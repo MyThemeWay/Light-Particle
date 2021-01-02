@@ -1,5 +1,5 @@
 /*!
- * MAIN SCRIPT OF DARK-PARTICLE
+ * MAIN SCRIPT OF LIGHT-PARTICLE
  * 
  * Author: sitdisch
  * Source: https://sitdisch.github.io/#mythemeway
@@ -40,7 +40,7 @@ var scrollSpyAnchors = {};
 Array.prototype.forEach.call(document.querySelectorAll(".scroll-spy"), function(e) {
         scrollSpyAnchors[e.id] = e.offsetTop - 100;
 });
-var currentPath = location.pathname.substring(1).replace(/^Dark-Particle\//,''); 
+var currentPath = location.pathname.substring(1).replace(/^Light-Particle\//,''); 
 if ( /\//.test(currentPath) ) {
         // highlight dropdownTogglers too if you are there
         var dropdownToggler = /[^\/]*/.exec(currentPath);
@@ -51,6 +51,13 @@ if ( /\//.test(currentPath) ) {
         // highlight the navbarLink, if it is the only one on the current page
         var navbarLink = document.getElementsByClassName('navbar-link-' + /[^\/]*(?=\.html$)/.exec(location.pathname));
         navbarLink[0].style.color="orange";
+} else {
+        var navbarLinkAbout = document.getElementsByClassName('navbar-link-about');
+        navbarLinkAbout[0].style.color="rgba(71, 104, 110, 1.0)";
+        var navbarLinkProjects = document.getElementsByClassName('navbar-link-projects');
+        for ( var i=0, len = navbarLinkProjects.length; i < len; i++ ) {
+                navbarLinkProjects[i].style.color="rgba(71, 104, 110, 1.0)";
+        }
 }
 
 // 
@@ -96,9 +103,8 @@ function pressDelay(ev) {
 // RESET PAGES WITH HASHES:
 window.onload = function () {
         // detect color changes from other sources and adapt specific ones (e.g. borders of Dark Reader)
-        if ( $("#particles-js").css('color') != "rgb(238, 238, 238)") {
+        if ( $("#particles-js").css('color') != "rgb(85, 85, 85)") {
                 document.documentElement.style.setProperty('--border-2', `white`);
-                document.documentElement.style.setProperty('--border-3', `black`);
         }
         if ( location.hash ) {
                 setTimeout(setupHashPage, 100);
@@ -129,7 +135,11 @@ window.onscroll = function () {
                         var j = i;
                 } else {
                         for ( var k=0; k < navbarLinkLength; k++ ) {
-                                navbarLink[k].style.color="#eeeeee";
+                                if ( navbarLink[k].classList.contains("header-link") ) {
+                                        navbarLink[k].style.color="rgba(71, 104, 110, 1.0)";
+                                } else {
+                                        navbarLink[k].style.color="#eeeeee";
+                                }
                         }
                 }
         }

@@ -1,6 +1,6 @@
 {
-    "name": "Dark-Particle",
-    "short_name": "DP",
+    "name": "Light-Particle",
+    "short_name": "LP",
     "icons": [
         {
             "src": "/assets/img/icon/android-chrome-192x192.png",
@@ -19,7 +19,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#1F2624",
-    "background_color": "#1F2624",
+    "theme_color": "#eaf1f2",
+    "background_color": "#eaf1f2",
     "display": "standalone"
 }

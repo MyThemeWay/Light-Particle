@@ -1,10 +1,10 @@
 @mixin background-style-brown-light {
-  background-color: #28312e;
-  background: #28312e; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #28312e 0%, #2D2C2A 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #28312e 0%, #2D2C2A 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #28312e 0%, #2D2C2A 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#28312e', endColorstr='#2D2C2A',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background-color: #1F2624;
+  background: #1F2624; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #1F2624 0%, #2D2C2A 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #1F2624 0%, #2D2C2A 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #1F2624 0%, #2D2C2A 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1F2624', endColorstr='#2D2C2A',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 @mixin background-style-brown-dark {
@@ -14,6 +14,24 @@
   background: -webkit-linear-gradient(-45deg, #1D1E1C 0%, #222120 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(135deg, #1D1E1C 0%, #222120 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1D1E1C', endColorstr='#222120',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@mixin background-style-grey {
+  background-color: #eaf1f2;
+  background: #eaf1f2;
+  background: -moz-linear-gradient(-45deg, #eaf1f2 0%, #c9c9c9 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #eaf1f2 0%, #c9c9c9 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #eaf1f2 0%, #c9c9c9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f1f2', endColorstr='#c9c9c9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@mixin background-style-white {
+  background-color: #f9f9f9;
+  background: #f9f9f9; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #f9f9f9 0%, #ececec 52%, #f9f9f9 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #f9f9f9 0%, #ececec 52%, #f9f9f9 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #f9f9f9 0%, #ececec 52%, #f9f9f9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#f9f9f9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 @mixin background-style-green {
@@ -26,7 +44,7 @@
 }
 
 @mixin header-style {
-  @include background-style-brown-dark;
+  @include background-style-white;
   z-index: 50;
   position: absolute;
   box-shadow: 4px 4px 6px rgba(70, 70, 70, 0.4);
@@ -34,12 +52,12 @@
   border-width: 1px;
   border-bottom-style: ridge;
   border-right-style: ridge;
-  border-color: grey;
+  border-color: #1D1E1C;
   border-radius: 7px;
 }
 
 @mixin card-style {
-  @include background-style-brown-dark;
+  @include background-style-white;
   box-shadow: 4px 4px 6px rgba(70, 70, 70, 0.4);
   border-radius: 6px;
   position: relative;
@@ -47,12 +65,16 @@
   padding: 27px 25px 27px 25px;
   h1 {
     @include background-style-green;
+    color: #f9f9f9;
     text-align: center;
     line-height: 1;
     padding: 15px 5px 12px 5px;
     border: 1px solid;
-    border-color: var(--border-2);
+    border-color: darkgrey;
     border-radius: 4px;
+  }
+  h2 {
+    color: #2A3E42;
   }
   @media only screen and (min-width: 550px) {
     padding: 30px 28px 30px 28px;
@@ -97,11 +119,51 @@
   }
 }
 
+@mixin icon-header-style {
+  background: #4c717d;
+  background-color: #4c717d;
+  box-shadow: 4px 4px 6px rgba(70, 70, 70, 0.4);
+  border: 1px solid rgba(71, 104, 110, 1.0);
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 27px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  &:focus, &:active {
+    outline: none;
+  }
+  @media (pointer:fine) {
+    &:hover {
+      @include hover-style;
+    }
+    &.pressed {
+      transform: scale(0.7);
+      background: transparent;
+      background-color: transparent;
+    }
+  }
+  @media (pointer:coarse) {
+    &.pressed {
+      @include hover-style;
+      outline: none;
+    }
+  }
+}
+
 @mixin hover-style {
   color: #ffffff;
   background: #756f63;
   background-color: #756f63;
   border: 1px solid darkgrey;
+}
+
+@mixin hover-header-style {
+  color: #ffffff;
+  background: rgba(71, 104, 110, 1.0);
+  background-color: rgba(71, 104, 110, 1.0);
+  border: 1px solid rgba(71, 104, 110, 1.0);
 }
 
 @mixin hover-link-style {
@@ -140,15 +202,14 @@
   font-size: 22px;
   color: #eeeeee;
   box-shadow: 2px 2px 6px rgba(70, 70, 70, 0.4);
-  border: 1px solid;
-  border-color: var(--border-3);
+  border: 1px solid #1D1E1C;
   border-radius: 3px;
   text-align: center;
   cursor: pointer;
-  -webkit-transition: all .4s;
-  -moz-transition: all .4s;
-  -o-transition: all .4s;
-  transition: all .4s;
+  -webkit-transition: font-size,font-weight,border,transform .4s;
+  -moz-transition: font-size,font-weight,border,transform .4s;
+  -o-transition: font-size,font-weight,border,transform .4s;
+  transition: font-size,font-weight,border,transform .4s;
   &:active, &:focus {
     color: #eeeeee;
   }
@@ -156,23 +217,95 @@
     &:hover {
       @include hover-style;
       font-size: 26px;
-      border: 1px solid #eeeeee;
+      border: 1px solid #1D1E1C;
       text-decoration: none;
       font-weight: bold;
     }
     &.pressed {
       transform: scale(0.8);
-      background: transparent;
-      background-color: transparent;
+      background: #2A3E42;
+      background-color: #2A3E42;
     }
   }
   @media (pointer:coarse) {
     &.pressed {
       @include hover-style;
       font-size: 26px;
-      border: 1px solid #eeeeee;
+      border: 1px solid #1D1E1C;
       text-decoration: none;
       font-weight: bold;
     }
+  }
+}
+
+@mixin drop-arrow-header-style {
+  &.btn-drop {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 15px;
+    font-weight: initial;
+    @media (pointer:fine) {
+      &:hover {
+        @include hover-link-style;
+        font-size: 16px;
+      }
+      &.pressed {
+        transform: scale(0.9);
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        @include hover-link-style;
+        font-size: 16px;
+      }
+    }
+  }
+  &.btn-arrow {
+    color: #f9f9f9;
+    border: none;
+    border: 1px solid #2A3E42;
+    background: rgba(71, 104, 110, 1.0);
+    background-color: rgba(71, 104, 110, 1.0);
+    border-radius: 25%;
+    margin-top: 3px;
+    margin-left: -1px;
+    margin-right: 0px;
+    padding-right: 2px;
+    padding-left: 2px;
+    font-size: 11px;
+    line-height: 1.15;
+    @media (pointer:fine) {
+      &:hover {
+        color: #f9f9f9;
+        background: #1D1E1C;
+        background-color: #1D1E1C;
+        font-size: 14px;
+        padding-right: 3px;
+        padding-left: 3px;
+        line-height: 1.15;
+      }
+      &:active {
+        background: grey;
+        background-color: grey;
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        color: #f9f9f9;
+        background: #1D1E1C;
+        background-color: #1D1E1C;
+        font-size: 14px;
+        padding-right: 3px;
+        padding-left: 3px;
+        line-height: 1.15;
+      }
+    }
+  }
+  &[aria-expanded="true"] {
+    @include background-style-brown-dark;
+    border: 1px solid grey;
+    box-shadow: none;
   }
 }

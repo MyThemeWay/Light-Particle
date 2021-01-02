@@ -24,7 +24,7 @@
   text-align: center;
   top: 50%;
   left: 50%;
-  color: #fcfcfc;
+  color: rgba(71, 104, 110, 1.0);
   padding: 15px 11px 7px 11px;
   margin: 0px;
   -webkit-transform: translate(-50%, -60%);
@@ -53,7 +53,7 @@
 .header-icons {
   margin-top: 5px;
   .icon {
-    @include icon-style;
+    @include icon-header-style;
     font-size: 21px;
     margin: 3px 1px 3px 1px;
     padding: .565em;
@@ -61,6 +61,10 @@
     @media (pointer:fine) {
       &:hover {
         font-size: 25px;
+      }
+      &.pressed {
+        background: #1A252F;
+        background-color: #1A252F;
       }
     }
     @media (pointer:coarse) {
@@ -88,7 +92,7 @@
     padding-bottom: 0px;
     padding-left: 0px;
     padding-right: 0px;
-    color: #eeeeee;
+    color: rgba(71, 104, 110, 1.0);
     @media (pointer:fine) {
       &:hover {
         @include hover-link-style;
@@ -106,7 +110,7 @@
     }
   }
   .bar {
-    color: #8F887B;
+    color: rgba(71, 104, 110, 1.0);
     font-size: 15px;
     font-weight: bold;
     margin-left: 6px;
@@ -116,67 +120,20 @@
     cursor: default;
     @media (pointer:fine) {
       &:hover {
-        color: #8F887B;
+        color: rgba(71, 104, 110, 1.0);
       }
     }
     @media (pointer:coarse) {
       &.pressed {
-        color: #8F887B;
+        color: rgba(71, 104, 110, 1.0);
       }
     }
   }
   .btn {
-    &.btn-drop {
-      padding-top: 0px;
-      padding-bottom: 0px;
-      padding-left: 0px;
-      padding-right: 0px;
-      font-size: 15px;
-      font-weight: initial;
-      @media (pointer:fine) {
-        &:hover {
-          @include hover-link-style;
-          font-size: 16px;
-        }
-        &.pressed {
-          transform: scale(0.9);
-        }
-      }
-      @media (pointer:coarse) {
-        &.pressed {
-          @include hover-link-style;
-          font-size: 16px;
-        }
-      }
-    }
-    &.btn-arrow {
-      margin-top: 3px;
-      margin-left: -1px;
-      margin-right: 0px;
-      padding-right: 2px;
-      padding-left: 2px;
-      font-size: 11px;
-      line-height: 1.15;
-      @media (pointer:fine) {
-        &:hover {
-          font-size: 14px;
-          padding-right: 3px;
-          padding-left: 3px;
-          line-height: 1.15;
-        }
-      }
-      @media (pointer:coarse) {
-        &.pressed {
-          font-size: 14px;
-          padding-right: 3px;
-          padding-left: 3px;
-          line-height: 1.15;
-        }
-      }
-    }
+    @include drop-arrow-header-style;
   }
   .dropdown-menu {
-    @include background-style-green;
+    @include background-style-brown-dark;
     line-height: 1.5;
     margin-top: 5%;
     margin-left: -85%;
@@ -300,12 +257,12 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: #706b60;
-    background-color: #706b60;
-    background: -moz-linear-gradient(-45deg, #706b60 0%, #7e786c 52%, #706b60 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(-45deg, #706b60 0%,#7e786c 52%, #706b60 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg, #706b60 0%,#7e786c 52%, #706b60 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#706b60', endColorstr='#7e786c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: #42737c;
+    background-color: #42737c;
+    background: -moz-linear-gradient(-45deg, #42737c 0%, #4699a9 52%, #42737c 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #42737c 0%,#4699a9 52%, #42737c 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #42737c 0%,#4699a9 52%, #42737c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#42737c', endColorstr='#4699a9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     visibility: visible;
     opacity: 0.25;
     -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);

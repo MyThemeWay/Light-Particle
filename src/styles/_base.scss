@@ -1,18 +1,17 @@
 :root {
   --border-1: #1D1E1C;
   --border-2: #1D1E1C;
-  --border-3: #eeeeee;
 }
 html { 
   background-color: #1F2624;
 } 
 body {
-  @include background-style-brown-light;
+  @include background-style-grey;
   margin: 0;
   padding: 0;
   font-size: 18px;
   line-height: 1.5;
-  color: #eeeeee;
+  color: #555;
   font-family: 'Rubik';
 }
 article, aside, figcaption, figure, footer, header, nav, section {
