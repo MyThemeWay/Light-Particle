@@ -1,10 +1,10 @@
-# Light Particle Jekyll Theme Boilerplate
+# Light Particle Website Boilerplate
 
 ## Preview - [Demo](https://mythemeway.github.io/Light-Particle/ "Go there")
 
 <a title="Go there" target="_blank" href="https://mythemeway.github.io/Light-Particle/"><img alt="Light-Particle" src="https://raw.githubusercontent.com/sitdisch/cloud/master/gifs/Light_collage.gif" ></a>
 
-This simple bright jekyll theme boilerplate combines Jekyll, Webpack, Bootstrap and much more: 
+This light theme website-boilerplate combines Jekyll, Webpack, Bootstrap and much more: 
 
 <a title="Go there" target="_blank" href="https://sitdisch.github.io/mythemeway/2020/11/01/light-particle.html#features"><img alt="Particle-Features" src="https://raw.githubusercontent.com/sitdisch/cloud/master/images/particle-features.png" ></a>
 
