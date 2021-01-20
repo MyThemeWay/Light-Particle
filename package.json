@@ -36,7 +36,7 @@
     "@babel/preset-env": "7.12.11",
     "@fortawesome/fontawesome-free": "5.15.2",
     "babel-loader": "8.2.2",
-    "bootstrap": "4.5.3",
+    "bootstrap": "4.6.0",
     "canvas-particle-network": "1.5.0",
     "css-loader": "4.3.0",
     "devicon": "2.2.0",
