@@ -16,7 +16,7 @@
     "build:log:webp": "node -e 'console.log(\"[\\x1b[90mwebpack\\x1b[0m]: Starting `\\x1b[36mproduction-mode\\x1b[0m`...\")'",
     "build:log:jekyll": "node -e 'console.log(\"[\\x1b[90mwebpack\\x1b[0m]: Finished `\\x1b[36mproduction-mode\\x1b[0m`\\n[\\x1b[90mjekyll\\x1b[0m]: Starting `\\x1b[36mbuild-process\\x1b[0m`...\")'",
     "build:log:htmlminifier": "node -e 'console.log(\"[\\x1b[90mjekyll\\x1b[0m]: Finished `\\x1b[36mbuild-process\\x1b[0m`\\n[\\x1b[90mHTMLMinifier\\x1b[0m]: Starting `\\x1b[36mminifying-process\\x1b[0m`...\")'",
-    "build:htmlminifier": "./node_modules/html-minifier-terser/cli.js --input-dir ./docs --output-dir ./docs --file-ext html --remove-comments --collapse-whitespace --conservative-collapse --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --minify-css true --minify-js true --collapse-boolean-attributes",
+    "build:htmlminifier": "./node_modules/html-minifier-terser/cli.js --input-dir ./docs --output-dir ./docs --file-ext html --remove-comments --collapse-whitespace --conservative-collapse --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --minify-css true --minify-js true --collapse-boolean-attributes",
     "build:log:finish": "node -e 'console.log(\"[\\x1b[90mHTMLMinifier\\x1b[0m]: Finished `\\x1b[36mminifying-process\\x1b[0m`\")'"
   },
   "nodemonConfig": {
