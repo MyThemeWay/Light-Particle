@@ -37,10 +37,14 @@
     margin-bottom: 11px;
   }
   img{
+    box-shadow: 4px 4px 6px var(--boxShadow);
+    border: 2px solid lightgrey;
+    border-radius: 50%;
     width: auto !important;
     height: auto !important;
-    max-height: 450px;
+    max-height: 200px;
     max-width: 65%;
+    margin-bottom: .3em;
   }
   .user-description {
     font-size: 20px;
@@ -624,6 +628,14 @@
   }
 }
 
+@media only screen and (min-width: 1200.5px) {
+  .header {
+    img {
+      max-height: 450px;
+    }
+  }
+}
+
 @media only screen and (max-height: 900px) and (min-width: 600.5px) {
   .header {
     padding: 15px 11px 7px 11px;
@@ -632,8 +644,7 @@
       margin-bottom: 11px;
     }
     img {
-      max-height: 230px;
-      max-width: 65%;
+      max-height: 200px;
     }
     .user-description {
       font-size: 20px;

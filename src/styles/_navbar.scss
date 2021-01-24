@@ -17,6 +17,9 @@
     padding: 0px 10px 0px 10px;
   }
   img {
+    box-shadow: 4px 4px 6px var(--boxShadow);
+    border: 1px solid grey;
+    border-radius: 50%;
     width: 40px;
     height: auto !important;
     @media (pointer:fine) {
