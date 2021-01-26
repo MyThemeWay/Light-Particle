@@ -5,6 +5,8 @@ encoding: utf-8
 markdown: kramdown
 future: true # allow posts with future dates
 theme: null
+# If you want to use this theme on your main domain, just set `baseurl` to nothing. Otherwise, this theme is only used in the subdirectory specified in baseurl.
+baseurl: /Light-Particle
 
 # User settings
 user_name: Username

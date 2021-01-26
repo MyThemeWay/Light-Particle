@@ -16,7 +16,7 @@ console.log("[\x1b[90mgulp\x1b[0m]: Using gulpfile\x1b[35m", __filename, "\x1b[0
 
 gulp.task('jekyll-build', function (done) {
   console.log("[\x1b[90mgulp\x1b[0m]: Starting `\x1b[36mjekyll-build\x1b[0m`...");
-  return cp.spawn(jekyllCommand, ['build'], {stdio: 'inherit'})
+  return cp.spawn(jekyllCommand, ['build', "--baseurl", ""], {stdio: 'inherit'})
     .on('close', done);
 });
 
