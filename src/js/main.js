@@ -199,3 +199,9 @@ $(document).on('click', '.dropdown-menu', function (ev) {
                 return;
         }
 });
+$(document).on('click', '.press-simulation-parent', function (ev) {
+        if ( firstIteration == "1" ) {
+                pressSimulation(ev.target.parentElement, 400);
+                return;
+        }
+});

@@ -1,6 +1,10 @@
 <head>
-  <meta charset="utf-8">
+  {% if site.content_security_policy != '' %}
+    <meta http-equiv="Content-Security-Policy" content="{{ site.content_security_policy }}">
+  {% endif %}
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
   {% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification }}">{% endif %}
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
   <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/icon/apple-touch-icon.png' | prepend: site.baseurl }}">

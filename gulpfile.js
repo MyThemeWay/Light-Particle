@@ -16,7 +16,7 @@ console.log("[\x1b[90mgulp\x1b[0m]: Using gulpfile\x1b[35m", __filename, "\x1b[0
 
 gulp.task('jekyll-build', function (done) {
   console.log("[\x1b[90mgulp\x1b[0m]: Starting `\x1b[36mjekyll-build\x1b[0m`...");
-  return cp.spawn(jekyllCommand, ['build', "--baseurl", ""], {stdio: 'inherit'})
+  return cp.spawn(jekyllCommand, ['build', "--config", "_config.yml,_config_dev.yml"], {stdio: 'inherit'})
     .on('close', done);
 });
 
@@ -34,7 +34,7 @@ gulp.task('copyfiles', function (done) {
 gulp.task('watch', function() {
   gulp.watch('copyfiles.js', gulp.series('copyfiles'));
   gulp.watch('assets/**/*', {delay:1000}, gulp.series('jekyll-build','console-log'));
-  gulp.watch('_config.yml', {delay:500}, gulp.series('jekyll-build','console-log'));
+  gulp.watch('_config*.yml', {delay:500}, gulp.series('jekyll-build','console-log'));
   gulp.watch(['*html', '_includes/*html', '_layouts/*.html', '_posts/*.md'], gulp.series('jekyll-build','console-log'));
 });
 
