@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@babel/core": "7.12.10",
-    "@babel/preset-env": "7.12.11",
+    "@babel/preset-env": "7.12.13",
     "@fortawesome/fontawesome-free": "5.15.2",
     "babel-loader": "8.2.2",
     "bootstrap": "4.6.0",
