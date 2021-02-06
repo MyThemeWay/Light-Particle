@@ -8,7 +8,7 @@ theme: null
 # If you want to use this theme on your main domain e.g. <username>.github.io, just set baseurl to nothing. Otherwise, it will only be used in the specified subdirectory e.g. <username>.github.io/Light-Particle
 baseurl: /Light-Particle
 # content_security_policy is only added in production-mode (npm run build); to disable it, set it to ''
-content_security_policy: default-src 'none'; script-src 'self'; img-src 'self'; font-src 'self'; style-src 'self'; frame-ancestors 'self'; form-action 'self'; base-uri 'self'; manifest-src 'self';
+content_security_policy: default-src 'none'; script-src 'self'; img-src 'self'; font-src 'self'; style-src 'self'; frame-ancestors 'self'; form-action 'self'; base-uri 'self'; manifest-src 'self'; media-src 'self'; frame-src 'self';
 
 # User settings
 user_name: Username
