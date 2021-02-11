@@ -15,11 +15,17 @@ This light theme website-boilerplate combines Jekyll, Webpack, Bootstrap and muc
 
 <a title="Go there" target="_blank" href="https://sitdisch.github.io/mythemeway/2020/11/01/light-particle.html#features"><img alt="Particle-Features" src="https://raw.githubusercontent.com/sitdisch/cloud/master/images/particle-features.png" ></a>
 
-It is a bright version of [this one](https://github.com/mythemeway/Dark-Particle "Go there"). You can use it as a starting template to make your web appearance, blogging and portfolio awesome. It's based heavily on the magnificent work of [Stephen Arsenault](https://github.com/s-arsenault/s-arsenault.github.io "Go there"), [Nathan Randecker](https://github.com/nrandecker/particle "Go there") (original repository) and me [Sitdisch](https://github.com/sitdisch "Go there").
+It is a bright version of [this one](https://github.com/mythemeway/Dark-Particle "Go there"):
 
-For more information about this boilerplate look here:
-- [Local Running](https://sitdisch.github.io/mythemeway/2020/11/01/light-particle.html#local-running "Go there")
+<a href="https://github.com/mythemeway/Dark-Particle" title="Check it out" target="_blank"><img src="https://repository-images.githubusercontent.com/324961883/45151580-4cea-11eb-9e3a-45882478a112" /></a>
+
+You can use one of these boilerplates as a starting template to make your web appearance, blogging and portfolio awesome. They base heavily on the magnificent work of [Stephen Arsenault](https://github.com/s-arsenault/s-arsenault.github.io "Go there"), [Nathan Randecker](https://github.com/nrandecker/particle "Go there") (original repository) and me [Sitdisch](https://github.com/sitdisch "Go there").
+
+For more information about this boilerplate, and to see what's possible, take a look at my personal GitHub page here:
+- Enable [Local Running](https://sitdisch.github.io/mythemeway/2020/11/01/light-particle.html#local-running "Go there")
 - [Customization](https://sitdisch.github.io/mythemeway/2020/11/01/light-particle.html#customization "Go there")
 - [Setup at GitHub Pages](https://sitdisch.github.io/mythemeway/2020/11/01/light-particle.html#setup-at-github-pages "Go there")
+
+P.s. don't be afraid of the cookie consent window on my website. I don't record your personal data. It's only necessary to satisfy the lawyers out there.
 
 Have a nice day.
