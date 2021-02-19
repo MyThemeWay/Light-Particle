@@ -18,7 +18,7 @@ user_description: Description of your experiences.
 email: your_email_address
 github_username: your_github_username
 twitter_username: your_twitter_username
-youtube_channel_id: # your_youtube_channel id (no quotation marks)
+youtube_channel_id: # your youtube channel id (no quotation marks)
 linkedin_username: # your_linkedin_username (no quotation marks)
 facebook_username: # your_facebook_username (no quotation marks)
 
@@ -27,6 +27,7 @@ google_site_verification: # your meta tag (no quotation marks)
 
 # SITE BUILDING SETTINGS
 destination: docs
+keep_files: ['assets']
 exclude: [
   'src',
   'node_modules',

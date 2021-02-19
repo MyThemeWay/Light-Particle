@@ -19,7 +19,7 @@ const fs = require('fs-extra');
 
 // CLEAR ASSETS FOLDER
 console.log("[\x1b[90mwebpack.config\x1b[0m]: Starting `\x1b[36mfs-extra\x1b[0m`...");
-fs.emptyDirSync('./assets');
+fs.emptyDirSync('./docs/assets');
 console.log('[\x1b[90mfs-extra\x1b[0m]: Assets \x1b[1;92m[cleaned]\x1b[0m');
 // COPY DIFFERENT FILES IN THE ASSETS FOLDER (GULP WATCHES THIS)
 require('./copyfiles.js');
@@ -35,7 +35,7 @@ var config = {
     bootstrap: './src/styles/bootstrap.scss',
   },
   output: {
-    path: path.resolve(__dirname, './assets'),
+    path: path.resolve(__dirname, './docs/assets'),
     filename: 'js/[name].bundle.min.js',
   },
   devServer: {
