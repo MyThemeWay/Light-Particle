@@ -36,8 +36,7 @@ gulp.task('copyfiles', function (done) {
 gulp.task('watch', function() {
   gulp.watch('copyfiles.js', gulp.task('copyfiles'));
   gulp.watch('docs/assets/**/*', gulp.task('console-log'));
-  gulp.watch('_config*.yml', gulp.series('jekyll-build','console-log'));
-  gulp.watch(['*html', '_includes/*html', '_layouts/*.html', '_posts/*.md'], gulp.series('jekyll-build','console-log'));
+  gulp.watch(['*html', '_includes/*html', '_layouts/*.html', '_posts/*.md', '_config*.yml'], gulp.series('jekyll-build','console-log'));
 });
 
 gulp.task('default', gulp.series('watch'));

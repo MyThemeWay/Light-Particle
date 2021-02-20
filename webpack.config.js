@@ -46,7 +46,7 @@ var config = {
       shell.exec('bundle exec gulp --silent --color', {async:true});
     },
     watchOptions: {
-      aggregateTimeout: 200,
+      aggregateTimeout: 100,
     },
   },
   plugins: [
