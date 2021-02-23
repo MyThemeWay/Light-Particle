@@ -1,0 +1,18 @@
+{% if site.email != null %}
+  <a aria-label="Send email" href="mailto:{{site.email}}" title="Mail me"><i class="icon fa fa-envelope" data-press-delay aria-hidden="true"></i></a>
+{% endif %}
+{% if site.github_username != null %}
+  <a aria-label="Github" rel="noopener" target="_blank" href="https://github.com/{{site.github_username}}" title="Visit my GitHub account"><i class="icon fa fa-github" data-press-delay aria-hidden="true"></i></a>
+{% endif %}
+{% if site.youtube_channel_id != null %}
+  <a aria-label="YouTube" rel="noopener" target="_blank" href="https://youtube.com/channel/{{site.youtube_channel_id}}" title="Visit my YouTube account"><i class="icon fa fa-youtube-play" data-press-delay aria-hidden="true"></i></a>
+{% endif %}
+{% if site.linkedin_username != null %}
+  <a aria-label="LinkedIn" rel="noopener" target="_blank" href="https://www.linkedin.com/in/{{site.linkedin_username}}" title="Visit my LinkedIn account"><i class="icon fab fa-linkedin" data-press-delay aria-hidden="true"></i></a>
+{% endif %}
+{% if site.twitter_username != null %}
+  <a aria-label="Twitter" rel="noopener" target="_blank" href="https://twitter.com/{{site.twitter_username}}" title="Visit my Twitter account"><i class="icon fa fa-twitter" data-press-delay aria-hidden="true"></i></a>
+{% endif %}
+{% if site.facebook_username != null %}
+  <a aria-label="Facebook" rel="noopener" target="_blank" href="https://fb.com/{{site.facebook_username}}" title="Visit my Facebook account"><i class="icon fa fa-facebook-official" data-press-delay aria-hidden="true"></i></a>
+{% endif %}

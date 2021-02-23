@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-sm navbar-dark navbar-click-stay" id="navbar">
+  <button class="navbar-toggler float-left navbar-click-stay" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="menu-close navbar-click-stay" title="Close Menu">X</span>
+    <i class="fas fa-bars menu-open navbar-click-stay" title="Open Menu"></i> 
+  </button>
+  <a class="navbar-brand mr-auto" title="Go Home" href="{{ '/' | prepend: site.baseurl }}"><img class="navbar-click-stay" data-press-delay src="{{ site.user_picture | prepend: site.baseurl }}" alt="{{ site.user_name | prepend: site.baseurl }}"></img></a>
+  <a class="nav-link float-right up-arrow navbar-click-stay" href="#" data-scroll title="Up to the top"><i class="icon fa fa-arrow-circle-up press-simulation-parent navbar-click-stay" title="Up to the top"></i></a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav float-left">
+      {% assign header = "" %}
+      {% include navbar-link-banner.html %}
+    </ul>
+  </div>
+</nav>

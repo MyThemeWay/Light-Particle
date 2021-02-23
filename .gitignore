@@ -1,0 +1,14 @@
+.jekyll-cache
+.ncurc.json
+.sass-cache
+node_modules
+npm-debug.log
+.DS_STORE
+Gemfile.lock
+:w
+*~
+*.swp
+yarn-error.log
+yarn.lock
+v8-compile-cache-0
+package-lock.json

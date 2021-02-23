@@ -1,0 +1,143 @@
+#projects {
+  @include card-style; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 960px;
+  padding-bottom: 0px;
+  h1 {
+    margin-bottom: 60px;
+  }
+  @media only screen and (min-width: 550px) {
+    width: 80%;
+    padding-bottom: 0px;
+    hr {
+      margin-top: 0px;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.user-project-details {
+  text-align: center;
+  @media only screen and (min-width: 550px) {
+    margin-bottom: 35px;
+  }
+}
+
+.user-projects { 
+  @include img-style; 
+  li {
+    font-size: 20px;
+    @media only screen and (min-height: 1350px) and (min-width: 1200px) {
+      font-size: 28px;
+    }
+  }
+}
+
+.contents {
+  @media only screen and (min-width: 550px) {
+    width: 48%;
+  }
+}
+
+.contents-right {
+  @media only screen and (min-width: 550px) {
+    float: right;
+    width: 48%;
+  }
+}
+
+.images-right {
+  text-align: center;
+  @media only screen and (min-width: 550px) {
+    float: right;
+    width: 48%;
+  }
+  img {
+    margin-bottom: 25px;
+    @media only screen and (min-width: 550px) {
+      float: right;
+      margin-top: 5px;
+      margin-bottom: 60px;
+    }
+  }
+}
+
+.images-left {
+  @media only screen and (min-width: 550px) {
+    float: left;
+    width: 48%;
+    padding-right: 10px;
+  }
+  img {
+    margin-bottom: 25px;
+    @media only screen and (min-width: 550px) {
+      float: left;
+      margin-top: 5px;
+      margin-bottom: 60px;
+    }
+  }
+}
+
+.project-link {
+  @include box-style; 
+  margin-top: 20px;
+  text-decoration: none;
+  width: 110px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+  @media only screen and (min-width: 550px) {
+    margin-bottom: 45px;
+  }
+  @media only screen and (min-height: 1350px) and (min-width: 1200px) {
+    font-size: 27px;
+    width: 130px;
+    @media (pointer:fine) {
+      &:hover {
+        font-size: 30px;
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+.project-link-header {
+  text-decoration: none;
+  font-weight: bold;
+  color: #2A3E42;
+  &:active, &:focus {
+    color: #2A3E42;
+  }
+  @media (pointer:fine) {
+    &:hover {
+      @include hover-link-style;
+      font-size: 40px;
+      color: #2A3E42;
+      @media only screen and (min-height: 1350px) and (min-width: 1200px) {
+        font-size: 54px;
+      }
+    }
+    &.pressed {
+      color: grey;
+    }
+  }
+  @media (pointer:coarse) {
+    &.pressed {
+      @include hover-link-style;
+      font-size: 40px;
+      color: #2A3E42;
+      @media only screen and (min-height: 1350px) and (min-width: 1200px) {
+        font-size: 54px;
+      }
+    }
+  }
+}

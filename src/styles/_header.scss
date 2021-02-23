@@ -1,0 +1,741 @@
+#particles-js {
+  background: #1A252F;
+  background-color: #1A252F;
+  border-top: 3px solid;
+  border-color: var(--border-1);
+  z-index: 2;
+  display: flex;
+  vertical-align: bottom;
+  left: -0.013px;
+  width: 100%;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  box-shadow: 0px 4px 6px rgba(70, 70, 70, 0.4);
+  &.short-particles {
+    left: 0px;
+    min-height: 25vh;
+    height: 30vh;
+  }
+}
+
+.header {
+  @include header-style;
+  max-width: 80%;
+  min-width: 187px;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  color: rgba(71, 104, 110, 1.0);
+  padding: 15px 11px 7px 11px;
+  margin: 0px;
+  -webkit-transform: translate(-50%, -60%);
+  transform: translate(-50%, -60%);
+  .site-title {
+    font-size: 24px;
+    min-width: 175px;
+    display: block;
+    line-height: 1;
+    margin-bottom: 11px;
+  }
+  img{
+    box-shadow: 4px 4px 6px var(--boxShadow);
+    border: 2px solid lightgrey;
+    border-radius: 50%;
+    width: auto !important;
+    height: auto !important;
+    max-height: 200px;
+    max-width: 65%;
+    margin-bottom: .3em;
+  }
+  .user-description {
+    font-size: 20px;
+    padding-bottom: 7px;
+    display: block;
+    line-height: 1;
+  }
+}
+
+.header-icons {
+  margin-top: 5px;
+  .icon {
+    @include icon-header-style;
+    font-size: 21px;
+    margin: 3px 1px 3px 1px;
+    padding: .565em;
+    border-radius: 50%;
+    @media (pointer:fine) {
+      &:hover {
+        font-size: 25px;
+      }
+      &.pressed {
+        background: #1A252F;
+        background-color: #1A252F;
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+.header-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  flex-wrap: wrap;
+  line-height: 1.25;
+  margin-top: 7px;
+  margin-bottom: 2px;
+  // here you change the middle bar position
+  margin-left: 8px;
+  .link {
+    font-size: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    color: rgba(71, 104, 110, 1.0);
+    @media (pointer:fine) {
+      &:hover {
+        @include hover-link-style;
+        font-size: 16px;
+      }
+      &.pressed {
+        transform: scale(0.9);
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        @include hover-link-style;
+        font-size: 16px;
+      }
+    }
+  }
+  .bar {
+    color: rgba(71, 104, 110, 1.0);
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 6px;
+    margin-right: 6px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    cursor: default;
+    @media (pointer:fine) {
+      &:hover {
+        color: rgba(71, 104, 110, 1.0);
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        color: rgba(71, 104, 110, 1.0);
+      }
+    }
+  }
+  .btn {
+    @include drop-arrow-header-style;
+  }
+  .dropdown-menu {
+    @include background-style-brown-dark;
+    line-height: 1.5;
+    margin-top: 5%;
+    margin-left: -85%;
+  }
+  .dropdown-item {
+    font-size: 13px;
+    font-weight: initial;
+    padding-left: 7px;
+    padding-right: 7px;
+    @media (pointer:fine) {
+      &:hover {
+        @include hover-link-style;
+        font-size: 14px;
+      }
+      &.pressed {
+        transform: scale(0.9);
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        @include hover-link-style;
+        font-size: 14px;
+      }
+    }
+  }
+  .navbar-link-home, .dropdown-divider {
+    display: none;
+  }
+}
+
+.down {
+  z-index: 52;
+  color: #FFF;
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  margin: 0px auto;
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  cursor: pointer;
+  .icon {
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    color: #fff;
+    -webkit-animation: pulse 3.3s infinite;
+    animation: pulse 3.3s infinite;
+    @media (pointer:fine) {
+      &:hover {
+        color: #8F887B;
+        font-size: 37px;
+      }
+    }
+    &.pressed {
+      color: orange;
+      font-size: 37px;
+    }
+  }
+}
+
+#hex-header {
+  z-index: 49;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.hex-header-li {
+  z-index: 49;
+  position: relative;
+  visibility: hidden;
+  outline: 1px solid transparent;
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: 86.602%;
+  }
+}
+
+.hex-header-div {
+  position: absolute;
+  width: 96%;
+  padding-bottom: 110.851%;
+  margin: -24% 2%;
+  visibility: hidden;
+  overflow: hidden;
+  outline: 1px solid transparent;
+  -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+  -moz-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+  -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+  transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+  * {
+    position: absolute;
+    visiblity: visible;
+    outline: 1px solid transparent;
+  }
+  .hex-header-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #42737c;
+    background-color: #42737c;
+    background: -moz-linear-gradient(-45deg, #42737c 0%, #4699a9 52%, #42737c 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #42737c 0%,#4699a9 52%, #42737c 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #42737c 0%,#4699a9 52%, #42737c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#42737c', endColorstr='#4699a9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    visibility: visible;
+    opacity: 0.25;
+    -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+    -moz-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+    -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+    transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+    -webkit-transition: opacity .3s ease-out;
+    -moz-transition: opacity .3s ease-out;
+    -o-transition: opacity .3s ease-out;
+    transition: opacity .3s ease-out;
+    @media (pointer:fine) {
+      &:hover {
+        opacity: 0.6;
+      }
+      &:focus {
+        opacity: 1.0;
+      }
+    }
+    @media (pointer:coarse) {
+      &:focus {
+        opacity: 1.0;
+      }
+    }
+  }
+}
+
+//
+// adaptions to screen size changes
+//
+
+@media only screen and (min-width: 1200.5px) {
+  .hex-header-li {
+    width: 20%;
+  }
+  /* 4/5 hexagons per row */
+  .hex-header-li:nth-child(9n+6) {
+    margin-left: 10%;
+  }
+  .header {
+    padding: 24px 17px 16px 17px;
+    .site-title {
+      font-size: 75px;
+      margin-bottom: 17px;
+    }
+    .user-description {
+      font-size: 45px;
+      padding-bottom: 13px;
+    }
+  }
+  .header-icons {
+    .icon {
+      font-size: 34px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 38px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 38px;
+        }
+      }
+    }
+  }
+  .header-links {
+    margin-top: 6px;
+    line-height: 0.9;
+    .link, .btn.btn-drop {
+      font-size: 25px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 26px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 26px;
+        }
+      }
+    }
+    .btn.btn-arrow {
+      margin-top: 3px;
+      margin-left: 2px;
+      font-size: 18px;
+      line-height: 1;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 22px;
+          line-height: 1;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 22px;
+          line-height: 1;
+        }
+      }
+    }
+    .dropdown-menu {
+      line-height: 1.6;
+      margin-top: 8%;
+      padding-right: 3%;
+    }
+    .dropdown-item {
+      font-size: 22px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 23px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 23px;
+        }
+      }
+    }
+    .bar {
+      font-size: 25px;
+      margin-left: 12px;
+      margin-right: 12px;
+    }
+  }
+  .down {
+    font-size: 45px;
+    .icon {
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 55px;
+        }
+      }
+      &.pressed {
+        font-size: 55px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 900.5px) {
+  .hex-header-li {
+    width: 25%;
+  }
+  /* 3/4 hexagons per row */
+  .hex-header-li:nth-child(7n+5) {
+    margin-left: 12.5%;
+  }
+  .header {
+    padding: 21px 15px 13px 15px;
+    .site-title {
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+    .user-description {
+      font-size: 40px;
+      padding-bottom: 11px;
+    }
+  }
+  .header-icons {
+    .icon {
+      font-size: 30px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 34px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 34px;
+        }
+      }
+    }
+  }
+  .header-links {
+    margin-top: 4px;
+    line-height: 0.8;
+    .link, .btn.btn-drop {
+      font-size: 20px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 21px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 21px;
+        }
+      }
+    }
+    .btn.btn-arrow {
+      margin-top: 3px;
+      margin-left: 1px;
+      font-size: 15px;
+      line-height: 1;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 18px;
+          line-height: 1;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 18px;
+          line-height: 1;
+        }
+      }
+    }
+    .dropdown-menu {
+      line-height: 1.6;
+      margin-top: 7%;
+      padding-right: 3%;
+    }
+    .dropdown-item {
+      font-size: 18px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 19px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 19px;
+        }
+      }
+    }
+    .bar {
+      font-size: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+  .down {
+    font-size: 40px;
+    .icon {
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 50px;
+        }
+      }
+      &.pressed {
+        font-size: 50px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 600.5px) {
+  .hex-header-li {
+    width: 33.333%;
+  }
+  /* 2/3 hexagons per row */
+  .hex-header-li:nth-child(5n+4) {
+    margin-left: 16.666%;
+  }
+  .header {
+    padding: 18px 13px 10px 13px;
+    .site-title {
+      font-size: 39px;
+      margin-bottom: 13px;
+    }
+    .user-description {
+      font-size: 30px;
+      padding-bottom: 9px;
+    }
+  }
+  .header-icons {
+    margin-top: 7px;
+    .icon {
+      font-size: 26px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 30px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+  .header-links {
+    margin-top: 2px;
+    line-height: 0.7;
+    .link, .btn.btn-drop {
+      font-size: 18px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 19px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 19px;
+        }
+      }
+    }
+    .btn.btn-arrow {
+      margin-top: 3px;
+      margin-left: 0px;
+      font-size: 14px;
+      line-height: 1;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 18px;
+          line-height: 1;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 18px;
+          line-height: 1;
+        }
+      }
+    }
+    .dropdown-menu {
+      line-height: 1.6;
+      margin-top: 7%;
+    }
+    .dropdown-item {
+      font-size: 16px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 17px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 17px;
+        }
+      }
+    }
+    .bar {
+      font-size: 18px;
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+  }
+  .down {
+    font-size: 35px;
+    .icon {
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 45px;
+        }
+      }
+      &.pressed {
+        font-size: 45px;
+      }
+    }
+  }
+}
+
+/* 1/2 hexagons per fow */
+@media only screen and (max-width: 600px) {
+  .hex-header-li {
+    width: 50%;
+  }
+  .hex-header-li:nth-child(3n+3) {
+    margin-left: 25%;
+  }
+}
+
+@media only screen and (min-width: 1200.5px) {
+  .header {
+    img {
+      max-height: 450px;
+    }
+  }
+}
+
+@media only screen and (max-height: 900px) and (min-width: 600.5px) {
+  .header {
+    padding: 15px 11px 7px 11px;
+    .site-title {
+      font-size: 24px;
+      margin-bottom: 11px;
+    }
+    img {
+      max-height: 200px;
+    }
+    .user-description {
+      font-size: 20px;
+      padding-bottom: 7px;
+    }
+  }
+  .header-icons {
+    margin-top: 5px;
+    .icon {
+      font-size: 21px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 25px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+  .header-links {
+    margin-top: 0px;
+    line-height: 0.6;
+    .link, .btn.btn-drop {
+      font-size: 15px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 16px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 16px;
+        }
+      }
+    }
+    .btn.btn-arrow {
+      margin-top: 3px;
+      margin-left: -1px;
+      font-size: 11px;
+      line-height: 1.15;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 14px;
+          line-height: 1.15;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 14px;
+          line-height: 1.15;
+        }
+      }
+    }
+    .dropdown-menu {
+      line-height: 1.5;
+      margin-top: 5%;
+    }
+    .dropdown-item {
+      font-size: 13px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 14px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 14px;
+        }
+      }
+    }
+    .bar {
+      font-size: 15px;
+      margin-left: 6px;
+      margin-right: 6px;
+    }
+  }
+  .down {
+    font-size: 30px;
+    .icon {
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 37px;
+        }
+      }
+      &.pressed {
+        font-size: 37px;
+      }
+    }
+  }
+}

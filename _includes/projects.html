@@ -1,0 +1,32 @@
+<div class="user-project-details">
+  <h1> Featured Projects </h1>
+</div>
+<div class="user-projects">
+  <div class="images-right" >
+    <img alt="Project1" src="{{ '/assets/img/Project1.jpg' | prepend: site.baseurl }}" ></img>
+  </div>
+  <div class="contents">
+    <h2><a data-press-delay href="{% post_url 2020-10-31-project-1 %}" class="project-link-header" title="Explore this">Project 1</a></h2>
+    <ul class="fa-ul">
+      <li><i class="fa fa-li fa-dot-circle-o"></i>Feature 1.1</li>
+      <li><i class="fa fa-li fa-dot-circle-o"></i>Feature 1.2</li>
+    </ul>
+    <p>Short explanation of your project</p>
+    <a class="project-link" data-press-delay href="{% post_url 2020-10-31-project-1 %}">Explore</a>
+  </div>
+</div>
+
+<div class="user-projects">
+  <div class="images-left" >
+    <img alt="Project2" src="{{ '/assets/img/Project2.jpg' | prepend: site.baseurl }}" ></img>
+  </div>
+  <div class="contents-right">
+    <h2><a data-press-delay href="{% post_url 2020-10-31-project-2 %}" class="project-link-header" title="Explore this">Project 2</a></h2>
+    <ul class="fa-ul">
+      <li><i class="far fa-li fa-dot-circle"></i>Feature 2.1</li>
+      <li><i class="far fa-li fa-dot-circle"></i>Feature 2.2</li>
+    </ul>
+    <p>Short explanation of your project</p>
+    <a class="project-link" data-press-delay href="{% post_url 2020-10-31-project-2 %}">Explore</a>
+  </div>
+</div>

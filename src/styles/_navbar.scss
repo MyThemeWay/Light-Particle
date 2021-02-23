@@ -1,0 +1,357 @@
+.navbar {
+  @include banner-style;
+  border-color: var(--border-2);
+  z-index: 1;
+  width: 100%;
+  max-height: 60px;
+  position: absolute;
+  top: -100px;
+  -webkit-transition: opacity .5s;
+  -moz-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  transition: opacity .5s;
+  opacity: 0;
+  padding: 5px 17px 7px 17px;
+  .navbar-brand {
+    font-size: 18px;
+    padding: 0px 10px 0px 10px;
+  }
+  img {
+    box-shadow: 4px 4px 6px var(--boxShadow);
+    border: 1px solid grey;
+    border-radius: 50%;
+    width: 40px;
+    height: auto !important;
+    @media (pointer:fine) {
+      &:hover {
+        @include hover-img-style;
+        width: 45px;
+        height: 45px;
+      }
+      &.pressed {
+        transform: scale(0.7);
+        background: transparent;
+        background-color: transparent;
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        @include hover-img-style;
+        width: 45px;
+        height: 45px;
+      }
+    }
+  }
+  button {
+    font-size: 18px;
+    padding: 0px;
+  }
+  .bar {
+   display: none;
+  }
+  @media only screen and (min-height: 1350px) and (min-width: 1200px) {
+    .navbar-nav {
+      .nav-link.link, .btn.btn-drop {
+        line-height: 1.2;
+        font-size: 30px;
+        @media (pointer:fine) {
+          &:hover {
+            font-size: 32px;
+          }
+        }
+        @media (pointer:coarse) {
+          &.pressed {
+            font-size: 32px;
+          }
+        }
+      }
+    }
+    .btn {
+      &.btn-arrow {
+        font-size: 20px;
+        margin-top: 5px;
+        @media (pointer:fine) {
+          &:hover {
+            font-size: 23px;
+            padding-right: 5px;
+            padding-left: 5px;
+          }
+        }
+        @media (pointer:coarse) {
+          &.pressed {
+            font-size: 23px;
+            padding-right: 5px;
+            padding-left: 5px;
+          }
+        }
+      }
+    }
+    .dropdown-item {
+      font-size: 26px;
+      @media (pointer:fine) {
+        &:hover {
+          font-size: 28px;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          font-size: 28px;
+        }
+      }
+    }
+    .dropdown-menu {
+      margin-top: 5px;
+    }
+  }
+}
+
+.navbar-nav {
+  @include banner-style;
+  position: absolute;
+  border-top: none;
+  border-left: none;
+  margin-top: 0px;
+  left: 0px;
+  padding: 0px 22px 10px 18px;
+  .nav-link.link {
+    color: #eeeeee;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0px;
+    @media (pointer:fine) {
+      &:hover {
+        @include hover-link-style;
+        font-size: 27px;
+      }
+      &.pressed {
+        transform: scale(0.9);
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        @include hover-link-style;
+        font-size: 27px;
+      }
+    }
+  }
+}
+
+.collapsing {
+  -webkit-transition: display 0s;
+  -moz-transition: display 0s;
+  -o-transition: display 0s;
+  transition: display 0s;
+}
+
+.btn {
+  &.btn-drop {
+    color: #eeeeee;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 0px;
+    padding: 0px;
+    text-decoration: none;
+    @media (pointer:fine) {
+      &:hover {
+        @include hover-link-style;
+        font-size: 27px;
+      }
+      &:focus, &:active {
+        box-shadow: none;
+      }
+      &.pressed {
+        transform: scale(0.9);
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        @include hover-link-style;
+        box-shadow: none;
+        font-size: 27px;
+      }
+      &:focus, &:active {
+        box-shadow: none;
+      }
+    }
+  }
+  &.btn-arrow {
+    @include icon-style;
+    line-height: 1.15;
+    border-radius: 25%;
+    font-size: 14px;
+    padding: 0px 4px 0px 4px;
+    margin: 3px 0px 0px 2px;
+    -webkit-transition: transform .4s;
+    -moz-transition: transform .4s;
+    -o-transition: transform .4s;
+    transition: transform .4s;
+    @media (pointer:fine) {
+      &:hover {
+        font-size: 17px;
+        line-height: 1.15;
+      }
+      &:active {
+        background: transparent;
+        background-color: transparent;
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        font-size: 17px;
+        line-height: 1.15;
+      }
+    }
+  }
+  &[aria-expanded="true"] {
+    @include hover-style;
+    transform: rotate(180deg);
+    box-shadow: none;
+  }
+}
+
+.dropdown-menu {
+  @include background-style-brown-light;
+  box-shadow: 4px 4px 6px rgba(70, 70, 70, 0.4);
+  border: 1px solid grey;
+  border-radius: 6px;
+  color: #eeeeee;
+  text-decoration: none;
+  margin-top: 0px;
+  padding: 5px 0px 5px 0px;
+  min-width: auto;
+}
+
+.dropdown-item {
+  color: #eeeeee;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 0px 10px 0px 10px;
+  &:active, &:focus {
+    color: inherit;
+    background: none;
+  }
+  @media (pointer:fine) {
+    &:hover {
+      @include hover-link-style;
+      font-size: 24px;
+      background: none;
+    }
+    &.pressed {
+      transform: scale(0.9);
+    }
+  }
+  @media (pointer:coarse) {
+    &.pressed {
+      @include hover-link-style;
+      font-size: 24px;
+      background: none;
+    }
+  }
+  .list-sign {
+    color: darkgrey;
+  }
+}
+
+.navbar-link-home {
+  margin-top: 15px;
+}
+
+.dropdown-divider {
+  margin-top: 9px;
+  margin-bottom: 15px;
+}
+
+.nav-link.up-arrow {
+  @include icon-style;
+  display: inline-block;
+  padding: 2px 6px 0px 6px;
+  font-size: 23px;
+  @media (pointer:fine) {
+    &:hover {
+      font-size: 26px;
+    }
+  }
+  @media (pointer:coarse) {
+    &.pressed {
+      font-size: 26px;
+    }
+  }
+}
+
+.navbar-toggler {
+  border: none;
+  .menu-open {
+    @include icon-style;
+    padding: 5px 10px 5px 10px;
+    @media (pointer:fine) {
+      &:hover {
+        font-size: 30px;
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        font-size: 30px;
+      }
+    }
+  }
+  .menu-close {
+    @include hover-style;
+    box-shadow: 4px 4px 6px rgba(70, 70, 70, 0.4);
+    border-radius: 6px;
+    font-size: 27px;
+    padding: 5px 10px 5px 10px;
+    display: inline-block;
+    font-weight: bold;
+    @media (pointer:fine) {
+      &:hover {
+        font-size: 30px;
+        -webkit-transition: all .4s;
+        -moz-transition: all .4s;
+        -o-transition: all .4s;
+        transition: all .4s;
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        font-size: 30px;
+        -webkit-transition: all .4s;
+        -moz-transition: all .4s;
+        -o-transition: all .4s;
+        transition: all .4s;
+      }
+    }
+  }
+  &.collapsed>.menu-close, &:not(.collapsed)>.menu-open {
+    display:none;
+  }
+  &:focus, &:active {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+// style before breakpoint
+@media (min-width: 576px) {
+  .btn {
+    &.btn-arrow {
+      margin-top: 2px;
+    }
+  }
+  .nav-link.up-arrow {
+    position: absolute;
+    right: 30px;
+  }
+  .navbar-nav {
+    top: 6px;
+    background: none;
+    border: none;
+    margin-left: 60px;
+    .nav-link.link {
+      margin-right: 15px;
+    }
+  }
+  .navbar-link-home {
+    margin-top: 0px;
+  }
+}

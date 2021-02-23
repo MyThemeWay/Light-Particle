@@ -1,0 +1,38 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      
+  # Maintain dependencies for bundler
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      
+  # Maintain dependencies for npm
+  - package-ecosystem: "npm" # See documentation for possible values
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "daily"
+    ignore:
+      - dependency-name: "css-loader"
+      - dependency-name: "file-loader"
+      - dependency-name: "ignore-emit-webpack-plugin"
+      - dependency-name: "image-webpack-loader"
+      - dependency-name: "mini-css-extract-plugin"
+      - dependency-name: "optimize-css-assets-webpack-plugin"
+      - dependency-name: "node-sass"
+      - dependency-name: "sass-loader"
+      - dependency-name: "style-loader"
+      - dependency-name: "terser-webpack-plugin"
+      - dependency-name: "webpack"
+      - dependency-name: "webpack-cli"
+      - dependency-name: "webpack-dev-server"

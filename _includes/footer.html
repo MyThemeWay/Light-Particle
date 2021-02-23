@@ -1,0 +1,12 @@
+<footer class="footer">
+  <p>&copy; {{site.user_name}}</p>
+  <p>Built with Webpack, Jekyll, Gulp, Github Pages and <i class="fas fa-heart love"></i> by <a data-press-delay href="https://github.com/nrandecker" title="Visit him">Nathan Randecker</a>, <a data-press-delay href="https://github.com/s-arsenault" title="Visit him">Stephen Arsenault</a> and <a data-press-delay href="https://github.com/sitdisch" title="Visit me">Sitdisch</a>.<br>You can find the source of this demo <a data-press-delay href="https://sitdisch.github.io/" title="Go there">here</a>.</p>
+</footer>
+
+<!-- INCLUDE THE NECESSARY HTML FILES FOR ALL LAYOUTS -->  
+{% include navbar.html %}
+
+<!-- INCLUDE THE NECESSARY JS FILES FOR ALL LAYOUTS -->  
+<script src="{{ '/assets/lib/jquery/dist/jquery.min.js' | prepend: site.baseurl }}" crossorigin="anonymous"></script>
+<script src="{{ '/assets/js/main.bundle.min.js' | prepend: site.baseurl }}" crossorigin="anonymous"></script>
+<script src="{{ '/assets/lib/bootstrap/dist/js/bootstrap.bundle.min.js' | prepend: site.baseurl }}" crossorigin="anonymous"></script>

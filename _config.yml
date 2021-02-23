@@ -1,0 +1,45 @@
+# Site settings
+title: Light-Particle
+description: Website description.
+encoding: utf-8
+markdown: kramdown
+future: true # allow posts with future dates
+theme: null
+# If you want to use this theme on your main domain e.g. <username>.github.io, just set baseurl to nothing. Otherwise, it will only be used in the specified subdirectory e.g. <username>.github.io/Light-Particle
+baseurl: /Light-Particle
+# content_security_policy is only added in production-mode (npm run build); to disable it, set it to ''
+content_security_policy: default-src 'none'; script-src 'self'; img-src 'self'; font-src 'self'; style-src 'self'; frame-ancestors 'self'; form-action 'self'; base-uri 'self'; manifest-src 'self'; media-src 'self'; frame-src 'self';
+
+# User settings
+user_name: Username
+user_title: Your_title
+user_picture: "/assets/img/User_picture.png"
+user_description: Description of your experiences.
+email: your_email_address
+github_username: your_github_username
+twitter_username: your_twitter_username
+youtube_channel_id: # your youtube channel id (no quotation marks)
+linkedin_username: # your_linkedin_username (no quotation marks)
+facebook_username: # your_facebook_username (no quotation marks)
+
+# Google Search Console
+google_site_verification: # your meta tag (no quotation marks)
+
+# SITE BUILDING SETTINGS
+destination: docs
+keep_files: ['assets']
+exclude: [
+  'src',
+  'node_modules',
+  'Gemfile',
+  'Gemfile.lock',
+  'index.js',
+  'copyfiles.js',
+  'gulpfile.js',
+  'webpack.config.js',
+  'README.md',
+  'yarn.lock',
+  'package.json',
+  'package-lock.json',
+  '.ncurc.json'
+]

@@ -1,0 +1,30 @@
+#project-content {
+  @include card-style;
+  @include img-style; 
+  width: 90%;
+  max-width: 1160px;
+  margin-bottom: 15px;
+  h1 { 
+    text-align: left;
+  }
+  h2 {
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  br {
+    content: "";
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+  img {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  @media only screen and (min-width: 550px) {
+    width: 80%;
+    img {
+      max-width: 50%;
+    }
+  }
+}

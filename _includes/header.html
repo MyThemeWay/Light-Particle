@@ -1,0 +1,25 @@
+<div id="particles-js">
+  <ul id="hex-header" class="clear">{% for i in (1..48) %}
+    <li class="hex-header-li" id="#hex{{ forloop.index }}">
+      <div class="hex-header-div">
+        <a class="hex-header-link" href="#hex{{ forloop.index }}"></a>
+      </div>
+    </li>{% endfor %}
+  </ul>
+  <div class="header">
+    <h1 class="site-title">{{site.title}}</h1>
+    <img src="{{ site.user_picture | prepend: site.baseurl }}" alt="{{ site.user_name | prepend: site.baseurl }}" ></img>
+    <span class="user-description">{{site.user_name}}</span>
+    {% if site.user_title != null %}
+      <span class="user-description">{{site.user_title}}</span>
+    {% endif %}
+    <div class="header-icons">
+      {% include follow-banner.html %}
+    </div>
+    <div class="header-links">
+      {% assign header = " header-link" %}
+      {% include navbar-link-banner.html %}
+    </div>
+  </div>
+  <a class="down" href="#about" title="Go down" data-scroll data-scroll-options='{"offset": -15}'><i class="icon fa fa-angle-double-down" aria-hidden="true"></i></a>
+</div>

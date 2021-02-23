@@ -1,0 +1,99 @@
+.footer {
+  @include banner-style;
+  border-color: var(--border-2);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  margin-top: 65px;
+  text-align: center;
+  p {
+    color: #AAA;
+    font-size: 15px;
+    margin: 18px;
+  }
+  a {
+    font-size: 15px;
+    text-decoration: none;
+    margin: 0;
+    color: #ccc;
+    @media (pointer:fine) {
+      &:hover {
+        text-decoration: none;
+        text-shadow: 0 0 .15px #ccc, 0 0 .15px #ccc, 0 0 .15px #ccc;
+        line-height: 1.25;
+      }
+      &.pressed {
+        color: grey;
+      }
+    }
+    @media (pointer:coarse) {
+      &.pressed {
+        text-decoration: none;
+        text-shadow: 0 0 .15px #ccc, 0 0 .15px #ccc, 0 0 .15px #ccc;
+        line-height: 1.25;
+      }
+    }
+  }
+  .love {
+    color: red;
+    font-size: 13px;
+  }
+}
+
+//
+// adaptions to screen size changes
+//
+
+@media only screen and (min-width: 550px) {
+  .footer {
+    p {
+      font-size: 17px;
+    }
+    a {
+      font-size: 17px;
+      @media (pointer:fine) {
+        &:hover {
+          text-shadow: 0 0 .17px #ccc, 0 0 .17px #ccc, 0 0 .17px #ccc;
+          line-height: 1.25;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          text-shadow: 0 0 .17px #ccc, 0 0 .17px #ccc, 0 0 .17px #ccc;
+          line-height: 1.25;
+        }
+      }
+    }
+    .love {
+      font-size: 14px;
+    }
+  }
+}
+
+@media only screen and (min-height: 1350px) and (min-width: 1200px) {
+  .footer {
+    p {
+      font-size: 20px;
+    }
+    a {
+      font-size: 20px;
+      @media (pointer:fine) {
+        &:hover {
+          text-shadow: 0 0 .2px #ccc, 0 0 .2px #ccc, 0 0 .2px #ccc;
+          line-height: 1.25;
+        }
+      }
+      @media (pointer:coarse) {
+        &.pressed {
+          text-shadow: 0 0 .2px #ccc, 0 0 .2px #ccc, 0 0 .2px #ccc;
+          line-height: 1.25;
+        }
+      }
+    }
+    .love {
+      font-size: 18px;
+    }
+  }
+}
