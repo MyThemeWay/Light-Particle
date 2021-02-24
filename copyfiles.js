@@ -14,7 +14,7 @@ const copyfiles = [
   {
     name: 'Devicon',
     source: './node_modules/devicon',
-    files: ['devicon.css', 'devicon-colors.css', 'LICENSE', 'fonts'],
+    files: ['devicon.min.css', 'LICENSE', 'fonts'],
     target: './docs/assets/lib/devicon'
   },
   {
