@@ -2,7 +2,7 @@
   <ul id="short-hex-header" class="clear">{% for i in (1..18) %}
     <li class="hex-header-li" id="#hex{{ forloop.index }}">
       <div class="hex-header-div">
-        <a class="hex-header-link" href="#hex{{ forloop.index }}"></a>
+        <span class="hex-header-link" href="#hex{{ forloop.index }}"></span>
       </div>
     </li>{% endfor %}
   </ul>
@@ -14,9 +14,9 @@
     <div class="short-header-icons">
       {% include follow-banner.html %}
     </div>
-    <div class="short-header-links">
+    <ul class="short-header-links">
       {% assign header = " header-link" %}
       {% include navbar-link-banner.html %}
-    </div>
+    </ul>
   </div>
 </div>
