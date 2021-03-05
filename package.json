@@ -32,8 +32,8 @@
     }
   },
   "dependencies": {
-    "@babel/core": "7.13.1",
-    "@babel/preset-env": "7.13.5",
+    "@babel/core": "7.13.8",
+    "@babel/preset-env": "7.13.9",
     "@fortawesome/fontawesome-free": "5.15.2",
     "babel-loader": "8.2.2",
     "bootstrap": "4.6.0",
@@ -46,7 +46,7 @@
     "html-minifier-terser": "5.1.1",
     "ignore-emit-webpack-plugin": "2.0.3",
     "image-webpack-loader": "7.0.1",
-    "jquery": "3.5.1",
+    "jquery": "3.6.0",
     "mini-css-extract-plugin": "0.11.3",
     "node-sass": "4.14.1",
     "nodemon": "2.0.7",
