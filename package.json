@@ -32,8 +32,8 @@
     }
   },
   "dependencies": {
-    "@babel/core": "7.13.8",
-    "@babel/preset-env": "7.13.9",
+    "@babel/core": "7.13.10",
+    "@babel/preset-env": "7.13.10",
     "@fortawesome/fontawesome-free": "5.15.2",
     "babel-loader": "8.2.2",
     "bootstrap": "4.6.0",
