@@ -1,0 +1,37 @@
+name: Lighthouse Check
+
+on:
+  page_build:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      with:
+        repository: 'sitdisch/cloud'
+        persist-credentials: false
+    - uses: actions/checkout@master
+      with:
+        repository: 'mythemeway/lighthouse-badges'
+        persist-credentials: false
+        path: nested
+    - name: Create Results
+      run: |
+        cd nested
+        ./src/index.js -u https://mythemeway.github.io/Light-Particle/ https://mythemeway.github.io/Light-Particle/projects/2020/10/31/project-1.html -r -b plastic -o light-particle/mobile
+        export LIGHTHOUSE_BADGES_PARAMS="--preset=desktop"
+        ./src/index.js -u https://mythemeway.github.io/Light-Particle/ https://mythemeway.github.io/Light-Particle/projects/2020/10/31/project-1.html -r -b plastic -o light-particle/desktop
+        cp -r light-particle ../lighthouse-results/
+        cd ..
+    - name: Commit Results
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add lighthouse-results/light-particle
+        git commit -am "Lighthouse Results Refreshed | Light-Particle"
+    - name: Push Results
+      uses: ad-m/github-push-action@master
+      with:
+        repository: 'sitdisch/cloud'
+        github_token: ${{ secrets.SITDISCH_REPO_TOKEN }}
