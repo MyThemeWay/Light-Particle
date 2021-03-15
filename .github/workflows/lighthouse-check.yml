@@ -19,8 +19,9 @@ jobs:
     - name: Create Results
       run: |
         cd nested
+        export LIGHTHOUSE_BADGES_PARAMS="--throttling.cpuSlowdownMultiplier=2"
         ./src/index.js -u https://mythemeway.github.io/Light-Particle/ https://mythemeway.github.io/Light-Particle/projects/2020/10/31/project-1.html -r -b plastic -o light-particle/mobile
-        export LIGHTHOUSE_BADGES_PARAMS="--preset=desktop"
+        export LIGHTHOUSE_BADGES_PARAMS="--preset=desktop --throttling.cpuSlowdownMultiplier=1"
         ./src/index.js -u https://mythemeway.github.io/Light-Particle/ https://mythemeway.github.io/Light-Particle/projects/2020/10/31/project-1.html -r -b plastic -o light-particle/desktop
         cp -r light-particle ../lighthouse-results/
         cd ..
