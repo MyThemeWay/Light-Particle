@@ -99,12 +99,12 @@ jobs:
   lighthouse-badger:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
         with:
           repository: ${{ github.event.inputs.repository || env.REPOSITORY || env.DEFAULT-REPOSITORY }}
           token: ${{ env.TOKEN }}
           ref: ${{ github.event.inputs.branch || env.BRANCH || env.DEFAULT-BRANCH }}
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
         with:
           repository: 'myactionway/lighthouse-badges'
           path: temp_lighthouse_badges_nested
