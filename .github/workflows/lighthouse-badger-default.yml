@@ -1,0 +1,124 @@
+# Lighthouse-Badger-Default | GitHub Action Workflow
+# 
+# Description: Generates, adds & updates manually/automatically Lighthouse badges & reports from one/multiple input URL(s) to a selected target repository & branch
+# Author: Sitdisch
+# Source: https://github.com/myactionway/lighthouse-badger-workflows
+# License: MIT
+# Copyright (c) 2021 Sitdisch
+
+name: 'Lighthouse-Badger-Default'
+
+########################################################################
+# DEFINE YOUR INPUTS AND TRIGGERS IN THE FOLLOWING
+########################################################################
+
+# INPUTS as environmental variables (env) for not manually triggered workflows 
+env:
+  URLS: 'https://mythemeway.github.io/Light-Particle/ https://mythemeway.github.io/Light-Particle/projects/2020/10/31/project-1.html' # URL(s) to be checked e.g. 'https://github.com/sitdisch https://github.com/mythemeway'
+  TOKEN_NAME: 'SITDISCH_REPO_TOKEN' # target token name; insert only the name never the real value e.g. 'LIGHTHOUSE_BADGER_TOKEN'
+  # If any of the following env is blank, a default value is used instead
+  REPO_BRANCH: 'sitdisch/cloud master' # target repository & branch e.g. 'dummy/mytargetrepo master'
+  BADGES_ARGS: '-b pagespeed -o lighthouse_results/light_particle -r' # badge-style '-b {flat,...}', preceding-label '-l "Lighthouse "', output-path '-o lighthouse_results/dummy', save-report '-r', single-badge '-s'
+  AUDIT_TYPE: # 'mobile', 'desktop', 'both' or 'both_p' 
+  MOBILE_LIGHTHOUSE_PARAMS: # Lighthouse parameters mobile audit
+  DESKTOP_LIGHTHOUSE_PARAMS: # Lighthouse parameters desktop audit
+  USER_NAME: # user who should commit e.g. 'dummy'
+  USER_EMAIL: # e.g. 'dummy@gmail.com'
+  COMMIT_MESSAGE: 'Lighthouse-Badger[bot]: Results Refreshed | Light-Particle' # e.g. 'Lighthouse results added'
+  # 
+  # THAT'S IT; JUMP TO THE TRIGGERS;
+  DEFAULT_REPO_BRANCH: '${{ github.repository }} master' # repo with this file and master branch
+  DEFAULT_BADGES_ARGS: '-b pagespeed -o lighthouse_results -r'
+  DEFAULT_AUDIT_TYPE: 'both'
+  DEFAULT_MOBILE_LIGHTHOUSE_PARAMS: '--throttling.cpuSlowdownMultiplier=2'
+  DEFAULT_DESKTOP_LIGHTHOUSE_PARAMS: '--preset=desktop --throttling.cpuSlowdownMultiplier=1'
+  DEFAULT_USER_NAME: 'github-actions[bot]'
+  DEFAULT_USER_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com'
+  DEFAULT_COMMIT_MESSAGE: 'Lighthouse-Badger[bot]: Results Refreshed'
+
+# TRIGGERS
+on:
+  page_build:
+  # schedule: # Check your schedule here => https://crontab.guru/
+  #   - cron: '55 23 * * 0' # e.g. every Sunday at 23:55
+  # 
+  # THAT'S IT; YOU'RE DONE;
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: 'URL(s) to be checked'
+        required: true
+        default: 'https://mythemeway.github.io/Light-Particle/ https://mythemeway.github.io/Light-Particle/projects/2020/10/31/project-1.html'
+      token_name:
+        description: 'Target token name (NO VALUE!)'
+        required: true
+        default: 'SITDISCH_REPO_TOKEN'
+      repo_branch:
+        description: 'Target repository & branch'
+        required: true
+        default: 'sitdisch/cloud master'
+      badges_args:
+        description: 'Badges arguments: -b, -l, -o, -r, -s'
+        required: true
+        default: '-b pagespeed -o lighthouse_results/light_particle -r'
+      audit_type:
+        description: 'Audit type: mobile, desktop, both or both_p'
+        required: true
+        default: 'both'
+      mobile_lighthouse_params:
+        description: 'Lighthouse parameters mobile audit'
+        required: true
+        default: '--throttling.cpuSlowdownMultiplier=2'
+      desktop_lighthouse_params:
+        description: 'Lighthouse parameters desktop audit'
+        required: true
+        default: '--preset=desktop --throttling.cpuSlowdownMultiplier=1'
+      user_name:
+        description: 'User who should commit'
+        required: true
+        default: 'github-actions[bot]'
+      user_email:
+        description: 'User e-mail address'
+        required: true
+        default: '41898282+github-actions[bot]@users.noreply.github.com'
+      commit_message:
+        description: 'Commit message'
+        required: true
+        default: 'Lighthouse-Badger[bot]: Results Refreshed | Light-Particle'
+
+########################################################################
+# THAT'S IT; YOU DON'T HAVE TO DEFINE ANYTHING IN THE FOLLOWING
+########################################################################
+
+jobs:
+  lighthouse-badger-default:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Preparatory Tasks
+        run: |
+          REPOSITORY=`expr "${{ env.REPO_BRANCH }}" : "\([^ ]*\)"`
+          BRANCH=`expr "${{ env.REPO_BRANCH }}" : ".* \([^ ]*\)"`
+          echo "REPOSITORY=$REPOSITORY" >> $GITHUB_ENV
+          echo "BRANCH=$BRANCH" >> $GITHUB_ENV
+        env:
+          REPO_BRANCH: ${{ github.event.inputs.repo_branch || env.REPO_BRANCH || env.DEFAULT_REPO_BRANCH }}
+      - uses: actions/checkout@v2.3.4
+        with:
+          repository: ${{ env.REPOSITORY }}
+          token: ${{ secrets[github.event.inputs.token_name] || secrets[env.TOKEN_NAME] }}
+          ref: ${{ env.BRANCH }}
+      - uses: actions/checkout@v2.3.4
+        with:
+          repository: 'myactionway/lighthouse-badges'
+          path: temp_lighthouse_badges_nested
+      - uses: myactionway/lighthouse-badger-action@v2.2
+        with:
+          urls: ${{ github.event.inputs.urls || env.URLS }}
+          badges_args: ${{ github.event.inputs.badges_args || env.BADGES_ARGS || env.DEFAULT_BADGES_ARGS }}
+          audit_type: ${{ github.event.inputs.audit_type || env.AUDIT_TYPE || env.DEFAULT_AUDIT_TYPE }}
+          mobile_lighthouse_params: ${{ github.event.inputs.mobile_lighthouse_params || env.MOBILE_LIGHTHOUSE_PARAMS || env.DEFAULT_MOBILE_LIGHTHOUSE_PARAMS }}
+          desktop_lighthouse_params: ${{ github.event.inputs.desktop_lighthouse_params || env.DESKTOP_LIGHTHOUSE_PARAMS || env.DEFAULT_DESKTOP_LIGHTHOUSE_PARAMS }}
+          user_name: ${{ github.event.inputs.user_name || env.USER_NAME || env.DEFAULT_USER_NAME }}
+          user_email: ${{ github.event.inputs.user_email || env.USER_EMAIL || env.DEFAULT_USER_EMAIL }}
+          commit_message: ${{ github.event.inputs.commit_message || env.COMMIT_MESSAGE || env.DEFAULT_COMMIT_MESSAGE }}
+          max_push_attempts: 5
