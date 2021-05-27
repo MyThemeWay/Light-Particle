@@ -48,7 +48,7 @@ You can get the dark version [here](https://github.com/mythemeway/Dark-Particle 
 
 ## More Information
 
-You can use one of these boilerplates as a starting template to make your web appearance, blogging and portfolio awesome. They base heavily on the magnificent work of [Stephen Arsenault](https://github.com/s-arsenault/s-arsenault.github.io "Go there"), [Nathan Randecker](https://github.com/nrandecker/particle "Go there") (original repository) and me [Sitdisch](https://github.com/sitdisch "Go there").
+You can use one of these boilerplates as a starting template to make your web appearance, blogging and portfolio awesome. They base heavily on the magnificent work of [Stephen Arsenault](https://github.com/s-arsenault/s-arsenault.github.io "Go there") [License: [MIT](https://github.com/s-arsenault/s-arsenault.github.io/blob/master/LICENSE.txt "Go there")], [Nathan Randecker](https://github.com/nrandecker/particle "Go there") [License: [MIT](https://github.com/nrandecker/particle/blob/master/LICENSE.txt "Go there"); Copyright (c) 2016 Nathan Randecker] and me [Sitdisch](https://github.com/sitdisch "Go there").
 
 For more information about this boilerplate, and to see what's possible, take a look at my personal GitHub page here:
 - Enable [Local Running](https://sitdisch.github.io/mythemeway/2020/11/01/light-particle.html#local-running "Go there")

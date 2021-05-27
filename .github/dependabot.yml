@@ -23,6 +23,7 @@ updates:
     schedule:
       interval: "daily"
     ignore:
+      - dependency-name: "bootstrap"
       - dependency-name: "css-loader"
       - dependency-name: "file-loader"
       - dependency-name: "ignore-emit-webpack-plugin"
