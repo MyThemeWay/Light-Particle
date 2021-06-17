@@ -7,7 +7,6 @@
 <img src="https://img.shields.io/github/languages/code-size/mythemeway/Light-Particle?label=CodeSize" />
 <img src="https://img.shields.io/github/repo-size/mythemeway/Light-Particle?label=RepoSize" />
 <img src="https://img.shields.io/github/repo-size/mythemeway/mythemeway.github.io?label=BuildSize" />
-<img src="https://img.shields.io/librariesio/github/mythemeway/Light-Particle?label=Dependencies" />
 
 ### <a title="Visit the Lighthouse" target="_blank" href="https://github.com/GoogleChrome/lighthouse"><img src="https://raw.githubusercontent.com/GoogleChrome/lighthouse/master/assets/lighthouse-logo.svg" width="25"/></a> Average Lighthouse Results 
 
@@ -23,7 +22,7 @@
 <b>Full Reports:</b> <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/sitdisch/cloud/master/lighthouse_results/light_particle/mobile/mythemeway_github_io_light_particle_.html" title="Check it out" target="_blank">Main Page </a> | <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/sitdisch/cloud/master/lighthouse_results/light_particle/mobile/mythemeway_github_io_light_particle_projects_2020_10_31_project_1_html.html" title="Check it out" target="_blank">Project Page</a>
 </details><p>
 
-> Created with [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") :badger: :tokyo_tower: :medal_military:
+> Created with the [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") :badger: :tokyo_tower: :medal_military:
 
 ## Preview - [Demo](https://mythemeway.github.io/Light-Particle/ "Go there")
 
