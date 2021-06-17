@@ -26,16 +26,18 @@ import './src/img/icon/browserconfig.xml';
 // IMPORT YOUR FILES OF THE JS DIRECTORY
 // 
 
-const sweet = require('sweet-scroll');
+import SweetScroll from 'sweet-scroll';
 require('canvas-particle-network');
 require('./src/js/main.js');
 
 document.addEventListener("DOMContentLoaded",
   () => {
     
-    const sweetScroll = new sweet({
-      "easing": "easeInCirc",
-      "stopPropagation": false
+    const scroller = new SweetScroll({
+      easing: "easeInCirc",
+      stopPropagation: false,
+      before: () => { setTimeout(function (){document.getElementById('navbar').setAttribute('data-hide','true')}, 300); },
+      complete: () => { setTimeout(function (){document.getElementById('navbar').setAttribute('data-hide','false')}, 100); }
     });
     
     var canvas = new ParticleNetwork(

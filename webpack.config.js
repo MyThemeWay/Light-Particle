@@ -13,7 +13,9 @@ const shell = require('shelljs');
 const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const { extendDefaultPlugins } = require("svgo");
 const IgnoreEmitPlugin = require('ignore-emit-webpack-plugin');
 const fs = require('fs-extra');
 
@@ -62,7 +64,6 @@ var config = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          'style-loader',
           MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader',
@@ -70,6 +71,7 @@ var config = {
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
+        type: 'javascript/auto',
         use: [
           {
             loader: 'file-loader',
@@ -79,12 +81,45 @@ var config = {
             }
           },
           {
-            loader: 'image-webpack-loader',
+            loader: ImageMinimizerPlugin.loader,
+            options: {
+              minimizerOptions: {
+                severityError: "warning", // Ignore errors on corrupted images
+                plugins: [
+                  ["gifsicle", { optimizationLevel: 7, interlaced: false }],
+                  ["mozjpeg", { quality: 65 }],
+                  ["pngquant", { quality: [0.65, 0.90], speed: 4 }],
+                  // Svgo configuration here https://github.com/svg/svgo#configuration
+                  [
+                    "svgo",
+                    {
+                      plugins: extendDefaultPlugins([
+                        {
+                          name: "removeViewBox",
+                          active: false,
+                        },
+                        {
+                          name: "removeEmptyAttrs",
+                          active: false,
+                        },
+                        {
+                          name: "addAttributesToSVGElement",
+                          params: {
+                            attributes: [{ xmlns: "http://www.w3.org/2000/svg" }],
+                          },
+                        },
+                      ]),
+                    },
+                  ],
+                ],
+              },
+            }
           },
         ],
       },
       {
         test: /\.(ico|xml)$/i,
+        type: 'javascript/auto',
         use: [
           {
             loader: 'file-loader',
@@ -117,7 +152,7 @@ module.exports = (env, argv) => {
   if (argv.mode === 'production') {
     config.optimization = {
       minimize: true,
-      minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
+      minimizer: [new TerserPlugin({}), new CssMinimizerPlugin({})],
     };
   };
   return config;

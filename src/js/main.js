@@ -17,8 +17,7 @@ var firstIteration = "1";
 
 // NAVBAR VARIABLES
 var nav = document.getElementById('navbar');
-var dropdownArrows = document.getElementsByClassName('dropdown-toggle');
-var dropdownArrowsLength = dropdownArrows.length;
+var collapseElementListNavbar = [].slice.call(document.querySelectorAll('.navbar-collapse'));
 
 // fix mobile viewport bug
 // source: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
@@ -73,14 +72,18 @@ function setupHashPage() {
         window.scrollBy(0, hashOffset);
         var hrefReplaceHash = location.href.replace(location.hash,"");
         history.pushState({},'reset_hash', hrefReplaceHash);
-        setTimeout(disNavbar, 100);
+        setTimeout(function (){nav.setAttribute('data-hide','false')}, 700);
 };
 
 function disNavbar() {
         nav.style.position = "absolute";
         nav.style.top = "-100px";
         nav.style.opacity = 0;
-        $('.navbar-collapse').collapse('hide');
+        if ( $('.navbar-collapse').hasClass('show') ) {
+                var collapseList = collapseElementListNavbar.map(function (collapseEl) {
+                  return new bootstrap.Collapse(collapseEl);
+                });
+        }
 };
 
 window.pressSimulation = function(element,time) {
@@ -113,7 +116,7 @@ window.onload = function () {
         if ( location.hash ) {
                 setTimeout(setupHashPage, 100);
         } else {
-                $('.navbar-collapse').collapse('hide');
+                setTimeout(function (){nav.setAttribute('data-hide','false')}, 500);
         }
 };
 
@@ -148,16 +151,22 @@ window.onscroll = function () {
                 }
         }
         // disappearing of the navbar
-        if ( prevScrollpos < currentScrollPos ) {
+        if ( ( nav.getAttribute('data-hide') == "true" ) || ( prevScrollpos < currentScrollPos )) {
                 disNavbar();
         } else {
                 nav.style.top = 0;
                 nav.style.position = "fixed";
                 nav.style.opacity = 1;
-                $('.navbar-collapse').collapse('hide');
-                $('.dropdown-menu').collapse('hide');
-                for ( var i=0; i < dropdownArrowsLength; i++ ) {
-                        dropdownArrows[i].setAttribute("aria-expanded", "false");
+                if ( $('.navbar-collapse').hasClass('show') ) {
+                        var collapseList = collapseElementListNavbar.map(function (collapseEl) {
+                          return new bootstrap.Collapse(collapseEl);
+                        });
+                }
+                if ( $('.dropdown-toggle').attr("aria-expanded") ) {
+                        $('.dropdown-toggle').removeClass('show');
+                        $('.dropdown-menu').removeClass('show');
+                        $('.dropdown-menu').removeAttr('data-bs-popper');
+                        $('.dropdown-toggle').attr("aria-expanded","false");
                 }
         }
         prevScrollpos = currentScrollPos;

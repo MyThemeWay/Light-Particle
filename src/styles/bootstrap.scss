@@ -1,9 +1,12 @@
 /*!
- * Bootstrap v4.5.2 (https://getbootstrap.com/)
- * Copyright 2011-2020 The Bootstrap Authors
- * Copyright 2011-2020 Twitter, Inc.
+ * Bootstrap (https://getbootstrap.com/)
+ * Copyright (c) 2011-2021 Twitter, Inc.
+ * Copyright (c) 2011-2021 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+// Bootstrap customization
+$enable-smooth-scroll: false; // sweet-scroll is used instead
 
 @import '../../node_modules/bootstrap/scss/functions';
 @import '../../node_modules/bootstrap/scss/variables';
@@ -16,6 +19,5 @@
 @import '../../node_modules/bootstrap/scss/navbar';
 @import '../../node_modules/bootstrap/scss/type';
 @import '../../node_modules/bootstrap/scss/transitions';
-@import '../../node_modules/bootstrap/scss/media';
 @import '../../node_modules/bootstrap/scss/utilities';
 @import '../../node_modules/bootstrap/scss/close';
