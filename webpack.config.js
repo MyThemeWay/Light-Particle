@@ -58,6 +58,38 @@ var config = {
       }
     ),
     new IgnoreEmitPlugin([ /bootstrap.bundle.min.js$/, /style.bundle.min.js$/ ]),
+    new ImageMinimizerPlugin({
+      minimizerOptions: {
+        severityError: "warning", // Ignore errors on corrupted images
+        plugins: [
+          ["gifsicle", { optimizationLevel: 7, interlaced: false }],
+          ["mozjpeg", { quality: 65 }],
+          ["pngquant", { quality: [0.65, 0.90], speed: 4 }],
+          // Svgo configuration here https://github.com/svg/svgo#configuration
+          [
+            "svgo",
+            {
+              plugins: extendDefaultPlugins([
+                {
+                  name: "removeViewBox",
+                  active: false,
+                },
+                {
+                  name: "removeEmptyAttrs",
+                  active: false,
+                },
+                {
+                  name: "addAttributesToSVGElement",
+                  params: {
+                    attributes: [{ xmlns: "http://www.w3.org/2000/svg" }],
+                  },
+                },
+              ]),
+            },
+          ],
+        ],
+      },
+    }),
   ],
   module: {
     rules: [
@@ -70,79 +102,11 @@ var config = {
         ],
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
-        type: 'javascript/auto',
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-              context: 'src',
-            }
-          },
-          {
-            loader: ImageMinimizerPlugin.loader,
-            options: {
-              minimizerOptions: {
-                severityError: "warning", // Ignore errors on corrupted images
-                plugins: [
-                  ["gifsicle", { optimizationLevel: 7, interlaced: false }],
-                  ["mozjpeg", { quality: 65 }],
-                  ["pngquant", { quality: [0.65, 0.90], speed: 4 }],
-                  // Svgo configuration here https://github.com/svg/svgo#configuration
-                  [
-                    "svgo",
-                    {
-                      plugins: extendDefaultPlugins([
-                        {
-                          name: "removeViewBox",
-                          active: false,
-                        },
-                        {
-                          name: "removeEmptyAttrs",
-                          active: false,
-                        },
-                        {
-                          name: "addAttributesToSVGElement",
-                          params: {
-                            attributes: [{ xmlns: "http://www.w3.org/2000/svg" }],
-                          },
-                        },
-                      ]),
-                    },
-                  ],
-                ],
-              },
-            }
-          },
-        ],
-      },
-      {
-        test: /\.(ico|xml)$/i,
-        type: 'javascript/auto',
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-              context: 'src',
-            }
-          },
-        ],
-      },
-      {
-        test: /manifest\.json$/i,
-        type: 'javascript/auto',
-        include: path.resolve(__dirname, './src/img/icon'),
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-              context: 'src',
-            }
-          },
-        ],
+        include: path.resolve(__dirname, './src/img'),
+        type: 'asset/resource',
+        generator: {
+          filename: 'img/[base]',
+        }
       },
     ],
   },
