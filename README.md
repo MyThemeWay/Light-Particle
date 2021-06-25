@@ -7,7 +7,7 @@
 <img src="https://img.shields.io/github/languages/code-size/mythemeway/Light-Particle?label=CodeSize" />
 <img src="https://img.shields.io/github/repo-size/mythemeway/Light-Particle?label=RepoSize" />
 <img src="https://img.shields.io/github/repo-size/mythemeway/mythemeway.github.io?label=BuildSize" />
-<a href="https://snyk.io/test/" title="Check Snyk out" target="_blank"><img src="https://img.shields.io/snyk/vulnerabilities/github/mythemeway/light-particle?logo=snyk&label=Vulnerabilities" /></a>
+<a href="https://snyk.io/test/" title="Check it out" target="_blank"><img src="https://img.shields.io/snyk/vulnerabilities/github/mythemeway/light-particle?logo=snyk&label=Snyk" /></a>
 
 ### <a title="Visit the Lighthouse" target="_blank" href="https://github.com/GoogleChrome/lighthouse"><img src="https://raw.githubusercontent.com/GoogleChrome/lighthouse/master/assets/lighthouse-logo.svg" width="25"/></a> Average Lighthouse Results 
 
