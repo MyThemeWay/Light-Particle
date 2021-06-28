@@ -39,7 +39,7 @@
     "bootstrap": "5.0.2",
     "canvas-particle-network": "1.5.0",
     "css-loader": "5.2.6",
-    "css-minimizer-webpack-plugin": "3.0.1",
+    "css-minimizer-webpack-plugin": "3.0.2",
     "devicon": "2.12.0",
     "fs-extra": "10.0.0",
     "gulp": "4.0.2",
