@@ -1,12 +1,12 @@
 <h1 align="center">Light Particle Website Boilerplate</h1>
 <div align="center">
-<a href="https://github.com/mythemeway/Light-Particle/actions?query=workflow%3ACodeQL" title="Explore it" target="_blank"><img width=168 src="https://img.shields.io/github/workflow/status/mythemeway/Light-Particle/CodeQL?logo=github&label=CodeQL" /></a>
-<a href="https://github.com/mythemeway/Light-Particle/deployments/activity_log?environment=github-pages" title="Explore it" target="_blank"><img width=153 src="https://img.shields.io/github/deployments/mythemeway/Light-Particle/github-pages?logo=github&label=State" /></a>
-<img width=162 src="https://img.shields.io/github/checks-status/mythemeway/Light-Particle/master?logo=github&label=Checks" />
-<a title="Check it out" target="_blank" href="https://mythemeway.github.io/Light-Particle/"><img width=105 src="https://img.shields.io/website?url=https%3A%2F%2Fmythemeway.github.io/Light-Particle&label=Website" /></a>
-<img width=159 src="https://img.shields.io/github/languages/code-size/mythemeway/Light-Particle?label=CodeSize" />
-<img width=159 src="https://img.shields.io/github/repo-size/mythemeway/Light-Particle?label=RepoSize" />
-<img width=159 src="https://img.shields.io/github/repo-size/mythemeway/mythemeway.github.io?label=BuildSize" />
+<a href="https://github.com/mythemeway/Light-Particle/actions?query=workflow%3ACodeQL" title="Explore it" target="_blank"><img height=25 src="https://img.shields.io/github/workflow/status/mythemeway/Light-Particle/CodeQL?logo=github&label=CodeQL" /></a>
+<a href="https://github.com/mythemeway/Light-Particle/deployments/activity_log?environment=github-pages" title="Explore it" target="_blank"><img height=25 src="https://img.shields.io/github/deployments/mythemeway/Light-Particle/github-pages?logo=github&label=State" /></a>
+<img height=25 src="https://img.shields.io/github/checks-status/mythemeway/Light-Particle/master?logo=github&label=Checks" />
+<a title="Check it out" target="_blank" href="https://mythemeway.github.io/Light-Particle/"><img height=25 src="https://img.shields.io/website?url=https%3A%2F%2Fmythemeway.github.io/Light-Particle&label=Website" /></a>
+<img height=25 src="https://img.shields.io/github/languages/code-size/mythemeway/Light-Particle?label=CodeSize" />
+<img height=25 src="https://img.shields.io/github/repo-size/mythemeway/Light-Particle?label=RepoSize" />
+<img height=25 src="https://img.shields.io/github/repo-size/mythemeway/mythemeway.github.io?label=BuildSize" />
 <br><br>
 
 <a title="Check Lighthouse out" target="_blank" href="https://github.com/GoogleChrome/lighthouse"><img width=275 src="https://img.shields.io/badge/Lighthouse-Average_Results-2A2E30.svg?logo=lighthouse" /></a><br>
@@ -29,10 +29,10 @@
 <td align="center" valign="top" width="500px">
 <p></p>
 
-<a title="Check Mozilla Observatory out" target="_blank" href="https://observatory.mozilla.org/"><img width=210 src="https://img.shields.io/badge/Observatory-Grade-2A2E30.svg?logo=mozilla" /></a>
+<a title="Check Mozilla Observatory out" target="_blank" href="https://observatory.mozilla.org/"><img width=206 src="https://img.shields.io/badge/Observatory-Grade-2A2E30.svg?logo=mozilla" /></a>
 
 <div>
-<a title="Explore it" target="_blank" href="https://observatory.mozilla.org/analyze/mythemeway.github.io?third-party=false"><img preload width=50 src="https://img.shields.io/mozilla-observatory/grade/mythemeway.github.io?label=" /></a><br>
+<a title="Explore it" target="_blank" href="https://observatory.mozilla.org/analyze/mythemeway.github.io?third-party=false"><img preload height=35 src="https://img.shields.io/mozilla-observatory/grade/mythemeway.github.io?label=" /></a><br>
 <b>Full Report: <a title="Check it out" target="_blank" href="https://observatory.mozilla.org/analyze/mythemeway.github.io?third-party=false">Last&nbsp;One</a></b>
 <details><summary><b>Example</b></summary>
 <img alt="Mozilla Observatory Report Example" src="https://raw.githubusercontent.com/sitdisch/cloud/master/images/mozilla_observatory_results.png" />
@@ -47,7 +47,7 @@
 <a title="Check Snyk out" target="_blank" href="https://snyk.io/"><img width=210 src="https://img.shields.io/badge/Snyk-Vulnerabilities-2A2E30.svg?logo=snyk" /></a>
 
 <div>
-<a title="Explore it" target="_blank" href="https://snyk.io/test/github/MyThemeWay/Light-Particle"><img preload width=33 src="https://img.shields.io/snyk/vulnerabilities/github/mythemeway/light-particle?label=" /></a><br>
+<a title="Explore it" target="_blank" href="https://snyk.io/test/github/MyThemeWay/Light-Particle"><img preload height=35 src="https://img.shields.io/snyk/vulnerabilities/github/mythemeway/light-particle?label=" /></a><br>
 <b>Full Report: <a title="Check it out" target="_blank" href="https://snyk.io/test/github/MyThemeWay/Light-Particle">Last&nbsp;One</a></b>
 <details><summary><b>Example</b></summary>
 <img alt="Snyk Report Example" src="https://raw.githubusercontent.com/sitdisch/cloud/master/images/snyk_lightparticle_results.png" />
@@ -69,40 +69,40 @@ This light theme website-boilerplate combines Webpack, Jekyll, Bootstrap and muc
 
 ## Feature Overview (clickable)
 <div align="center">
-	<a href="https://github.com/npm/cli" title="Check it out" target="_blank"><img width=81 src="https://img.shields.io/badge/npm--blue.svg?logo=npm"/></a>
-	<a href="https://github.com/rubygems/rubygems" title="Check it out" target="_blank"><img width=126 src="https://img.shields.io/badge/RubyGems--blue.svg?logo=rubygems"/></a>
-	<a href="https://www.npmjs.com/package/jquery" title="Check it out" target="_blank"><img width=97 src="https://img.shields.io/badge/jQuery--blue.svg?logo=jquery"/></a>
-	<a href="https://www.npmjs.com/package/@babel/core" title="Check it out" target="_blank"><img width=94 src="https://img.shields.io/badge/BABEL--blue.svg?logo=babel"/></a>
-	<a href="https://github.com/jekyll/jekyll" title="Check it out" target="_blank"><img width=86 src="https://img.shields.io/badge/jekyll--blue.svg?logo=jekyll"/></a>
-	<a href="https://github.com/FortAwesome/Font-Awesome" title="Check it out" target="_blank"><img width=154 src="https://img.shields.io/badge/Font_Awesome--blue.svg?logo=font-awesome"/></a>
-	<a href="https://www.npmjs.com/package/gulp" title="Check it out" target="_blank"><img width=81 src="https://img.shields.io/badge/Gulp--blue.svg?logo=gulp"/></a>
-	<a href="https://search.google.com/search-console/about" title="Check it out" target="_blank"><img width=215 src="https://img.shields.io/badge/Google_Search_Console--blue.svg?logo=Google-Search-Console"/></a>
-	<a href="https://www.npmjs.com/package/html-minifier-terser" title="Check it out" target="_blank"><img width=120 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/htmlminifier.svg"/></a>
-	<a href="https://www.npmjs.com/package/mini-css-extract-plugin" title="Check it out" target="_blank"><img width=180 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/minicssextractplugin.svg"/></a>
-	<a href="https://www.npmjs.com/package/terser-webpack-plugin" title="Check it out" target="_blank"><img width=184 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/terserwebpackplugin.svg"/></a>
-	<a href="https://github.com/JulianLaval/canvas-particle-network" title="Check it out" target="_blank"><img width=208 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/canvas_particle_network.svg"/></a>
-	<a href="https://www.npmjs.com/package/sweet-scroll" title="Check it out" target="_blank"><img width=121 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/sweet_scroll.svg"/></a>
-	<a href="https://github.com/devicons/devicon" title="Check it out" target="_blank"><img width=84 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/devicon.svg"/></a>
-	<a href="#feature-overview-clickable" title="Not linked" target="_blank"><img width=167 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/navbar_%26_scrollspy.svg"/></a>
-	<a href="#feature-overview-clickable" title="Not linked" target="_blank"><img width=136 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/follow_buttons.svg"/></a>
-	<a href="#feature-presentation-screen-size-adaption" title="Check it out" target="_blank"><img width=180 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/screen_size_adaption.svg"/></a>
-	<a href="#feature-overview-clickable" title="Not linked" target="_blank"><img width=238 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/local_hosting_%26_development.svg"/></a>
-	<a href="#feature-overview-clickable" title="Not linked" target="_blank"><img width=292 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/cross_browser_%26_device_presentation.svg"/></a>
+	<a href="https://github.com/npm/cli" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/npm--blue.svg?logo=npm"/></a>
+	<a href="https://github.com/rubygems/rubygems" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/RubyGems--blue.svg?logo=rubygems"/></a>
+	<a href="https://www.npmjs.com/package/jquery" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/jQuery--blue.svg?logo=jquery"/></a>
+	<a href="https://www.npmjs.com/package/@babel/core" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/BABEL--blue.svg?logo=babel"/></a>
+	<a href="https://github.com/jekyll/jekyll" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/jekyll--blue.svg?logo=jekyll"/></a>
+	<a href="https://github.com/FortAwesome/Font-Awesome" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Font_Awesome--blue.svg?logo=font-awesome"/></a>
+	<a href="https://www.npmjs.com/package/gulp" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Gulp--blue.svg?logo=gulp"/></a>
+	<a href="https://search.google.com/search-console/about" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Google_Search_Console--blue.svg?logo=Google-Search-Console"/></a>
+	<a href="https://www.npmjs.com/package/html-minifier-terser" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/htmlminifier.svg"/></a>
+	<a href="https://www.npmjs.com/package/mini-css-extract-plugin" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/minicssextractplugin.svg"/></a>
+	<a href="https://www.npmjs.com/package/terser-webpack-plugin" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/terserwebpackplugin.svg"/></a>
+	<a href="https://github.com/JulianLaval/canvas-particle-network" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/canvas_particle_network.svg"/></a>
+	<a href="https://www.npmjs.com/package/sweet-scroll" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/sweet_scroll.svg"/></a>
+	<a href="https://github.com/devicons/devicon" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/devicon.svg"/></a>
+	<a href="#feature-overview-clickable" title="Not linked" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/navbar_%26_scrollspy.svg"/></a>
+	<a href="#feature-overview-clickable" title="Not linked" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/follow_buttons.svg"/></a>
+	<a href="#feature-presentation-screen-size-adaption" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/screen_size_adaption.svg"/></a>
+	<a href="#feature-overview-clickable" title="Not linked" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/local_hosting_%26_development.svg"/></a>
+	<a href="#feature-overview-clickable" title="Not linked" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/cross_browser_%26_device_presentation.svg"/></a>
 </div>
 
 ### [master branch](https://github.com/MyThemeWay/Light-Particle/tree/master "Check it out")
-<a title="Check it out" target="_blank" href="https://www.npmjs.com/package/webpack"><img width=159 src="https://img.shields.io/github/package-json/dependency-version/mythemeway/light-particle/webpack?label=webpack&logo=webpack" /></a>
-<a title="Check it out" target="_blank" href="https://www.npmjs.com/package/bootstrap"><img width=156 src="https://img.shields.io/github/package-json/dependency-version/mythemeway/light-particle/bootstrap?label=Bootstrap&logo=bootstrap" /></a>
-<a href="https://www.npmjs.com/package/sass" title="Check it out" target="_blank"><img width=115 src="https://img.shields.io/badge/Sass-Dart-blue.svg?logo=sass"/></a>
-<a href="https://www.npmjs.com/package/image-minimizer-webpack-plugin" title="Check it out" target="_blank"><img width=248 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/imageminimizerwebpackplugin.svg"/></a>
-<a href="https://www.npmjs.com/package/css-minimizer-webpack-plugin" title="Check it out" target="_blank"><img width=226 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/cssminimizerwebpackplugin.svg"/></a>
+<a title="Check it out" target="_blank" href="https://www.npmjs.com/package/webpack"><img height=26 src="https://img.shields.io/github/package-json/dependency-version/mythemeway/light-particle/webpack?label=webpack&logo=webpack" /></a>
+<a title="Check it out" target="_blank" href="https://www.npmjs.com/package/bootstrap"><img height=26 src="https://img.shields.io/github/package-json/dependency-version/mythemeway/light-particle/bootstrap?label=Bootstrap&logo=bootstrap" /></a>
+<a href="https://www.npmjs.com/package/sass" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Sass-Dart-blue.svg?logo=sass"/></a>
+<a href="https://www.npmjs.com/package/image-minimizer-webpack-plugin" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/imageminimizerwebpackplugin.svg"/></a>
+<a href="https://www.npmjs.com/package/css-minimizer-webpack-plugin" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/cssminimizerwebpackplugin.svg"/></a>
 
 ### [v1.0](https://github.com/MyThemeWay/Light-Particle/releases/tag/v1.0 "Go there")
-<a href="https://www.npmjs.com/package/webpack" title="Check it out" target="_blank"><img width=159 src="https://img.shields.io/badge/webpack-4.44.2-blue.svg?logo=webpack"/></a>
-<a href="https://www.npmjs.com/package/bootstrap" title="Check it out" target="_blank"><img width=156 src="https://img.shields.io/badge/Bootstrap-4.6.0-blue.svg?logo=bootstrap"/></a>
-<a href="https://www.npmjs.com/package/node-sass" title="Check it out" target="_blank"><img width=120 src="https://img.shields.io/badge/Sass-Node-blue.svg?logo=sass"/></a>
-<a href="https://www.npmjs.com/package/image-webpack-loader" title="Check it out" target="_blank"><img width=190 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/image_webpack_loader.svg"/></a>
-<a href="https://www.npmjs.com/package/optimize-css-assets-webpack-plugin" title="Check it out" target="_blank"><img width=293 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/optimize_css_assets_webpack_plugin.svg"/></a>
+<a href="https://www.npmjs.com/package/webpack" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/webpack-4.44.2-blue.svg?logo=webpack"/></a>
+<a href="https://www.npmjs.com/package/bootstrap" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Bootstrap-4.6.0-blue.svg?logo=bootstrap"/></a>
+<a href="https://www.npmjs.com/package/node-sass" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Sass-Node-blue.svg?logo=sass"/></a>
+<a href="https://www.npmjs.com/package/image-webpack-loader" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/image_webpack_loader.svg"/></a>
+<a href="https://www.npmjs.com/package/optimize-css-assets-webpack-plugin" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/optimize_css_assets_webpack_plugin.svg"/></a>
 
 > Created with [Shields.io](https://github.com/badges/shields "Check it out") [License: [CC0 1.0](https://github.com/badges/shields/blob/master/LICENSE "Go there")] and [Simple Icons](https://simpleicons.org/ "Check it out") [License: [CC0 1.0](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md "Go there")]
 
