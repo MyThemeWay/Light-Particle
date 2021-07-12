@@ -32,7 +32,7 @@
 <a title="Check Mozilla Observatory out" target="_blank" href="https://observatory.mozilla.org/"><img width=206 src="https://img.shields.io/badge/Observatory-Grade-2A2E30.svg?logo=mozilla" /></a>
 
 <div>
-<a title="Explore it" target="_blank" href="https://observatory.mozilla.org/analyze/mythemeway.github.io?third-party=false"><img preload height=35 src="https://img.shields.io/mozilla-observatory/grade/mythemeway.github.io?label=" /></a><br>
+<a title="Explore it" target="_blank" href="https://observatory.mozilla.org/analyze/mythemeway.github.io?third-party=false"><img height=35 src="https://img.shields.io/mozilla-observatory/grade/mythemeway.github.io?label=" /></a><br>
 <b>Full Report: <a title="Check it out" target="_blank" href="https://observatory.mozilla.org/analyze/mythemeway.github.io?third-party=false">Last&nbsp;One</a></b>
 <details><summary><b>Example</b></summary>
 <img alt="Mozilla Observatory Report Example" src="https://raw.githubusercontent.com/sitdisch/cloud/master/images/mozilla_observatory_results.png" />
@@ -47,7 +47,7 @@
 <a title="Check Snyk out" target="_blank" href="https://snyk.io/"><img width=210 src="https://img.shields.io/badge/Snyk-Vulnerabilities-2A2E30.svg?logo=snyk" /></a>
 
 <div>
-<a title="Explore it" target="_blank" href="https://snyk.io/test/github/MyThemeWay/Light-Particle"><img loading="eager" preload height=35 src="https://img.shields.io/snyk/vulnerabilities/github/mythemeway/light-particle?label=" /></a><br>
+<a title="Explore it" target="_blank" href="https://snyk.io/test/github/MyThemeWay/Light-Particle"><img loading="eager" alt="&nbsp;pending..." height=35 src="https://img.shields.io/snyk/vulnerabilities/github/mythemeway/light-particle?label=" /></a><br>
 <b>Full Report: <a title="Check it out" target="_blank" href="https://snyk.io/test/github/MyThemeWay/Light-Particle">Last&nbsp;One</a></b>
 <details><summary><b>Example</b></summary>
 <img alt="Snyk Report Example" src="https://raw.githubusercontent.com/sitdisch/cloud/master/images/snyk_lightparticle_results.png" />
