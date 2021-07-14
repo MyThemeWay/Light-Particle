@@ -1,5 +1,5 @@
-<h1 align="center">Light Particle Website Boilerplate</h1>
 <div align="center">
+<h1>Light Particle Website Boilerplate</h1>
 <a href="https://github.com/mythemeway/Light-Particle/actions?query=workflow%3ACodeQL" title="Explore it" target="_blank"><img height=25 src="https://img.shields.io/github/workflow/status/mythemeway/Light-Particle/CodeQL?logo=github&label=CodeQL" /></a>
 <a href="https://github.com/mythemeway/Light-Particle/deployments/activity_log?environment=github-pages" title="Explore it" target="_blank"><img height=25 src="https://img.shields.io/github/deployments/mythemeway/Light-Particle/github-pages?logo=github&label=State" /></a>
 <img height=25 src="https://img.shields.io/github/checks-status/mythemeway/Light-Particle/master?logo=github&label=Checks" />
@@ -20,7 +20,7 @@
 <img src="https://raw.githubusercontent.com/sitdisch/cloud/master/lighthouse_results/light_particle/mobile/pagespeed.svg" /><p>
 
 <b>Full Reports:</b> <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/sitdisch/cloud/master/lighthouse_results/light_particle/mobile/mythemeway_github_io_light_particle_.html" title="Check it out" target="_blank">Main Page </a> | <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/sitdisch/cloud/master/lighthouse_results/light_particle/mobile/mythemeway_github_io_light_particle_projects_2020_10_31_project_1_html.html" title="Check it out" target="_blank">Project Page</a>
-</details><p>
+</details><p></p>
 
 ~ Created with [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") :badger: :tokyo_tower: :medal_military: ~
 
@@ -47,7 +47,7 @@
 <a title="Check Snyk out" target="_blank" href="https://snyk.io/"><img width=210 src="https://img.shields.io/badge/Snyk-Vulnerabilities-2A2E30.svg?logo=snyk" /></a>
 
 <div>
-<a title="Explore it" target="_blank" href="https://snyk.io/test/github/MyThemeWay/Light-Particle"><img loading="eager" alt="&nbsp;pending..." height=35 src="https://img.shields.io/snyk/vulnerabilities/github/mythemeway/light-particle?label=" /></a><br>
+<a title="Explore it" target="_blank" href="https://snyk.io/test/github/MyThemeWay/Light-Particle"><img loading="eager" alt="&nbsp;pending..." height=35 src="https://img.shields.io/snyk/vulnerabilities/github/mythemeway/light-particle?label=&cacheSeconds=maxAge" /></a><br>
 <b>Full Report: <a title="Check it out" target="_blank" href="https://snyk.io/test/github/MyThemeWay/Light-Particle">Last&nbsp;One</a></b>
 <details><summary><b>Example</b></summary>
 <img alt="Snyk Report Example" src="https://raw.githubusercontent.com/sitdisch/cloud/master/images/snyk_lightparticle_results.png" />
@@ -133,7 +133,7 @@ This light theme website-boilerplate combines Webpack, Jekyll, Bootstrap and muc
 	<a href="https://github.com/sass/node-sass" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=sass&repo=node-sass&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
 	<a href="https://github.com/tcoopman/image-webpack-loader" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=tcoopman&repo=image-webpack-loader&text_color=F1F1EB&border_color=050B0E&bg_color=212426&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
 	<a href="https://github.com/NMFR/optimize-css-assets-webpack-plugin" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=NMFR&repo=optimize-css-assets-webpack-plugin&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
-	</details><p>
+	</details><p></p>
 </div>
 
 > Created with [GitHub Readme Stats](https://github.com/anuraghazra/github-readme-stats "Check it out") [License: [MIT](https://github.com/anuraghazra/github-readme-stats/blob/master/LICENSE "Go there"); Copyright ©️ 2021 Anurag Hazra]
@@ -148,7 +148,7 @@ It is shown using the dark version of this boilerplate.
 
 ## Other Version
 
-You can get the dark version [here](https://github.com/mythemeway/Dark-Particle "Go there"):
+You can get a dark version [here](https://github.com/mythemeway/Dark-Particle "Go there"):
 
 <a href="https://github.com/mythemeway/Dark-Particle" title="Check it out" target="_blank"><img src="https://repository-images.githubusercontent.com/324961883/45151580-4cea-11eb-9e3a-45882478a112" /></a>
 
