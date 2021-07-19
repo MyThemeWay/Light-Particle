@@ -7,6 +7,7 @@
 <img height=25 src="https://img.shields.io/github/languages/code-size/mythemeway/Light-Particle?label=CodeSize" />
 <img height=25 src="https://img.shields.io/github/repo-size/mythemeway/Light-Particle?label=RepoSize" />
 <img height=25 src="https://img.shields.io/github/repo-size/mythemeway/mythemeway.github.io?label=BuildSize" />
+<img height=25 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/dev_compile_time_light.svg"/>
 <br><br>
 
 <a title="Check Lighthouse out" target="_blank" href="https://github.com/GoogleChrome/lighthouse"><img width=275 src="https://img.shields.io/badge/Lighthouse-Average_Results-2A2E30.svg?logo=lighthouse" /></a><br>
@@ -67,7 +68,7 @@
 
 This light theme website-boilerplate combines Webpack, Jekyll, Bootstrap and much more. Additionally, you can easily add other packages from <a href="https://www.npmjs.com/" title="Check it out" target="_blank">npm</a> and/or gems from <a href="https://rubygems.org/" title="Check it out" target="_blank">RubyGems</a> as you like.
 
-## Feature Overview (clickable)
+## Feature Overview
 <div align="center">
 	<a href="https://github.com/npm/cli" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/npm--blue.svg?logo=npm"/></a>
 	<a href="https://github.com/rubygems/rubygems" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/RubyGems--blue.svg?logo=rubygems"/></a>
@@ -104,7 +105,7 @@ This light theme website-boilerplate combines Webpack, Jekyll, Bootstrap and muc
 <a href="https://www.npmjs.com/package/image-webpack-loader" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/image_webpack_loader.svg"/></a>
 <a href="https://www.npmjs.com/package/optimize-css-assets-webpack-plugin" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/optimize_css_assets_webpack_plugin.svg"/></a>
 
-> Created with [Shields.io](https://github.com/badges/shields "Check it out") [License: [CC0 1.0](https://github.com/badges/shields/blob/master/LICENSE "Go there")] and [Simple Icons](https://simpleicons.org/ "Check it out") [License: [CC0 1.0](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md "Go there")]
+> <b>Note</b>: Third party feature badges are clickable and linked to their sources.
 
 <h3>Additional Feature Information</h3>
 <div align="center">
@@ -136,7 +137,7 @@ This light theme website-boilerplate combines Webpack, Jekyll, Bootstrap and muc
 	</details><p></p>
 </div>
 
-> Created with [GitHub Readme Stats](https://github.com/anuraghazra/github-readme-stats "Check it out") [License: [MIT](https://github.com/anuraghazra/github-readme-stats/blob/master/LICENSE "Go there"); Copyright ©️ 2021 Anurag Hazra]
+> <b>Note</b>: Cards are clickable and linked to the corresponding GitHub repositories.
 
 ## Feature Presentation: Screen size adaption
 
@@ -165,6 +166,16 @@ P.s. don't be afraid of the cookie consent window on my website. I don't record 
 
 Have a nice day.
 
-> ### Note on protected brand names and logos:
-> * The use of protected brand names, trade names, utility models and brand logos on this website does not constitute an infringement of copyright; rather it serves as an illustrative note. Even if this is not marked as such at the respective points, the corresponding legal provisions always apply.
+## Appendix
+### Note on protected brand names and logos
+> * The use of protected brand names, trade names, utility models and brand logos on this website does not constitute an infringement of copyright; rather, it serves as an illustrative note. Even if this is not marked as such at the respective points, the corresponding legal provisions always apply.
 > * The brand names and logos used are the property of their respective owners and are subject to their copyright provisions.
+
+### Note on liability for links
+> * This README contains links to external third-party websites. The README operator has no influence on the content of these sites. Therefore, he cannot assume any liability. Instead, the respective provider is always responsible for the content.
+> * The linked pages were checked for possible legal violations at the time of linking and illegal content wasn't discernible. A permanent control of the linked pages is unreasonable without concrete evidence of an infringement. However, if the README operator becomes aware of such a violation, he will act immediately. 
+
+### Readme uses
+> * [GitHub Readme Stats](https://github.com/anuraghazra/github-readme-stats "Check it out") [License: [MIT](https://github.com/anuraghazra/github-readme-stats/blob/master/LICENSE "Go there"); Copyright © 2021 Anurag Hazra]
+> * [Shields.io](https://github.com/badges/shields "Check it out") [License: [CC0 1.0](https://github.com/badges/shields/blob/master/LICENSE "Go there")] 
+> * [Simple Icons](https://simpleicons.org/ "Check it out") [License: [CC0 1.0](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md "Go there")]
