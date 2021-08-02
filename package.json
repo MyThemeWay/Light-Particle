@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@babel/core": "7.14.8",
-    "@babel/preset-env": "7.14.8",
+    "@babel/preset-env": "7.14.9",
     "@fortawesome/fontawesome-free": "5.15.3",
     "babel-loader": "8.2.2",
     "bootstrap": "5.0.2",
@@ -53,11 +53,11 @@
     "jquery": "3.6.0",
     "mini-css-extract-plugin": "2.1.0",
     "nodemon": "2.0.12",
-    "sass": "1.36.0",
+    "sass": "1.37.0",
     "sass-loader": "12.1.0",
     "shelljs": "0.8.4",
     "sweet-scroll": "4.0.0",
-    "webpack": "5.47.0",
+    "webpack": "5.47.1",
     "webpack-cli": "4.7.2",
     "webpack-dev-server": "3.11.2"
   }
