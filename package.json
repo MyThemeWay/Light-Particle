@@ -53,7 +53,7 @@
     "jquery": "3.6.0",
     "mini-css-extract-plugin": "2.2.0",
     "nodemon": "2.0.12",
-    "sass": "1.38.0",
+    "sass": "1.38.1",
     "sass-loader": "12.1.0",
     "shelljs": "0.8.4",
     "sweet-scroll": "4.0.0",
