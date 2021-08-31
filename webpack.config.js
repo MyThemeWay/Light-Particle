@@ -41,14 +41,20 @@ var config = {
     filename: 'js/[name].bundle.min.js',
   },
   devServer: {
-    watchContentBase: true,
-    contentBase: './docs',
-    writeToDisk: true,
-    after: function(app, server, compiler) {
-      shell.exec('bundle exec gulp --silent --color', {async:true});
+    static: {
+      directory: './docs',
+      watch: {
+        watchContentBase: true,
+        watchOptions: {
+          aggregateTimeout: 100,
+        },
+      }
     },
-    watchOptions: {
-      aggregateTimeout: 100,
+    devMiddleware: {
+      writeToDisk: true,
+    },
+    onAfterSetupMiddleware: function (devServer) {
+      shell.exec('bundle exec gulp --silent --color', {async:true});
     },
   },
   plugins: [
