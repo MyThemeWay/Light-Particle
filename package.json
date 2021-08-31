@@ -43,7 +43,7 @@
     "devicon": "2.13.0",
     "fs-extra": "10.0.0",
     "gulp": "4.0.2",
-    "html-minifier-terser": "5.1.1",
+    "html-minifier-terser": "6.0.0",
     "ignore-emit-webpack-plugin": "2.0.6",
     "image-minimizer-webpack-plugin": "2.2.0",
     "imagemin-gifsicle": "7.0.0",
