@@ -13,12 +13,12 @@
 <a title="Check Lighthouse out" target="_blank" href="https://github.com/GoogleChrome/lighthouse"><img width=275 src="https://img.shields.io/badge/Lighthouse-Average_Results-2A2E30.svg?logo=lighthouse" /></a><br>
 <b>Desktop</b>
 
-<img src="https://raw.githubusercontent.com/sitdisch/cloud/master/lighthouse_results/light_particle/desktop/pagespeed.svg" /><br>
+<img width=700 src="https://raw.githubusercontent.com/sitdisch/cloud/master/lighthouse_results/light_particle/desktop/pagespeed.svg" /><br>
 
 <b>Full Reports:</b> <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/sitdisch/cloud/master/lighthouse_results/light_particle/desktop/mythemeway_github_io_light_particle_.html" title="Check it out" target="_blank">Main Page </a> | <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/sitdisch/cloud/master/lighthouse_results/light_particle/desktop/mythemeway_github_io_light_particle_projects_2020_10_31_project_1_html.html" title="Check it out" target="_blank">Project Page</a>
 
 <details><summary><b>Mobile (click to toggle)</b></summary><br>
-<img src="https://raw.githubusercontent.com/sitdisch/cloud/master/lighthouse_results/light_particle/mobile/pagespeed.svg" /><p>
+<img width=700 src="https://raw.githubusercontent.com/sitdisch/cloud/master/lighthouse_results/light_particle/mobile/pagespeed.svg" /><p>
 
 <b>Full Reports:</b> <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/sitdisch/cloud/master/lighthouse_results/light_particle/mobile/mythemeway_github_io_light_particle_.html" title="Check it out" target="_blank">Main Page </a> | <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/sitdisch/cloud/master/lighthouse_results/light_particle/mobile/mythemeway_github_io_light_particle_projects_2020_10_31_project_1_html.html" title="Check it out" target="_blank">Project Page</a>
 </details><p></p>
