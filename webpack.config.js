@@ -15,7 +15,6 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
-const { extendDefaultPlugins } = require("svgo");
 const IgnoreEmitPlugin = require('ignore-emit-webpack-plugin');
 const fs = require('fs-extra');
 
@@ -75,22 +74,20 @@ var config = {
           [
             "svgo",
             {
-              plugins: extendDefaultPlugins([
-                {
-                  name: "removeViewBox",
-                  active: false,
-                },
-                {
-                  name: "removeEmptyAttrs",
-                  active: false,
-                },
-                {
-                  name: "addAttributesToSVGElement",
-                  params: {
-                    attributes: [{ xmlns: "http://www.w3.org/2000/svg" }],
+              plugins: [{
+                name: 'preset-default',
+                params: {
+                  overrides: {
+                    // customize options for plugins included in preset
+                    addAttributesToSVGElement: {
+                      attributes: [{ xmlns: "http://www.w3.org/2000/svg" }],
+                    },
+                    // or disable plugins
+                    removeViewBox: false,
+                    removeEmptyAttrs: false,
                   },
                 },
-              ]),
+              }],
             },
           ],
         ],
