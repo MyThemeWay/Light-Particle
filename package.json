@@ -51,7 +51,7 @@
     "imagemin-pngquant": "9.0.2",
     "imagemin-svgo": "9.0.0",
     "jquery": "3.6.0",
-    "mini-css-extract-plugin": "2.2.2",
+    "mini-css-extract-plugin": "2.3.0",
     "nodemon": "2.0.12",
     "sass": "1.39.2",
     "sass-loader": "12.1.0",
