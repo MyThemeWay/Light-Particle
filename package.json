@@ -57,7 +57,7 @@
     "sass-loader": "12.1.0",
     "shelljs": "0.8.4",
     "sweet-scroll": "4.0.0",
-    "webpack": "5.52.1",
+    "webpack": "5.53.0",
     "webpack-cli": "4.8.0",
     "webpack-dev-server": "4.2.1"
   }
