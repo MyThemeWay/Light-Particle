@@ -52,7 +52,7 @@
     "imagemin-svgo": "9.0.0",
     "jquery": "3.6.0",
     "mini-css-extract-plugin": "2.3.0",
-    "nodemon": "2.0.12",
+    "nodemon": "2.0.13",
     "sass": "1.41.0",
     "sass-loader": "12.1.0",
     "shelljs": "0.8.4",
