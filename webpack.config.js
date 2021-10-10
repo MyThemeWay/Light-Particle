@@ -8,22 +8,44 @@
  *
  */
 
-const path = require('path');
-const shell = require('shelljs');
-const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
-const IgnoreEmitPlugin = require('ignore-emit-webpack-plugin');
-const fs = require('fs-extra');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const IgnoreEmitPlugin = require('ignore-emit-webpack-plugin');
+const jekyllCmd = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll';
+const { emptyDirSync, ensureDirSync } = require('fs-extra');
+const { spawn, fork } = require('child_process');
+const { resolve } = require('path');
+const { watch } = require('chokidar');
 
-// CLEAR ASSETS FOLDER
-console.log("[\x1b[90mwebpack.config\x1b[0m]: Starting `\x1b[36mfs-extra\x1b[0m`...");
-fs.emptyDirSync('./docs/assets');
-console.log('[\x1b[90mfs-extra\x1b[0m]: Assets \x1b[1;92m[cleaned]\x1b[0m');
-// COPY DIFFERENT FILES IN THE ASSETS FOLDER (GULP WATCHES THIS)
-require('./copyfiles.js');
+var projectLog = '';
+
+// ASSETS CLEARING
+emptyDirSync('./docs/assets');
+console.log("[\x1b[90mfs-extra\x1b[0m]: Assets \x1b[1;32m[cleaned]\x1b[0m");
+
+// FILES COPYING
+spawn('node',['copyfiles.mjs'], {stdio: 'inherit'})
+  .on('spawn', () => {
+    console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35mcopyfiles.mjs\x1b[0m...");
+  })
+  .on('close', () => {
+    console.log("[\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mcopyfiles.mjs\x1b[0m \x1b[1;32m[finished]\x1b[0m"+projectLog);
+  })
+;
+
+// FUNCTIONS
+async function jekyllBuild(jekyllSubCmds) {
+  spawn(jekyllCmd, jekyllSubCmds, {stdio: 'inherit'})
+    .on('spawn', () => {
+      console.log("[\x1b[90mjekyll\x1b[0m]: Starting async `\x1b[36mbuild-process\x1b[0m`...");
+    })
+    .on('close', () => {
+      console.log("[\x1b[90mjekyll\x1b[0m]: `\x1b[36mbuild-process\x1b[0m` \x1b[1;32m[finished]\x1b[0m"+projectLog);
+    })
+  ;
+};
 
 // 
 // WEBPACK SECTION
@@ -36,63 +58,51 @@ var config = {
     bootstrap: './src/styles/bootstrap.scss',
   },
   output: {
-    path: path.resolve(__dirname, './docs/assets'),
+    path: resolve(__dirname, './docs/assets'),
     filename: 'js/[name].bundle.min.js',
   },
   devServer: {
-    static: {
-      directory: './docs',
-      watch: {
-        watchContentBase: true,
-        watchOptions: {
-          aggregateTimeout: 100,
+    static: [
+      {
+        directory: './docs',
+        watch: {
+          watchContentBase: true,
+          watchOptions: {
+            aggregateTimeout: 100,
+          },
         },
-      }
-    },
+      },
+    ],
     devMiddleware: {
       writeToDisk: true,
     },
-    onAfterSetupMiddleware: function (devServer) {
-      shell.exec('bundle exec gulp --silent --color', {async:true});
+    onListening: (devServer) => {
+      const watcherConfig = fork('watcher.config.mjs', [""], {stdio: 'inherit'})
+        .on('spawn', () => {
+          console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m...");
+        })
+      ;
+      devServer.compiler.hooks.afterDone.tap('compLog', () => {
+        console.log("[\x1b[90mwebpack\x1b[0m]: Starting `\x1b[36mcompile-process\x1b[0m`...");
+        if (!(projectLog)) {
+          projectLog = "[\x1b[90mwebpack\x1b[0m]: Server is still running...\n    Server Address: \x1b[1;36mhttp://localhost:"+devServer.server.address().port+"/\x1b[0m\n\t   Restart: insert \x1b[35mrs\x1b[0m and hit \x1b[35m<CR>\x1b[0m\n\t      Exit: press \x1b[35mctrl-c\x1b[0m";
+          watcherConfig.send(projectLog);
+        };
+        setTimeout( () => { console.log(projectLog); }, 100);
+      });
+      ensureDirSync('./docs/assets/img');
+      watch('./docs/assets/img/*', {ignoreInitial: true})
+        .on('all', () => {
+          for (const ws of devServer.webSocketServer.clients) {
+            ws.send('{"type": "static-changed"}')
+          }
+        })
+      ;
     },
   },
   plugins: [
-    new MiniCssExtractPlugin(
-      {
-        filename: "css/[name].min.css",
-      }
-    ),
+    new MiniCssExtractPlugin( { filename: "css/[name].min.css" }),
     new IgnoreEmitPlugin([ /bootstrap.bundle.min.js$/, /style.bundle.min.js$/ ]),
-    new ImageMinimizerPlugin({
-      minimizerOptions: {
-        severityError: "warning", // Ignore errors on corrupted images
-        plugins: [
-          ["gifsicle", { optimizationLevel: 7, interlaced: false }],
-          ["mozjpeg", { quality: 65 }],
-          ["pngquant", { quality: [0.65, 0.90], speed: 4 }],
-          // Svgo configuration here https://github.com/svg/svgo#configuration
-          [
-            "svgo",
-            {
-              plugins: [{
-                name: 'preset-default',
-                params: {
-                  overrides: {
-                    // customize options for plugins included in preset
-                    addAttributesToSVGElement: {
-                      attributes: [{ xmlns: "http://www.w3.org/2000/svg" }],
-                    },
-                    // or disable plugins
-                    removeViewBox: false,
-                    removeEmptyAttrs: false,
-                  },
-                },
-              }],
-            },
-          ],
-        ],
-      },
-    }),
   ],
   module: {
     rules: [
@@ -104,13 +114,6 @@ var config = {
           'sass-loader',
         ],
       },
-      {
-        include: path.resolve(__dirname, './src/img'),
-        type: 'asset/resource',
-        generator: {
-          filename: 'img/[base]',
-        }
-      },
     ],
   },
 }
@@ -119,8 +122,19 @@ module.exports = (env, argv) => {
   if (argv.mode === 'production') {
     config.optimization = {
       minimize: true,
-      minimizer: [new TerserPlugin({}), new CssMinimizerPlugin({})],
+      minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
     };
+    jekyllBuild(['build']);
+    spawn('node',['watcher.config.mjs', '1'], {stdio: 'inherit'})
+      .on('spawn', () => {
+        console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m...");
+      })
+      .on('close', () => {
+        console.log("[\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m \x1b[1;32m[finished]\x1b[0m");
+      })
+    ;
+  } else {
+    jekyllBuild(['build', '--config', '_config.yml,_config_dev.yml']);
   };
   return config;
 };

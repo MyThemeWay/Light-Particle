@@ -29,17 +29,13 @@ google_site_verification: # your meta tag (no quotation marks)
 destination: docs
 keep_files: ['assets']
 exclude: [
-  'src',
-  'node_modules',
-  'Gemfile',
-  'Gemfile.lock',
-  'index.js',
-  'copyfiles.js',
-  'gulpfile.js',
-  'webpack.config.js',
   'README.md',
-  'yarn.lock',
-  'package.json',
+  'copyfiles.mjs',
+  'index.js',
+  'node_modules',
   'package-lock.json',
-  '.ncurc.json'
+  'package.json',
+  'src',
+  'watcher.config.mjs',
+  'webpack.config.js',
 ]

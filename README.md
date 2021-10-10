@@ -7,7 +7,7 @@
 <img height=25 src="https://img.shields.io/github/languages/code-size/mythemeway/Light-Particle?label=CodeSize" />
 <img height=25 src="https://img.shields.io/github/repo-size/mythemeway/Light-Particle?label=RepoSize" />
 <img height=25 src="https://img.shields.io/github/repo-size/mythemeway/mythemeway.github.io?label=BuildSize" />
-<img height=25 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/dev_compile_time_light.svg"/>
+<a title="Check it out" target="_blank" href="https://github.com/mythemeway/light-particle/releases"><img height=25 src="https://img.shields.io/github/v/release/mythemeway/light-particle?label=LastRelease" /></a><br>
 <br><br>
 
 <a title="Check Lighthouse out" target="_blank" href="https://github.com/GoogleChrome/lighthouse"><img width=275 src="https://img.shields.io/badge/Lighthouse-Average_Results-2A2E30.svg?logo=lighthouse" /></a><br>
@@ -74,16 +74,14 @@ This light theme website-boilerplate combines Webpack, Jekyll, Bootstrap and muc
 	<a href="https://github.com/rubygems/rubygems" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/RubyGems--blue.svg?logo=rubygems"/></a>
 	<a href="https://www.npmjs.com/package/jquery" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/jQuery--blue.svg?logo=jquery"/></a>
 	<a href="https://www.npmjs.com/package/@babel/core" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/BABEL--blue.svg?logo=babel"/></a>
-	<a href="https://github.com/jekyll/jekyll" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/jekyll--blue.svg?logo=jekyll"/></a>
 	<a href="https://github.com/FortAwesome/Font-Awesome" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Font_Awesome--blue.svg?logo=font-awesome"/></a>
-	<a href="https://www.npmjs.com/package/gulp" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Gulp--blue.svg?logo=gulp"/></a>
-	<a href="https://search.google.com/search-console/about" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Google_Search_Console--blue.svg?logo=Google-Search-Console"/></a>
 	<a href="https://www.npmjs.com/package/html-minifier-terser" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/htmlminifier.svg"/></a>
+	<a href="https://search.google.com/search-console/about" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Google_Search_Console--blue.svg?logo=Google-Search-Console"/></a>
 	<a href="https://www.npmjs.com/package/mini-css-extract-plugin" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/minicssextractplugin.svg"/></a>
 	<a href="https://www.npmjs.com/package/terser-webpack-plugin" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/terserwebpackplugin.svg"/></a>
-	<a href="https://github.com/JulianLaval/canvas-particle-network" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/canvas_particle_network.svg"/></a>
 	<a href="https://www.npmjs.com/package/sweet-scroll" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/sweet_scroll.svg"/></a>
 	<a href="https://github.com/devicons/devicon" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/devicon.svg"/></a>
+	<a href="https://github.com/JulianLaval/canvas-particle-network" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/canvas_particle_network.svg"/></a>
 	<a href="#feature-overview-clickable" title="Not linked" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/navbar_%26_scrollspy.svg"/></a>
 	<a href="#feature-overview-clickable" title="Not linked" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/follow_buttons.svg"/></a>
 	<a href="#feature-presentation-screen-size-adaption" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/screen_size_adaption.svg"/></a>
@@ -91,49 +89,80 @@ This light theme website-boilerplate combines Webpack, Jekyll, Bootstrap and muc
 	<a href="#feature-overview-clickable" title="Not linked" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/cross_browser_%26_device_presentation.svg"/></a>
 </div>
 
-### [master branch](https://github.com/MyThemeWay/Light-Particle/tree/master "Check it out")
-<a title="Check it out" target="_blank" href="https://www.npmjs.com/package/webpack"><img height=26 src="https://img.shields.io/github/package-json/dependency-version/mythemeway/light-particle/webpack?label=webpack&logo=webpack" /></a>
-<a title="Check it out" target="_blank" href="https://www.npmjs.com/package/bootstrap"><img height=26 src="https://img.shields.io/github/package-json/dependency-version/mythemeway/light-particle/bootstrap?label=Bootstrap&logo=bootstrap" /></a>
+### [Branch: master](https://github.com/MyThemeWay/Light-Particle/tree/master "Check it out")
+<a title="Check it out" target="_blank" href="https://www.npmjs.com/package/webpack"><img height=26 src="https://img.shields.io/github/package-json/dependency-version/mythemeway/Light-particle/webpack?label=webpack&logo=webpack" /></a>
+<a title="Check it out" target="_blank" href="https://www.npmjs.com/package/bootstrap"><img height=26 src="https://img.shields.io/github/package-json/dependency-version/mythemeway/Light-particle/bootstrap?label=Bootstrap&logo=bootstrap" /></a>
+<a href="https://github.com/jekyll/jekyll" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/jekyll-4.2.1-blue.svg?logo=jekyll"/></a>
+<a href="https://github.com/nodejs/node" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Node.js-14.18.0-blue.svg?logo=node.js"/></a>
+<a href="https://github.com/nvm-sh/nvm" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/nvm-0.39.0-blue.svg"/></a>
 <a href="https://www.npmjs.com/package/sass" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Sass-Dart-blue.svg?logo=sass"/></a>
-<a href="https://www.npmjs.com/package/image-minimizer-webpack-plugin" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/imageminimizerwebpackplugin.svg"/></a>
+<a href="https://github.com/GoogleChromeLabs/squoosh" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Squoosh-mozjpeg,_oxipng-blue.svg"/></a>
+<a href="https://www.npmjs.com/package/imagemin" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/imagemin-svgo-blue.svg"/></a>
+<a href="https://www.npmjs.com/package/chokidar" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/chokidar--blue.svg"/></a>
 <a href="https://www.npmjs.com/package/css-minimizer-webpack-plugin" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/cssminimizerwebpackplugin.svg"/></a>
+> <b>Note</b>: <b>imagemin</b>-<b>mozjpeg</b>, -<b>pngquant</b> & -<b>gifsicle</b> are deactivated by default due to currently unresolved vulnerabilities. Feel free to change this here [<b>watcher.config.mjs</b>](https://github.com/MyThemeWay/Light-Particle/blob/master/watcher.config.mjs "Go there") (e.&nbsp;g. <b>imagemin</b>-<b>pngquant</b> is faster than <b>Squoosh</b>-<b>oxipng</b>).
 
-### [v1.0](https://github.com/MyThemeWay/Light-Particle/releases/tag/v1.0 "Go there")
-<a href="https://www.npmjs.com/package/webpack" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/webpack-4.44.2-blue.svg?logo=webpack"/></a>
-<a href="https://www.npmjs.com/package/bootstrap" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Bootstrap-4.6.0-blue.svg?logo=bootstrap"/></a>
-<a href="https://www.npmjs.com/package/node-sass" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Sass-Node-blue.svg?logo=sass"/></a>
+### [Releases](https://github.com/MyThemeWay/Light-Particle/releases "Go there"): [v1.0](https://github.com/MyThemeWay/Light-Particle/releases/tag/v1.0 "Go there") > [v2.0](https://github.com/MyThemeWay/Light-Particle/releases/tag/v2.0 "Go there") > [v3.0](https://github.com/MyThemeWay/Light-Particle/releases/tag/v3.0 "Go there")
+<a href="https://www.npmjs.com/package/webpack" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/webpack-4.44_>_5.40_>_5.58-blue.svg?logo=webpack"/></a>
+<a href="https://www.npmjs.com/package/bootstrap" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Bootstrap-4.6_>_5.0_>_5.1-blue.svg?logo=bootstrap"/></a>
+<a href="https://github.com/jekyll/jekyll" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/jekyll-4.2.0_>>_4.2.1-blue.svg?logo=jekyll"/></a>
+<a href="https://github.com/nodejs/node" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Node.js-14.1_>...>_14.18-blue.svg?logo=node.js"/></a>
+<a href="https://github.com/nvm-sh/nvm" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/nvm-0.35_>...>_0.39-blue.svg"/></a>
+<a href="https://www.npmjs.com/package/node-sass" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Sass-Node_>_Dart-blue.svg?logo=sass"/></a>
+
 <a href="https://www.npmjs.com/package/image-webpack-loader" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/image_webpack_loader.svg"/></a>
-<a href="https://www.npmjs.com/package/optimize-css-assets-webpack-plugin" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/optimize_css_assets_webpack_plugin.svg"/></a>
+<img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/->-blue.svg"></img>
+<a href="https://www.npmjs.com/package/image-minimizer-webpack-plugin" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/imageminimizerwebpackplugin.svg"/></a>
+<img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/->-blue.svg"></img>
+<a href="https://github.com/GoogleChromeLabs/squoosh" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/Squoosh-mozjpeg,_oxipng-blue.svg"/></a>
+<a href="https://www.npmjs.com/package/imagemin" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/imagemin-svgo-blue.svg"/></a>
+
+<a href="https://www.npmjs.com/package/gulp" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Gulp-grey.svg?logo=gulp"/></a>
+<img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/->>-blue.svg"></img>
+<a href="https://www.npmjs.com/package/chokidar" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/chokidar-grey.svg"/></a>
+
+<a href="https://www.npmjs.com/package/optimize-css-assets-webpack-plugin" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/Optimize_CSS_Assets_Webpack_Plugin-grey.svg"/></a>
+<img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/->-blue.svg"></img>
+<a href="https://www.npmjs.com/package/css-minimizer-webpack-plugin" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/CssMinimizerWebpackPlugin-grey.svg"/></a>
+
+<a href="https://www.npmjs.com/package/shelljs" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/ShellJS-grey.svg"/></a>
+<img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/->>-blue.svg"></img>
+<a href="https://github.com/nodejs/node" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Node.js-grey.svg?logo=node.js"/></a>
 
 > <b>Note</b>: Third party feature badges are clickable and linked to their sources.
 
-<h3>Additional Feature Information</h3>
+<h3>Additional Feature Information: <a href="https://github.com/MyThemeWay/Light-Particle/releases/tag/v3.0" title="Check it out" target="_blank">v3.0</a></h3>
 <div align="center">
 	<a href="https://github.com/webpack/webpack" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=webpack&repo=webpack&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
 	<a href="https://github.com/twbs/bootstrap" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=twbs&repo=bootstrap&text_color=F1F1EB&border_color=050B0E&bg_color=212426&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
 	<a href="https://github.com/jekyll/jekyll" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=jekyll&repo=jekyll&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
 	<br>
 	<details><summary><b>[click to toggle]</b></summary>
+	<a href="https://github.com/nodejs/node" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=nodejs&repo=node&text_color=F1F1EB&border_color=050B0E&bg_color=212426&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
+	<a href="https://github.com/npm/cli" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=npm&repo=cli&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905&show_owner=true" /></a><span> </span>
+	<a href="https://github.com/nvm-sh/nvm" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=nvm-sh&repo=nvm&text_color=F1F1EB&border_color=050B0E&bg_color=212426&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
+	<a href="https://github.com/GoogleChromeLabs/squoosh" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=GoogleChromeLabs&repo=squoosh&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
+	<a href="https://github.com/imagemin/imagemin" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=imagemin&repo=imagemin&text_color=F1F1EB&border_color=050B0E&bg_color=212426&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
+	<a href="https://github.com/paulmillr/chokidar" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=paulmillr&repo=chokidar&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
+	<a href="https://github.com/sass/dart-sass" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=sass&repo=dart-sass&text_color=F1F1EB&border_color=050B0E&bg_color=212426&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
+	<a href="https://github.com/FortAwesome/Font-Awesome" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=FortAwesome&repo=Font-Awesome&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>	
 	<a href="https://github.com/jquery/jquery" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=jquery&repo=jquery&text_color=F1F1EB&border_color=050B0E&bg_color=212426&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
-	<a href="https://github.com/gulpjs/gulp" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=gulpjs&repo=gulp&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
-	<a href="https://github.com/npm/cli" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=npm&repo=cli&text_color=F1F1EB&border_color=050B0E&bg_color=212426&title_color=FFFFFF&icon_color=E28905&show_owner=true" /></a><span> </span>
 	<a href="https://github.com/rubygems/rubygems" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=rubygems&repo=rubygems&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
 	<a href="https://github.com/babel/babel" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=babel&repo=babel&text_color=F1F1EB&border_color=050B0E&bg_color=212426&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
-	<a href="https://github.com/devicons/devicon" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=devicons&repo=devicon&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
-	<a href="https://github.com/FortAwesome/Font-Awesome" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=FortAwesome&repo=Font-Awesome&text_color=F1F1EB&border_color=050B0E&bg_color=212426&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>	
+	<a href="https://github.com/terser/html-minifier-terser" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=terser&repo=html-minifier-terser&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
+	<a href="https://github.com/webpack-contrib/css-minimizer-webpack-plugin" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=webpack-contrib&repo=css-minimizer-webpack-plugin&text_color=F1F1EB&border_color=050B0E&bg_color=212426&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
+	<a href="https://github.com/webpack-contrib/mini-css-extract-plugin" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=webpack-contrib&repo=mini-css-extract-plugin&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
+	<a href="https://github.com/webpack-contrib/terser-webpack-plugin" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=webpack-contrib&repo=terser-webpack-plugin&text_color=F1F1EB&border_color=050B0E&bg_color=212426&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
 	<a href="https://github.com/JulianLaval/canvas-particle-network" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=JulianLaval&repo=canvas-particle-network&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
 	<a href="https://github.com/wadackel/sweet-scroll" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=wadackel&repo=sweet-scroll&text_color=F1F1EB&border_color=050B0E&bg_color=212426&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
-	<a href="https://github.com/terser/html-minifier-terser" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=terser&repo=html-minifier-terser&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
-	<a href="https://github.com/webpack-contrib/terser-webpack-plugin" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=webpack-contrib&repo=terser-webpack-plugin&text_color=F1F1EB&border_color=050B0E&bg_color=212426&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
-	<a href="https://github.com/webpack-contrib/mini-css-extract-plugin" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=webpack-contrib&repo=mini-css-extract-plugin&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
-	<h3 align="left"><a href="https://github.com/MyThemeWay/Light-Particle/tree/master" title="Check it out" target="_blank">master branch</a></h3>
-	<a href="https://github.com/sass/dart-sass" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=sass&repo=dart-sass&text_color=F1F1EB&border_color=050B0E&bg_color=212426&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
-	<a href="https://github.com/webpack-contrib/image-minimizer-webpack-plugin" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=webpack-contrib&repo=image-minimizer-webpack-plugin&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
-	<a href="https://github.com/webpack-contrib/css-minimizer-webpack-plugin" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=webpack-contrib&repo=css-minimizer-webpack-plugin&text_color=F1F1EB&border_color=050B0E&bg_color=212426&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
-	<h3 align="left" ><a href="https://github.com/MyThemeWay/Light-Particle/releases/tag/v1.0" title="Check it out" target="_blank">v1.0</a></h3>
-	<a href="https://github.com/sass/node-sass" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=sass&repo=node-sass&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
+	<a href="https://github.com/devicons/devicon" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=devicons&repo=devicon&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
+	<h3 align="left" >Additional Feature Information: <a href="https://github.com/MyThemeWay/Light-Particle/releases/tag/v1.0" title="Check it out" target="_blank">v1.0</a> & <a href="https://github.com/MyThemeWay/Light-Particle/releases/tag/v2.0" title="Check it out" target="_blank">v2.0</a></h3>
+	<a href="https://github.com/shelljs/shelljs" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=shelljs&repo=shelljs&text_color=F1F1EB&border_color=050B0E&bg_color=212426&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
+	<a href="https://github.com/gulpjs/gulp" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=gulpjs&repo=gulp&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
 	<a href="https://github.com/tcoopman/image-webpack-loader" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=tcoopman&repo=image-webpack-loader&text_color=F1F1EB&border_color=050B0E&bg_color=212426&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
-	<a href="https://github.com/NMFR/optimize-css-assets-webpack-plugin" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=NMFR&repo=optimize-css-assets-webpack-plugin&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
+	<a href="https://github.com/webpack-contrib/image-minimizer-webpack-plugin" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=webpack-contrib&repo=image-minimizer-webpack-plugin&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
+	<a href="https://github.com/NMFR/optimize-css-assets-webpack-plugin" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=NMFR&repo=optimize-css-assets-webpack-plugin&text_color=F1F1EB&border_color=050B0E&bg_color=212426&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
+	<a href="https://github.com/sass/node-sass" title="Explore this" target="_blank"><img src="https://github-readme-stats.vercel.app/api/pin/?username=sass&repo=node-sass&text_color=F1F1EB&border_color=050B0E&bg_color=2A2E30&title_color=FFFFFF&icon_color=E28905" /></a><span> </span>
 	</details><p></p>
 </div>
 
@@ -176,6 +205,6 @@ Have a nice day.
 > * The linked pages were checked for possible legal violations at the time of linking and illegal content wasn't discernible. A permanent control of the linked pages is unreasonable without concrete evidence of an infringement. However, if the README operator becomes aware of such a violation, he will act immediately. 
 
 ### Readme uses
-> * [GitHub Readme Stats](https://github.com/anuraghazra/github-readme-stats "Check it out") [License: [MIT](https://github.com/anuraghazra/github-readme-stats/blob/master/LICENSE "Go there"); Copyright © 2021 Anurag Hazra]
+> * [GitHub Readme Stats](https://github.com/anuraghazra/github-readme-stats "Check it out") [License: [MIT](https://github.com/anuraghazra/github-readme-stats/blob/master/LICENSE "Go there"); Copyright ©️ 2021 Anurag Hazra]
 > * [Shields.io](https://github.com/badges/shields "Check it out") [License: [CC0 1.0](https://github.com/badges/shields/blob/master/LICENSE "Go there")] 
 > * [Simple Icons](https://simpleicons.org/ "Check it out") [License: [CC0 1.0](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md "Go there")]
