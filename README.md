@@ -96,7 +96,7 @@ This light theme website-boilerplate combines Webpack, Jekyll, Bootstrap and muc
 <a href="https://github.com/nodejs/node" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Node.js-14.18.0-blue.svg?logo=node.js"/></a>
 <a href="https://github.com/nvm-sh/nvm" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/nvm-0.39.0-blue.svg"/></a>
 <a href="https://www.npmjs.com/package/sass" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Sass-Dart-blue.svg?logo=sass"/></a>
-<a href="https://github.com/GoogleChromeLabs/squoosh" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Squoosh-mozjpeg,_oxipng-blue.svg"/></a>
+<a href="https://github.com/GoogleChromeLabs/squoosh" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/Squoosh-mozjpeg,_oxipng-blue.svg?logo=google-chrome"/></a>
 <a href="https://www.npmjs.com/package/imagemin" title="Check it out" target="_blank"><img height=26 src="https://img.shields.io/badge/imagemin-svgo-blue.svg"/></a>
 <a href="https://www.npmjs.com/package/chokidar" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/chokidar--blue.svg"/></a>
 <a href="https://www.npmjs.com/package/css-minimizer-webpack-plugin" title="Check it out" target="_blank"><img height=26 src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/cssminimizerwebpackplugin.svg"/></a>
