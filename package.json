@@ -12,16 +12,16 @@
     "start": "npm run -s start:log && nodemon",
     "start:log": "node -e 'console.log(\"[\\x1b[90mnodemon\\x1b[0m]: Starting `\\x1b[36mwatch\\x1b[0m` of \\x1b[35mwebpack.config.js\\x1b[0m, \\x1b[35mpackage.json\\x1b[0m and \\x1b[35mwatcher.config.mjs\\x1b[0m...\\n[\\x1b[90mnodemon\\x1b[0m]: Starting `\\x1b[36mwebpack-dev-server\\x1b[0m`...\")'",
     "build": "npm run -s build:cmd",
-    "build:cmd": "(npm run -s build:log:webp) && (./node_modules/.bin/webpack --mode=production) && (npm run -s build:log:htmlminifier) && (npm run -s build:htmlminifier) && (npm run -s build:log:finish)",
+    "build:cmd": "(npm run -s build:log:webp) && (webpack --mode=production) && (npm run -s build:log:htmlminifier) && (npm run -s build:htmlminifier) && (npm run -s build:log:finish)",
     "build:log:webp": "node -e 'console.log(\"[\\x1b[90mwebpack\\x1b[0m]: Starting `\\x1b[36mproduction-mode\\x1b[0m`...\")'",
     "build:log:htmlminifier": "node -e 'console.log(\"[\\x1b[90mwebpack\\x1b[0m]: `\\x1b[36mproduction-mode\\x1b[0m` \\x1b[1;32m[finished]\\x1b[0m\\n[\\x1b[90mHTMLMinifier\\x1b[0m]: Starting `\\x1b[36mminifying-process\\x1b[0m`...\")'",
-    "build:htmlminifier": "./node_modules/html-minifier-terser/cli.js --input-dir ./docs --output-dir ./docs --file-ext html --remove-comments --collapse-whitespace --conservative-collapse --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --minify-css true --minify-js true --collapse-boolean-attributes",
+    "build:htmlminifier": "html-minifier-terser --input-dir ./docs --output-dir ./docs --file-ext html --remove-comments --collapse-whitespace --conservative-collapse --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --minify-css true --minify-js true --collapse-boolean-attributes",
     "build:log:finish": "node -e 'console.log(\"[\\x1b[90mHTMLMinifier\\x1b[0m]: `\\x1b[36mminifying-process\\x1b[0m` \\x1b[1;32m[finished]\\x1b[0m\")'"
   },
   "nodemonConfig": {
     "quiet": true,
     "legacyWatch": true,
-    "exec": "./node_modules/.bin/webpack serve --mode=development",
+    "exec": "webpack serve --mode=development",
     "watch": [
       "webpack.config.js",
       "package.json",
@@ -50,11 +50,11 @@
     "imagemin-svgo": "10.0.0",
     "jquery": "3.6.0",
     "mini-css-extract-plugin": "2.4.2",
-    "nodemon": "2.0.13",
+    "nodemon": "2.0.14",
     "sass": "1.43.2",
     "sass-loader": "12.2.0",
     "sweet-scroll": "4.0.0",
-    "webpack": "5.58.2",
+    "webpack": "5.59.0",
     "webpack-cli": "4.9.1",
     "webpack-dev-server": "4.3.1"
   }
