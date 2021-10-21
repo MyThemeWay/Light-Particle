@@ -37,7 +37,7 @@
     "@squoosh/cli": "0.7.2",
     "chokidar": "3.5.2",
     "@fortawesome/fontawesome-free": "5.15.4",
-    "babel-loader": "8.2.2",
+    "babel-loader": "8.2.3",
     "bootstrap": "5.1.3",
     "canvas-particle-network": "1.5.0",
     "css-loader": "6.4.0",
