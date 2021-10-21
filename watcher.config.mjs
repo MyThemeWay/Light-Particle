@@ -218,6 +218,10 @@ watcherJekyll.on('all', () => {
     .on('spawn', () => {
       console.log("[\x1b[90mjekyll\x1b[0m]: Starting async `\x1b[36mbuild-process\x1b[0m`...");
     })
+    .on('error', (err) => {
+      console.log("[\x1b[90mjekyll\x1b[0m]: `\x1b[36mbuild-process\x1b[0m` \x1b[1;31m[ERROR]\x1b[0m\n");
+      throw err;
+    })
     .on('close', () => {
       console.log("[\x1b[90mjekyll\x1b[0m]: `\x1b[36mbuild-process\x1b[0m` \x1b[1;32m[finished]\x1b[0m"+projectLog);
     })
