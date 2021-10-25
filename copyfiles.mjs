@@ -14,33 +14,28 @@ const copyfiles = [
   {
     source: './node_modules/devicon',
     files: ['devicon.min.css', 'LICENSE', 'fonts'],
-    target: './docs/assets/lib/devicon'
+    target: `devicon`
   },
   {
     source: './node_modules/@fortawesome/fontawesome-free',
     files: ['LICENSE.txt', 'css/all.min.css', 'css/v4-shims.min.css', 'webfonts'],
-    target: './docs/assets/lib/fontawesome'
-  },
-  {
-    source: './src/lib/google-webfonts',
-    files: ['font-rubik.css', 'font-files'],
-    target: './docs/assets/lib/google-webfonts'
+    target: 'fontawesome'
   },
   {
     source: './node_modules/jquery',
     files: ['/dist/jquery.min.js', 'LICENSE.txt'],
-    target: './docs/assets/lib/jquery'
+    target: 'jquery'
   },
   {
     source: './node_modules/bootstrap/',
     files: ['/dist/js/bootstrap.bundle.min.js', '/dist/js/bootstrap.bundle.min.js.map', 'LICENSE'],
-    target: './docs/assets/lib/bootstrap'
+    target: 'bootstrap'
   }
 ];
 
 copyfiles.forEach(copyfile => {
   copyfile.files.forEach(file => {
-    copy(`${copyfile.source}/${file}`, `${copyfile.target}/${file}`)
+    copy(`${copyfile.source}/${file}`, `./docs/assets/lib_c/${copyfile.target}/${file}`)
       .catch(err => console.error(err))
   });
 });

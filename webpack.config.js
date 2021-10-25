@@ -14,7 +14,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const IgnoreEmitPlugin = require('ignore-emit-webpack-plugin');
 const jekyllCmd = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll';
-const { emptyDirSync, ensureDirSync } = require('fs-extra');
+const { emptyDirSync } = require('fs-extra');
 const { spawn, fork } = require('child_process');
 const { resolve } = require('path');
 const { watch } = require('chokidar');
@@ -30,6 +30,10 @@ spawn('node',['copyfiles.mjs'], {stdio: 'inherit'})
   .on('spawn', () => {
     console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35mcopyfiles.mjs\x1b[0m...");
   })
+  .on('error', err => {
+    console.log("\x1b[1;31m[ERROR]\x1b[0m\n");
+    throw err;
+  })
   .on('close', () => {
     console.log("[\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mcopyfiles.mjs\x1b[0m \x1b[1;32m[finished]\x1b[0m"+projectLog);
   })
@@ -41,8 +45,8 @@ async function jekyllBuild(jekyllSubCmds) {
     .on('spawn', () => {
       console.log("[\x1b[90mjekyll\x1b[0m]: Starting async `\x1b[36mbuild-process\x1b[0m`...");
     })
-    .on('error', (err) => {
-      console.log("[\x1b[90mjekyll\x1b[0m]: `\x1b[36mbuild-process\x1b[0m` \x1b[1;31m[ERROR]\x1b[0m\n");
+    .on('error', err => {
+      console.log("\x1b[1;31m[ERROR]\x1b[0m\n");
       throw err;
     })
     .on('close', () => {
@@ -85,6 +89,10 @@ var config = {
         .on('spawn', () => {
           console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m...");
         })
+        .on('error', err => {
+          console.log("\x1b[1;31m[ERROR]\x1b[0m\n");
+          throw err;
+        })
       ;
       devServer.compiler.hooks.afterDone.tap('compLog', () => {
         console.log("[\x1b[90mwebpack\x1b[0m]: Starting `\x1b[36mcompile-process\x1b[0m`...");
@@ -94,8 +102,7 @@ var config = {
         };
         setTimeout( () => { console.log(projectLog); }, 100);
       });
-      ensureDirSync('./docs/assets/img');
-      watch('./docs/assets/img/*', {ignoreInitial: true})
+      watch('./docs/assets/', {ignored: /^(js|styles)\//,ignoreInitial: true})
         .on('all', () => {
           for (const ws of devServer.webSocketServer.clients) {
             ws.send('{"type": "static-changed"}')
@@ -132,6 +139,10 @@ module.exports = (env, argv) => {
     spawn('node',['watcher.config.mjs', '1'], {stdio: 'inherit'})
       .on('spawn', () => {
         console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m...");
+      })
+      .on('error', err => {
+        console.log("\x1b[1;31m[ERROR]\x1b[0m\n");
+        throw err;
       })
       .on('close', () => {
         console.log("[\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m \x1b[1;32m[finished]\x1b[0m");
