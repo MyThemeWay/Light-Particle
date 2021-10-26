@@ -14,7 +14,7 @@ const copyfiles = [
   {
     source: './node_modules/devicon',
     files: ['devicon.min.css', 'LICENSE', 'fonts'],
-    target: `devicon`
+    target: 'devicon'
   },
   {
     source: './node_modules/@fortawesome/fontawesome-free',
