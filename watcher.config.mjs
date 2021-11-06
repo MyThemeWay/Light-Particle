@@ -175,60 +175,72 @@ watcherSrcOther.on('all', (event,path) => {
 //
 
 const watcherCopyMjs = watch('copyfiles.mjs', {
-  ignoreInitial: true,
   followSymlinks: false
 });
 
-watcherCopyMjs.on('change', path => {
-  emptyDirSync('./docs/assets/lib_c');
+watcherCopyMjs
+  .on('add', path => { copyMjs(path); })
+  .on('change', path => {
+    emptyDirSync('./docs/assets/lib_c');
+    copyMjs(path);
+  })
+;
+
+async function copyMjs(path) {
   spawn('node',[path], {stdio: 'inherit'})
     .on('spawn', () => {
       console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35m"+path+"\x1b[0m...");
     })
     .on('error', err => {
-      console.log("\x1b[1;31m[ERROR]\x1b[0m\n");
+      console.log("\x1b[1;31m[ERROR]\x1b[0m => [\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35m"+path+"\x1b[0m \x1b[1;31m[failed]\x1b[0m");
       throw err;
     })
     .on('close', () => {
       console.log("[\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35m"+path+"\x1b[0m \x1b[1;32m[finished]\x1b[0m"+projectLog);
     })
   ;
-});
+}
 
 //
 // SECTION: JEKYLL BUILD
 //
 
-const jekyllCommand = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll';
+const jekyllCmd = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll';
+const jekyllSubCmds = (argv[2]) ? ['build'] : ['build', '--config', '_config.yml,_config_dev.yml'] ;
 const watcherJekyll = watch(['*.html', '_includes/*.html', '_layouts/*.html', '_posts/*.md', '_config*.yml'], {
-  ignoreInitial: true,
+  ignoreInitial: true
 });
-watcherJekyll.on('all', () => {
-  spawn(jekyllCommand, ['build', '--config', '_config.yml,_config_dev.yml'], {stdio: 'inherit'})
+
+watcherJekyll.on('all', () => { jekyll(); });
+
+async function jekyll() {
+  spawn(jekyllCmd, jekyllSubCmds, {stdio: 'inherit'})
     .on('spawn', () => {
       console.log("[\x1b[90mjekyll\x1b[0m]: Starting async `\x1b[36mbuild-process\x1b[0m`...");
     })
     .on('error', err => {
-      console.log("\x1b[1;31m[ERROR]\x1b[0m\n");
+      console.log("\x1b[1;31m[ERROR]\x1b[0m => \x1b[0m[\x1b[90mjekyll\x1b[0m]: `\x1b[36mbuild-process\x1b[0m` \x1b[1;31m[failed]\x1b[0m");
       throw err;
     })
     .on('close', () => {
       console.log("[\x1b[90mjekyll\x1b[0m]: `\x1b[36mbuild-process\x1b[0m` \x1b[1;32m[finished]\x1b[0m"+projectLog);
     })
   ;
-});
+}
+
+jekyll();
 
 //
 // SECTION: DISTINCTION DEVELOP- OR PRODUCTION-MODE
 //
 
 if (argv[2]) {
-  watcherCopyMjs.close();
-  watcherJekyll.close();
   watcherSquooshJpg.on('ready', () => watcherSquooshJpg.close());
   watcherSquooshPng.on('ready', () => watcherSquooshPng.close());
   watcherImagemin.on('ready', () => watcherImagemin.close());
   watcherSrcOther.on('ready', () => watcherSrcOther.close());
+  watcherCopyMjs.on('ready', () => watcherCopyMjs.close());
+  watcherJekyll.close();
 } else {
   process.on('message', (log) => { projectLog = "\n"+log });
 };

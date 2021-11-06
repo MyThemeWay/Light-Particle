@@ -13,7 +13,6 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const IgnoreEmitPlugin = require('ignore-emit-webpack-plugin');
-const jekyllCmd = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll';
 const { emptyDirSync } = require('fs-extra');
 const { spawn, fork } = require('child_process');
 const { resolve } = require('path');
@@ -24,36 +23,6 @@ var projectLog = '';
 // ASSETS CLEARING
 emptyDirSync('./docs/assets');
 console.log("[\x1b[90mfs-extra\x1b[0m]: Assets \x1b[1;32m[cleaned]\x1b[0m");
-
-// FILES COPYING
-spawn('node',['copyfiles.mjs'], {stdio: 'inherit'})
-  .on('spawn', () => {
-    console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35mcopyfiles.mjs\x1b[0m...");
-  })
-  .on('error', err => {
-    console.log("\x1b[1;31m[ERROR]\x1b[0m\n");
-    throw err;
-  })
-  .on('close', () => {
-    console.log("[\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mcopyfiles.mjs\x1b[0m \x1b[1;32m[finished]\x1b[0m"+projectLog);
-  })
-;
-
-// FUNCTIONS
-async function jekyllBuild(jekyllSubCmds) {
-  spawn(jekyllCmd, jekyllSubCmds, {stdio: 'inherit'})
-    .on('spawn', () => {
-      console.log("[\x1b[90mjekyll\x1b[0m]: Starting async `\x1b[36mbuild-process\x1b[0m`...");
-    })
-    .on('error', err => {
-      console.log("\x1b[1;31m[ERROR]\x1b[0m\n");
-      throw err;
-    })
-    .on('close', () => {
-      console.log("[\x1b[90mjekyll\x1b[0m]: `\x1b[36mbuild-process\x1b[0m` \x1b[1;32m[finished]\x1b[0m"+projectLog);
-    })
-  ;
-};
 
 // 
 // WEBPACK SECTION
@@ -90,7 +59,7 @@ var config = {
           console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m...");
         })
         .on('error', err => {
-          console.log("\x1b[1;31m[ERROR]\x1b[0m\n");
+          console.log("\x1b[1;31m[ERROR]\x1b[0m => [\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m \x1b[1;31m[failed]\x1b[0m");
           throw err;
         })
       ;
@@ -135,21 +104,18 @@ module.exports = (env, argv) => {
       minimize: true,
       minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
     };
-    jekyllBuild(['build']);
     spawn('node',['watcher.config.mjs', '1'], {stdio: 'inherit'})
       .on('spawn', () => {
         console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m...");
       })
       .on('error', err => {
-        console.log("\x1b[1;31m[ERROR]\x1b[0m\n");
+        console.log("\x1b[1;31m[ERROR]\x1b[0m => [\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m \x1b[1;31m[failed]\x1b[0m");
         throw err;
       })
       .on('close', () => {
         console.log("[\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m \x1b[1;32m[finished]\x1b[0m");
       })
     ;
-  } else {
-    jekyllBuild(['build', '--config', '_config.yml,_config_dev.yml']);
   };
   return config;
 };
