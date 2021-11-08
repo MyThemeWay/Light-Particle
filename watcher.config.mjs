@@ -65,13 +65,13 @@ async function squoosh(encoder,encoderConfig,event,path,statsBefore) {
          logSizeTxt('squoosh', targetPath, statsBefore);
        } else {
          cp.stderr.on('data', (data) => { 
-           console.log('[\x1b[90msquoosh\x1b[0m]: \x1b[35m'+basename(targetPath)+'\x1b[0m \x1b[1;31m[ERROR]\x1b[0m\n'+data.toString().replace(/\n$/,"")+projectLog)
+           console.log('[\x1b[90msquoosh\x1b[0m]: \x1b[35m'+basename(targetPath)+' \x1b[1;31m[ERROR]\x1b[0m\n'+data.toString().replace(/\n$/,"")+projectLog)
          });
        };
      });
   } else if ( event === 'unlink' ) {
     remove(targetPath)
-      .then( () => console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+'\x1b[0m \x1b[1;32m[removed]\x1b[0m'+projectLog))
+      .then( () => console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+' \x1b[1;32m[removed]\x1b[0m'+projectLog))
       .catch(err => console.error(err))
     ;
   };
@@ -137,7 +137,7 @@ watcherImagemin.on('all', (event,path,statsBefore) => {
     ;
   } else if ( event === 'unlink' ) {
     remove(targetPath)
-      .then( () => console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+'\x1b[0m \x1b[1;32m[removed]\x1b[0m'+projectLog))
+      .then( () => console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+' \x1b[1;32m[removed]\x1b[0m'+projectLog))
       .catch(err => console.error(err))
     ;
   };
@@ -155,16 +155,16 @@ watcherSrcOther.on('all', (event,path) => {
   const targetPath = './docs/assets/'+path.replace(/^src\//, "");
   if ( event === 'addDir' ) {
     ensureDir(targetPath)
-      .then( () => { if ( projectLog ) { console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+'\x1b[0m \x1b[1;32m[added]\x1b[0m'+projectLog); }})
+      .then( () => { if ( projectLog ) { console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+' \x1b[1;32m[added]\x1b[0m'+projectLog); }})
       .catch(err => console.error(err))
   } else if (( event === 'add' ) || ( event === 'change' )) {
     copy(path, targetPath)
-      .then( () => { if ( projectLog ) { console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+'\x1b[0m \x1b[1;32m['+event.substring(0,5)+'ed]\x1b[0m'+projectLog) }})
+      .then( () => { if ( projectLog ) { console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+' \x1b[1;32m['+event.substring(0,5)+'ed]\x1b[0m'+projectLog) }})
       .catch(err => console.error(err))
     ;
   } else if (( event === 'unlink' ) || ( event === 'unlinkDir' )) {
     remove(targetPath)
-      .then( () => console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+'\x1b[0m \x1b[1;32m[removed]\x1b[0m'+projectLog))
+      .then( () => console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+' \x1b[1;32m[removed]\x1b[0m'+projectLog))
       .catch(err => console.error(err))
     ;
   };
@@ -192,11 +192,11 @@ async function copyMjs(path) {
       console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35m"+path+"\x1b[0m...");
     })
     .on('error', err => {
-      console.log("\x1b[1;31m[ERROR]\x1b[0m => [\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35m"+path+"\x1b[0m \x1b[1;31m[failed]\x1b[0m");
+      console.log("\x1b[1;31m[ERROR]\x1b[0m => [\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35m"+path+" \x1b[1;31m[failed]\x1b[0m");
       throw err;
     })
     .on('close', () => {
-      console.log("[\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35m"+path+"\x1b[0m \x1b[1;32m[finished]\x1b[0m"+projectLog);
+      console.log("[\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35m"+path+" \x1b[1;32m[finished]\x1b[0m"+projectLog);
     })
   ;
 }

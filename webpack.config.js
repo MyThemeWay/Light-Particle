@@ -59,7 +59,7 @@ var config = {
           console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m...");
         })
         .on('error', err => {
-          console.log("\x1b[1;31m[ERROR]\x1b[0m => [\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m \x1b[1;31m[failed]\x1b[0m");
+          console.log("\x1b[1;31m[ERROR]\x1b[0m => [\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs \x1b[1;31m[failed]\x1b[0m");
           throw err;
         })
       ;
@@ -109,11 +109,11 @@ module.exports = (env, argv) => {
         console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m...");
       })
       .on('error', err => {
-        console.log("\x1b[1;31m[ERROR]\x1b[0m => [\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m \x1b[1;31m[failed]\x1b[0m");
+        console.log("\x1b[1;31m[ERROR]\x1b[0m => [\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs \x1b[1;31m[failed]\x1b[0m");
         throw err;
       })
       .on('close', () => {
-        console.log("[\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m \x1b[1;32m[finished]\x1b[0m");
+        console.log("[\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs \x1b[1;32m[finished]\x1b[0m");
       })
     ;
   };
