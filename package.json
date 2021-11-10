@@ -50,7 +50,7 @@
     "imagemin-svgo": "10.0.0",
     "jquery": "3.6.0",
     "mini-css-extract-plugin": "2.4.4",
-    "nodemon": "2.0.14",
+    "nodemon": "2.0.15",
     "sass": "1.43.4",
     "sass-loader": "12.3.0",
     "sweet-scroll": "4.0.0",
