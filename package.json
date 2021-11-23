@@ -44,7 +44,7 @@
     "css-minimizer-webpack-plugin": "3.1.4",
     "devicon": "2.14.0",
     "fs-extra": "10.0.0",
-    "html-minifier-terser": "6.0.2",
+    "html-minifier-terser": "6.1.0",
     "ignore-emit-webpack-plugin": "2.0.6",
     "imagemin": "8.0.1",
     "imagemin-svgo": "10.0.0",
