@@ -1,11 +1,9 @@
-/*!
- * copyfiles.mjs
+/*! LIGHT-PARTICLE: COPYFILES.MJS
  * 
  * Author: sitdisch
  * Source: https://sitdisch.github.io/#mythemeway
  * License: MIT
- * Copyright (c) 2021 sitdisch
- *
+ * Copyright © 2021 sitdisch
  */
 
 import { copy } from 'fs-extra';

@@ -1,0 +1,12 @@
+{
+  "restartable": false,
+  "quiet": true,
+  "legacyWatch": true,
+  "exec": "webpack serve --mode=development --config=canvas.config.js",
+  "watch": [
+    "canvas.config.js"
+  ],
+  "events": {
+    "restart": "node -e 'console.log(\"[\\x1b[90mwebpack\\x1b[0m]: Starting async `\\x1b[36mcanvas-build-process\\x1b[0m`...\")'"
+  }
+}

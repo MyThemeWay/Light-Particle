@@ -1,8 +1,8 @@
 @-webkit-keyframes pulse {
   from {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-    filter: alpha(opacity=40);
-    opacity: .4;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    opacity: .7;
     top: 0;
   }
   50% {
@@ -13,17 +13,17 @@
     top: -10px;
   }
   to {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-    filter: alpha(opacity=40);
-    opacity: .4;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    opacity: .7;
     top: 0;
   }
 }
 @keyframes pulse {
   from {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-    filter: alpha(opacity=40);
-    opacity: .4;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    opacity: .7;
     top: 0;
   }
   50% {
@@ -34,9 +34,29 @@
     top: -10px;
   }
   to {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-    filter: alpha(opacity=40);
-    opacity: .4;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    opacity: .7;
     top: 0;
+  }
+}
+@-webkit-keyframes flubber {
+  50% {
+    border-radius: 25% 70% 25% 100% / 70% 25% 100% 25%;
+  }
+}
+@keyframes flubber {
+  50% {
+    border-radius: 25% 70% 25% 100% / 70% 25% 100% 25%;
+  }
+}
+@-webkit-keyframes flubber-right {
+  50% {
+    border-radius: 0% 70% 25% 0% / 0% 25% 100% 0%;
+  }
+}
+@keyframes flubber-right {
+  50% {
+    border-radius: 0% 70% 25% 0% / 0% 25% 100% 0%;
   }
 }

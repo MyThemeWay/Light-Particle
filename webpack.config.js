@@ -1,31 +1,36 @@
-/*!
- * webpack.config.js
+/*! LIGHT-PARTICLE: WEBPACK.CONFIG.JS
  * 
  * Author: sitdisch
  * Source: https://sitdisch.github.io/#mythemeway
  * License: MIT
- * Copyright (c) 2020 sitdisch
- *
+ * Copyright © 2020 sitdisch
  */
+
+// 
+// SECTION: OTHER CONST, VARS & FUNCTIONS
+// 
 
 const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const IgnoreEmitPlugin = require('ignore-emit-webpack-plugin');
-const { emptyDirSync } = require('fs-extra');
+const { emptyDirSync, ensureFileSync } = require('fs-extra');
 const { spawn, fork } = require('child_process');
 const { resolve } = require('path');
 const { watch } = require('chokidar');
 
 var projectLog = '';
 
-// ASSETS CLEARING
+// 
+// SECTION: ASSETS CLEARING
+// 
+
 emptyDirSync('./docs/assets');
 console.log("[\x1b[90mfs-extra\x1b[0m]: Assets \x1b[1;32m[cleaned]\x1b[0m");
 
 // 
-// WEBPACK SECTION
+// SECTION: WEBPACK
 // 
 
 var config = {
@@ -44,15 +49,11 @@ var config = {
         directory: './docs',
         watch: {
           watchContentBase: true,
-          watchOptions: {
-            aggregateTimeout: 100,
-          },
+          watchOptions: { aggregateTimeout: 100 },
         },
       },
     ],
-    devMiddleware: {
-      writeToDisk: true,
-    },
+    devMiddleware: { writeToDisk: true },
     onListening: (devServer) => {
       const watcherConfig = fork('watcher.config.mjs', [""], {stdio: 'inherit'})
         .on('spawn', () => {
@@ -63,14 +64,6 @@ var config = {
           throw err;
         })
       ;
-      devServer.compiler.hooks.afterDone.tap('compLog', () => {
-        console.log("[\x1b[90mwebpack\x1b[0m]: Starting `\x1b[36mcompile-process\x1b[0m`...");
-        if (!(projectLog)) {
-          projectLog = "[\x1b[90mwebpack\x1b[0m]: Server is still running...\n    Server Address: \x1b[1;36mhttp://localhost:"+devServer.server.address().port+"/\x1b[0m\n\t   Restart: insert \x1b[35mrs\x1b[0m and hit \x1b[35m<CR>\x1b[0m\n\t      Exit: press \x1b[35mctrl-c\x1b[0m";
-          watcherConfig.send(projectLog);
-        };
-        setTimeout( () => { console.log(projectLog); }, 100);
-      });
       watch('./docs/assets/', {ignored: /^(js|styles)\//,ignoreInitial: true})
         .on('all', () => {
           for (const ws of devServer.webSocketServer.clients) {
@@ -78,6 +71,21 @@ var config = {
           }
         })
       ;
+      devServer.compiler.hooks.afterDone.tap('compLog', () => {
+        console.log("[\x1b[90mwebpack\x1b[0m]: Starting `\x1b[36mcompile-process\x1b[0m`...");
+        if (!(projectLog)) {
+          projectLog = "[\x1b[90mwebpack\x1b[0m]: Server is still running...\n    Server Address: \x1b[1;36mhttp://localhost:"+devServer.server.address().port+"/\x1b[0m\n\t   Restart: insert \x1b[35mrs\x1b[0m and hit \x1b[35m<CR>\x1b[0m\n\t      Exit: press \x1b[35mctrl-c\x1b[0m";
+          watcherConfig.send(projectLog);
+          ensureFileSync('./docs/assets/js/canvas.bundle.min.js');
+          watch('./docs/assets/js/canvas.bundle.min.js', {ignoreInitial: true})
+            .on('change', () => {
+              console.log("[\x1b[90mwebpack\x1b[0m]: `\x1b[36mcanvas-build-process\x1b[0m` \x1b[1;32m[finished]\x1b[0m");
+              setTimeout( () => { console.log(projectLog); }, 100);
+            })
+          ;
+        };
+        setTimeout( () => { console.log(projectLog); }, 100);
+      });
     },
   },
   plugins: [

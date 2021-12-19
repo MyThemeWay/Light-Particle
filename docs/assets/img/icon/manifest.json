@@ -5,7 +5,8 @@
         {
             "src": "/assets/img/icon/android-chrome-192x192.png",
             "sizes": "192x192",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any maskable"
         },
         {
             "src": "/assets/img/icon/android-chrome-256x256.png",
@@ -16,10 +17,13 @@
         {
             "src": "/assets/img/icon/android-chrome-512x512.png",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ],
     "theme_color": "#eaf1f2",
     "background_color": "#eaf1f2",
-    "display": "standalone"
+    "display": "standalone",
+    "orientation": "portrait",
+    "description": "Website-Boilerplate: Light-Particle"
 }

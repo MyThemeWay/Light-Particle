@@ -91,6 +91,10 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 60px;
+  -webkit-transition: all .3s, background 0s,background-color 0s;
+  -moz-transition: all .3s, background 0s,background-color 0s;
+  -o-transition: all .3s, background 0s,background-color 0s;
+  transition: all .3s, background 0s,background-color 0s;
   @media only screen and (min-width: 550px) {
     margin-bottom: 45px;
   }
@@ -114,14 +118,14 @@
   text-decoration: none;
   font-weight: bold;
   color: #2A3E42;
-  &:active, &:focus {
+  &:active, &:focus, &:visited, &:link  {
     color: #2A3E42;
   }
   @media (pointer:fine) {
     &:hover {
       @include hover-link-style;
-      font-size: 40px;
       color: #2A3E42;
+      font-size: 40px;
       @media only screen and (min-height: 1350px) and (min-width: 1200px) {
         font-size: 54px;
       }
@@ -133,8 +137,8 @@
   @media (pointer:coarse) {
     &.pressed {
       @include hover-link-style;
-      font-size: 40px;
       color: #2A3E42;
+      font-size: 40px;
       @media only screen and (min-height: 1350px) and (min-width: 1200px) {
         font-size: 54px;
       }

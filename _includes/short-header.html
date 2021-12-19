@@ -1,22 +1,17 @@
-<div id="particles-js" class="short-particles">
-  <ul id="short-hex-header" class="clear">{% for i in (1..18) %}
-    <li class="hex-header-li" id="#hex{{ forloop.index }}">
-      <div class="hex-header-div">
-        <span class="hex-header-link" href="#hex{{ forloop.index }}"></span>
-      </div>
-    </li>{% endfor %}
-  </ul>
-  <div class="short-header">
+<div id="header" class="short">
+  <span id="header-canvas-overshadow"></span>
+  <canvas id="header-canvas"></canvas>
+  <div class="header-items">
     <a title="Go Home" href="{{ '/' | prepend: site.baseurl }}">
       <img data-press-delay src="{{ site.user_picture | prepend: site.baseurl }}" alt="{{ site.user_name | prepend: site.baseurl }}" ></img>
     </a>
     <h1 class="site-title">{{site.user_name}}</h1>
-    <div class="short-header-icons">
+    <div class="header-icons">
       {% include follow-banner.html %}
     </div>
-    <ul class="short-header-links">
-      {% assign header = " header-link" %}
+    <ul class="header-links">
       {% include navbar-link-banner.html %}
     </ul>
   </div>
 </div>
+<span id="header-end"></span>

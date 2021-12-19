@@ -17,8 +17,8 @@
     padding: 0px 10px 0px 10px;
   }
   img {
-    box-shadow: 4px 4px 6px var(--boxShadow);
-    border: 1px solid grey;
+    box-shadow: 4px 4px 6px rgba(70, 70, 70, .4);
+    border: 1px solid black;
     border-radius: 50%;
     width: 40px;
     height: auto !important;
@@ -30,8 +30,8 @@
       }
       &.pressed {
         transform: scale(0.7);
-        background: transparent;
-        background-color: transparent;
+        background: grey;
+        background-color: grey;
       }
     }
     @media (pointer:coarse) {
@@ -52,7 +52,6 @@
   @media only screen and (min-height: 1350px) and (min-width: 1200px) {
     .navbar-nav {
       .nav-link.link, .btn.btn-drop {
-        line-height: 1.2;
         font-size: 30px;
         @media (pointer:fine) {
           &:hover {
@@ -65,11 +64,17 @@
           }
         }
       }
+      .nav-link.link {
+        line-height: 1.2;
+      }
+      .btn.btn-drop {
+        line-height: 1.12;
+      }
     }
     .btn {
       &.btn-arrow {
         font-size: 20px;
-        margin-top: 5px;
+        margin-top: 4px;
         @media (pointer:fine) {
           &:hover {
             font-size: 23px;
@@ -109,9 +114,8 @@
   @include banner-style;
   position: absolute;
   border-top: none;
-  border-left: none;
-  margin-top: 0px;
-  left: 0px;
+  margin-top: 8px;
+  left: -2.7px;
   padding: 0px 22px 10px 18px;
   .nav-link.link {
     color: #eeeeee;
@@ -150,6 +154,7 @@
     font-size: 25px;
     font-weight: bold;
     margin-top: 0px;
+    line-height: 1.4;
     padding: 0px;
     text-decoration: none;
     @media (pointer:fine) {
@@ -179,7 +184,7 @@
     @include icon-style;
     line-height: 1.15;
     border-radius: 25%;
-    font-size: 14px;
+    font-size: 18px;
     padding: 0px 4px 0px 4px;
     margin: 3px 0px 0px 2px;
     -webkit-transition: transform .4s;
@@ -188,17 +193,18 @@
     transition: transform .4s;
     @media (pointer:fine) {
       &:hover {
-        font-size: 17px;
+        padding: 0px 5px 0px 5px;
+        font-size: 21px;
         line-height: 1.15;
       }
       &:active {
-        background: transparent;
-        background-color: transparent;
+        background: grey;
+        background-color: grey;
       }
     }
     @media (pointer:coarse) {
       &.pressed {
-        font-size: 17px;
+        font-size: 21px;
         line-height: 1.15;
       }
     }
@@ -227,7 +233,7 @@
   font-size: 22px;
   font-weight: bold;
   padding: 0px 10px 0px 10px;
-  &:active, &:focus {
+  &:active, &:focus, &:visited, &:link  {
     color: inherit;
     background: none;
   }
@@ -288,6 +294,10 @@
       &:hover {
         font-size: 30px;
       }
+      &:active {
+        background: grey;
+        background-color: grey;
+      }
     }
     @media (pointer:coarse) {
       &.pressed {
@@ -311,6 +321,10 @@
         -o-transition: all .4s;
         transition: all .4s;
       }
+      &:active {
+        background: grey;
+        background-color: grey;
+      }
     }
     @media (pointer:coarse) {
       &.pressed {
@@ -332,7 +346,7 @@
 }
 
 // style before breakpoint
-@media (min-width: 576px) {
+@media only screen and (min-width: 576px) {
   .btn {
     &.btn-arrow {
       margin-top: 2px;
@@ -343,9 +357,10 @@
     right: 30px;
   }
   .navbar-nav {
-    top: 6px;
     background: none;
     border: none;
+    top: 7px;
+    margin-top: 0px;
     margin-left: 60px;
     .nav-link.link {
       margin-right: 15px;

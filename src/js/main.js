@@ -1,11 +1,9 @@
-/*!
- * MAIN SCRIPT OF LIGHT-PARTICLE
+/*! LIGHT-PARTICLE: MAIN.JS
  * 
  * Author: sitdisch
  * Source: https://sitdisch.github.io/#mythemeway
  * License: MIT
- * Copyright (c) 2020 sitdisch
- *
+ * Copyright © 2020 sitdisch
  */
 
 //
@@ -13,21 +11,17 @@
 //
 
 // OTHER VARIABLES
-var firstIteration = "1";
+var firstIteration = true;
 
 // NAVBAR VARIABLES
 var nav = document.getElementById('navbar');
 var collapseElementListNavbar = [].slice.call(document.querySelectorAll('.navbar-collapse'));
 
-// fix mobile viewport bug
-// source: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
-
 // SCROLL-SPYING VARIABLES
-var prevScrollpos = window.pageYOffset;
+var prevScrollPos = window.pageYOffset;
+var headEndPos = document.getElementById("header-end").offsetTop - 150;
 var scrollSpyAnchors = {};
-Array.prototype.forEach.call(document.querySelectorAll(".scroll-spy"), function(e) {
+Array.prototype.forEach.call(document.querySelectorAll(".scroll-spy"), (e) => {
         scrollSpyAnchors[e.id] = e.offsetTop - 100;
 });
 var currentPath = location.pathname.substring(1).replace(/^Light-Particle\//,''); 
@@ -41,26 +35,35 @@ if ( /\//.test(currentPath) ) {
         // highlight the navbarLink, if it is the only one on the current page
         var navbarLink = document.getElementsByClassName('navbar-link-' + /[^\/]*(?=\.html$)/.exec(location.pathname));
         navbarLink[0].style.color="orange";
-} else {
-        var navbarLinkAbout = document.getElementsByClassName('navbar-link-about');
-        navbarLinkAbout[0].style.color="rgba(71, 104, 110, 1.0)";
-        var navbarLinkProjects = document.getElementsByClassName('navbar-link-projects');
-        for ( var i=0, len = navbarLinkProjects.length; i < len; i++ ) {
-                navbarLinkProjects[i].style.color="rgba(71, 104, 110, 1.0)";
-        }
 }
 
 // DISTINCTION WHETHER TOUCH IS POSSIBLE
 if ( window.matchMedia("(pointer: coarse)").matches )  {
         // pressSimulationTime for touch devices
         var pressSimulationTime = 400;
+        // fix mobile viewport bug
+        // source: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        // adaption after orientation change
+        window
+            .matchMedia('(orientation: portrait)')
+            .addListener(() => {
+                    setTimeout( () => { location.reload() }, 100);
+            });
 } else {
         // pressSimulationTime for notouch devices
         var pressSimulationTime = 175;
         // adaption after resize only for notouch devices
-        window.onresize = function () {
+        window.addEventListener('resize', () => {
                 setTimeout( () => { location.reload() }, 100);
-        }
+        })
+}
+
+// CHECK IF FULL-SIZE CANVAS IS REASONABLE
+var header = document.getElementById('header');
+if ( (header.offsetHeight+header.offsetWidth ) < 1578) {
+        document.getElementById('header-canvas').classList.add("full-size");
 }
 
 // 
@@ -100,7 +103,7 @@ function pressDelay(ev) {
         setTimeout(  () => {
                 ev.target.click();
         }, 400);
-        firstIteration = "0";
+        firstIteration = false;
 }
 
 //
@@ -108,20 +111,16 @@ function pressDelay(ev) {
 //
 
 // RESET PAGES WITH HASHES:
-window.onload = function () {
-        // detect color changes from other sources and adapt specific ones (e.g. borders of Dark Reader)
-        if ( $("#particles-js").css('color') != "rgb(85, 85, 85)") {
-                document.documentElement.style.setProperty('--border-2', `white`);
-        }
+window.addEventListener('load', () => {
         if ( location.hash ) {
                 setTimeout(setupHashPage, 100);
         } else {
                 setTimeout( () => {nav.setAttribute('data-hide','false')}, 500);
         }
-};
+});
 
 // ADAPTIONS DURING SCROLLING:
-window.onscroll = function () {
+window.addEventListener('scroll', () => {
         var currentScrollPos = window.pageYOffset;
         var j = "";
         // scroll-spying
@@ -142,16 +141,12 @@ window.onscroll = function () {
                         var j = i;
                 } else {
                         for ( var k=0; k < navbarLinkLength; k++ ) {
-                                if ( navbarLink[k].classList.contains("header-link") ) {
-                                        navbarLink[k].style.color="rgba(71, 104, 110, 1.0)";
-                                } else {
-                                        navbarLink[k].style.color="#eeeeee";
-                                }
+                                navbarLink[k].style.color="#eeeeee";
                         }
                 }
         }
         // disappearing of the navbar
-        if ( ( nav.getAttribute('data-hide') == "true" ) || ( prevScrollpos < currentScrollPos )) {
+        if ( ( nav.getAttribute('data-hide') == "true" ) || ( prevScrollPos < currentScrollPos ) || ( headEndPos > currentScrollPos )) {
                 disNavbar();
         } else {
                 nav.style.top = 0;
@@ -169,14 +164,14 @@ window.onscroll = function () {
                         $('.dropdown-toggle').attr("aria-expanded","false");
                 }
         }
-        prevScrollpos = currentScrollPos;
-};
+        prevScrollPos = currentScrollPos;
+});
 
 // ADAPTION AFTER A ONCLICK AND DISTINCT BETWEEN TOUCH AND NOTOUCH:
-window.onclick = function(ev) {
-        if ( firstIteration == "1" ) {
+window.addEventListener('click', (ev) => {
+        if ( firstIteration ) {
                 pressSimulation(ev.target, pressSimulationTime);
-                if ( ev.target.hasAttribute('data-press-delay') == true ) {
+                if ( ev.target.hasAttribute('data-press-delay') ) {
                         pressDelay(ev);
                         return;
                 }
@@ -185,8 +180,8 @@ window.onclick = function(ev) {
                 var targetHash = ev.target.hash.substring(1);
                 if ( document.getElementById(targetHash) != null ) {
                         setTimeout(disNavbar,1050);
-                } else if ( !/hex\d*/.test(targetHash) ) {
-                        if ( firstIteration == "1" ) {
+                } else {
+                        if ( firstIteration ) {
                                 pressDelay(ev);
                                 return;
                         }
@@ -203,17 +198,17 @@ window.onclick = function(ev) {
                 // consider the ! (if not true then do this)
                 disNavbar();
         }
-        firstIteration = "1";
-};
+        firstIteration = true;
+});
 $(document).on('click', '.dropdown-menu', function (ev) {
-        if ( firstIteration == "1" ) {
+        if ( firstIteration ) {
                 pressSimulation(ev.target, pressSimulationTime);
                 pressDelay(ev);
                 return;
         }
 });
 $(document).on('click', '.press-simulation-parent', function (ev) {
-        if ( firstIteration == "1" ) {
+        if ( firstIteration ) {
                 pressSimulation(ev.target.parentElement, 400);
                 return;
         }

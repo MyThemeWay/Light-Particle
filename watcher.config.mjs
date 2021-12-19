@@ -1,11 +1,9 @@
-/*!
- * watcher.config.mjs
+/*! LIGHT-PARTICLE: WATCHER.CONFIG.MJS
  * 
  * Author: sitdisch
  * Source: https://sitdisch.github.io/#mythemeway
  * License: MIT
- * Copyright (c) 2021 sitdisch
- *
+ * Copyright © 2021 sitdisch
  */
 
 //
@@ -148,7 +146,7 @@ watcherImagemin.on('all', (event,path,statsBefore) => {
 //
 
 const watcherSrcOther = watch('./src/', {
-  ignored: /^src\/(js|styles|img\/.*\.(svg|gif|jpg|jpeg|png))$/,
+  ignored: /^src\/(js|canvas|styles|img\/.*\.(svg|gif|jpg|jpeg|png))$/,
 });
 
 watcherSrcOther.on('all', (event,path) => {
@@ -206,7 +204,7 @@ async function copyMjs(path) {
 //
 
 const jekyllCmd = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll';
-const jekyllSubCmds = (argv[2]) ? ['build'] : ['build', '--config', '_config.yml,_config_dev.yml'] ;
+const jekyllSubCmds = ['build', '--config', ((argv[2]) ? '_config.yml' : '_config.yml,_config_dev.yml') ];
 const watcherJekyll = watch(['*.html', '_includes/*.html', '_layouts/*.html', '_posts/*.md', '_config*.yml'], {
   ignoreInitial: true
 });
@@ -216,19 +214,43 @@ watcherJekyll.on('all', () => { jekyll(); });
 async function jekyll() {
   spawn(jekyllCmd, jekyllSubCmds, {stdio: 'inherit'})
     .on('spawn', () => {
-      console.log("[\x1b[90mjekyll\x1b[0m]: Starting async `\x1b[36mbuild-process\x1b[0m`...");
+      console.log("[\x1b[90mjekyll\x1b[0m]: Starting async `\x1b[36mhtml-build-process\x1b[0m`...");
     })
     .on('error', err => {
-      console.log("\x1b[1;31m[ERROR]\x1b[0m => \x1b[0m[\x1b[90mjekyll\x1b[0m]: `\x1b[36mbuild-process\x1b[0m` \x1b[1;31m[failed]\x1b[0m");
+      console.log("\x1b[1;31m[ERROR]\x1b[0m => \x1b[0m[\x1b[90mjekyll\x1b[0m]: `\x1b[36mhtml-build-process\x1b[0m` \x1b[1;31m[failed]\x1b[0m");
       throw err;
     })
     .on('close', () => {
-      console.log("[\x1b[90mjekyll\x1b[0m]: `\x1b[36mbuild-process\x1b[0m` \x1b[1;32m[finished]\x1b[0m"+projectLog);
+      console.log("[\x1b[90mjekyll\x1b[0m]: `\x1b[36mhtml-build-process\x1b[0m` \x1b[1;32m[finished]\x1b[0m"+projectLog);
     })
   ;
 }
 
 jekyll();
+
+//
+// SECTION: CANVAS BUILD
+//
+
+var canvasCmd = [];
+if (argv[2]) {
+  canvasCmd = ['webpack', '--mode=production', '--config=canvas.config.js'];
+} else {
+  canvasCmd = ['nodemon', '--config', 'canvas.nodemon.json'];
+}
+
+spawn('npx', canvasCmd, {stdio: 'inherit'})
+  .on('spawn', () => {
+    console.log("[\x1b[90mwebpack\x1b[0m]: Starting async `\x1b[36mcanvas-build-process\x1b[0m`...");
+  })
+  .on('error', err => {
+    console.log("\x1b[1;31m[ERROR]\x1b[0m => \x1b[0m[\x1b[90mwebpack\x1b[0m]: `\x1b[36mcanvas-build-process\x1b[0m` \x1b[1;31m[failed]\x1b[0m");
+    throw err;
+  })
+  .on('close', () => {
+    console.log("[\x1b[90mwebpack\x1b[0m]: `\x1b[36mcanvas-build-process\x1b[0m` \x1b[1;32m[finished]\x1b[0m"+projectLog);
+  })
+;
 
 //
 // SECTION: DISTINCTION DEVELOP- OR PRODUCTION-MODE

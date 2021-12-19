@@ -30,6 +30,8 @@ destination: docs
 keep_files: ['assets']
 exclude: [
   'README.md',
+  'canvas.config.js',
+  'canvas.nodemon.json',
   'copyfiles.mjs',
   'index.js',
   'node_modules',

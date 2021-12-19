@@ -1,8 +1,10 @@
 :root {
   --border-1: #1D1E1C;
   --border-2: #1D1E1C;
+  --textShadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em black, -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em black, 0.05em 0.05em black, 0 0 1em black;
 }
 html { 
+  background: #1F2624;
   background-color: #1F2624;
 } 
 body {
@@ -10,9 +12,10 @@ body {
   margin: 0;
   padding: 0;
   font-size: 18px;
+  min-width: 280px;
   line-height: 1.5;
   color: #555;
-  font-family: 'Rubik';
+  font-family: 'Rubik', Fallback, sans-serif;
 }
 article, aside, figcaption, figure, footer, header, nav, section {
   display: block;
