@@ -66,9 +66,9 @@
 
 <a title="Go there" target="_blank" href="https://mythemeway.github.io/Light-Particle/"><img alt="Light-Particle" src="https://raw.githubusercontent.com/sitdisch/cloud/master/images/Light_collage.jpg" ></a>
 
-This light theme website-boilerplate combines Webpack, Jekyll, Bootstrap and much more. Additionally, you can easily add other packages from <a href="https://www.npmjs.com/" title="Check it out" target="_blank">npm</a> and/or gems from <a href="https://rubygems.org/" title="Check it out" target="_blank">RubyGems</a> as you like.
+This light theme website-boilerplate combines Webpack, Jekyll, Bootstrap and much more. Additionally, you can just add other packages from <a href="https://www.npmjs.com/" title="Check it out" target="_blank">npm</a> and/or gems from <a href="https://rubygems.org/" title="Check it out" target="_blank">RubyGems</a> as you like.
 
-It also has an easily [exchangeable WebGL canvas header](#feature-presentation-exchangeable-webgl-header "Check it out"). Feel free to develop your own GLSLX shader. I am curious what you will create. If you need a little inspiration, check out [Shadertoy](https://www.shadertoy.com/browse "Go there") or [GLSL Sandbox](https://glslsandbox.com/ "Go there") for fragment shaders and [Vertexshaderart](https://www.vertexshaderart.com/gallery/1?sort=popular "Go there") for vertex shaders. There you can see what's possible.
+Further, it has an easily [exchangeable WebGL canvas header](#feature-presentation-exchangeable-webgl-header "Check it out"). The GLSLX shader files are also watched in the development mode of this boilerplate. That means, if you edit them and save your changes, the shaders will be recompiled and reloaded immediately. So feel free to edit the existing ones or create a completely new one with this boilerplate. I am curious what you will develop. If you need inspiration, check out [Shadertoy](https://www.shadertoy.com/browse "Go there") or [GLSL Sandbox](https://glslsandbox.com/ "Go there") for fragment shaders and [Vertexshaderart](https://www.vertexshaderart.com/gallery/1?sort=popular "Go there") for vertex shaders. There you can see what's possible.
 > <b>Note</b>: WebGL canvas headers can make your CPU sweat, but it gets colder as you scroll down :wink:
 
 ## Feature Overview

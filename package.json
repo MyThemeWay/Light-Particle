@@ -52,7 +52,7 @@
     "mini-css-extract-plugin": "2.4.5",
     "nodemon": "2.0.15",
     "prepr": "^1.2.4",
-    "sass": "1.45.2",
+    "sass": "1.46.0",
     "sass-loader": "12.4.0",
     "sweet-scroll": "4.0.0",
     "twgl.js": "^4.21.2",
