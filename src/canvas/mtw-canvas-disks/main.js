@@ -3,7 +3,7 @@
  * Author: sitdisch
  * Source: https://sitdisch.github.io/#mythemeway
  * License: MIT
- * Copyright © 2021 sitdisch
+ * Copyright: © 2021 sitdisch
  *
  * FRAGMENT SHADER IS BASED ON:
  * 
@@ -12,7 +12,8 @@
  * Original Author: Inigo Quilez
  * Source: https://www.shadertoy.com/view/lsfGDB
  * License: MIT
- * Copyright © 2013 Inigo Quilez
+ * Copyright: © 2013 Inigo Quilez
+ * Changes: made
  */
 
 import { createProgramInfo, createBufferInfoFromArrays, resizeCanvasToDisplaySize, setBuffersAndAttributes, setUniforms, drawBufferInfo } from '../../../node_modules/twgl.js/dist/4.x/twgl-full.module.js';

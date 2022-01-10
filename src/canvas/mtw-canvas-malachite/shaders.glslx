@@ -2,7 +2,7 @@
  * 
  * Author: sitdisch
  * Source: https://sitdisch.github.io/#mythemeway
- * Copyright © 2021 sitdisch
+ * Copyright: © 2021 sitdisch
  *
  * FRAGMENT SHADER IS BASED ON:
  * 
@@ -11,7 +11,8 @@
  * Original Author: Jan Mróz (jaszunio15)
  * Source: https://www.shadertoy.com/view/ttSGz3
  * License: CC BY 3.0
- * Copyright © 2019 Jan Mróz 
+ * Copyright: © 2019 Jan Mróz 
+ * Changes: made
  */
 
 // 
