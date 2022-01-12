@@ -70,7 +70,7 @@ This light theme website-boilerplate combines Webpack, Jekyll, Bootstrap and muc
 
 Further, it has an easily [exchangeable WebGL canvas header](#feature-presentation-exchangeable-webgl-header "Check it out"). The GLSLX shader files are also watched in the development mode of this boilerplate. That means, if you edit them and save your changes, the shaders will be recompiled and reloaded immediately.
 
-You are welcome to use this boilerplate to edit the existing shaders or create a completely new one. I am curious what you will develop. If you need inspiration, check out [Shadertoy](https://www.shadertoy.com/browse "Go there") or [GLSL Sandbox](https://glslsandbox.com/ "Go there") for fragment shaders and [Vertexshaderart](https://www.vertexshaderart.com/gallery/1?sort=popular "Go there") for vertex shaders. There you can see what's possible.
+You are welcome to use this boilerplate to edit the existing shaders or to create a completely new one. I am curious what you will develop. If you need inspiration, check out [Shadertoy](https://www.shadertoy.com/browse "Go there") or [GLSL Sandbox](https://glslsandbox.com/ "Go there") for fragment shaders and [Vertexshaderart](https://www.vertexshaderart.com/gallery/1?sort=popular "Go there") for vertex shaders. There you can see what's possible.
 > <b>Note</b>: WebGL canvas headers can make your CPU sweat, but it gets colder as you scroll down :wink:
 
 ## Feature Overview
@@ -98,7 +98,7 @@ You are welcome to use this boilerplate to edit the existing shaders or create a
 <a title="Check it out" target="_blank" href="https://www.npmjs.com/package/webpack"><img height="26" src="https://img.shields.io/github/package-json/dependency-version/mythemeway/Light-particle/webpack?label=webpack&logo=webpack" /></a>
 <a title="Check it out" target="_blank" href="https://www.npmjs.com/package/bootstrap"><img height="26" src="https://img.shields.io/github/package-json/dependency-version/mythemeway/Light-particle/bootstrap?label=Bootstrap&logo=bootstrap" /></a>
 <a href="https://github.com/jekyll/jekyll" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/jekyll-4.2.1-blue.svg?logo=jekyll"/></a>
-<a href="https://github.com/nodejs/node" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/Node.js-16.13.1-blue.svg?logo=node.js"/></a>
+<a href="https://github.com/nodejs/node" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/Node.js-16.13.2-blue.svg?logo=node.js"/></a>
 <a href="https://github.com/nvm-sh/nvm" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/nvm-0.39.1-blue.svg"/></a>
 <a href="https://www.npmjs.com/package/twgl.js" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/TWGL--blue.svg"/></a>
 <a href="https://www.npmjs.com/package/glslx" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/GLSLX--blue.svg"/></a>
@@ -219,8 +219,8 @@ https://user-images.githubusercontent.com/16251546/148187184-a4d76093-e495-43f1-
 </table>
 
 ### Note:
->	* [mtw-canvas-disks](https://github.com/MyThemeWay/mtw-canvas-disks "Get it") <b>[included] [default]</b>; Fragment shader is based on [CoordSys - intersection](https://www.shadertoy.com/view/lsfGDB "Check it out") [License: [MIT](https://www.shadertoy.com/view/lsfGDB "Go there"); Copyright: ©️ 2013 Inigo Quilez; Changes: made]
->	* [mtw-canvas-malachite](https://github.com/MyThemeWay/mtw-canvas-malachite "Get it") <b>[included]</b>; Fragment shader is based on [Glare of water](https://www.shadertoy.com/view/ttSGz3 "Check it out") [License: [CC&nbsp;BY&nbsp;3.0](https://www.shadertoy.com/view/ttSGz3 "Go there"); Copyright: ©️ 2019 Jan Mróz; Changes: made]
+>	* [mtw-canvas-malachite](https://github.com/MyThemeWay/mtw-canvas-malachite "Get it") <b>[included] [default]</b>; Fragment shader is based on [Glare of water](https://www.shadertoy.com/view/ttSGz3 "Check it out") [License: [CC&nbsp;BY&nbsp;3.0](https://www.shadertoy.com/view/ttSGz3 "Go there"); Copyright: ©️ 2019 Jan Mróz; Changes: made]
+>	* [mtw-canvas-disks](https://github.com/MyThemeWay/mtw-canvas-disks "Get it") <b>[included]</b>; Fragment shader is based on [CoordSys - intersection](https://www.shadertoy.com/view/lsfGDB "Check it out") [License: [MIT](https://www.shadertoy.com/view/lsfGDB "Go there"); Copyright: ©️ 2013 Inigo Quilez; Changes: made]
 >	* other mtw-canvases <b>[not included]</b>; you have to add them manually
 
 ## Feature Presentation: Screen Size Adaption
@@ -255,6 +255,7 @@ Have a nice day.
 ### Note on protected brand names and logos
 > * The use of protected brand names, trade names, utility models and brand logos on this website does not constitute an infringement of copyright; rather, it serves as an illustrative note. Even if this is not marked as such at the respective points, the corresponding legal provisions always apply.
 > * The brand names and logos used are the property of their respective owners and are subject to their copyright provisions.
+> * This offer is in no way related to the legal entities of the protected brand names and logos used.
 
 ### Note on liability for links
 > * This README contains links to external third-party websites. The README operator has no influence on the content of these sites. Therefore, he cannot assume any liability. Instead, the respective provider is always responsible for the content.

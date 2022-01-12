@@ -2,6 +2,7 @@
  * 
  * Author: sitdisch
  * Source: https://sitdisch.github.io/#mythemeway
+ * License: CC BY 3.0
  * Copyright: © 2021 sitdisch
  *
  * FRAGMENT SHADER IS BASED ON:
