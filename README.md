@@ -68,9 +68,9 @@
 
 This light theme website-boilerplate combines Webpack, Jekyll, Bootstrap and much more. Additionally, you can just add other packages from <a href="https://www.npmjs.com/" title="Check it out" target="_blank">npm</a> and/or gems from <a href="https://rubygems.org/" title="Check it out" target="_blank">RubyGems</a> as you like.
 
-Further, it has an easily [exchangeable WebGL canvas header](#feature-presentation-exchangeable-webgl-header "Check it out"). The GLSLX shader files are also watched in the development mode of this boilerplate. That means, if you edit them and save your changes, the shaders will be recompiled and reloaded immediately.
+Further, it has an easily [exchangeable WebGL canvas header](#feature-presentation-exchangeable-webgl-header "Check it out") as an animated 3D background. The GLSLX shader files are also watched in the development mode of this boilerplate. That means, if you edit them and save your changes, the shaders will be recompiled and reloaded immediately.
 
-You are welcome to use this boilerplate to edit the existing shaders or to create a completely new one. I am curious what you will develop. If you need inspiration, check out [Shadertoy](https://www.shadertoy.com/browse "Go there") or [GLSL Sandbox](https://glslsandbox.com/ "Go there") for fragment shaders and [Vertexshaderart](https://www.vertexshaderart.com/gallery/1?sort=popular "Go there") for vertex shaders. There you can see what's possible.
+You are welcome to use this boilerplate to edit the existing shaders or to create a completely new WebGL header. I am curious what you will develop. If you need inspiration, check out [Shadertoy](https://www.shadertoy.com/browse "Go there") or [GLSL Sandbox](https://glslsandbox.com/ "Go there") for fragment shaders and [Vertexshaderart](https://www.vertexshaderart.com/gallery/1?sort=popular "Go there") for vertex shaders. There you can see what's possible.
 > <b>Note</b>: WebGL canvas headers can make your CPU sweat, but it gets colder as you scroll down :wink:
 
 ## Feature Overview

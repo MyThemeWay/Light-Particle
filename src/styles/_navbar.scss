@@ -211,6 +211,7 @@
   }
   &[aria-expanded="true"] {
     @include hover-style;
+    border-color: #eeeeee;
     transform: rotate(180deg);
     box-shadow: none;
   }
@@ -307,6 +308,7 @@
   }
   .menu-close {
     @include hover-style;
+    border-color: #eeeeee;
     box-shadow: 4px 4px 6px rgba(70, 70, 70, 0.4);
     border-radius: 6px;
     font-size: 27px;
