@@ -24,15 +24,15 @@ var scrollSpyAnchors = {};
 Array.prototype.forEach.call(document.querySelectorAll(".scroll-spy"), (e) => {
         scrollSpyAnchors[e.id] = e.offsetTop - 100;
 });
-var currentPath = location.pathname.substring(1).replace(/^Light-Particle\//,''); 
-if ( /\//.test(currentPath) ) {
-        // highlight dropdownTogglers too if you are there
-        var dropdownToggler = /[^\/]*/.exec(currentPath);
+
+// HIGHLIGHTING OF NAVBAR ITEMS ON SHORT-HEADER PAGES
+if ( $('#header').hasClass('short') ) {
+        var dropdownToggler = /[^\/]*(?=\/\d{4}\/(?:\d\d?\/){2}.*$)/.exec(location.pathname);
         var navbarArrow = document.getElementsByClassName('navbar-arrow-'+dropdownToggler);
         for ( var i=0, len = navbarArrow.length; i < len; i++ ) {
                 navbarArrow[i].style.color="orange";
         }
-        // highlight the navbarLink, if it is the only one on the current page
+        // highlighting of navbarLink, if it is the only one on the current page
         var navbarLink = document.getElementsByClassName('navbar-link-' + /[^\/]*(?=\.html$)/.exec(location.pathname));
         navbarLink[0].style.color="orange";
 }
