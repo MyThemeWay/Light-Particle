@@ -20,8 +20,8 @@ const p2c = './src/canvas/mtw-canvas-malachite';
 const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const prepr = require('prepr');
-const { emptyDirSync, remove, readFileSync, writeFileSync } = require('fs-extra');
-const { spawn, spawnSync } = require('child_process');
+const { remove, readFileSync, writeFileSync } = require('fs-extra');
+const { spawnSync } = require('child_process');
 const { resolve } = require('path');
 const { watch } = require('chokidar');
 
