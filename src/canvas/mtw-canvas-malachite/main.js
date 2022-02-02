@@ -16,7 +16,7 @@
  * Changes: made
  */
 
-import { createProgramInfo, createBufferInfoFromArrays, resizeCanvasToDisplaySize, setBuffersAndAttributes, setUniforms, drawBufferInfo } from '../../../node_modules/twgl.js/dist/4.x/twgl-full.module.js';
+import { createProgramInfo, createBufferInfoFromArrays, resizeCanvasToDisplaySize, setBuffersAndAttributes, setUniforms, drawBufferInfo } from 'twgl.js';
 import { GLSLX_SOURCE_FRAGMENT_SHADER, GLSLX_SOURCE_VERTEX_SHADER, GLSLX_NAME_I_TIME, GLSLX_NAME_I_RESOLUTION, GLSLX_NAME_POSITION } from './shaders.glslx.min.js';
 
 (() => {
