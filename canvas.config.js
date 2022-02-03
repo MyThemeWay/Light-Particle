@@ -26,8 +26,8 @@ const { resolve } = require('path');
 const { watch } = require('chokidar');
 
 function glsl(devMode) {
-  writeFileSync(`${p2c}/shader.prepr.glslx`, prepr(readFileSync(`${p2c}/shaders.glslx`, "utf8")));
-  var glslxCmd = ['glslx', `${p2c}/shader.prepr.glslx`, `--output=${p2c}/shaders.glslx.min.js`, '--format=js' ];
+  writeFileSync(`${p2c}/shaders.prepr.glslx`, prepr(readFileSync(`${p2c}/shaders.glslx`, "utf8")));
+  var glslxCmd = ['glslx', `${p2c}/shaders.prepr.glslx`, `--output=${p2c}/shaders.glslx.min.js`, '--format=js' ];
   if (devMode) {
     glslxCmd.push('--pretty-print', '--disable-rewriting', '--renaming=none');
   }
@@ -36,7 +36,7 @@ function glsl(devMode) {
     console.log("\x1b[1;31m[ERROR]\x1b[0m => \x1b[0m[\x1b[90mwebpack\x1b[0m]: `\x1b[36mcanvas-glsl-preprocess\x1b[0m` \x1b[1;31m[failed]\x1b[0m");
     remove(`${p2c}/shaders.glslx.min.js`);
   };
-  remove(`${p2c}/shader.prepr.glslx`);
+  remove(`${p2c}/shaders.prepr.glslx`);
 }
 
 // 
