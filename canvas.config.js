@@ -17,7 +17,6 @@ const p2c = './src/canvas/mtw-canvas-malachite';
 // SECTION: OTHER CONST, VARS & FUNCTIONS
 // 
 
-const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const prepr = require('prepr');
 const { remove, readFileSync, writeFileSync } = require('fs-extra');
@@ -50,23 +49,6 @@ var config = {
     filename: 'js/[name].bundle.min.js',
   },
   stats: { modules: false },
-  devServer: {
-    host: 'local-ip',
-    hot: 'only',
-    liveReload: false,
-    magicHtml: false,
-    client: {
-      logging: 'none',
-      overlay: true
-    },
-    static: false,
-    devMiddleware: { writeToDisk: true },
-    onListening: () => {
-      watch(`${p2c}/shaders.glslx`, {ignoreInitial: true})
-        .on('change', () => { glsl(true); })
-      ;
-    },
-  },
 }
 
 module.exports = (env, argv) => {
@@ -77,6 +59,23 @@ module.exports = (env, argv) => {
     };
     glsl();
   } else {
+    config.devServer = {
+      host: 'local-ip',
+      hot: false,
+      liveReload: false,
+      magicHtml: false,
+      client: {
+        logging: 'none',
+        overlay: true
+      },
+      static: false,
+      devMiddleware: { writeToDisk: true },
+      onListening: () => {
+        watch(`${p2c}/shaders.glslx`, {ignoreInitial: true})
+          .on('change', () => { glsl(true); })
+        ;
+      },
+    };
     config.infrastructureLogging = { level: 'warn' };
     glsl(true);
   };
