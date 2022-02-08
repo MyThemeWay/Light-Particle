@@ -14,7 +14,7 @@
 const p2c = './src/canvas/mtw-canvas-malachite';
 
 // 
-// SECTION: OTHER CONST, VARS & FUNCTIONS
+// SECTION: LOADING MODULES
 // 
 
 const TerserPlugin = require('terser-webpack-plugin');
@@ -23,6 +23,10 @@ const { remove, readFileSync, writeFileSync } = require('fs-extra');
 const { spawnSync } = require('child_process');
 const { resolve } = require('path');
 const { watch } = require('chokidar');
+
+// 
+// SECTION: GLSL-PREPROCESS
+// 
 
 function glsl(devMode) {
   writeFileSync(`${p2c}/shaders.prepr.glslx`, prepr(readFileSync(`${p2c}/shaders.glslx`, "utf8")));
