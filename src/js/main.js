@@ -6,6 +6,8 @@
  * Copyright © 2020 sitdisch
  */
 
+"use strict";
+
 //
 // VARIABLES:
 //

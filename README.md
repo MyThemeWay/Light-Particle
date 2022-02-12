@@ -2,7 +2,6 @@
 <h1>Light Particle Website Boilerplate</h1>
 <a href="https://github.com/mythemeway/Light-Particle/actions?query=workflow%3ACodeQL" title="Explore it" target="_blank"><img height="25" src="https://img.shields.io/github/workflow/status/mythemeway/Light-Particle/CodeQL?logo=github&label=CodeQL" /></a>
 <a href="https://github.com/mythemeway/Light-Particle/deployments/activity_log?environment=github-pages" title="Explore it" target="_blank"><img height="25" src="https://img.shields.io/github/deployments/mythemeway/Light-Particle/github-pages?logo=github&label=State" /></a>
-<img height="25" src="https://img.shields.io/github/checks-status/mythemeway/Light-Particle/master?logo=github&label=Checks" />
 <a title="Check it out" target="_blank" href="https://mythemeway.github.io/Light-Particle/"><img height="25" src="https://img.shields.io/website?url=https%3A%2F%2Fmythemeway.github.io/Light-Particle&label=Website" /></a>
 <img height="25" src="https://img.shields.io/github/languages/code-size/mythemeway/Light-Particle?label=CodeSize" />
 <img height="25" src="https://img.shields.io/github/repo-size/mythemeway/Light-Particle?label=RepoSize" />
@@ -98,7 +97,7 @@ You are welcome to use this boilerplate to edit the existing shaders or to creat
 <a title="Check it out" target="_blank" href="https://www.npmjs.com/package/webpack"><img height="26" src="https://img.shields.io/github/package-json/dependency-version/mythemeway/Light-particle/webpack?label=webpack&logo=webpack" /></a>
 <a title="Check it out" target="_blank" href="https://www.npmjs.com/package/bootstrap"><img height="26" src="https://img.shields.io/github/package-json/dependency-version/mythemeway/Light-particle/bootstrap?label=Bootstrap&logo=bootstrap" /></a>
 <a href="https://github.com/jekyll/jekyll" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/jekyll-4.2.1-blue.svg?logo=jekyll"/></a>
-<a href="https://github.com/nodejs/node" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/Node.js-16.13.2-blue.svg?logo=node.js"/></a>
+<a href="https://github.com/nodejs/node" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/Node.js-16.14.0-blue.svg?logo=node.js"/></a>
 <a href="https://github.com/nvm-sh/nvm" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/nvm-0.39.1-blue.svg"/></a>
 <a href="https://www.npmjs.com/package/twgl.js" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/TWGL--blue.svg"/></a>
 <a href="https://www.npmjs.com/package/glslx" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/GLSLX--blue.svg"/></a>
