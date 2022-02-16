@@ -57,28 +57,7 @@ var config = {
 }
 
 module.exports = (env, argv) => {
-  if (argv.mode === 'production') {
-    config.output = {
-      path: resolve(__dirname, './docs/assets'),
-      filename: 'js/[name].bundle.min.js',
-    };
-    config.optimization = {
-      minimize: true,
-      minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
-    };
-    spawn('node',['watcher.config.mjs', '1'], {stdio: 'inherit'})
-      .on('spawn', () => {
-        console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m...");
-      })
-      .on('error', err => {
-        console.log("\x1b[1;31m[ERROR]\x1b[0m => [\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs \x1b[1;31m[failed]\x1b[0m");
-        throw err;
-      })
-      .on('close', () => {
-        console.log("[\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs \x1b[1;32m[finished]\x1b[0m");
-      })
-    ;
-  } else {
+  if (argv.mode === 'development') {
     config.output = {
       publicPath: '/assets',
       filename: 'js/[name].bundle.min.js',
@@ -128,6 +107,27 @@ module.exports = (env, argv) => {
         });
       },
     };
+  } else {
+    config.output = {
+      path: resolve(__dirname, './docs/assets'),
+      filename: 'js/[name].bundle.min.js',
+    };
+    config.optimization = {
+      minimize: true,
+      minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
+    };
+    spawn('node',['watcher.config.mjs', '1'], {stdio: 'inherit'})
+      .on('spawn', () => {
+        console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m...");
+      })
+      .on('error', err => {
+        console.log("\x1b[1;31m[ERROR]\x1b[0m => [\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs \x1b[1;31m[failed]\x1b[0m");
+        throw err;
+      })
+      .on('close', () => {
+        console.log("[\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs \x1b[1;32m[finished]\x1b[0m");
+      })
+    ;
   };
   return config;
 };

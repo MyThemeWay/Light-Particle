@@ -25,10 +25,10 @@ const { resolve } = require('path');
 const { watch } = require('chokidar');
 
 // 
-// SECTION: GLSL-PREPROCESS
+// SECTION: GLSLX-PREPROCESS
 // 
 
-function glsl(devMode) {
+function glslxPrepr(devMode) {
   writeFileSync(`${p2c}/shaders.prepr.glslx`, prepr(readFileSync(`${p2c}/shaders.glslx`, "utf8")));
   var glslxCmd = ['glslx', `${p2c}/shaders.prepr.glslx`, `--output=${p2c}/shaders.glslx.min.js`, '--format=js' ];
   if (devMode) {
@@ -36,7 +36,7 @@ function glsl(devMode) {
   }
   const cp = spawnSync('npx', glslxCmd, {stdio: 'inherit'});
   if (cp.status != 0) {
-    console.log("\x1b[1;31m[ERROR]\x1b[0m => \x1b[0m[\x1b[90mwebpack\x1b[0m]: `\x1b[36mcanvas-glsl-preprocess\x1b[0m` \x1b[1;31m[failed]\x1b[0m");
+    console.log("\x1b[1;31m[ERROR]\x1b[0m => \x1b[0m[\x1b[90mwebpack\x1b[0m]: `\x1b[36mcanvas-glslx-preprocess\x1b[0m` \x1b[1;31m[failed]\x1b[0m");
     remove(`${p2c}/shaders.glslx.min.js`);
   };
   remove(`${p2c}/shaders.prepr.glslx`);
@@ -56,13 +56,7 @@ var config = {
 }
 
 module.exports = (env, argv) => {
-  if (argv.mode === 'production') {
-    config.optimization = {
-      minimize: true,
-      minimizer: [new TerserPlugin()],
-    };
-    glsl();
-  } else {
+  if (argv.mode === 'development') {
     config.devServer = {
       host: 'local-ip',
       hot: false,
@@ -76,12 +70,18 @@ module.exports = (env, argv) => {
       devMiddleware: { writeToDisk: true },
       onListening: () => {
         watch(`${p2c}/shaders.glslx`, {ignoreInitial: true})
-          .on('change', () => { glsl(true); })
+          .on('change', () => { glslxPrepr(true); })
         ;
       },
     };
     config.infrastructureLogging = { level: 'warn' };
-    glsl(true);
+    glslxPrepr(true);
+  } else {
+    config.optimization = {
+      minimize: true,
+      minimizer: [new TerserPlugin()],
+    };
+    glslxPrepr();
   };
   return config;
 };

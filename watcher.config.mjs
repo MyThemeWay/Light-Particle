@@ -23,10 +23,10 @@ async function logSizeTxt(plugin,targetPath,statsBefore) {
   stat(targetPath, (err, statsAfter) => {
     const percent = Math.round((statsAfter.size/statsBefore.size-1)*100);
     var logTxt = '';
-    if (percent === 0) {
-      logTxt = '\x1b[1;90m'+percent+'%\x1b[0m)\x1b[1;90m [unchanged]';
-    } else if (percent < 0) {
+    if (percent < 0) {
       logTxt = '\x1b[1;32m'+percent+'%\x1b[0m)\x1b[1;33m [minimized]';
+    } else if (percent === 0) {
+      logTxt = '\x1b[1;90m'+percent+'%\x1b[0m)\x1b[1;90m [unchanged]';
     } else {
       logTxt = '\x1b[1;31m+'+percent+'%\x1b[0m)\x1b[1;31m [ENLARGED]';
     };
