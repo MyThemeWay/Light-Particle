@@ -47,32 +47,29 @@ const watcherSquooshPng= watch('./src/img/**/*.png');
 
 // Options: https://github.com/GoogleChromeLabs/squoosh/tree/dev/cli
 
-watcherSquooshJpg.on('all', (event,path,statsBefore) => {
-  squoosh('--mozjpeg','{ quality: 65 }',event,path,statsBefore);
-});
-watcherSquooshPng.on('all', (event,path,statsBefore) => {
-  squoosh('--oxipng','{ level: 3 }',event,path,statsBefore);
-});
+watcherSquooshJpg.on('all', (event,path,statsBefore) =>
+  squoosh('--mozjpeg','{ quality: 65 }',event,path,statsBefore)
+);
+watcherSquooshPng.on('all', (event,path,statsBefore) =>
+  squoosh('--oxipng','{ level: 3 }',event,path,statsBefore)
+);
 
 async function squoosh(encoder,encoderConfig,event,path,statsBefore) {
   const targetPath = './docs/assets/'+path.replace(/^src\//, "");
   if (( event === 'add' ) || ( event === 'change' )) {
     const cp = spawn('npx',['@squoosh/cli', encoder, encoderConfig, path, '--output-dir', dirname(targetPath)], {stdio: 'pipe'})
-     .on('exit', (code) => {
-       if (code === 0) {
-         logSizeTxt('squoosh', targetPath, statsBefore);
-       } else {
-         cp.stderr.on('data', (data) => { 
-           console.log('[\x1b[90msquoosh\x1b[0m]: \x1b[35m'+basename(targetPath)+' \x1b[1;31m[ERROR]\x1b[0m\n'+data.toString().replace(/\n$/,"")+projectLog)
-         });
-       };
+     .on('exit', code => {
+       if (code === 0)
+         logSizeTxt('squoosh', targetPath, statsBefore)
+       else
+         cp.stderr.on('data', data =>
+           console.log('[\x1b[90msquoosh\x1b[0m]: \x1b[35m'+basename(targetPath)+' \x1b[1;31m[ERROR]\x1b[0m\n'+data.toString().replace(/\n$/,"")+projectLog))
      });
-  } else if ( event === 'unlink' ) {
+  } else if ( event === 'unlink' )
     remove(targetPath)
-      .then( () => console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+' \x1b[1;32m[removed]\x1b[0m'+projectLog))
+      .then(() =>
+        console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+' \x1b[1;32m[removed]\x1b[0m'+projectLog))
       .catch(err => console.error(err))
-    ;
-  };
 };
 
 //
@@ -128,17 +125,14 @@ const watcherImagemin = watch('./src/img/**/*.{svg,gif}');
 
 watcherImagemin.on('all', (event,path,statsBefore) => {
   const targetPath = './docs/assets/'+path.replace(/^src\//, "");
-  if (( event === 'add' ) || ( event === 'change' )) {
+  if (( event === 'add' ) || ( event === 'change' ))
     imgMin(path, dirname(targetPath))
-      .then( () =>  { logSizeTxt('imagemin', targetPath, statsBefore); })
+      .then(() => logSizeTxt('imagemin', targetPath, statsBefore))
       .catch(err => console.error(err))
-    ;
-  } else if ( event === 'unlink' ) {
+  else if ( event === 'unlink' )
     remove(targetPath)
-      .then( () => console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+' \x1b[1;32m[removed]\x1b[0m'+projectLog))
+      .then(() => console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+' \x1b[1;32m[removed]\x1b[0m'+projectLog))
       .catch(err => console.error(err))
-    ;
-  };
 });
 
 //
@@ -151,21 +145,18 @@ const watcherSrcOther = watch('./src/', {
 
 watcherSrcOther.on('all', (event,path) => {
   const targetPath = './docs/assets/'+path.replace(/^src\//, "");
-  if ( event === 'addDir' ) {
+  if ( event === 'addDir' )
     ensureDir(targetPath)
-      .then( () => { if ( projectLog ) { console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+' \x1b[1;32m[added]\x1b[0m'+projectLog); }})
+      .then(() => { if ( projectLog ) console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+' \x1b[1;32m[added]\x1b[0m'+projectLog) })
       .catch(err => console.error(err))
-  } else if (( event === 'add' ) || ( event === 'change' )) {
+  else if (( event === 'add' ) || ( event === 'change' ))
     copy(path, targetPath)
-      .then( () => { if ( projectLog ) { console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+' \x1b[1;32m['+event.substring(0,5)+'ed]\x1b[0m'+projectLog) }})
+      .then(() => { if ( projectLog ) console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+' \x1b[1;32m['+event.substring(0,5)+'ed]\x1b[0m'+projectLog) })
       .catch(err => console.error(err))
-    ;
-  } else if (( event === 'unlink' ) || ( event === 'unlinkDir' )) {
+  else if (( event === 'unlink' ) || ( event === 'unlinkDir' ))
     remove(targetPath)
-      .then( () => console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+' \x1b[1;32m[removed]\x1b[0m'+projectLog))
+      .then(() => console.log('[\x1b[90mfs-extra\x1b[0m]: \x1b[35m'+basename(targetPath)+' \x1b[1;32m[removed]\x1b[0m'+projectLog))
       .catch(err => console.error(err))
-    ;
-  };
 });
 
 //
@@ -177,7 +168,7 @@ const watcherCopyMjs = watch('copyfiles.mjs', {
 });
 
 watcherCopyMjs
-  .on('add', path => { copyMjs(path); })
+  .on('add', path => copyMjs(path))
   .on('change', path => {
     emptyDirSync('./docs/assets/lib_c');
     copyMjs(path);
@@ -186,16 +177,13 @@ watcherCopyMjs
 
 async function copyMjs(path) {
   spawn('node',[path], {stdio: 'inherit'})
-    .on('spawn', () => {
-      console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35m"+path+"\x1b[0m...");
-    })
+    .on('spawn', () =>
+      console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35m"+path+"\x1b[0m..."))
     .on('error', err => {
       console.log("\x1b[1;31m[ERROR]\x1b[0m => [\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35m"+path+" \x1b[1;31m[failed]\x1b[0m");
-      throw err;
-    })
-    .on('close', () => {
-      console.log("[\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35m"+path+" \x1b[1;32m[finished]\x1b[0m"+projectLog);
-    })
+      throw err;})
+    .on('close', () =>
+      console.log("[\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35m"+path+" \x1b[1;32m[finished]\x1b[0m"+projectLog))
   ;
 }
 
@@ -209,20 +197,17 @@ const watcherJekyll = watch(['*.html', '_includes/*.html', '_layouts/*.html', '_
   ignoreInitial: true
 });
 
-watcherJekyll.on('all', () => { jekyll(); });
+watcherJekyll.on('all', () => jekyll());
 
 async function jekyll() {
   spawn(jekyllCmd, jekyllSubCmds, {stdio: 'inherit'})
-    .on('spawn', () => {
-      console.log("[\x1b[90mjekyll\x1b[0m]: Starting async `\x1b[36mhtml-build-process\x1b[0m`...");
-    })
+    .on('spawn', () =>
+      console.log("[\x1b[90mjekyll\x1b[0m]: Starting async `\x1b[36mhtml-build-process\x1b[0m`..."))
     .on('error', err => {
       console.log("\x1b[1;31m[ERROR]\x1b[0m => \x1b[0m[\x1b[90mjekyll\x1b[0m]: `\x1b[36mhtml-build-process\x1b[0m` \x1b[1;31m[failed]\x1b[0m");
-      throw err;
-    })
-    .on('close', () => {
-      console.log("[\x1b[90mjekyll\x1b[0m]: `\x1b[36mhtml-build-process\x1b[0m` \x1b[1;32m[finished]\x1b[0m"+projectLog);
-    })
+      throw err;})
+    .on('close', () =>
+      console.log("[\x1b[90mjekyll\x1b[0m]: `\x1b[36mhtml-build-process\x1b[0m` \x1b[1;32m[finished]\x1b[0m"+projectLog))
   ;
 }
 
@@ -240,16 +225,13 @@ if (argv[2]) {
 }
 
 spawn('npx', canvasCmd, {stdio: 'inherit'})
-  .on('spawn', () => {
-    console.log("[\x1b[90mwebpack\x1b[0m]: Starting async `\x1b[36mcanvas-build-process\x1b[0m`...");
-  })
+  .on('spawn', () =>
+    console.log("[\x1b[90mwebpack\x1b[0m]: Starting async `\x1b[36mcanvas-build-process\x1b[0m`..."))
   .on('error', err => {
     console.log("\x1b[1;31m[ERROR]\x1b[0m => \x1b[0m[\x1b[90mwebpack\x1b[0m]: `\x1b[36mcanvas-build-process\x1b[0m` \x1b[1;31m[failed]\x1b[0m");
-    throw err;
-  })
-  .on('close', () => {
-    console.log("[\x1b[90mwebpack\x1b[0m]: `\x1b[36mcanvas-build-process\x1b[0m` \x1b[1;32m[finished]\x1b[0m"+projectLog);
-  })
+    throw err;})
+  .on('close', () =>
+    console.log("[\x1b[90mwebpack\x1b[0m]: `\x1b[36mcanvas-build-process\x1b[0m` \x1b[1;32m[finished]\x1b[0m"+projectLog))
 ;
 
 //
@@ -263,6 +245,4 @@ if (argv[2]) {
   watcherSrcOther.on('ready', () => watcherSrcOther.close());
   watcherCopyMjs.on('ready', () => watcherCopyMjs.close());
   watcherJekyll.close();
-} else {
-  process.on('message', (log) => { projectLog = "\n"+log });
-};
+} else process.on('message', log => { projectLog = "\n"+log })

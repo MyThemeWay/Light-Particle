@@ -32,7 +32,7 @@
     }
   },
   "dependencies": {
-    "@babel/core": "7.17.4",
+    "@babel/core": "7.17.5",
     "@babel/preset-env": "7.16.11",
     "@fortawesome/fontawesome-free": "5.15.4",
     "@squoosh/cli": "0.7.2",
@@ -42,7 +42,7 @@
     "css-loader": "6.6.0",
     "css-minimizer-webpack-plugin": "3.4.1",
     "devicon": "2.14.0",
-    "fs-extra": "10.0.0",
+    "fs-extra": "10.0.1",
     "glslx": "0.2.13",
     "html-minifier-terser": "6.1.0",
     "ignore-emit-webpack-plugin": "2.0.6",
@@ -52,11 +52,11 @@
     "mini-css-extract-plugin": "2.5.3",
     "nodemon": "2.0.15",
     "prepr": "1.2.4",
-    "sass": "1.49.7",
+    "sass": "1.49.9",
     "sass-loader": "12.6.0",
     "sweet-scroll": "4.0.0",
     "twgl.js": "4.21.2",
-    "webpack": "5.69.0",
+    "webpack": "5.69.1",
     "webpack-cli": "4.9.2",
     "webpack-dev-server": "4.7.4"
   }

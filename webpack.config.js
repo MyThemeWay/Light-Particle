@@ -73,15 +73,13 @@ module.exports = (env, argv) => {
         },
       ],
       hot: false,
-      onListening: (devServer) => {
+      onListening: devServer => {
         const watcherConfig = fork('watcher.config.mjs', [""], {stdio: 'inherit'})
-          .on('spawn', () => {
-            console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m...");
-          })
+          .on('spawn', () =>
+            console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m..."))
           .on('error', err => {
             console.log("\x1b[1;31m[ERROR]\x1b[0m => [\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs \x1b[1;31m[failed]\x1b[0m");
-            throw err;
-          })
+            throw err;})
         ;
         watch('./docs/assets/', {ignored: /^(js|styles)\//,ignoreInitial: true})
           .on('all', () => {
@@ -99,11 +97,11 @@ module.exports = (env, argv) => {
             watch('./docs/assets/js/canvas.bundle.min.js', {ignoreInitial: true})
               .on('change', () => {
                 console.log("[\x1b[90mwebpack\x1b[0m]: `\x1b[36mcanvas-build-process\x1b[0m` \x1b[1;32m[finished]\x1b[0m");
-                setTimeout( () => { console.log(projectLog); }, 100);
+                setTimeout(() => console.log(projectLog), 100);
               })
             ;
           };
-          setTimeout( () => { console.log(projectLog); }, 100);
+          setTimeout(() => console.log(projectLog), 100);
         });
       },
     };
@@ -117,16 +115,13 @@ module.exports = (env, argv) => {
       minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
     };
     spawn('node',['watcher.config.mjs', '1'], {stdio: 'inherit'})
-      .on('spawn', () => {
-        console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m...");
-      })
+      .on('spawn', () =>
+        console.log("[\x1b[90mnode\x1b[0m]: Starting async `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs\x1b[0m..."))
       .on('error', err => {
         console.log("\x1b[1;31m[ERROR]\x1b[0m => [\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs \x1b[1;31m[failed]\x1b[0m");
-        throw err;
-      })
-      .on('close', () => {
-        console.log("[\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs \x1b[1;32m[finished]\x1b[0m");
-      })
+        throw err;})
+      .on('close', () =>
+        console.log("[\x1b[90mnode\x1b[0m]: `\x1b[36mexec\x1b[0m` of \x1b[35mwatcher.config.mjs \x1b[1;32m[finished]\x1b[0m"))
     ;
   };
   return config;

@@ -31,9 +31,9 @@ const copyfiles = [
   }
 ];
 
-copyfiles.forEach(copyfile => {
-  copyfile.files.forEach(file => {
+copyfiles.forEach(copyfile =>
+  copyfile.files.forEach(file =>
     copy(`${copyfile.source}/${file}`, `./docs/assets/lib_c/${copyfile.target}/${file}`)
       .catch(err => console.error(err))
-  });
-});
+  )
+);

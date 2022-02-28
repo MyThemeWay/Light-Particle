@@ -23,7 +23,7 @@ var collapseElementListNavbar = [].slice.call(document.querySelectorAll('.navbar
 var prevScrollPos = window.pageYOffset;
 var headEndPos = document.getElementById("header-end").offsetTop - 150;
 var scrollSpyAnchors = {};
-Array.prototype.forEach.call(document.querySelectorAll(".scroll-spy"), (e) => {
+Array.prototype.forEach.call(document.querySelectorAll(".scroll-spy"), e => {
         scrollSpyAnchors[e.id] = e.offsetTop - 100;
 });
 
@@ -50,23 +50,19 @@ if ( window.matchMedia("(pointer: coarse)").matches )  {
         // adaption after orientation change
         window
             .matchMedia('(orientation: portrait)')
-            .addListener(() => {
-                    setTimeout( () => { location.reload() }, 100);
-            });
+            .addListener(() => setTimeout(() => location.reload(), 100))
+        ;
 } else {
         // pressSimulationTime for notouch devices
         var pressSimulationTime = 175;
         // adaption after resize only for notouch devices
-        window.addEventListener('resize', () => {
-                setTimeout( () => { location.reload() }, 100);
-        })
+        window.addEventListener('resize', () => setTimeout(() => location.reload(), 100));
 }
 
 // CHECK IF FULL-SIZE CANVAS IS REASONABLE
 var header = document.getElementById('header');
-if ( (header.offsetHeight+header.offsetWidth ) < 1578) {
-        document.getElementById('header-canvas').classList.add("full-size");
-}
+if ( (header.offsetHeight+header.offsetWidth ) < 1578)
+        document.getElementById('header-canvas').classList.add("full-size")
 
 // 
 // HELP FUNCTIONS:
@@ -77,7 +73,7 @@ function setupHashPage() {
         window.scrollBy(0, hashOffset);
         var hrefReplaceHash = location.href.replace(location.hash,"");
         history.pushState({},'reset_hash', hrefReplaceHash);
-        setTimeout( () => {nav.setAttribute('data-hide','false')}, 700);
+        setTimeout(() => nav.setAttribute('data-hide','false'), 700);
 };
 
 function disNavbar() {
@@ -85,26 +81,22 @@ function disNavbar() {
         nav.style.top = "-100px";
         nav.style.opacity = 0;
         if ( $('.navbar-collapse').hasClass('show') ) {
-                var collapseList = collapseElementListNavbar.map(function (collapseEl) {
+                var collapseList = collapseElementListNavbar.map(collapseEl => {
                   return new bootstrap.Collapse(collapseEl);
                 });
         }
 };
 
-window.pressSimulation = function(element,time) {
+window.pressSimulation = (element,time) => {
         element.classList.add("pressed");
-        setTimeout( () => {
-                element.classList.remove("pressed");
-        }, time);
+        setTimeout(() => element.classList.remove("pressed"), time);
 }
 
 function pressDelay(ev) {
         ev.preventDefault();
         ev.stopImmediatePropagation();
         ev.stopPropagation();
-        setTimeout(  () => {
-                ev.target.click();
-        }, 400);
+        setTimeout(() => ev.target.click(), 400);
         firstIteration = false;
 }
 
@@ -114,11 +106,10 @@ function pressDelay(ev) {
 
 // RESET PAGES WITH HASHES:
 window.addEventListener('load', () => {
-        if ( location.hash ) {
-                setTimeout(setupHashPage, 100);
-        } else {
-                setTimeout( () => {nav.setAttribute('data-hide','false')}, 500);
-        }
+        if ( location.hash ) 
+                setTimeout(setupHashPage, 100)
+        else 
+                setTimeout(() => nav.setAttribute('data-hide','false'), 500)
 });
 
 // ADAPTIONS DURING SCROLLING:
@@ -148,14 +139,14 @@ window.addEventListener('scroll', () => {
                 }
         }
         // disappearing of the navbar
-        if ( ( nav.getAttribute('data-hide') == "true" ) || ( prevScrollPos < currentScrollPos ) || ( headEndPos > currentScrollPos )) {
-                disNavbar();
-        } else {
+        if ( ( nav.getAttribute('data-hide') == "true" ) || ( prevScrollPos < currentScrollPos ) || ( headEndPos > currentScrollPos ))
+                disNavbar()
+        else {
                 nav.style.top = 0;
                 nav.style.position = "fixed";
                 nav.style.opacity = 1;
                 if ( $('.navbar-collapse').hasClass('show') ) {
-                        var collapseList = collapseElementListNavbar.map(function (collapseEl) {
+                        var collapseList = collapseElementListNavbar.map((collapseEl) => {
                           return new bootstrap.Collapse(collapseEl);
                         });
                 }
@@ -170,7 +161,7 @@ window.addEventListener('scroll', () => {
 });
 
 // ADAPTION AFTER A ONCLICK AND DISTINCT BETWEEN TOUCH AND NOTOUCH:
-window.addEventListener('click', (ev) => {
+window.addEventListener('click', ev => {
         if ( firstIteration ) {
                 pressSimulation(ev.target, pressSimulationTime);
                 if ( ev.target.hasAttribute('data-press-delay') ) {
@@ -180,9 +171,9 @@ window.addEventListener('click', (ev) => {
         }
         if ( ev.target.hash ) {
                 var targetHash = ev.target.hash.substring(1);
-                if ( document.getElementById(targetHash) != null ) {
-                        setTimeout(disNavbar,1050);
-                } else {
+                if ( document.getElementById(targetHash) != null )
+                        setTimeout(disNavbar,1050)
+                else {
                         if ( firstIteration ) {
                                 pressDelay(ev);
                                 return;
@@ -190,26 +181,24 @@ window.addEventListener('click', (ev) => {
                         var hashPrefix = ev.target.getAttribute("data-hash-prefix");
                         var hashOffset = JSON.parse(ev.target.getAttribute("data-scroll-options"))["offset"];
                         sessionStorage.setItem("hashOffset", hashOffset);
-                        if ( hashPrefix ) {
-                                location.assign(location.protocol+'//'+location.host+hashPrefix+"#"+targetHash);
-                        } else {
-                                location.assign(location.protocol+'//'+location.host+"/#"+targetHash);
-                        }
+                        if ( hashPrefix )
+                                location.assign(location.protocol+'//'+location.host+hashPrefix+"#"+targetHash)
+                        else
+                                location.assign(location.protocol+'//'+location.host+"/#"+targetHash)
                 }
-        } else if ( !ev.target.classList.contains('navbar-click-stay') ) {
+        } else if ( !ev.target.classList.contains('navbar-click-stay') )
                 // consider the ! (if not true then do this)
-                disNavbar();
-        }
+                disNavbar()
         firstIteration = true;
 });
-$(document).on('click', '.dropdown-menu', function (ev) {
+$(document).on('click', '.dropdown-menu', ev => {
         if ( firstIteration ) {
                 pressSimulation(ev.target, pressSimulationTime);
                 pressDelay(ev);
                 return;
         }
 });
-$(document).on('click', '.press-simulation-parent', function (ev) {
+$(document).on('click', '.press-simulation-parent', ev => {
         if ( firstIteration ) {
                 pressSimulation(ev.target.parentElement, 400);
                 return;
