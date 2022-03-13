@@ -70,6 +70,9 @@ This light theme website-boilerplate combines Webpack, Jekyll, Bootstrap and muc
 Further, it has an easily [exchangeable WebGL canvas header](#feature-presentation-exchangeable-webgl-header "Check it out") as an animated 3D background. The GLSLX shader files are also watched in the development mode of this boilerplate. That means, if you edit them and save your changes, the shaders will be recompiled and reloaded immediately.
 
 You are welcome to use this boilerplate to edit the existing shaders or to create a completely new WebGL header. I am curious what you will develop. If you need inspiration, check out [Shadertoy](https://www.shadertoy.com/browse "Go there") or [GLSL Sandbox](https://glslsandbox.com/ "Go there") for fragment shaders and [Vertexshaderart](https://www.vertexshaderart.com/gallery/1?sort=popular "Go there") for vertex shaders. There you can see what's possible.
+
+If you don't need this boilerplate with all the bells and whistles, but want a WebGL canvas boilerplate as a quick and easy live editor, or if you just want the pure minimized bundles as a 3D animated background, look [here](https://github.com/MyThemeWay/mtw-boilerplate-canvas "Check it out").
+
 > <b>Note</b>: WebGL canvas headers can make your CPU sweat, but it gets colder as you scroll down :wink:
 
 ## Feature Overview
@@ -96,7 +99,7 @@ You are welcome to use this boilerplate to edit the existing shaders or to creat
 ### [Branch: master](https://github.com/MyThemeWay/Light-Particle/tree/master "Check it out")
 <a title="Check it out" target="_blank" href="https://www.npmjs.com/package/webpack"><img height="26" src="https://img.shields.io/github/package-json/dependency-version/mythemeway/Light-particle/webpack?label=webpack&logo=webpack" /></a>
 <a title="Check it out" target="_blank" href="https://www.npmjs.com/package/bootstrap"><img height="26" src="https://img.shields.io/github/package-json/dependency-version/mythemeway/Light-particle/bootstrap?label=Bootstrap&logo=bootstrap" /></a>
-<a href="https://github.com/jekyll/jekyll" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/jekyll-4.2.1-blue.svg?logo=jekyll"/></a>
+<a href="https://github.com/jekyll/jekyll" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/jekyll-4.2.2-blue.svg?logo=jekyll"/></a>
 <a href="https://github.com/nodejs/node" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/Node.js-16.14.0-blue.svg?logo=node.js"/></a>
 <a href="https://github.com/nvm-sh/nvm" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/nvm-0.39.1-blue.svg"/></a>
 <a href="https://www.npmjs.com/package/twgl.js" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/TWGL--blue.svg"/></a>
