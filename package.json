@@ -2,7 +2,7 @@
   "name": "Light-Particle",
   "author": "Sitdisch",
   "version": "4.0.0",
-  "description": "Package of Light-Particle",
+  "description": "Website-Boilerplate | Combo of Webpack, Bootstrap... to develop/build a cross-browser & -device, light-theme blog + portfolio website with exchangeable WebGL header",
   "repository": {
     "type": "git",
     "url": "https://github.com/mythemeway/light-particle"
@@ -32,7 +32,7 @@
     }
   },
   "dependencies": {
-    "@babel/core": "7.17.7",
+    "@babel/core": "7.17.8",
     "@babel/preset-env": "7.16.11",
     "@fortawesome/fontawesome-free": "5.15.4",
     "@squoosh/cli": "0.7.2",
