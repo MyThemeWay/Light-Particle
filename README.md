@@ -1,15 +1,15 @@
 <div align="center">
 <h1>Light Particle Website Boilerplate</h1>
-<a href="https://github.com/mythemeway/Light-Particle/actions?query=workflow%3ACodeQL" title="Explore it" target="_blank"><img height="25" src="https://img.shields.io/github/workflow/status/mythemeway/Light-Particle/CodeQL?logo=github&label=CodeQL" /></a>
-<a href="https://github.com/mythemeway/Light-Particle/deployments/activity_log?environment=github-pages" title="Explore it" target="_blank"><img height="25" src="https://img.shields.io/github/deployments/mythemeway/Light-Particle/github-pages?logo=github&label=State" /></a>
-<a title="Check it out" target="_blank" href="https://mythemeway.github.io/Light-Particle/"><img height="25" src="https://img.shields.io/website?url=https%3A%2F%2Fmythemeway.github.io/Light-Particle&label=Website" /></a>
-<img height="25" src="https://img.shields.io/github/languages/code-size/mythemeway/Light-Particle?label=CodeSize" />
-<img height="25" src="https://img.shields.io/github/repo-size/mythemeway/Light-Particle?label=RepoSize" />
-<img height="25" src="https://img.shields.io/github/repo-size/mythemeway/mythemeway.github.io?label=BuildSize" />
-<a title="Check it out" target="_blank" href="https://github.com/mythemeway/light-particle/releases"><img height="25" src="https://img.shields.io/github/v/release/mythemeway/light-particle?label=LastRelease" /></a><br>
+<a href="https://github.com/mythemeway/Light-Particle/actions?query=workflow%3ACodeQL" title="Explore it" target="_blank"><img height="25" src="https://img.shields.io/github/workflow/status/mythemeway/Light-Particle/CodeQL?logo=github&label=CodeQL&cacheSeconds=3600" /></a>
+<a href="https://github.com/mythemeway/Light-Particle/deployments/activity_log?environment=github-pages" title="Explore it" target="_blank"><img height="25" src="https://img.shields.io/github/deployments/mythemeway/Light-Particle/github-pages?logo=github&label=State&cacheSeconds=3600" /></a>
+<a title="Check it out" target="_blank" href="https://mythemeway.github.io/Light-Particle/"><img height="25" src="https://img.shields.io/website?url=https%3A%2F%2Fmythemeway.github.io/Light-Particle&label=Website&cacheSeconds=3600" /></a>
+<img height="25" src="https://img.shields.io/github/languages/code-size/mythemeway/Light-Particle?label=CodeSize&cacheSeconds=3600" />
+<img height="25" src="https://img.shields.io/github/repo-size/mythemeway/Light-Particle?label=RepoSize&cacheSeconds=3600" />
+<img height="25" src="https://img.shields.io/github/repo-size/mythemeway/mythemeway.github.io?label=BuildSize&cacheSeconds=3600" />
+<a title="Check it out" target="_blank" href="https://github.com/mythemeway/light-particle/releases"><img height="25" src="https://img.shields.io/github/v/release/mythemeway/light-particle?label=LastRelease&cacheSeconds=3600" /></a><br>
 <br><br>
 
-<a title="Check Lighthouse out" target="_blank" href="https://github.com/GoogleChrome/lighthouse"><img width="275" src="https://img.shields.io/badge/Lighthouse-Average_Results-2A2E30.svg?logo=lighthouse" /></a><br>
+<a title="Check Lighthouse out" target="_blank" href="https://github.com/GoogleChrome/lighthouse"><img alt="Lighthouse Average Results" width="275" src="https://img.shields.io/badge/Lighthouse-Average_Results-2A2E30.svg?logo=lighthouse&cacheSeconds=3600" /></a><br>
 <b>Desktop</b>
 
 <img width="700" src="https://raw.githubusercontent.com/sitdisch/cloud/master/lighthouse_results/light_particle/desktop/pagespeed.svg" /><br>
@@ -29,10 +29,10 @@
 <td align="center" valign="top" width="500px">
 <p></p>
 
-<a title="Check Mozilla Observatory out" target="_blank" href="https://observatory.mozilla.org/"><img alt="Mozilla Observatory" width="206" src="https://img.shields.io/badge/Observatory-Grade-2A2E30.svg?logo=mozilla" /></a>
+<a title="Check Mozilla Observatory out" target="_blank" href="https://observatory.mozilla.org/"><img alt="Mozilla Observatory" width="206" src="https://img.shields.io/badge/Observatory-Grade-2A2E30.svg?logo=mozilla&cacheSeconds=3600" /></a>
 
 <div>
-<a title="Explore it" target="_blank" href="https://observatory.mozilla.org/analyze/mythemeway.github.io?third-party=false"><img height="35" src="https://img.shields.io/mozilla-observatory/grade/mythemeway.github.io?label=" /></a><br>
+<a title="Explore it" target="_blank" href="https://observatory.mozilla.org/analyze/mythemeway.github.io?third-party=false"><img alt="&nbsp;pending..." height="35" src="https://img.shields.io/mozilla-observatory/grade/mythemeway.github.io?label=&cacheSeconds=3600" /></a><br>
 <b>Full Report: <a title="Check it out" target="_blank" href="https://observatory.mozilla.org/analyze/mythemeway.github.io?third-party=false">Last&nbsp;One</a></b>
 <details><summary><b>Example</b></summary>
 <img alt="Mozilla Observatory Report Example" src="https://raw.githubusercontent.com/sitdisch/cloud/master/images/mozilla_observatory_results.png" />
@@ -44,10 +44,10 @@
 <td align="center" valign="top" width="500px">
 <p></p>
 
-<a title="Check Snyk out" target="_blank" href="https://snyk.io/"><img alt="Snyk Vulnerabilities" width="210" src="https://img.shields.io/badge/Snyk-Vulnerabilities-2A2E30.svg?logo=snyk" /></a>
+<a title="Check Snyk out" target="_blank" href="https://snyk.io/"><img alt="Snyk Vulnerabilities" width="210" src="https://img.shields.io/badge/Snyk-Vulnerabilities-2A2E30.svg?logo=snyk&cacheSeconds=3600" /></a>
 
 <div>
-<a title="Explore it" target="_blank" href="https://snyk.io/test/github/MyThemeWay/Light-Particle"><img loading="eager" alt="&nbsp;pending..." height="35" src="https://img.shields.io/snyk/vulnerabilities/github/mythemeway/light-particle?label=&cacheSeconds=maxAge" /></a><br>
+<a title="Explore it" target="_blank" href="https://snyk.io/test/github/MyThemeWay/Light-Particle"><img loading="eager" alt="&nbsp;pending..." height="35" src="https://img.shields.io/snyk/vulnerabilities/github/mythemeway/light-particle?label=&cacheSeconds=3600" /></a><br>
 <b>Full Report: <a title="Check it out" target="_blank" href="https://snyk.io/test/github/MyThemeWay/Light-Particle">Last&nbsp;One</a></b>
 <details><summary><b>Example</b></summary>
 <img alt="Snyk Report Example" src="https://raw.githubusercontent.com/sitdisch/cloud/master/images/snyk_lightparticle_results.png" />
@@ -77,13 +77,13 @@ If you don't need this boilerplate with all the bells and whistles, but want a W
 
 ## Feature Overview
 <div align="center">
-	<a href="https://github.com/npm/cli" title="Check it out" target="_blank"><img height="26" alt="npm" src="https://img.shields.io/badge/npm--blue.svg?logo=npm"/></a>
-	<a href="https://github.com/rubygems/rubygems" title="Check it out" target="_blank"><img height="26" alt="RubyGems" src="https://img.shields.io/badge/RubyGems--blue.svg?logo=rubygems"/></a>
-	<a href="https://www.npmjs.com/package/jquery" title="Check it out" target="_blank"><img height="26" alt="jQuery" src="https://img.shields.io/badge/jQuery--blue.svg?logo=jquery"/></a>
-	<a href="https://www.npmjs.com/package/@babel/core" title="Check it out" target="_blank"><img height="26" alt="BABEL" src="https://img.shields.io/badge/BABEL--blue.svg?logo=babel"/></a>
-	<a href="https://github.com/FortAwesome/Font-Awesome" title="Check it out" target="_blank"><img height="26" alt="Font Awesome" src="https://img.shields.io/badge/Font_Awesome--blue.svg?logo=font-awesome"/></a>
+	<a href="https://github.com/npm/cli" title="Check it out" target="_blank"><img height="26" alt="npm" src="https://img.shields.io/badge/npm--blue.svg?logo=npm&cacheSeconds=3600"/></a>
+	<a href="https://github.com/rubygems/rubygems" title="Check it out" target="_blank"><img height="26" alt="RubyGems" src="https://img.shields.io/badge/RubyGems--blue.svg?logo=rubygems&cacheSeconds=3600"/></a>
+	<a href="https://www.npmjs.com/package/jquery" title="Check it out" target="_blank"><img height="26" alt="jQuery" src="https://img.shields.io/badge/jQuery--blue.svg?logo=jquery&cacheSeconds=3600"/></a>
+	<a href="https://www.npmjs.com/package/@babel/core" title="Check it out" target="_blank"><img height="26" alt="BABEL" src="https://img.shields.io/badge/BABEL--blue.svg?logo=babel&cacheSeconds=3600"/></a>
+	<a href="https://github.com/FortAwesome/Font-Awesome" title="Check it out" target="_blank"><img height="26" alt="Font Awesome" src="https://img.shields.io/badge/Font_Awesome--blue.svg?logo=font-awesome&cacheSeconds=3600"/></a>
 	<a href="https://www.npmjs.com/package/html-minifier-terser" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/htmlminifier.svg"/></a>
-	<a href="https://search.google.com/search-console/about" title="Check it out" target="_blank"><img height="26" alt="Google Search Console" src="https://img.shields.io/badge/Google_Search_Console--blue.svg?logo=Google-Search-Console"/></a>
+	<a href="https://search.google.com/search-console/about" title="Check it out" target="_blank"><img height="26" alt="Google Search Console" src="https://img.shields.io/badge/Google_Search_Console--blue.svg?logo=Google-Search-Console&cacheSeconds=3600"/></a>
 	<a href="https://www.npmjs.com/package/mini-css-extract-plugin" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/minicssextractplugin.svg"/></a>
 	<a href="https://www.npmjs.com/package/terser-webpack-plugin" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/terserwebpackplugin.svg"/></a>
 	<a href="https://www.npmjs.com/package/sweet-scroll" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/sweet_scroll.svg"/></a>
@@ -97,28 +97,28 @@ If you don't need this boilerplate with all the bells and whistles, but want a W
 </div>
 
 ### [Branch: master](https://github.com/MyThemeWay/Light-Particle/tree/master "Check it out")
-<a title="Check it out" target="_blank" href="https://www.npmjs.com/package/webpack"><img height="26" alt="webpack" src="https://img.shields.io/github/package-json/dependency-version/mythemeway/Light-particle/webpack?label=webpack&logo=webpack" /></a>
-<a title="Check it out" target="_blank" href="https://www.npmjs.com/package/bootstrap"><img height="26" alt="Bootstrap" src="https://img.shields.io/github/package-json/dependency-version/mythemeway/Light-particle/bootstrap?label=Bootstrap&logo=bootstrap" /></a>
-<a href="https://github.com/jekyll/jekyll" title="Check it out" target="_blank"><img height="26" alt="jekyll" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/sitdisch/cloud/master/badges/json/jekyll.json"/></a>
-<a href="https://github.com/nodejs/node" title="Check it out" target="_blank"><img height="26" alt="Node.js" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/sitdisch/cloud/master/badges/json/nodejs.json"/></a>
-<a href="https://github.com/nvm-sh/nvm" title="Check it out" target="_blank"><img height="26" alt="nvm" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/sitdisch/cloud/master/badges/json/nvm.json"/></a>
+<a title="Check it out" target="_blank" href="https://www.npmjs.com/package/webpack"><img height="26" alt="webpack" src="https://img.shields.io/github/package-json/dependency-version/mythemeway/Light-particle/webpack?label=webpack&logo=webpack&cacheSeconds=3600" /></a>
+<a title="Check it out" target="_blank" href="https://www.npmjs.com/package/bootstrap"><img height="26" alt="Bootstrap" src="https://img.shields.io/github/package-json/dependency-version/mythemeway/Light-particle/bootstrap?label=Bootstrap&logo=bootstrap&cacheSeconds=3600" /></a>
+<a href="https://github.com/jekyll/jekyll" title="Check it out" target="_blank"><img height="26" alt="jekyll" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/sitdisch/cloud/master/badges/json/jekyll.json&cacheSeconds=3600"/></a>
+<a href="https://github.com/nodejs/node" title="Check it out" target="_blank"><img height="26" alt="Node.js" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/sitdisch/cloud/master/badges/json/nodejs.json&cacheSeconds=3600"/></a>
+<a href="https://github.com/nvm-sh/nvm" title="Check it out" target="_blank"><img height="26" alt="nvm" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/sitdisch/cloud/master/badges/json/nvm.json&cacheSeconds=3600"/></a>
 <a href="https://www.npmjs.com/package/twgl.js" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/TWGL--blue.svg"/></a>
 <a href="https://www.npmjs.com/package/glslx" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/GLSLX--blue.svg"/></a>
 <a href="https://www.npmjs.com/package/prepr" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/prepr--blue.svg"/></a>
-<a href="https://www.npmjs.com/package/sass" title="Check it out" target="_blank"><img height="26" alt="Sass" src="https://img.shields.io/badge/Sass-Dart-blue.svg?logo=sass"/></a>
-<a href="https://github.com/GoogleChromeLabs/squoosh" title="Check it out" target="_blank"><img height="26" alt="Squoosh" src="https://img.shields.io/badge/Squoosh-mozjpeg,_oxipng-blue.svg?logo=google-chrome"/></a>
-<a href="https://www.npmjs.com/package/imagemin" title="Check it out" target="_blank"><img height="26" alt="imagemin" src="https://img.shields.io/badge/imagemin-svgo-blue.svg"/></a>
+<a href="https://www.npmjs.com/package/sass" title="Check it out" target="_blank"><img height="26" alt="Sass" src="https://img.shields.io/badge/Sass-Dart-blue.svg?logo=sass&cacheSeconds=3600"/></a>
+<a href="https://github.com/GoogleChromeLabs/squoosh" title="Check it out" target="_blank"><img height="26" alt="Squoosh" src="https://img.shields.io/badge/Squoosh-mozjpeg,_oxipng-blue.svg?logo=google-chrome&cacheSeconds=3600"/></a>
+<a href="https://www.npmjs.com/package/imagemin" title="Check it out" target="_blank"><img height="26" alt="imagemin" src="https://img.shields.io/badge/imagemin-svgo-blue.svg?cacheSeconds=3600"/></a>
 <a href="https://www.npmjs.com/package/chokidar" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/chokidar--blue.svg"/></a>
 <a href="https://www.npmjs.com/package/css-minimizer-webpack-plugin" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/cssminimizerwebpackplugin.svg"/></a>
 > <b>Note</b>: <b>imagemin</b>-<b>mozjpeg</b>, -<b>pngquant</b> & -<b>gifsicle</b> are deactivated by default due to currently unresolved vulnerabilities. Feel free to change this here [<b>watcher.config.mjs</b>](https://github.com/MyThemeWay/Light-Particle/blob/master/watcher.config.mjs "Go there") (e.&nbsp;g. <b>imagemin</b>-<b>pngquant</b> is faster than <b>Squoosh</b>-<b>oxipng</b>).
 
 ### [Releases](https://github.com/MyThemeWay/Light-Particle/releases "Go there"): [v1](https://github.com/MyThemeWay/Light-Particle/releases/tag/v1.0 "Go there") > [v2](https://github.com/MyThemeWay/Light-Particle/releases/tag/v2.0 "Go there") > [v3](https://github.com/MyThemeWay/Light-Particle/releases/tag/v3.0 "Go there") > [v4](https://github.com/MyThemeWay/Light-Particle/releases/tag/v4.0 "Go there")
-<a href="https://www.npmjs.com/package/webpack" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/webpack-4.44_>...>_5.65-blue.svg?logo=webpack"/></a>
-<a href="https://www.npmjs.com/package/bootstrap" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/Bootstrap-4.6_>_5.0_>_5.1-blue.svg?logo=bootstrap"/></a>
-<a href="https://github.com/jekyll/jekyll" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/jekyll-4.2.0_>>_4.2.1-blue.svg?logo=jekyll"/></a>
-<a href="https://github.com/nodejs/node" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/Node.js-14.1_>...>_16.13-blue.svg?logo=node.js"/></a>
-<a href="https://github.com/nvm-sh/nvm" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/nvm-0.35_>...>_0.39-blue.svg"/></a>
-<a href="https://www.npmjs.com/package/node-sass" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/Sass-Node_>_Dart-blue.svg?logo=sass"/></a>
+<a href="https://www.npmjs.com/package/webpack" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/webpack-4.44_>...>_5.65-blue.svg?logo=webpack&cacheSeconds=3600"/></a>
+<a href="https://www.npmjs.com/package/bootstrap" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/Bootstrap-4.6_>_5.0_>_5.1-blue.svg?logo=bootstrap&cacheSeconds=3600"/></a>
+<a href="https://github.com/jekyll/jekyll" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/jekyll-4.2.0_>>_4.2.1-blue.svg?logo=jekyll&cacheSeconds=3600"/></a>
+<a href="https://github.com/nodejs/node" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/Node.js-14.1_>...>_16.13-blue.svg?logo=node.js&cacheSeconds=3600"/></a>
+<a href="https://github.com/nvm-sh/nvm" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/nvm-0.35_>...>_0.39-blue.svg?cacheSeconds=3600"/></a>
+<a href="https://www.npmjs.com/package/node-sass" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/Sass-Node_>_Dart-blue.svg?logo=sass&cacheSeconds=3600"/></a>
 
 <a href="https://github.com/JulianLaval/canvas-particle-network" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/canvas_particle_network.svg"/></a>
 <img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/->>>-blue.svg"></img>
@@ -133,7 +133,7 @@ If you don't need this boilerplate with all the bells and whistles, but want a W
 <a href="https://github.com/GoogleChromeLabs/squoosh" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/Squoosh-mozjpeg,_oxipng-blue.svg"/></a>
 <a href="https://www.npmjs.com/package/imagemin" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/imagemin-svgo-blue.svg"/></a>
 
-<a href="https://www.npmjs.com/package/gulp" title="Check it out" target="_blank"><img height="26" alt="Gulp" src="https://img.shields.io/badge/Gulp-grey.svg?logo=gulp"/></a>
+<a href="https://www.npmjs.com/package/gulp" title="Check it out" target="_blank"><img height="26" alt="Gulp" src="https://img.shields.io/badge/Gulp-grey.svg?logo=gulp&cacheSeconds=3600"/></a>
 <img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/->>-blue.svg"></img>
 <a href="https://www.npmjs.com/package/chokidar" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/chokidar-grey.svg"/></a>
 
@@ -143,7 +143,7 @@ If you don't need this boilerplate with all the bells and whistles, but want a W
 
 <a href="https://www.npmjs.com/package/shelljs" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/ShellJS-grey.svg"/></a>
 <img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/->>-blue.svg"></img>
-<a href="https://github.com/nodejs/node" title="Check it out" target="_blank"><img height="26" alt="Node.js" src="https://img.shields.io/badge/Node.js-grey.svg?logo=node.js"/></a>
+<a href="https://github.com/nodejs/node" title="Check it out" target="_blank"><img height="26" alt="Node.js" src="https://img.shields.io/badge/Node.js-grey.svg?logo=node.js&cacheSeconds=3600"/></a>
 
 > <b>Note</b>: Third party feature badges are clickable and linked to their sources.
 
@@ -184,7 +184,7 @@ If you don't need this boilerplate with all the bells and whistles, but want a W
 <table>
 <tr>
 <td align="center" width="400px">
-<div align="right"><a href="https://github.com/MyThemeWay/mtw-canvas-malachite" title="Stars of Malachite Canvas" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/3parties/star-solid.svg"/></img> <img height="17" src="https://img.shields.io/github/stars/MyThemeWay/mtw-canvas-malachite?label="/></img></a> <a href="https://github.com/MyThemeWay/mtw-canvas-malachite" title="Forks of Malachite Canvas" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/3parties/code-branch-solid.svg"/></img> <img height="17" src="https://img.shields.io/github/forks/MyThemeWay/mtw-canvas-malachite?label="/></img></a> <a href="https://github.com/MyThemeWay/mtw-canvas-malachite#embed-via-jsdelivr" title="jsDelivr Hits of Malachite Canvas" target="_blank"> <img height="17" src="https://img.shields.io/jsdelivr/gh/hy/mythemeway/mtw-canvas-malachite?label=Hits&color=blue&logo=jsdelivr" /></a></div>
+<div align="right"><a href="https://github.com/MyThemeWay/mtw-canvas-malachite" title="Stars of Malachite Canvas" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/3parties/star-solid.svg"/></img> <img height="17" src="https://img.shields.io/github/stars/MyThemeWay/mtw-canvas-malachite?label=&cacheSeconds=3600"/></img></a> <a href="https://github.com/MyThemeWay/mtw-canvas-malachite" title="Forks of Malachite Canvas" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/3parties/code-branch-solid.svg"/></img> <img height="17" src="https://img.shields.io/github/forks/MyThemeWay/mtw-canvas-malachite?label=&cacheSeconds=3600"/></img></a> <a href="https://github.com/MyThemeWay/mtw-canvas-malachite#embed-via-jsdelivr" title="jsDelivr Hits of Malachite Canvas" target="_blank"> <img height="17" src="https://img.shields.io/jsdelivr/gh/hy/mythemeway/mtw-canvas-malachite?label=Hits&color=blue&logo=jsdelivr&cacheSeconds=3600" /></a></div>
 
 https://user-images.githubusercontent.com/16251546/148097883-83556136-6853-471d-a476-af80bdd41b63.mp4
 
@@ -192,7 +192,7 @@ https://user-images.githubusercontent.com/16251546/148097883-83556136-6853-471d-
 
 </td>
 <td align="center" width="400px">
-<div align="right"><a href="https://github.com/MyThemeWay/mtw-canvas-disks" title="Stars of Disks Canvas" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/3parties/star-solid.svg"/></img> <img height="17" src="https://img.shields.io/github/stars/MyThemeWay/mtw-canvas-disks?label="/></img></a> <a href="https://github.com/MyThemeWay/mtw-canvas-disks" title="Forks of Disks Canvas" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/3parties/code-branch-solid.svg"/></img> <img height="17" src="https://img.shields.io/github/forks/MyThemeWay/mtw-canvas-disks?label="/></img></a> <a href="https://github.com/MyThemeWay/mtw-canvas-disks#embed-via-jsdelivr" title="jsDelivr Hits of Disks Canvas" target="_blank"> <img height="17" src="https://img.shields.io/jsdelivr/gh/hy/mythemeway/mtw-canvas-disks?label=Hits&color=blue&logo=jsdelivr" /></a></div>
+<div align="right"><a href="https://github.com/MyThemeWay/mtw-canvas-disks" title="Stars of Disks Canvas" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/3parties/star-solid.svg"/></img> <img height="17" src="https://img.shields.io/github/stars/MyThemeWay/mtw-canvas-disks?label=&cacheSeconds=3600"/></img></a> <a href="https://github.com/MyThemeWay/mtw-canvas-disks" title="Forks of Disks Canvas" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/3parties/code-branch-solid.svg"/></img> <img height="17" src="https://img.shields.io/github/forks/MyThemeWay/mtw-canvas-disks?label=&cacheSeconds=3600"/></img></a> <a href="https://github.com/MyThemeWay/mtw-canvas-disks#embed-via-jsdelivr" title="jsDelivr Hits of Disks Canvas" target="_blank"> <img height="17" src="https://img.shields.io/jsdelivr/gh/hy/mythemeway/mtw-canvas-disks?label=Hits&color=blue&logo=jsdelivr&cacheSeconds=3600" /></a></div>
 
 https://user-images.githubusercontent.com/16251546/148187030-1fd7bd3a-83b3-444d-9f4d-d847e66e0063.mp4
 
@@ -202,7 +202,7 @@ https://user-images.githubusercontent.com/16251546/148187030-1fd7bd3a-83b3-444d-
 </tr>
 <tr>
 <td align="center" width="400px">
-<div align="right"><a href="https://github.com/MyThemeWay/mtw-canvas-spiral" title="Stars of Spiral Canvas" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/3parties/star-solid.svg"/></img> <img height="17" src="https://img.shields.io/github/stars/MyThemeWay/mtw-canvas-spiral?label="/></img></a> <a href="https://github.com/MyThemeWay/mtw-canvas-spiral" title="Forks of Spiral Canvas" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/3parties/code-branch-solid.svg"/></img> <img height="17" src="https://img.shields.io/github/forks/MyThemeWay/mtw-canvas-spiral?label="/></img></a> <a href="https://github.com/MyThemeWay/mtw-canvas-spiral#embed-via-jsdelivr" title="jsDelivr Hits of Spiral Canvas" target="_blank"> <img height="17" src="https://img.shields.io/jsdelivr/gh/hy/mythemeway/mtw-canvas-spiral?label=Hits&color=blue&logo=jsdelivr" /></a></div>
+<div align="right"><a href="https://github.com/MyThemeWay/mtw-canvas-spiral" title="Stars of Spiral Canvas" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/3parties/star-solid.svg"/></img> <img height="17" src="https://img.shields.io/github/stars/MyThemeWay/mtw-canvas-spiral?label=&cacheSeconds=3600"/></img></a> <a href="https://github.com/MyThemeWay/mtw-canvas-spiral" title="Forks of Spiral Canvas" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/3parties/code-branch-solid.svg"/></img> <img height="17" src="https://img.shields.io/github/forks/MyThemeWay/mtw-canvas-spiral?label=&cacheSeconds=3600"/></img></a> <a href="https://github.com/MyThemeWay/mtw-canvas-spiral#embed-via-jsdelivr" title="jsDelivr Hits of Spiral Canvas" target="_blank"> <img height="17" src="https://img.shields.io/jsdelivr/gh/hy/mythemeway/mtw-canvas-spiral?label=Hits&color=blue&logo=jsdelivr&cacheSeconds=3600" /></a></div>
 
 https://user-images.githubusercontent.com/16251546/148187130-712e32cf-363f-41d5-a2ee-ed448e85ff00.mp4
 
@@ -210,7 +210,7 @@ https://user-images.githubusercontent.com/16251546/148187130-712e32cf-363f-41d5-
 
 </td>
 <td align="center" width="400px">
-<div align="right"><a href="https://github.com/MyThemeWay/mtw-canvas-blacksea" title="Stars of Blacksea Canvas" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/3parties/star-solid.svg"/></img> <img height="17" src="https://img.shields.io/github/stars/MyThemeWay/mtw-canvas-blacksea?label="/></img></a> <a href="https://github.com/MyThemeWay/mtw-canvas-blacksea" title="Forks of Blacksea Canvas" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/3parties/code-branch-solid.svg"/></img> <img height="17" src="https://img.shields.io/github/forks/MyThemeWay/mtw-canvas-blacksea?label="/></img></a> <a href="https://github.com/MyThemeWay/mtw-canvas-blacksea#embed-via-jsdelivr" title="jsDelivr Hits of Blacksea Canvas" target="_blank"> <img height="17" src="https://img.shields.io/jsdelivr/gh/hy/mythemeway/mtw-canvas-blacksea?label=Hits&color=blue&logo=jsdelivr" /></a></div>
+<div align="right"><a href="https://github.com/MyThemeWay/mtw-canvas-blacksea" title="Stars of Blacksea Canvas" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/3parties/star-solid.svg"/></img> <img height="17" src="https://img.shields.io/github/stars/MyThemeWay/mtw-canvas-blacksea?label=&cacheSeconds=3600"/></img></a> <a href="https://github.com/MyThemeWay/mtw-canvas-blacksea" title="Forks of Blacksea Canvas" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/3parties/code-branch-solid.svg"/></img> <img height="17" src="https://img.shields.io/github/forks/MyThemeWay/mtw-canvas-blacksea?label=&cacheSeconds=3600"/></img></a> <a href="https://github.com/MyThemeWay/mtw-canvas-blacksea#embed-via-jsdelivr" title="jsDelivr Hits of Blacksea Canvas" target="_blank"> <img height="17" src="https://img.shields.io/jsdelivr/gh/hy/mythemeway/mtw-canvas-blacksea?label=Hits&color=blue&logo=jsdelivr&cacheSeconds=3600" /></a></div>
 
 https://user-images.githubusercontent.com/16251546/148187184-a4d76093-e495-43f1-8178-07a551a7672f.mp4
 
