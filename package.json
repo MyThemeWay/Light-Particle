@@ -49,7 +49,7 @@
     "imagemin": "8.0.1",
     "imagemin-svgo": "10.0.1",
     "jquery": "3.6.0",
-    "mini-css-extract-plugin": "2.6.0",
+    "mini-css-extract-plugin": "2.6.1",
     "nodemon": "2.0.16",
     "prepr": "1.2.4",
     "sass": "1.52.3",
