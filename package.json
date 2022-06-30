@@ -32,8 +32,8 @@
     }
   },
   "dependencies": {
-    "@babel/core": "7.18.5",
-    "@babel/preset-env": "7.18.2",
+    "@babel/core": "7.18.6",
+    "@babel/preset-env": "7.18.6",
     "@fortawesome/fontawesome-free": "5.15.4",
     "@squoosh/cli": "0.7.2",
     "babel-loader": "8.2.5",
@@ -53,11 +53,11 @@
     "nodemon": "2.0.18",
     "prepr": "1.2.4",
     "sass": "1.53.0",
-    "sass-loader": "13.0.1",
+    "sass-loader": "13.0.2",
     "sweet-scroll": "4.0.0",
     "twgl.js": "4.23.1",
     "webpack": "5.73.0",
     "webpack-cli": "4.10.0",
-    "webpack-dev-server": "4.9.2"
+    "webpack-dev-server": "4.9.3"
   }
 }
