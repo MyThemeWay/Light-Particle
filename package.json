@@ -48,7 +48,7 @@
     "ignore-emit-webpack-plugin": "2.0.6",
     "imagemin": "8.0.1",
     "imagemin-svgo": "10.0.1",
-    "jquery": "3.6.0",
+    "jquery": "3.6.1",
     "mini-css-extract-plugin": "2.6.1",
     "nodemon": "2.0.19",
     "prepr": "1.2.4",
