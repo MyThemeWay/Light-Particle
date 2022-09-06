@@ -32,8 +32,8 @@
     }
   },
   "dependencies": {
-    "@babel/core": "7.18.10",
-    "@babel/preset-env": "7.18.10",
+    "@babel/core": "7.19.0",
+    "@babel/preset-env": "7.19.0",
     "@fortawesome/fontawesome-free": "5.15.4",
     "@squoosh/cli": "0.7.2",
     "babel-loader": "8.2.5",
@@ -48,16 +48,16 @@
     "ignore-emit-webpack-plugin": "2.0.6",
     "imagemin": "8.0.1",
     "imagemin-svgo": "10.0.1",
-    "jquery": "3.6.0",
+    "jquery": "3.6.1",
     "mini-css-extract-plugin": "2.6.1",
     "nodemon": "2.0.19",
     "prepr": "1.2.4",
-    "sass": "1.54.4",
+    "sass": "1.54.8",
     "sass-loader": "13.0.2",
     "sweet-scroll": "4.0.0",
     "twgl.js": "4.24.0",
     "webpack": "5.74.0",
     "webpack-cli": "4.10.0",
-    "webpack-dev-server": "4.10.0"
+    "webpack-dev-server": "4.10.1"
   }
 }
