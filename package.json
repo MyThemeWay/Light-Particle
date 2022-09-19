@@ -50,7 +50,7 @@
     "imagemin-svgo": "10.0.1",
     "jquery": "3.6.1",
     "mini-css-extract-plugin": "2.6.1",
-    "nodemon": "2.0.19",
+    "nodemon": "2.0.20",
     "prepr": "1.2.4",
     "sass": "1.54.8",
     "sass-loader": "13.0.2",
