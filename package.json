@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@babel/core": "7.19.3",
-    "@babel/preset-env": "7.19.3",
+    "@babel/preset-env": "7.19.4",
     "@fortawesome/fontawesome-free": "5.15.4",
     "@squoosh/cli": "0.7.2",
     "babel-loader": "8.2.5",
