@@ -43,7 +43,7 @@
     "css-minimizer-webpack-plugin": "4.2.1",
     "devicon": "2.15.1",
     "fs-extra": "10.1.0",
-    "glslx": "0.2.13",
+    "glslx": "0.3.0",
     "html-minifier-terser": "7.0.0",
     "ignore-emit-webpack-plugin": "2.0.6",
     "imagemin": "8.0.1",
