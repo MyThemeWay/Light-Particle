@@ -53,7 +53,7 @@
     "nodemon": "2.0.20",
     "prepr": "1.2.4",
     "sass": "1.55.0",
-    "sass-loader": "13.1.0",
+    "sass-loader": "13.2.0",
     "sweet-scroll": "4.0.0",
     "twgl.js": "5.2.0",
     "webpack": "5.74.0",
