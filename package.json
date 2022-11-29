@@ -55,7 +55,7 @@
     "sass": "1.55.0",
     "sass-loader": "13.2.0",
     "sweet-scroll": "4.0.0",
-    "twgl.js": "5.2.0",
+    "twgl.js": "5.3.0",
     "webpack": "5.75.0",
     "webpack-cli": "5.0.0",
     "webpack-dev-server": "4.11.1"
