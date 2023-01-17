@@ -3,7 +3,7 @@
   <canvas id="header-canvas"></canvas>
   <div class="header-items">
     <h1 class="site-title">{{site.title}}</h1>
-    <img src="{{ site.user_picture | prepend: site.baseurl }}" alt="{{ site.user_name | prepend: site.baseurl }}" ></img>
+    <img src="{{ site.user_picture | prepend: site.baseurl }}" alt="{{ site.user_name | prepend: site.baseurl }}" />
     <span class="user-description">{{site.user_name}}</span>
     {% if site.user_title != null %}
       <span class="user-description">{{site.user_title}}</span>
