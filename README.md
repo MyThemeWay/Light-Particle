@@ -73,7 +73,9 @@ You are welcome to use this boilerplate to edit the existing shaders or to creat
 
 If you don't need this boilerplate with all the bells and whistles, but want a WebGL canvas boilerplate as a quick and easy live editor, or if you just want the pure minimized bundles as a 3D animated background, look [here](https://github.com/MyThemeWay/mtw-boilerplate-graphics "Check it out").
 
-> <b>Note</b>: WebGL canvas headers can make your CPU sweat, but it gets colder as you scroll down :wink:
+> <b>**Note**</b>: WebGL canvas headers can make your CPU sweat, but it gets colder as you scroll down :wink:
+
+<br>
 
 ## Feature Overview
 <div align="center">
@@ -110,12 +112,11 @@ If you don't need this boilerplate with all the bells and whistles, but want a W
 <a href="https://www.npmjs.com/package/imagemin" title="Check it out" target="_blank"><img height="26" alt="imagemin" src="https://img.shields.io/badge/imagemin-svgo-blue.svg?cacheSeconds=3600"/></a>
 <a href="https://www.npmjs.com/package/chokidar" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/chokidar--blue.svg"/></a>
 <a href="https://www.npmjs.com/package/css-minimizer-webpack-plugin" title="Check it out" target="_blank"><img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/cssminimizerwebpackplugin.svg"/></a>
-> <b>Note</b>: <b>imagemin</b>-<b>mozjpeg</b>, -<b>pngquant</b> & -<b>gifsicle</b> are deactivated by default due to currently unresolved vulnerabilities. Feel free to change this here [<b>watcher.config.mjs</b>](https://github.com/MyThemeWay/Light-Particle/blob/master/watcher.config.mjs "Go there") (e.&nbsp;g. <b>imagemin</b>-<b>pngquant</b> is faster than <b>Squoosh</b>-<b>oxipng</b>).
+> <b>**Note**</b>: <b>imagemin</b>-<b>mozjpeg</b>, -<b>pngquant</b> & -<b>gifsicle</b> are deactivated by default due to currently unresolved vulnerabilities. Feel free to change this here [<b>watcher.config.mjs</b>](https://github.com/MyThemeWay/Light-Particle/blob/master/watcher.config.mjs "Go there") (e.&nbsp;g. <b>imagemin</b>-<b>pngquant</b> is faster than <b>Squoosh</b>-<b>oxipng</b>).
 
 ### [Releases](https://github.com/MyThemeWay/Light-Particle/releases "Go there"): [v1](https://github.com/MyThemeWay/Light-Particle/releases/tag/v1.0 "Go there") > [v2](https://github.com/MyThemeWay/Light-Particle/releases/tag/v2.0 "Go there") > [v3](https://github.com/MyThemeWay/Light-Particle/releases/tag/v3.0 "Go there") > [v4](https://github.com/MyThemeWay/Light-Particle/releases/tag/v4.0 "Go there")
 <a href="https://www.npmjs.com/package/webpack" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/webpack-4.44_>...>_5.65-blue.svg?logo=webpack&cacheSeconds=3600"/></a>
 <a href="https://www.npmjs.com/package/bootstrap" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/Bootstrap-4.6_>_5.0_>_5.1-blue.svg?logo=bootstrap&cacheSeconds=3600"/></a>
-<a href="https://github.com/jekyll/jekyll" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/jekyll-4.2.0_>>_4.2.1-blue.svg?logo=jekyll&cacheSeconds=3600"/></a>
 <a href="https://github.com/nodejs/node" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/Node.js-14.1_>...>_16.13-blue.svg?logo=node.js&cacheSeconds=3600"/></a>
 <a href="https://github.com/nvm-sh/nvm" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/nvm-0.35_>...>_0.39-blue.svg?cacheSeconds=3600"/></a>
 <a href="https://www.npmjs.com/package/node-sass" title="Check it out" target="_blank"><img height="26" src="https://img.shields.io/badge/Sass-Node_>_Dart-blue.svg?logo=sass&cacheSeconds=3600"/></a>
@@ -145,7 +146,7 @@ If you don't need this boilerplate with all the bells and whistles, but want a W
 <img height="26" src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/->>-blue.svg"/>
 <a href="https://github.com/nodejs/node" title="Check it out" target="_blank"><img height="26" alt="Node.js" src="https://img.shields.io/badge/Node.js-grey.svg?logo=node.js&cacheSeconds=3600"/></a>
 
-> <b>Note</b>: Third party feature badges are clickable and linked to their sources.
+> <b>**Note**</b>: Third party feature badges are clickable and linked to their sources.
 
 <h3>Additional Feature Information: <a href="https://github.com/MyThemeWay/Light-Particle/releases/tag/v4.0" title="Check it out" target="_blank">v4.0</a></h3>
 <div align="center">
@@ -177,7 +178,9 @@ If you don't need this boilerplate with all the bells and whistles, but want a W
 	</details><p></p>
 </div>
 
-> <b>Note</b>: Cards are clickable and linked to the corresponding GitHub repositories.
+> <b>**Note**</b>: Cards are clickable and linked to the corresponding GitHub repositories.
+
+<br>
 
 ## Feature Presentation: Exchangeable WebGL Header
 
@@ -221,9 +224,12 @@ https://user-images.githubusercontent.com/16251546/148187184-a4d76093-e495-43f1-
 </table>
 
 ### Note:
->	* [mtw-canvas-malachite](https://github.com/MyThemeWay/mtw-canvas-malachite "Get it") <b>[included] [default]</b>; Fragment shader is based on [Glare of water](https://www.shadertoy.com/view/ttSGz3 "Check it out") [License: [CC&nbsp;BY&nbsp;3.0](https://www.shadertoy.com/view/ttSGz3 "Go there"); Copyright: ©️ 2019 Jan Mróz; Changes: made]
->	* [mtw-canvas-disks](https://github.com/MyThemeWay/mtw-canvas-disks "Get it") <b>[included]</b>; Fragment shader is based on [CoordSys - intersection](https://www.shadertoy.com/view/lsfGDB "Check it out") [License: [MIT](https://www.shadertoy.com/view/lsfGDB "Go there"); Copyright: ©️ 2013 Inigo Quilez; Changes: made]
+>	* [mtw-canvas-malachite](https://github.com/MyThemeWay/mtw-canvas-malachite "Get it") <b>[included] [default]</b>; Fragment shader is based on [Glare of water](https://www.shadertoy.com/view/ttSGz3 "Check it out") [License: [CC&nbsp;BY&nbsp;3.0](https://www.shadertoy.com/view/ttSGz3 "Go there"); Copyright: © 2019 Jan Mróz; Changes: made]
+>	
+>	* [mtw-canvas-disks](https://github.com/MyThemeWay/mtw-canvas-disks "Get it") <b>[included]</b>; Fragment shader is based on [CoordSys - intersection](https://www.shadertoy.com/view/lsfGDB "Check it out") [License: [MIT](https://www.shadertoy.com/view/lsfGDB "Go there"); Copyright: © 2013 Inigo Quilez; Changes: made]
 >	* other mtw-canvases <b>[not included]</b>; you have to add them manually
+
+<br>
 
 ## Feature Presentation: Screen Size Adaption
 
@@ -233,15 +239,19 @@ It is shown using the dark version of this boilerplate.
 <img alt="About" src="https://raw.githubusercontent.com/sitdisch/cloud/master/gifs/screenAdaption_about.gif" />
 <img alt="Projects" src="https://raw.githubusercontent.com/sitdisch/cloud/master/gifs/screenAdaption_projects.gif" />
 
+<br><p></p>
+
 ## Other Version
 
 You can get a dark version [here](https://github.com/mythemeway/Dark-Particle "Go there"):
 
 <a href="https://github.com/mythemeway/Dark-Particle" title="Check it out" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/gifs/dark_social_preview.gif" /></a>
 
+<br>
+
 ## More Information
 
-You can use one of these boilerplates as a starting template to make your web appearance, blogging and portfolio awesome. They are heavily based on the magnificent work of [Stephen Arsenault](https://github.com/s-arsenault/s-arsenault.github.io "Go there") [License: [MIT](https://github.com/s-arsenault/s-arsenault.github.io/blob/master/LICENSE.txt "Go there")], [Nathan Randecker](https://github.com/nrandecker/particle "Go there") [License: [MIT](https://github.com/nrandecker/particle/blob/master/LICENSE.txt "Go there"); Copyright: ©️ 2016 Nathan Randecker], me [Sitdisch](https://github.com/sitdisch "Go there") and many more.
+You can use one of these boilerplates as a starting template to make your web appearance, blogging and portfolio awesome. They are heavily based on the magnificent work of [Stephen Arsenault](https://github.com/s-arsenault/s-arsenault.github.io "Go there") [License: [MIT](https://github.com/s-arsenault/s-arsenault.github.io/blob/master/LICENSE.txt "Go there")], [Nathan Randecker](https://github.com/nrandecker/particle "Go there") [License: [MIT](https://github.com/nrandecker/particle/blob/master/LICENSE.txt "Go there"); Copyright: © 2016 Nathan Randecker], me [Sitdisch](https://github.com/sitdisch "Go there") and many more.
 
 For more information about this boilerplate, and to see what's possible even with an older version, take a look at my personal GitHub page here:
 - [Enable Local Running](https://sitdisch.github.io/mythemeway/2020/11/01/light-particle.html#local-running "Go there")
@@ -253,18 +263,23 @@ P.s. don't be afraid of the cookie consent window on my website. I don't record 
 
 Have a nice day.
 
+<br>
+
 ## Appendix
 ### Note on protected brand names and logos
 > * The use of protected brand names, trade names, utility models and brand logos on this website does not constitute an infringement of copyright; rather, it serves as an illustrative note. Even if this is not marked as such at the respective points, the corresponding legal provisions always apply.
+> 
 > * The brand names and logos used are the property of their respective owners and are subject to their copyright provisions.
 > * This offer is in no way related to the legal entities of the protected brand names and logos used.
 
 ### Note on liability for links
 > * This README contains links to external third-party websites. The README operator has no influence on the content of these sites. Therefore, he cannot assume any liability. Instead, the respective provider is always responsible for the content.
+> 
 > * The linked pages were checked for possible legal violations at the time of linking and illegal content wasn't discernible. A permanent control of the linked pages is unreasonable without concrete evidence of an infringement. However, if the README operator becomes aware of such a violation, he will act immediately.
 
 ### Readme uses
-> * [star-solid.svg](https://fontawesome.com/v5.15/icons/star?style=solid "Check it out") & [code-branch-solid.svg](https://fontawesome.com/v5.15/icons/code-branch?style=solid "Check it out") [License: [CC&nbsp;BY&nbsp;4.0](https://fontawesome.com/license/free "Check it out"); Copyright: ©️  Fonticons, Inc.; Changes: made]
-> * [GitHub Readme Stats](https://github.com/anuraghazra/github-readme-stats "Check it out") [License: [MIT](https://github.com/anuraghazra/github-readme-stats/blob/master/LICENSE "Go there"); Copyright: ©️ 2021 Anurag Hazra]
+> * [star-solid.svg](https://fontawesome.com/v5.15/icons/star?style=solid "Check it out") & [code-branch-solid.svg](https://fontawesome.com/v5.15/icons/code-branch?style=solid "Check it out") [License: [CC&nbsp;BY&nbsp;4.0](https://fontawesome.com/license/free "Check it out"); Copyright: © Fonticons, Inc.; Changes: made]
+> 
+> * [GitHub Readme Stats](https://github.com/anuraghazra/github-readme-stats "Check it out") [License: [MIT](https://github.com/anuraghazra/github-readme-stats/blob/master/LICENSE "Go there"); Copyright: © 2021 Anurag Hazra]
 > * [Simple Icons](https://simpleicons.org/ "Check it out") [License: [CC0&nbsp;1.0](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md "Go there")]
 > * [Shields.io](https://github.com/badges/shields "Check it out") [License: [CC0&nbsp;1.0](https://github.com/badges/shields/blob/master/LICENSE "Go there")] 
