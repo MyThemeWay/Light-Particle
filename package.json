@@ -51,7 +51,7 @@
     "jquery": "3.6.3",
     "mini-css-extract-plugin": "2.7.2",
     "nodemon": "2.0.20",
-    "prepr": "1.2.4",
+    "prepr": "2.0.1",
     "sass": "1.55.0",
     "sass-loader": "13.2.0",
     "sweet-scroll": "4.0.0",
