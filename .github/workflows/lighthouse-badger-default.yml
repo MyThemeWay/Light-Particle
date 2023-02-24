@@ -30,8 +30,8 @@ env:
   DEFAULT_REPO_BRANCH: '${{ github.repository }} master' # repo with this file and master branch
   DEFAULT_BADGES_ARGS: '-b pagespeed -o lighthouse_results -r'
   DEFAULT_AUDIT_TYPE: 'both'
-  DEFAULT_MOBILE_LIGHTHOUSE_PARAMS: '--throttling.cpuSlowdownMultiplier=2'
-  DEFAULT_DESKTOP_LIGHTHOUSE_PARAMS: '--preset=desktop --throttling.cpuSlowdownMultiplier=1'
+  DEFAULT_MOBILE_LIGHTHOUSE_PARAMS: '--throttling.cpuSlowdownMultiplier=2 --max-wait-for-load=3000'
+  DEFAULT_DESKTOP_LIGHTHOUSE_PARAMS: '--preset=desktop --throttling.cpuSlowdownMultiplier=1 --max-wait-for-load=3000'
   DEFAULT_USER_NAME: 'github-actions[bot]'
   DEFAULT_USER_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com'
   DEFAULT_COMMIT_MESSAGE: 'Lighthouse-Badger[bot]: Results Refreshed'
@@ -68,11 +68,11 @@ on:
       mobile_lighthouse_params:
         description: 'Lighthouse parameters mobile audit'
         required: true
-        default: '--throttling.cpuSlowdownMultiplier=2'
+        default: '--throttling.cpuSlowdownMultiplier=2 --max-wait-for-load=3000'
       desktop_lighthouse_params:
         description: 'Lighthouse parameters desktop audit'
         required: true
-        default: '--preset=desktop --throttling.cpuSlowdownMultiplier=1'
+        default: '--preset=desktop --throttling.cpuSlowdownMultiplier=1 --max-wait-for-load=3000'
       user_name:
         description: 'User who should commit'
         required: true
